@@ -1,1 +1,7 @@
-/index.html / 301
+# Una sola versión canónica del sitio: evita que Google indexe duplicados.
+https://www.designia360.com/*   https://designia360.com/:splat   301!
+http://www.designia360.com/*    https://designia360.com/:splat   301!
+http://designia360.com/*        https://designia360.com/:splat   301!
+
+# El index explícito redirige a la raíz
+/index.html                     /                                 301!

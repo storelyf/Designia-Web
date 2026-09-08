@@ -109,6 +109,7 @@
    ========================================================================== */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:80px;overflow-x:clip}
+html.nav-abierto{overflow-y:hidden}   /* bloqueo de scroll sin romper el sticky */
 body{
   font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
   font-size:clamp(.95rem,.92rem + .2vw,1.05rem);
@@ -307,11 +308,14 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
 .burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
 @media(max-width:1000px){
   .burger{display:block}
-  .topbar nav{position:fixed;left:0;right:0;top:0;flex-direction:column;gap:0;
-    padding:86px 24px 32px;background:rgba(23,15,53,.99);backdrop-filter:blur(18px);
-    transform:translateY(-102%);transition:transform .45s var(--ease-expo);
-    max-height:100dvh;overflow-y:auto;z-index:-1}
-  .topbar nav.open{transform:none}
+  .topbar nav{position:fixed;left:0;right:0;top:var(--h-barra,70px);
+    height:calc(100dvh - var(--h-barra,70px));
+    flex-direction:column;gap:0;padding:18px 24px calc(40px + env(safe-area-inset-bottom));
+    background:var(--tinta-900);overflow-y:auto;overscroll-behavior:contain;
+    z-index:55;                       /* encima del contenido, debajo de la barra (60) */
+    opacity:0;visibility:hidden;transform:translateY(-10px);
+    transition:opacity .3s var(--ease),transform .38s var(--ease-expo),visibility .38s}
+  .topbar nav.open{opacity:1;visibility:visible;transform:none}
   .topbar nav a{padding:18px 2px;font-family:'Poppins',sans-serif;font-weight:700;font-size:1.5rem;
     letter-spacing:-.03em;color:var(--lavanda);border-bottom:1px solid var(--hilo);
     opacity:0;transform:translateY(-10px);transition:opacity .4s var(--ease),transform .4s var(--ease)}
@@ -1584,21 +1588,35 @@ document.addEventListener('click', function(e){
    2. MENÚ MÓVIL
    ------------------------------------------------------------------ */
 (function(){
-  var burger = $('#burger'), nav = $('#navMenu');
+  var burger = $('#burger'), nav = $('#navMenu'), barra = $('#topbar');
+  var raiz = document.documentElement;
+
+  // La barra encoge al hacer scroll (70px arriba del todo, ~52px encogida).
+  // Se mide justo cuando hace falta, que es al abrir el menú.
+  function medirBarra(){
+    raiz.style.setProperty('--h-barra', Math.round(barra.getBoundingClientRect().height) + 'px');
+  }
+
   var cerrar = function(){
+    if(!nav.classList.contains('open')) return;
     nav.classList.remove('open');
     burger.setAttribute('aria-expanded','false');
     burger.setAttribute('aria-label','Abrir menú');
-    document.body.style.overflow = '';
+    raiz.classList.remove('nav-abierto');
   };
+
   burger.addEventListener('click', function(){
+    medirBarra();
     var abierto = nav.classList.toggle('open');
     burger.setAttribute('aria-expanded', String(abierto));
     burger.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
-    document.body.style.overflow = abierto ? 'hidden' : '';
+    raiz.classList.toggle('nav-abierto', abierto);
   });
+
   $$('a', nav).forEach(function(a){ a.addEventListener('click', cerrar); });
   addEventListener('keydown', function(e){ if(e.key === 'Escape') cerrar(); });
+  addEventListener('resize', function(){ if(nav.classList.contains('open')) medirBarra(); }, {passive:true});
+  medirBarra();
 })();
 
 /* ------------------------------------------------------------------
