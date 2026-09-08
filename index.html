@@ -1,0 +1,2056 @@
+<!DOCTYPE html>
+<html lang="es-PE" class="no-js">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.remove('no-js')</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Designia · Marketing, Publicidad y Tecnología en Lima</title>
+<meta name="description" content="Designia es la agencia de marketing, publicidad y tecnología de los negocios de servicio en Lima: estrategia, contenido, pauta, branding, web y automatización. Haz tu diagnóstico gratis en 60 segundos.">
+<meta name="theme-color" content="#22184a">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Designia">
+<meta name="geo.region" content="PE-LIM">
+<meta name="geo.placename" content="Lima">
+
+<!-- ==========================================================
+     ✏️  AL COMPRAR EL DOMINIO
+     Reemplaza https://designia.pe por tu dominio final aquí
+     y en los bloques JSON-LD del final del archivo.
+     ========================================================== -->
+<link rel="canonical" href="https://designia360.com/">
+<meta property="og:url" content="https://designia360.com/">
+<meta property="og:image" content="https://designia360.com/og-designia.jpg">
+<meta name="twitter:image" content="https://designia360.com/og-designia.jpg">
+
+<meta property="og:title" content="Designia · Agencia de Marketing Digital y Publicidad en Lima">
+<meta property="og:description" content="Somos el área de marketing que tu negocio no puede contratar a planilla. Diagnóstico gratis de tu presencia digital.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_PE">
+<meta property="og:site_name" content="Designia">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Designia — agencia de marketing digital y publicidad en Lima">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Designia · Agencia de Marketing Digital y Publicidad en Lima">
+<meta name="twitter:description" content="Somos el área de marketing que tu negocio no puede contratar a planilla.">
+
+<link rel="alternate" hreflang="es-pe" href="https://designia360.com/">
+<link rel="alternate" hreflang="x-default" href="https://designia360.com/">
+
+<!-- ==========================================================
+     ✏️ VERIFICACIÓN EN BUSCADORES
+     Descomenta cada línea y pega el código que te da cada panel:
+       Google  → search.google.com/search-console  (método "etiqueta HTML")
+       Bing    → bing.com/webmasters               (verifica también Yahoo y DuckDuckGo)
+     ========================================================== -->
+<!-- <meta name="google-site-verification" content="PEGA_AQUI_EL_CODIGO"> -->
+<!-- <meta name="msvalidate.01" content="PEGA_AQUI_EL_CODIGO"> -->
+
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="icono-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<!-- Fuentes de marca auto-alojadas (subconjunto latin). Cero llamadas a terceros. -->
+<link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/poppins-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="logo-designia-blanco.png" fetchpriority="high">
+
+<style>
+/* ==========================================================================
+   1. FUENTES DE MARCA — Poppins (títulos) · Inter (cuerpo)
+   ========================================================================== */
+@font-face{font-family:'Poppins';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/poppins-600.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/poppins-700.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:800;font-display:swap;src:url(fonts/poppins-800.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/inter-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+/* ==========================================================================
+   2. TOKENS — paleta del manual, propuesta del isotipo bombilla
+      (turquesa + morado, con azul intenso, violeta y lavanda de apoyo)
+   ========================================================================== */
+:root{
+  --turq:#13CDD9;        /* turquesa de marca — RGB 19/205/217 */
+  --turq-600:#0FA9B3;    /* hover / enlaces */
+  --turq-050:#EAFBFC;
+
+  --tinta:#22184a;       /* morado profundo — color principal */
+  --tinta-900:#170F35;   /* fondo más profundo */
+  --tinta-800:#1C1440;
+  --tinta-700:#2E2160;
+
+  --intenso:#271d9c;     /* secundario */
+  --violeta:#8b6af7;     /* secundario */
+  --lavanda:#e8e1fd;     /* apoyo — es también el texto sobre fondo oscuro */
+  --lav-050:#F7F4FE;
+  --lav-100:#EFEAFC;
+
+  --texto:#5A5385;       /* cuerpo sobre fondo claro */
+  --blanco:#fff;
+
+  /* Hilos de retícula: la estructura se ve, como en las agencias editoriales */
+  --hilo:rgba(232,225,253,.16);
+  --hilo-claro:rgba(34,24,74,.14);
+
+  --grad-turq:linear-gradient(100deg,var(--turq),var(--turq-600));
+  --grad-marca:linear-gradient(100deg,var(--turq) 0%,var(--violeta) 100%);
+
+  --r-xs:6px; --r-sm:10px; --r:14px; --r-lg:20px; --r-full:999px;
+  --sh:0 4px 12px rgba(34,24,74,.06),0 14px 34px rgba(34,24,74,.09);
+  --sh-lg:0 10px 24px rgba(34,24,74,.08),0 30px 64px rgba(34,24,74,.14);
+  --sh-turq:0 10px 30px rgba(19,205,217,.32);
+
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --ease-expo:cubic-bezier(.16,1,.3,1);
+  --sp:clamp(84px,10vw,150px);
+}
+
+/* ==========================================================================
+   3. BASE
+   ========================================================================== */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:80px;overflow-x:clip}
+body{
+  font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-size:clamp(.95rem,.92rem + .2vw,1.05rem);
+  line-height:1.6;color:var(--lavanda);background:var(--tinta-900);
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+img,svg{max-width:100%;display:block}
+[hidden]{display:none!important}   /* gana a cualquier display de clase */
+a{color:var(--turq)}
+button{font:inherit;color:inherit;background:none;border:0}
+::selection{background:var(--turq);color:var(--tinta)}
+
+h1,h2,h3,h4,.display{font-family:'Poppins',system-ui,sans-serif;line-height:1.05;letter-spacing:-.035em}
+.display{font-weight:800;text-wrap:balance}
+/* Escala tipográfica declarada: el titular es la pieza gráfica principal */
+h1.display{font-size:clamp(2.6rem,8.2vw,6.8rem);line-height:.92;letter-spacing:-.048em}
+h2.display{font-size:clamp(2.2rem,6.4vw,5rem);line-height:.95;letter-spacing:-.042em}
+
+:focus-visible{outline:3px solid var(--turq);outline-offset:3px;border-radius:3px}
+.skip{position:absolute;left:-999px;top:0;z-index:10001;background:var(--turq);color:var(--tinta);
+  padding:12px 20px;font-weight:700;text-decoration:none}
+.skip:focus{left:0}
+
+/* ==========================================================================
+   4. SECCIONES — dominio oscuro con dos respiros claros, y retícula visible
+   ========================================================================== */
+.section{padding:var(--sp) 24px;position:relative}
+.inner{max-width:1240px;margin:auto;position:relative;z-index:2}
+
+.w-dark{background:var(--tinta);color:var(--lavanda);border-top:1px solid var(--hilo)}
+.w-deep{background:var(--tinta-900);color:var(--lavanda);border-top:1px solid var(--hilo)}
+.w-dark h1,.w-dark h2,.w-dark h3,.w-dark h4,
+.w-deep h1,.w-deep h2,.w-deep h3,.w-deep h4{color:var(--blanco)}
+.w-luz{background:var(--lav-050);color:var(--texto);border-top:1px solid var(--hilo-claro)}
+.w-luz h1,.w-luz h2,.w-luz h3,.w-luz h4{color:var(--tinta)}
+.w-turq{background:var(--turq);color:var(--tinta);overflow:hidden}
+.w-turq h2,.w-turq h3,.w-turq h4{color:var(--tinta)}
+
+/* Número de sección, tamaño editorial, al margen */
+.section[data-num]::after{content:attr(data-num);position:absolute;top:calc(var(--sp) - .18em);right:24px;
+  font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(4.5rem,15vw,13rem);line-height:.8;
+  letter-spacing:-.06em;color:transparent;-webkit-text-stroke:2px rgba(19,205,217,.34);pointer-events:none;z-index:1}
+.w-luz[data-num]::after{-webkit-text-stroke-color:rgba(19,205,217,.5)}
+.w-turq[data-num]::after{-webkit-text-stroke-color:rgba(34,24,74,.28)}
+@media(max-width:900px){.section[data-num]::after{font-size:clamp(3.5rem,17vw,7rem);opacity:.7}}
+
+.kicker{display:inline-flex;align-items:center;gap:11px;text-transform:uppercase;letter-spacing:.2em;
+  font-size:.72rem;font-weight:700;color:var(--turq);margin-bottom:20px}
+.kicker::before{content:"";width:32px;height:2px;background:var(--turq);flex:none}
+.w-luz .kicker{color:var(--turq-600)}
+.w-luz .kicker::before{background:var(--turq-600)}
+.w-turq .kicker{color:var(--tinta)}
+.w-turq .kicker::before{background:var(--tinta)}
+.sec-lead{max-width:660px;margin-top:26px;font-size:1.08rem;line-height:1.7;color:rgba(232,225,253,.72)}
+.w-luz .sec-lead{color:var(--texto)}
+.w-turq .sec-lead{color:rgba(34,24,74,.82);font-weight:500}
+
+/* ==========================================================================
+   5. REVELADOS
+   ========================================================================== */
+.mask{display:block;overflow:hidden;padding-bottom:.08em}
+.mask>span{display:block;transform:translateY(110%);transition:transform 1s var(--ease-expo) var(--d,0s)}
+.mask.is-in>span{transform:none}
+.grad{background:var(--grad-marca);-webkit-background-clip:text;background-clip:text;color:transparent}
+.w-luz .grad{background:linear-gradient(100deg,var(--turq-600),var(--intenso));-webkit-background-clip:text;background-clip:text}
+
+[data-reveal]{opacity:0;transform:translateY(30px);
+  transition:opacity .8s var(--ease) var(--d,0s),transform .8s var(--ease) var(--d,0s)}
+[data-reveal="scale"]{transform:translateY(20px) scale(.97)}
+/* Las entradas laterales desplazaban el bloque ±32px ANTES de revelarse y
+   sobresalían del viewport en anchos intermedios, generando scroll horizontal.
+   El movimiento ahora es siempre vertical: mismo efecto, sin desbordar. */
+[data-reveal="left"],[data-reveal="right"]{transform:translateY(30px)}
+[data-reveal].is-in{opacity:1;transform:none}
+
+/* ==========================================================================
+   6. BOTONES
+   ========================================================================== */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  min-height:56px;padding:16px 34px;border-radius:var(--r-full);font-family:'Poppins',sans-serif;
+  font-weight:700;font-size:.97rem;letter-spacing:-.01em;text-decoration:none;cursor:pointer;
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .3s,color .3s,border-color .3s;
+  will-change:transform;overflow:hidden;isolation:isolate}
+.btn>*{position:relative;z-index:2}
+.btn-primary{background:var(--turq);color:var(--tinta);box-shadow:var(--sh-turq)}
+.btn-primary::after{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(100deg,transparent 20%,rgba(255,255,255,.6) 50%,transparent 80%);
+  transform:translateX(-120%);transition:transform .7s var(--ease)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 44px rgba(19,205,217,.48)}
+.btn-primary:hover::after{transform:translateX(120%)}
+.btn-ghost{border:1.5px solid rgba(232,225,253,.34);color:var(--lavanda)}
+.btn-ghost:hover{border-color:var(--turq);color:var(--turq);transform:translateY(-3px)}
+.btn-line{border:1.5px solid var(--tinta);color:var(--tinta)}
+.btn-line:hover{background:var(--tinta);color:var(--lavanda);transform:translateY(-3px)}
+.btn-sm{min-height:44px;padding:11px 22px;font-size:.85rem}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.cta-nota{display:inline-flex;align-items:center;gap:9px;font-size:.86rem;font-weight:500;
+  color:rgba(232,225,253,.62)}
+.w-luz .cta-nota{color:var(--texto)}
+.cta-nota .ic-s{--t1:var(--turq)}
+
+/* ==========================================================================
+   7. ÍCONOS — set propio, plano, dos tintas, mismo trazo
+   ========================================================================== */
+.ic,.ic-s,.ic-m{fill:none;stroke-linecap:round;stroke-linejoin:round;--t1:var(--turq);--t2:var(--lavanda)}
+.ic{width:38px;height:38px;stroke-width:4}
+.ic-m{width:46px;height:46px;stroke-width:3.6}
+.ic-s{width:1.15em;height:1.15em;stroke-width:5;vertical-align:-.2em;display:inline-block;flex:none}
+.w-luz .ic,.w-luz .ic-s,.w-luz .ic-m{--t2:var(--tinta)}
+.w-turq .ic-s{--t1:var(--intenso);--t2:var(--tinta)}
+.ico-tile{display:grid;place-items:center;width:60px;height:60px;border-radius:var(--r);
+  background:rgba(19,205,217,.1);border:1px solid rgba(19,205,217,.3);
+  transition:transform .45s var(--ease),background .35s,border-color .35s}
+.w-luz .ico-tile{background:var(--turq-050);border-color:rgba(19,205,217,.32)}
+
+/* Isotipo de marca (bombilla con el imán dentro) */
+.mark{width:22px;height:auto;flex:none}
+.mark-sm{width:15px}
+
+/* ==========================================================================
+   8. INTRO
+   ========================================================================== */
+#intro{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;background:var(--tinta-900);
+  transition:opacity .55s var(--ease),visibility .55s}
+#intro.done{opacity:0;visibility:hidden;pointer-events:none}
+.intro-lock{display:flex;flex-direction:column;align-items:center;gap:18px;z-index:2}
+.logo-wrap{position:relative;overflow:hidden;padding:10px}
+.logo-intro{width:min(400px,74vw);height:auto;opacity:0;animation:introIn .7s .05s var(--ease-expo) forwards}
+@keyframes introIn{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}
+.sweep{position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(105deg,transparent 42%,rgba(19,205,217,.55) 50%,transparent 58%);
+  transform:translateX(-130%);animation:barrido .85s .45s var(--ease) forwards}
+@keyframes barrido{to{transform:translateX(130%)}}
+.intro-tag{opacity:0;font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--turq);font-weight:700;animation:sube .6s .55s var(--ease) forwards}
+.intro-bar{width:min(230px,50vw);height:2px;background:rgba(232,225,253,.14);overflow:hidden;
+  opacity:0;animation:sube .4s .5s forwards}
+.intro-bar i{display:block;height:100%;background:var(--turq);transform-origin:left;
+  transform:scaleX(0);animation:carga 1s .35s var(--ease) forwards}
+@keyframes carga{to{transform:scaleX(1)}}
+@keyframes sube{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+#saltar{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);
+  border:1px solid rgba(232,225,253,.28);color:rgba(232,225,253,.8);border-radius:var(--r-full);
+  padding:9px 22px;font-size:.78rem;font-weight:600;cursor:pointer;transition:.3s;z-index:3}
+#saltar:hover{border-color:var(--turq);color:var(--turq)}
+
+/* ==========================================================================
+   9. CURSOR — punto y anillo se pintan en el MISMO fotograma (ver JS)
+   ========================================================================== */
+.cursor-dot,.cursor-ring{position:fixed;top:0;left:0;border-radius:50%;pointer-events:none;
+  z-index:9999;transform:translate3d(-200px,-200px,0) translate(-50%,-50%);will-change:transform;
+  opacity:0;transition:opacity .3s}
+.cursor-dot{width:8px;height:8px;background:var(--turq)}
+.cursor-ring{width:36px;height:36px;border:1.5px solid rgba(19,205,217,.6);z-index:9998;
+  transition:width .3s var(--ease),height .3s var(--ease),background .3s,opacity .3s,border-color .3s}
+body.cursor-on .cursor-dot,body.cursor-on .cursor-ring{opacity:1}
+body.cursor-hot .cursor-ring{width:62px;height:62px;background:rgba(19,205,217,.14);border-color:var(--turq)}
+body.cursor-hot .cursor-dot{width:5px;height:5px}
+/* Sobre turquesa o sobre fondo claro, el cursor turquesa se diluye: se oscurece */
+body.cursor-claro .cursor-dot{background:var(--tinta)}
+body.cursor-claro .cursor-ring{border-color:rgba(34,24,74,.55)}
+body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-color:var(--tinta)}
+@media(hover:hover) and (pointer:fine){
+  body.cursor-on,body.cursor-on a,body.cursor-on button,body.cursor-on .faq-q,
+  body.cursor-on .card,body.cursor-on .plan,body.cursor-on .work{cursor:none}
+  body.cursor-on input,body.cursor-on textarea,body.cursor-on select,body.cursor-on label{cursor:auto}
+}
+@media(hover:none){.cursor-dot,.cursor-ring{display:none}}
+
+/* ==========================================================================
+   10. BARRA SUPERIOR
+   ========================================================================== */
+.progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:70;pointer-events:none}
+.progress i{display:block;height:100%;background:var(--turq);transform:scaleX(0);transform-origin:left}
+.topbar{position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;
+  gap:16px;padding:14px 24px;background:rgba(23,15,53,.72);backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);border-bottom:1px solid transparent;
+  transition:padding .35s var(--ease),background .35s,border-color .35s}
+.topbar.scrolled{padding:9px 24px;background:rgba(23,15,53,.94);border-bottom-color:var(--hilo)}
+.logo-top{height:42px;width:auto;transition:height .35s var(--ease)}
+.topbar.scrolled .logo-top{height:34px}
+.topbar nav{display:flex;gap:28px}
+.topbar nav a{color:rgba(232,225,253,.82);text-decoration:none;font-weight:500;font-size:.88rem;
+  position:relative;padding:4px 0;transition:color .3s}
+.topbar nav a::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1.5px;
+  background:var(--turq);transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease)}
+.topbar nav a:hover{color:var(--turq)}
+.topbar nav a:hover::after,.topbar nav a.active::after{transform:scaleX(1);transform-origin:left}
+.topbar nav a.active{color:var(--turq)}
+.nav-cta{display:flex;align-items:center;gap:8px}
+.burger{display:none;padding:10px 6px;line-height:0;cursor:pointer;z-index:61}
+.burger span{display:block;width:26px;height:2px;margin:6px 0;background:var(--lavanda);
+  transition:transform .35s var(--ease),opacity .2s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+@media(max-width:1000px){
+  .burger{display:block}
+  .topbar nav{position:fixed;left:0;right:0;top:0;flex-direction:column;gap:0;
+    padding:86px 24px 32px;background:rgba(23,15,53,.99);backdrop-filter:blur(18px);
+    transform:translateY(-102%);transition:transform .45s var(--ease-expo);
+    max-height:100dvh;overflow-y:auto;z-index:-1}
+  .topbar nav.open{transform:none}
+  .topbar nav a{padding:18px 2px;font-family:'Poppins',sans-serif;font-weight:700;font-size:1.5rem;
+    letter-spacing:-.03em;color:var(--lavanda);border-bottom:1px solid var(--hilo);
+    opacity:0;transform:translateY(-10px);transition:opacity .4s var(--ease),transform .4s var(--ease)}
+  .topbar nav.open a{opacity:1;transform:none;transition-delay:calc(.045s * var(--n,0) + .1s)}
+  .topbar nav a::after{display:none}
+}
+@media(max-width:560px){.topbar .btn{padding:11px 16px;font-size:.8rem;min-height:44px}.logo-top{height:34px}}
+
+/* ==========================================================================
+   11. HERO
+   ========================================================================== */
+.hero{position:relative;overflow:hidden;padding:clamp(48px,5vw,76px) 24px clamp(56px,6vw,88px);
+  background:var(--tinta-900);color:var(--lavanda);min-height:min(82vh,820px);display:flex;align-items:center}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(600px circle at var(--mx,62%) var(--my,38%),rgba(19,205,217,.14),transparent 62%)}
+/* En lugar de retícula, un halo suave que da profundidad sin dibujar líneas */
+.hero-glow{position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(70% 55% at 18% 12%,rgba(19,205,217,.14),transparent 70%),
+             radial-gradient(60% 50% at 88% 88%,rgba(139,106,247,.16),transparent 70%)}
+.blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;pointer-events:none;
+  animation:flotar 18s ease-in-out infinite;will-change:transform}
+.b1{width:460px;height:460px;background:var(--turq);top:-160px;left:-140px;opacity:.32}
+.b2{width:420px;height:420px;background:var(--violeta);bottom:-180px;right:-110px;animation-delay:-9s;opacity:.34}
+@keyframes flotar{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(50px,34px) scale(1.16)}}
+.hero .inner{max-width:1240px;width:100%}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:11px;padding:8px 20px 8px 10px;margin-bottom:24px;
+  border-radius:var(--r-full);background:rgba(232,225,253,.06);border:1px solid var(--hilo);
+  font-size:.78rem;font-weight:600;color:var(--lavanda);opacity:0;animation:sube .7s .15s var(--ease) forwards}
+.hero-eyebrow b{color:var(--turq);font-weight:700}
+.hero .mask>span{animation:linea 1.05s var(--ease-expo) both}
+.hero .mask:nth-of-type(2)>span{animation-delay:.1s}
+@keyframes linea{from{transform:translateY(110%)}to{transform:none}}
+.big-rot{margin-top:20px;font-family:'Poppins',sans-serif;font-size:clamp(1.15rem,.9rem + 1.1vw,1.9rem);
+  font-weight:700;letter-spacing:-.03em;color:var(--lavanda);min-height:1.5em;
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  opacity:0;animation:sube .8s .45s var(--ease) forwards}
+.rot-word{display:inline-block;color:var(--turq);
+  transition:opacity .32s var(--ease),transform .32s var(--ease)}
+.rot-word.fade{opacity:0;transform:translateY(12px)}
+.hero .lead{margin:18px 0 32px;max-width:580px;font-size:1.08rem;line-height:1.72;
+  color:rgba(232,225,253,.7);opacity:0;animation:sube .8s .58s var(--ease) forwards}
+.hero .lead strong{color:var(--lavanda);font-weight:600}
+.hero .cta-row{opacity:0;animation:sube .8s .7s var(--ease) forwards}
+.social-lab{margin-top:36px;font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(232,225,253,.58);opacity:0;animation:sube .8s .82s var(--ease) forwards}
+.social-row{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;opacity:0;animation:sube .8s .9s var(--ease) forwards}
+.pill{display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:10px 20px;border-radius:var(--r-full);
+  border:1px solid var(--hilo);color:var(--lavanda);text-decoration:none;font-size:.87rem;font-weight:500;
+  transition:transform .35s var(--ease),border-color .3s,color .3s,background .3s}
+.pill:hover{border-color:var(--turq);color:var(--turq);transform:translateY(-3px);background:rgba(19,205,217,.07)}
+.pill .dot{width:7px;height:7px;border-radius:50%;background:var(--turq);flex:none}
+
+/* Franja de dos pisos: las cifras dan escala, los compromisos dan confianza */
+.franja{background:var(--tinta);padding:clamp(46px,5vw,68px) 24px}
+.franja>*{max-width:1240px;margin-inline:auto}
+.franja-cifras{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;
+  padding-bottom:clamp(36px,4vw,50px);border-bottom:1px solid var(--hilo)}
+.cifra strong{display:block;font-family:'Poppins',sans-serif;font-weight:800;letter-spacing:-.055em;
+  font-size:clamp(2.5rem,1.9rem + 2.4vw,3.9rem);color:var(--turq);line-height:.95}
+.cifra span{display:block;margin-top:10px;font-size:.85rem;line-height:1.4;
+  color:rgba(232,225,253,.62);font-weight:500;max-width:15ch}
+.promesas{padding-top:clamp(36px,4vw,50px);display:grid;
+  grid-template-columns:repeat(3,1fr);gap:clamp(26px,3vw,44px)}
+.promesa{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start}
+.promesa .ic{width:32px;height:32px;margin-top:2px}
+.promesa strong{display:block;font-family:'Poppins',sans-serif;font-weight:700;
+  font-size:1.04rem;letter-spacing:-.025em;color:var(--blanco);line-height:1.25;margin-bottom:8px}
+.promesa span{display:block;font-size:.91rem;line-height:1.62;color:rgba(232,225,253,.66)}
+@media(max-width:900px){
+  .franja-cifras{grid-template-columns:repeat(2,1fr);gap:32px 26px}
+  .promesas{grid-template-columns:1fr;gap:28px}
+}
+
+/* ==========================================================================
+   12. CINTAS — la banda turquesa manda, el rótulo gigante ya no se pierde
+   ========================================================================== */
+.cintas{display:grid;background:var(--tinta-900);overflow:hidden}
+.marquee{overflow:hidden;padding:15px 0;background:var(--turq);color:var(--tinta)}
+.track{display:flex;white-space:nowrap;width:max-content;animation:desfile 36s linear infinite;
+  font-family:'Poppins',sans-serif;font-weight:700;font-size:1rem;letter-spacing:-.01em}
+.track span{display:inline-flex;align-items:center;gap:24px;padding:0 24px}
+@keyframes desfile{to{transform:translateX(-50%)}}
+.cinta-gigante{overflow:hidden;padding:40px 0;background:var(--tinta-900)}
+.cinta-gigante .track{animation-duration:48s;animation-direction:reverse}
+.cinta-gigante span{font-family:'Poppins',sans-serif;font-weight:800;
+  font-size:clamp(2.8rem,9vw,7rem);letter-spacing:-.05em;padding:0 30px;gap:30px;
+  color:transparent;-webkit-text-stroke:1.5px rgba(232,225,253,.55)}
+.cinta-gigante b,.cinta-gigante u{display:inline-block;padding:0 26px;text-decoration:none}
+.cinta-gigante b{-webkit-text-stroke:0;color:var(--turq)}      /* relleno: pesa */
+.cinta-gigante u{-webkit-text-stroke:1.5px var(--lavanda)}     /* contorno: respira */
+.track .sep{display:inline-block;width:9px;height:9px;flex:none;background:currentColor;
+  transform:rotate(45deg);opacity:.55}
+
+/* ==========================================================================
+   MARCAS — prueba social. Cada logo va sobre su propia placa clara para que
+   convivan sin pelearse entre sí ni con el fondo morado.
+   ========================================================================== */
+.marcas{background:var(--tinta-900);padding:clamp(44px,5vw,66px) 24px;
+  border-top:1px solid var(--hilo)}
+.marcas-lab{max-width:1240px;margin:0 auto 26px;text-align:center;
+  font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(232,225,253,.55)}
+.marcas-fila{max-width:1240px;margin:auto;display:flex;flex-wrap:wrap;
+  justify-content:center;align-items:center;gap:clamp(22px,4vw,52px)}
+.marca{flex:0 0 auto;display:flex;align-items:center;justify-content:center;
+  width:clamp(128px,15vw,168px);height:clamp(58px,7vw,76px);padding:4px}
+.marca img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;
+  opacity:.62;transition:opacity .35s var(--ease),transform .35s var(--ease)}
+.marca:hover img{opacity:1;transform:scale(1.06)}
+@media(max-width:560px){.marcas-fila{gap:20px 8px}.marca{width:calc(50% - 4px)}}
+
+/* ==========================================================================
+   13. TARJETAS
+   ========================================================================== */
+.card{position:relative;background:rgba(232,225,253,.035);border:1px solid var(--hilo);
+  border-radius:var(--r-lg);padding:34px 30px;overflow:hidden;
+  transition:transform .45s var(--ease),background .35s,border-color .35s}
+.card::before{content:"";position:absolute;inset:0;opacity:0;transition:opacity .4s;pointer-events:none;
+  background:radial-gradient(340px circle at var(--cx,50%) var(--cy,0%),rgba(19,205,217,.14),transparent 70%)}
+.card::after{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--turq);
+  transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.card:hover{transform:translateY(-6px);background:rgba(232,225,253,.06);border-color:rgba(19,205,217,.45)}
+.card:hover::before{opacity:1}
+.card:hover::after{transform:scaleX(1)}
+.card:hover .ico-tile{transform:translateY(-3px) rotate(-5deg);background:var(--turq);border-color:var(--turq)}
+.card:hover .ico-tile .ic{--t1:var(--tinta);--t2:var(--tinta)}
+.card h3{font-size:1.2rem;font-weight:700;margin:22px 0 12px;position:relative;color:var(--blanco)}
+.card p{font-size:.94rem;line-height:1.68;color:rgba(232,225,253,.66);position:relative}
+.w-luz .card{background:var(--blanco);border-color:var(--hilo-claro);box-shadow:var(--sh)}
+.w-luz .card h3{color:var(--tinta)}
+.w-luz .card p{color:var(--texto)}
+
+.postales{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));margin-top:64px}
+.cierre-problema{margin-top:72px;font-family:'Poppins',sans-serif;font-weight:800;letter-spacing:-.045em;
+  font-size:clamp(2rem,5.5vw,4.2rem);line-height:1;color:var(--blanco)}
+.cierre-problema em{font-style:normal;color:var(--turq)}
+/* En la sección clara el titular iba blanco sobre lavanda: no se leía */
+.w-luz .cierre-problema{color:var(--tinta)}
+.w-luz .cierre-problema em{color:var(--turq-600)}
+
+/* ==========================================================================
+   DIAGNÓSTICO EXPRESS — la herramienta es la demostración
+   ========================================================================== */
+.dx{margin-top:52px;background:var(--tinta);border-radius:var(--r-lg);overflow:hidden;
+  box-shadow:0 30px 70px rgba(23,15,53,.3)}
+.dx-quiz{padding:clamp(28px,4vw,48px)}
+.dx-top{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:30px}
+.dx-paso{font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(232,225,253,.6);flex:none}
+.dx-paso b{color:var(--turq)}
+.dx-barra{flex:1;min-width:120px;height:3px;background:var(--hilo);overflow:hidden;border-radius:3px}
+.dx-barra i{display:block;height:100%;width:0;background:var(--turq);
+  transition:width .45s var(--ease);border-radius:3px}
+.dx-preg{font-family:'Poppins',sans-serif;font-weight:700;letter-spacing:-.035em;
+  font-size:clamp(1.5rem,1.1rem + 1.7vw,2.6rem);line-height:1.14;color:var(--blanco);margin-bottom:30px}
+.dx-opts{display:grid;gap:12px}
+.opt{display:flex;align-items:center;gap:16px;width:100%;text-align:left;cursor:pointer;
+  padding:18px 22px;border:1px solid var(--hilo);border-radius:var(--r);
+  color:var(--lavanda);font-size:1rem;line-height:1.4;
+  transition:background .25s,border-color .25s,transform .25s var(--ease)}
+.opt:hover{background:rgba(19,205,217,.09);border-color:var(--turq);transform:translateX(5px)}
+.opt .letra{flex:none;width:30px;height:30px;display:grid;place-items:center;border-radius:50%;
+  border:1px solid var(--hilo);font-size:.8rem;font-weight:700;color:rgba(232,225,253,.65);
+  transition:background .25s,color .25s,border-color .25s}
+.opt:hover .letra{background:var(--turq);color:var(--tinta);border-color:var(--turq)}
+.dx-atras{margin-top:22px;font-size:.86rem;font-weight:600;color:rgba(232,225,253,.6);cursor:pointer;
+  transition:color .25s}
+.dx-atras:hover{color:var(--turq)}
+
+.dx-res{display:grid;grid-template-columns:auto 1fr;gap:clamp(28px,4vw,52px);
+  padding:clamp(28px,4vw,48px);align-items:start}
+@media(max-width:760px){.dx-res{grid-template-columns:1fr}}
+.dx-marcador{position:relative;width:clamp(140px,20vw,180px);justify-self:center}
+.dx-marcador svg{width:100%;height:auto;display:block}
+#dxAro{transition:stroke-dashoffset 1.1s var(--ease-expo)}
+.dx-cifra{position:absolute;inset:0;display:grid;place-content:center;text-align:center}
+.dx-cifra b{display:block;font-family:'Poppins',sans-serif;font-weight:800;letter-spacing:-.05em;
+  font-size:clamp(2.2rem,1.6rem + 2vw,3rem);color:var(--turq);line-height:1}
+.dx-cifra span{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(232,225,253,.6)}
+.dx-lectura h3{font-family:'Poppins',sans-serif;font-weight:800;letter-spacing:-.035em;
+  font-size:clamp(1.4rem,1.1rem + 1.2vw,2.1rem);line-height:1.15;color:var(--blanco);margin-bottom:14px}
+.dx-nota{font-size:.84rem;line-height:1.6;color:rgba(232,225,253,.58);
+  padding-left:14px;border-left:2px solid var(--violeta);margin-bottom:26px}
+.dx-hallazgos{list-style:none;display:grid;border-top:1px solid var(--hilo);margin-bottom:28px}
+.dx-hallazgos li{padding:18px 0;border-bottom:1px solid var(--hilo);display:grid;
+  grid-template-columns:auto 1fr;gap:16px;align-items:start}
+.dx-hallazgos .rank{width:26px;height:26px;display:grid;place-items:center;border-radius:50%;
+  background:rgba(19,205,217,.14);color:var(--turq);font-family:'Poppins',sans-serif;
+  font-weight:800;font-size:.8rem}
+.dx-hallazgos strong{display:block;color:var(--blanco);font-family:'Poppins',sans-serif;
+  font-weight:700;font-size:1.02rem;letter-spacing:-.02em;margin-bottom:5px;line-height:1.3}
+.dx-hallazgos span{font-size:.9rem;line-height:1.6;color:rgba(232,225,253,.66)}
+.dx-hallazgos em{display:block;margin-top:7px;font-style:normal;font-size:.86rem;color:var(--turq)}
+.dx-acciones{display:flex;gap:12px;flex-wrap:wrap}
+.dx-acciones .btn-line{border-color:var(--hilo);color:var(--lavanda)}
+.dx-acciones .btn-line:hover{background:var(--lavanda);color:var(--tinta)}
+
+/* ==========================================================================
+   14. SERVICIOS
+   ========================================================================== */
+.pilar-bloque{margin-top:70px;padding-top:34px;border-top:1px solid var(--hilo)}
+.pilar-bloque:first-of-type{margin-top:56px}
+.pilar-head{display:flex;align-items:center;gap:20px;margin-bottom:30px}
+.pilar-head .ico-tile{flex:none;width:54px;height:54px}
+.pilar-tit{font-family:'Poppins',sans-serif;font-weight:800;letter-spacing:-.04em;
+  font-size:clamp(1.8rem,1.2rem + 2vw,3rem);color:var(--blanco);line-height:1}
+.pilar-lead{color:rgba(232,225,253,.62);font-size:.94rem;margin-top:6px}
+.pilar-num{margin-left:auto;font-family:'Poppins',sans-serif;font-weight:800;
+  font-size:clamp(2.4rem,5vw,4rem);color:transparent;-webkit-text-stroke:1.5px var(--hilo);
+  line-height:1;letter-spacing:-.05em}
+.serv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1px;
+  background:var(--hilo);border:1px solid var(--hilo)}
+@media(min-width:1080px){.serv-grid{grid-template-columns:repeat(5,1fr)}
+  .serv-grid--6{grid-template-columns:repeat(3,1fr)}}
+.serv-card{position:relative;background:var(--tinta);padding:26px 22px;overflow:hidden;
+  transition:background .35s}
+.serv-card::before{content:"";position:absolute;inset:0;opacity:0;transition:opacity .4s;pointer-events:none;
+  background:radial-gradient(260px circle at var(--cx,50%) var(--cy,0%),rgba(19,205,217,.2),transparent 70%)}
+.serv-card:hover{background:var(--tinta-700)}
+.serv-card:hover::before{opacity:1}
+.serv-card h4{font-family:'Poppins',sans-serif;font-weight:700;font-size:1rem;color:var(--blanco);
+  margin-bottom:10px;letter-spacing:-.025em;line-height:1.25;position:relative}
+.serv-card p{color:rgba(232,225,253,.58);font-size:.87rem;line-height:1.62;position:relative}
+.serv-nuevo{position:absolute;top:14px;right:14px;background:var(--turq);color:var(--tinta);
+  font-size:.58rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;z-index:2}
+.serv-cierre{margin-top:64px;padding-top:48px;border-top:1px solid var(--hilo)}
+.pruebas{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;margin-top:40px;
+  background:var(--hilo);border:1px solid var(--hilo)}
+.prueba{background:var(--tinta);padding:26px 24px}
+.prueba strong{display:block;font-family:'Poppins',sans-serif;font-weight:700;font-size:1rem;
+  letter-spacing:-.02em;color:var(--turq);margin-bottom:9px;line-height:1.3}
+.prueba span{font-size:.9rem;line-height:1.62;color:rgba(232,225,253,.66)}
+.serv-pie{margin:0 auto;text-align:center;color:rgba(232,225,253,.68);font-size:1.05rem;
+  line-height:1.7;max-width:740px}
+.serv-pie strong{color:var(--turq);font-weight:700}
+@media(max-width:600px){.pilar-num{display:none}}
+
+/* ==========================================================================
+   15. PROYECTOS
+   ========================================================================== */
+.carr-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.carr-btns{display:flex;gap:10px}
+.carr-btn{width:54px;height:54px;border-radius:50%;border:1.5px solid var(--hilo);
+  color:var(--lavanda);display:grid;place-items:center;cursor:pointer;
+  transition:transform .35s var(--ease),background .3s,color .3s,border-color .3s,opacity .3s}
+.carr-btn svg{width:18px;height:18px;stroke:currentColor;stroke-width:2.2;fill:none;
+  stroke-linecap:round;stroke-linejoin:round}
+.carr-btn:hover{background:var(--turq);color:var(--tinta);border-color:var(--turq);transform:scale(1.07)}
+.carr-btn[disabled]{opacity:.25;pointer-events:none}
+.film{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;
+  padding:8px 4px 12px;margin-top:52px;cursor:grab;overscroll-behavior-x:contain}
+.film::-webkit-scrollbar{display:none}
+.film.drag,.film.nosnap{scroll-snap-type:none}
+.film.drag{cursor:grabbing}
+.work{position:relative;flex:0 0 min(330px,80vw);overflow:hidden;
+  display:flex;flex-direction:column;color:var(--lavanda);scroll-snap-align:start;
+  user-select:none;border-radius:var(--r-lg);border:1px solid var(--hilo);
+  background:var(--tinta);transition:transform .45s var(--ease),border-color .35s}
+.work-art{position:relative;aspect-ratio:16/10;overflow:hidden;border-bottom:1px solid var(--hilo)}
+.work-art svg{width:100%;height:100%;display:block}
+.work>div:last-child{padding:24px 26px 28px}
+.work:hover{transform:translateY(-8px);border-color:rgba(19,205,217,.5)}
+.w1 .work-art{background:linear-gradient(150deg,#0FBECB,var(--intenso))}
+.w2 .work-art{background:linear-gradient(150deg,var(--violeta),var(--tinta-700))}
+.w3 .work-art{background:linear-gradient(150deg,var(--turq-600),var(--violeta))}
+.w4 .work-art{background:linear-gradient(150deg,var(--intenso),var(--turq-600))}
+.libre .work-art{background:rgba(19,205,217,.05)}
+.work h3{color:var(--blanco);font-size:1.3rem;font-weight:700;margin-bottom:9px;letter-spacing:-.03em}
+.work p{font-size:.88rem;line-height:1.55;color:rgba(255,255,255,.84)}
+.wtag{position:absolute;top:16px;left:16px;z-index:3;background:rgba(23,15,53,.62);
+  backdrop-filter:blur(8px);padding:7px 14px;border-radius:var(--r-full);font-size:.66rem;
+  font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff}
+.work.libre{border-style:dashed;border-color:rgba(19,205,217,.45)}
+.work.libre h3{color:var(--turq)}
+.carr-prog{margin-top:24px;height:2px;background:var(--hilo);overflow:hidden;max-width:260px}
+.carr-prog i{display:block;height:100%;width:30%;background:var(--turq)}
+
+/* ==========================================================================
+   16. PROCESO
+   ========================================================================== */
+.steps{position:relative;display:grid;gap:0;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  margin-top:76px;border-top:1px solid var(--hilo-claro)}
+.linea{position:absolute;top:-1px;left:0;right:0;height:2px;background:var(--turq);
+  transform:scaleX(0);transform-origin:left;transition:transform 1.7s var(--ease) .15s}
+.steps.is-in .linea{transform:scaleX(1)}
+.step{padding:34px 26px 34px 0;position:relative}
+.step+.step{padding-left:26px}
+.step+.step::before{content:"";position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--hilo-claro)}
+.step .num{font-family:'Poppins',sans-serif;font-weight:800;font-size:2.6rem;letter-spacing:-.05em;
+  color:transparent;-webkit-text-stroke:1.5px var(--turq);line-height:1;margin-bottom:18px;
+  opacity:.25;transition:opacity .5s var(--ease),color .5s var(--ease)}
+.steps.is-in .num{opacity:1;transition-delay:calc(.14s * var(--n,0) + .25s)}
+.step:hover .num{color:var(--turq)}
+.step h3{font-size:1.15rem;font-weight:700;margin-bottom:10px;color:var(--tinta)}
+.step p{font-size:.91rem;line-height:1.6;color:var(--texto)}
+.step .rec{margin-top:14px;padding-top:14px;border-top:1px solid var(--hilo-claro);
+  font-size:.84rem;line-height:1.55;color:var(--texto)}
+.step .rec b{color:var(--tinta);font-weight:700}
+@media(max-width:640px){.step,.step+.step{padding:26px 0;border-top:1px solid var(--hilo-claro)}
+  .step+.step::before{display:none}.steps{border-top:0}}
+
+/* ==========================================================================
+   17. FILOSOFÍA
+   ========================================================================== */
+.filo-intro{max-width:780px;font-size:1.14rem;line-height:1.7;font-weight:500;color:rgba(232,225,253,.82);margin-top:26px}
+.adn{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:1px;margin-top:52px;
+  background:var(--hilo);border:1px solid var(--hilo)}
+.adn-item{background:var(--tinta);padding:30px 26px;transition:background .35s}
+.adn-item:hover{background:var(--tinta-700)}
+.adn-item h4{display:flex;align-items:center;gap:11px;font-size:1.08rem;font-weight:700;
+  margin-bottom:12px;line-height:1.25;color:var(--blanco)}
+.adn-item p{font-size:.91rem;color:rgba(232,225,253,.66);line-height:1.62}
+.filo-mv{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:36px;margin-top:56px;
+  padding-top:40px;border-top:1px solid var(--hilo)}
+.filo-slide h3{display:flex;align-items:center;gap:12px;font-size:1.4rem;font-weight:700;margin-bottom:14px}
+.filo-slide p{font-size:1rem;line-height:1.72;color:rgba(232,225,253,.7);font-weight:500}
+
+/* ==========================================================================
+   18. PLANES
+   ========================================================================== */
+.cupos{display:inline-flex;align-items:center;gap:10px;margin-top:24px;padding:10px 20px;
+  border-radius:var(--r-full);background:rgba(139,106,247,.14);border:1px solid rgba(139,106,247,.4);
+  color:var(--violeta);font-size:.87rem;font-weight:600}
+.cupos .ic-s{--t1:var(--violeta);--t2:var(--violeta)}
+.planes{display:grid;gap:1px;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));margin-top:60px;
+  background:var(--hilo);border:1px solid var(--hilo);perspective:1400px}
+.plan{position:relative;background:var(--tinta);padding:48px 30px 34px;color:var(--lavanda);
+  display:flex;flex-direction:column;transform-style:preserve-3d;will-change:transform;
+  transition:transform .4s var(--ease),background .35s}
+.plan:hover{background:var(--tinta-700)}
+.plan.destacado{background:linear-gradient(170deg,rgba(19,205,217,.14),rgba(34,24,74,0) 60%),var(--tinta-700)}
+.p-tag-plan{position:absolute;top:18px;right:18px;background:var(--turq);color:var(--tinta);
+  padding:6px 14px;border-radius:var(--r-full);font-size:.66rem;font-weight:800;
+  letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+.plan h3{font-size:1.5rem;font-weight:700;margin-bottom:10px;letter-spacing:-.03em;color:var(--blanco)}
+.plan .para{font-size:.89rem;color:rgba(232,225,253,.6);min-height:46px;line-height:1.6}
+.plan .price{font-family:'Poppins',sans-serif;font-size:2.6rem;font-weight:800;letter-spacing:-.05em;
+  color:var(--turq);margin:22px 0 2px;line-height:1}
+.plan .price small{font-size:.85rem;font-weight:600;letter-spacing:0;color:rgba(232,225,253,.55)}
+.plan .nota{font-size:.75rem;color:rgba(232,225,253,.55);line-height:1.5;margin-top:6px}
+.plan ul{list-style:none;margin:24px 0 30px;display:grid;gap:12px;font-size:.91rem;
+  color:rgba(232,225,253,.85)}
+.plan li{display:flex;gap:11px;align-items:flex-start;line-height:1.5}
+.plan li::before{content:"";flex:none;width:15px;height:15px;margin-top:4px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.4l3 3L13 4.4' fill='none' stroke='%2313CDD9' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.plan .btn{margin-top:auto;width:100%}
+.plan-pie{margin-top:30px;text-align:center;font-size:.92rem;color:rgba(232,225,253,.6)}
+.plan-pie a{color:var(--turq);font-weight:600}
+.kit{margin-top:60px;background:var(--turq);color:var(--tinta);padding:44px 40px;
+  display:flex;gap:34px;align-items:center;flex-wrap:wrap;position:relative;overflow:hidden;
+  border-radius:var(--r-lg)}
+.kit .precio{font-family:'Poppins',sans-serif;font-size:clamp(2.4rem,5vw,3.4rem);font-weight:800;
+  letter-spacing:-.05em;color:var(--tinta);white-space:nowrap;line-height:1}
+.kit .precio small{display:block;font-size:.72rem;font-weight:800;letter-spacing:.14em;
+  text-transform:uppercase;color:rgba(34,24,74,.8);margin-top:6px}
+.kit h3{font-size:1.5rem;font-weight:800;margin-bottom:10px;letter-spacing:-.03em;color:var(--tinta)}
+.kit p{font-size:.96rem;color:rgba(34,24,74,.82);line-height:1.65}
+.kit .btn-primary{background:var(--tinta);color:var(--turq);box-shadow:none}
+.kit .btn-primary:hover{box-shadow:0 16px 40px rgba(34,24,74,.35)}
+
+/* ==========================================================================
+   19. FAQ
+   ========================================================================== */
+.faq{max-width:900px;margin:56px auto 0;border-top:1px solid var(--hilo-claro)}
+.faq-item{border-bottom:1px solid var(--hilo-claro);transition:background .35s}
+.faq-item.open{background:var(--blanco)}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;
+  padding:26px 20px;font-family:'Poppins',sans-serif;font-weight:700;
+  font-size:clamp(1.05rem,.95rem + .4vw,1.3rem);letter-spacing:-.025em;color:var(--tinta);
+  text-align:left;cursor:pointer;line-height:1.3;transition:color .3s}
+.faq-q:hover{color:var(--turq-600)}
+.faq-q .mas{position:relative;flex:none;width:24px;height:24px;transition:transform .4s var(--ease)}
+.faq-q .mas::before,.faq-q .mas::after{content:"";position:absolute;left:50%;top:50%;background:var(--turq);
+  transform:translate(-50%,-50%)}
+.faq-q .mas::before{width:16px;height:2px}
+.faq-q .mas::after{width:2px;height:16px;transition:transform .4s var(--ease)}
+.faq-item.open .mas{transform:rotate(180deg)}
+.faq-item.open .mas::after{transform:translate(-50%,-50%) scaleY(0)}
+.faq-a{height:0;overflow:hidden;transition:height .42s var(--ease)}
+.faq-a p{padding:0 20px 28px;font-size:.98rem;line-height:1.72;color:var(--texto);max-width:720px}
+.no-js .faq-a{height:auto}
+
+/* ==========================================================================
+   20. CONTACTO
+   ========================================================================== */
+.contacto-wrap .sub{color:rgba(232,225,253,.72);font-size:1.1rem;margin-top:22px;max-width:620px}
+.contacto-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;margin-top:64px;align-items:start}
+@media(max-width:900px){.contacto-grid{grid-template-columns:1fr;gap:44px}}
+.entrega h3{font-size:1.1rem;font-weight:700;margin-bottom:22px;color:var(--blanco)}
+.entrega ul{display:grid;list-style:none;border-top:1px solid var(--hilo)}
+.entrega li{display:flex;gap:14px;align-items:flex-start;font-size:.94rem;padding:16px 0;
+  border-bottom:1px solid var(--hilo);color:rgba(232,225,253,.75);line-height:1.55}
+.entrega li .ic-s{margin-top:.2em}
+.garantia{margin-top:26px;padding:20px 22px;background:rgba(139,106,247,.1);
+  border-left:2px solid var(--violeta);font-size:.88rem;color:rgba(232,225,253,.72);line-height:1.6}
+.garantia b{color:var(--lavanda)}
+.form-reset{display:grid;gap:30px;grid-template-columns:1fr 1fr}
+@media(max-width:620px){.form-reset{grid-template-columns:1fr}}
+.campo-r label{display:block;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(232,225,253,.62);font-weight:700;margin-bottom:10px}
+.campo-r input,.campo-r textarea{width:100%;background:transparent;border:0;
+  border-bottom:1.5px solid var(--hilo);color:var(--blanco);font:inherit;font-size:1.05rem;
+  padding:10px 2px;border-radius:0;transition:border-color .35s}
+.campo-r input::placeholder,.campo-r textarea::placeholder{color:rgba(232,225,253,.28)}
+.campo-r input:focus,.campo-r textarea:focus{outline:none;border-color:var(--turq)}
+.campo-r.full{grid-column:1/-1}
+.chips{display:flex;flex-wrap:wrap;gap:9px}
+.chip input{position:absolute;opacity:0;width:0;height:0}
+.chip span{display:inline-flex;align-items:center;min-height:44px;padding:10px 18px;
+  border-radius:var(--r-full);border:1px solid var(--hilo);color:rgba(232,225,253,.78);
+  font-size:.87rem;font-weight:500;cursor:pointer;transition:.3s}
+.chip span:hover{border-color:var(--turq);color:var(--lavanda)}
+.chip input:checked+span{background:var(--turq);border-color:var(--turq);color:var(--tinta);font-weight:700}
+.chip input:focus-visible+span{outline:3px solid var(--turq);outline-offset:3px}
+.envio{grid-column:1/-1;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.btn-enviar{display:inline-flex;align-items:center;gap:14px;background:var(--turq);color:var(--tinta);
+  border-radius:var(--r-full);padding:18px 42px;min-height:60px;font-family:'Poppins',sans-serif;
+  font-weight:800;font-size:1.06rem;letter-spacing:-.02em;cursor:pointer;box-shadow:var(--sh-turq);
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.btn-enviar:hover{transform:translateY(-3px);box-shadow:0 16px 44px rgba(19,205,217,.5)}
+.btn-enviar .arr{display:flex;gap:4px}
+.btn-enviar .arr i{width:8px;height:11px;background:var(--tinta);clip-path:polygon(0 0,100% 50%,0 100%);
+  animation:correr 1.1s infinite}
+.btn-enviar .arr i:nth-child(2){animation-delay:.14s}
+.btn-enviar .arr i:nth-child(3){animation-delay:.28s}
+@keyframes correr{0%,100%{transform:translateX(0);opacity:1}50%{transform:translateX(5px);opacity:.4}}
+.envio small{font-size:.83rem;color:rgba(232,225,253,.62);line-height:1.5}
+.gigante-wrap{overflow:hidden;margin:100px 0 20px}
+.gigante{animation:deslizar 26s linear infinite;font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:-.05em;
+  font-size:clamp(2.6rem,11vw,8rem);line-height:.9;color:transparent;
+  -webkit-text-stroke:1.5px rgba(19,205,217,.8);white-space:nowrap;width:max-content}
+@keyframes deslizar{to{transform:translateX(-50%)}}
+.datos-contacto{display:flex;gap:12px 30px;flex-wrap:wrap;color:rgba(232,225,253,.65);font-weight:500;
+  padding-top:24px;border-top:1px solid var(--hilo)}
+.datos-contacto a{color:var(--turq);text-decoration:none;font-weight:600;transition:color .3s}
+.datos-contacto a:hover{color:var(--lavanda)}
+
+/* ==========================================================================
+   21. WHATSAPP + BARRA MÓVIL
+   ========================================================================== */
+.wa-float{position:fixed;right:22px;bottom:22px;z-index:55;width:58px;height:58px;border-radius:50%;
+  background:#25d366;display:grid;place-items:center;box-shadow:0 10px 30px rgba(37,211,102,.42);
+  transition:transform .35s var(--ease),opacity .35s;opacity:0;pointer-events:none;transform:scale(.6)}
+.wa-float.show{opacity:1;pointer-events:auto;transform:scale(1)}
+.wa-float::after{content:"";position:absolute;inset:0;border-radius:50%;animation:pulso 2.4s infinite}
+.wa-float:hover{transform:scale(1.09)}
+.wa-float svg{width:27px;height:27px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+@keyframes pulso{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+.cta-movil{position:fixed;left:0;right:0;bottom:0;z-index:56;display:none;gap:10px;padding:10px 14px;
+  padding-bottom:calc(10px + env(safe-area-inset-bottom));background:rgba(23,15,53,.97);
+  backdrop-filter:blur(14px);border-top:1px solid var(--hilo);
+  transform:translateY(115%);transition:transform .45s var(--ease-expo)}
+.cta-movil.show{transform:none}
+.cta-movil .btn{flex:1;min-height:50px;padding:12px 14px;font-size:.88rem}
+.cta-movil .btn-line{border-color:var(--hilo);color:var(--lavanda)}
+.cta-movil .btn-line:hover{background:var(--lavanda);color:var(--tinta)}
+@media(max-width:760px){
+  .cta-movil{display:flex}
+  .wa-float{display:none}
+  footer{padding-bottom:104px}
+}
+
+/* ==========================================================================
+   22. FOOTER
+   ========================================================================== */
+footer{background:var(--tinta-900);color:rgba(232,225,253,.6);text-align:center;
+  padding:60px 24px 48px;font-size:.88rem;border-top:1px solid var(--hilo)}
+footer .logo-foot{height:42px;width:auto;margin:0 auto 24px}
+.f-social{display:flex;gap:10px;justify-content:center;margin-bottom:26px;flex-wrap:wrap}
+footer .legal{margin-top:12px;font-size:.8rem;color:rgba(232,225,253,.52)}
+footer strong{color:var(--lavanda)}
+footer a{color:var(--turq);font-weight:600;text-decoration:none}
+
+/* ==========================================================================
+   23. MÓVIL Y MOVIMIENTO REDUCIDO
+   ========================================================================== */
+@media(max-width:760px){
+  .blob{filter:blur(58px);animation:none}
+  .kit{padding:30px 24px;gap:22px}
+  .card{padding:28px 24px}
+  .cinta-gigante{padding:26px 0}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important}
+  html{scroll-behavior:auto}
+  #intro{display:none}
+  [data-reveal],.mask>span,.hero .inner>*{opacity:1!important;transform:none!important}
+  .steps .num{opacity:1!important}
+  .steps .linea{transform:scaleX(1)!important}
+  .track{animation:none!important}
+  .cursor-dot,.cursor-ring{display:none!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#portada">Saltar al contenido</a>
+
+<!-- ==========================================================================
+     SET DE ÍCONOS PROPIO — planos, dos tintas (--t1 turquesa / --t2 azul),
+     mismo grosor de trazo, geometría simple derivada del isotipo.
+     Sin emojis de sistema, sin íconos 3D: una sola familia visual.
+     ========================================================================== -->
+<svg style="display:none" aria-hidden="true" focusable="false">
+  <symbol id="ic-cal" viewBox="0 0 64 64"><rect x="10" y="14" width="44" height="40" rx="6" stroke="var(--t1)"/><path d="M22 8v10M42 8v10M22 32h8M22 42h8M36 42h6" stroke="var(--t2)"/></symbol>
+  <symbol id="ic-down" viewBox="0 0 64 64"><path d="M12 12v40h40" stroke="var(--t1)"/><path d="M18 24l12 12 8-6 14 12" stroke="var(--t2)"/></symbol>
+  <symbol id="ic-search" viewBox="0 0 64 64"><circle cx="28" cy="28" r="14" stroke="var(--t1)"/><path d="M38 38l14 14" stroke="var(--t2)"/></symbol>
+  <symbol id="ic-clock" viewBox="0 0 64 64"><circle cx="32" cy="32" r="20" stroke="var(--t1)"/><path d="M32 20v12l8 6" stroke="var(--t2)"/></symbol>
+  <symbol id="ic-clap" viewBox="0 0 64 64"><rect x="10" y="28" width="44" height="26" rx="4" stroke="var(--t1)"/><path d="M10 26l44-8M20 24l6-8M32 22l6-8M44 20l6-8" stroke="var(--t2)"/></symbol>
+  <symbol id="ic-globe" viewBox="0 0 64 64"><circle cx="32" cy="32" r="20" stroke="var(--t1)"/><ellipse cx="32" cy="32" rx="9" ry="20" stroke="var(--t2)"/><path d="M12 32h40" stroke="var(--t2)"/></symbol>
+  <symbol id="ic-gear" viewBox="0 0 64 64"><circle cx="32" cy="32" r="9" stroke="var(--t2)"/><path d="M32 12v8M32 44v8M12 32h8M44 32h8M18 18l6 6M40 40l6 6M46 18l-6 6M24 40l-6 6" stroke="var(--t1)"/></symbol>
+  <symbol id="ic-rocket" viewBox="0 0 64 64"><path d="M32 8c8 6 11 16 11 23l-11 9-11-9c0-7 3-17 11-23z" stroke="var(--t1)"/><circle cx="32" cy="26" r="4" stroke="var(--t2)"/><path d="M21 38l-7 12 11-5M43 38l7 12-11-5M32 48v8" stroke="var(--t2)"/></symbol>
+  <symbol id="ic-plug" viewBox="0 0 64 64"><path d="M24 8v10M40 8v10" stroke="var(--t2)"/><path d="M18 18h28v10a14 14 0 0 1-28 0z" stroke="var(--t1)"/><path d="M32 44v12" stroke="var(--t2)"/></symbol>
+  <symbol id="ic-target" viewBox="0 0 64 64"><circle cx="32" cy="32" r="20" stroke="var(--t1)"/><circle cx="32" cy="32" r="10" stroke="var(--t2)"/><circle cx="32" cy="32" r="2.5" fill="var(--t2)" stroke="none"/></symbol>
+  <symbol id="ic-chart" viewBox="0 0 64 64"><path d="M18 44V32M30 44V20M42 44V36M54 44V14" stroke="var(--t1)"/><path d="M12 52h44" stroke="var(--t2)"/></symbol>
+  <symbol id="ic-chat" viewBox="0 0 64 64"><path d="M12 12h40v28H30l-12 10V40h-6z" stroke="var(--t1)"/><path d="M22 26h4M30 26h4M38 26h4" stroke="var(--t2)"/></symbol>
+  <symbol id="ic-eye" viewBox="0 0 64 64"><path d="M10 32c6-10 14-15 22-15s16 5 22 15c-6 10-14 15-22 15s-16-5-22-15z" stroke="var(--t1)"/><circle cx="32" cy="32" r="6" stroke="var(--t2)"/></symbol>
+  <symbol id="ic-check" viewBox="0 0 64 64"><circle cx="32" cy="32" r="21" stroke="var(--t1)"/><path d="M21 33l8 8 15-16" stroke="var(--t2)"/></symbol>
+  <symbol id="ic-doc" viewBox="0 0 64 64"><path d="M16 8h20l12 12v36H16z" stroke="var(--t1)"/><path d="M24 32h16M24 41h16M24 23h8" stroke="var(--t2)"/></symbol>
+  <symbol id="ic-star" viewBox="0 0 64 64"><path d="M32 10l6.6 13.8 15.4 2.1-11.2 10.6 2.8 15.1L32 44.5 18.4 51.6l2.8-15.1L10 25.9l15.4-2.1z" stroke="var(--t1)"/></symbol>
+</svg>
+
+<!-- INTRO -->
+<div id="intro" role="dialog" aria-label="Bienvenida Designia">
+  <div class="intro-lock">
+    <div class="logo-wrap">
+      <img src="logo-designia-blanco.png" alt="" class="logo-intro" width="478" height="160" fetchpriority="high">
+      <div class="sweep" aria-hidden="true"></div>
+    </div>
+    <small class="intro-tag">marketing digital y publicidad</small>
+    <div class="intro-bar" aria-hidden="true"><i></i></div>
+  </div>
+  <button id="saltar" type="button">Saltar intro</button>
+</div>
+
+<div class="cursor-ring" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="progress" aria-hidden="true"><i id="progBar"></i></div>
+
+<!-- BARRA SUPERIOR -->
+<header class="topbar" id="topbar">
+  <a href="#portada" aria-label="Designia, ir al inicio">
+    <img src="logo-designia-blanco.png" alt="Designia — agencia de marketing digital y publicidad" class="logo-top" width="478" height="160">
+  </a>
+  <nav id="navMenu" aria-label="Navegación principal">
+    <a href="#diagnostico" style="--n:1">Diagnóstico</a>
+    <a href="#servicios" style="--n:2">Servicios</a>
+    <a href="#proyectos" style="--n:3">Proyectos</a>
+    <a href="#proceso" style="--n:4">Proceso</a>
+    <a href="#filosofia" style="--n:5">Nosotros</a>
+    <a href="#planes" style="--n:6">Planes</a>
+    <a href="#contacto" style="--n:7">Contacto</a>
+  </nav>
+  <div class="nav-cta">
+    <a class="btn btn-primary btn-sm" href="https://wa.me/51998399001?text=Hola%20Designia%2C%20vengo%20de%20la%20web%20y%20quiero%20mi%20diagn%C3%B3stico%20gratis"
+       target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="header_whatsapp">Hablemos</a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+<!-- ========================= HERO ========================= -->
+<section class="hero" id="portada">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="blob b1" aria-hidden="true"></div>
+  <div class="blob b2" aria-hidden="true"></div>
+  <div class="inner">
+    <p class="hero-eyebrow">
+      <img class="mark" src="isotipo-blanco.png" alt="" width="112" height="115" aria-hidden="true">
+      Agencia de marketing digital · <b>Lima, Perú</b>
+    </p>
+    <h1 class="display">
+      <span class="mask"><span>Todo un <span class="grad">equipo de marketing</span></span></span>
+      <span class="mask"><span>sin ampliar tu planilla</span></span>
+    </h1>
+    <p class="big-rot">
+      <img class="mark" src="isotipo-blanco.png" alt="" width="112" height="115" aria-hidden="true">
+      Encendemos tu marca con <span class="rot-word" id="rotWord">contenido que conecta</span>
+    </p>
+    <p class="lead">Agencia de marketing digital y publicidad para marcas que ya venden, pero todavía no suenan. Con base en Lima y trabajando <strong>en todo el Perú</strong>.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary magnetico" href="https://wa.me/51998399001?text=Hola%20Designia%2C%20vengo%20de%20la%20web%20y%20quiero%20mi%20diagn%C3%B3stico%20gratis"
+         target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="hero_diagnostico">Quiero mi diagnóstico gratis</a>
+      <a class="btn btn-ghost" href="#planes" data-ga="cta_click" data-ga-label="hero_planes">Ver planes y precios</a>
+      <span class="cta-nota"><svg class="ic-s on-dark" aria-hidden="true"><use href="#ic-clock"/></svg>Te respondemos el mismo día hábil</span>
+    </div>
+    <p class="social-lab">Escríbenos por</p>
+    <div class="social-row">
+      <a class="pill" href="https://www.instagram.com/designia.pe/" target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="hero_instagram"><span class="dot"></span>Instagram</a>
+      <a class="pill" href="https://www.linkedin.com/company/designia-pe/" target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="hero_linkedin"><span class="dot"></span>LinkedIn</a>
+      <a class="pill" href="https://wa.me/51998399001" target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="hero_whatsapp"><span class="dot"></span>WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- Franja: cifras arriba, compromisos abajo, en un solo bloque -->
+<div class="franja">
+  <div class="franja-cifras" data-stagger>
+    <div class="cifra" data-reveal><strong data-target="20">20</strong><span>servicios integrales</span></div>
+    <div class="cifra" data-reveal><strong data-target="4">4</strong><span>frentes de trabajo</span></div>
+    <div class="cifra" data-reveal><strong data-target="5">5</strong><span>etapas de proceso</span></div>
+    <div class="cifra" data-reveal><strong data-target="24" data-suffix=" h">24 h</strong><span>y tienes propuesta en mano</span></div>
+  </div>
+  <div class="promesas" data-stagger>
+    <div class="promesa" data-reveal>
+      <svg class="ic" aria-hidden="true"><use href="#ic-clock"/></svg>
+      <div>
+        <strong>Respuesta el mismo día hábil</strong>
+        <span>Escribes hoy y hablas hoy con nosotros. Sin cadena de correos ni ejecutivo de cuentas de intermediario.</span>
+      </div>
+    </div>
+    <div class="promesa" data-reveal>
+      <svg class="ic" aria-hidden="true"><use href="#ic-chart"/></svg>
+      <div>
+        <strong>Reporte con lectura, no capturas</strong>
+        <span>Cada mes te decimos qué funcionó, qué no y qué cambia el mes siguiente. Con una reunión para revisarlo juntos.</span>
+      </div>
+    </div>
+    <div class="promesa" data-reveal>
+      <svg class="ic" aria-hidden="true"><use href="#ic-chat"/></svg>
+      <div>
+        <strong>Hablas con quien hace el trabajo</strong>
+        <span>El equipo que te presenta la propuesta es el que ejecuta. Tu cuenta no rota de manos cada mes.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Marcas con las que se ha trabajado. Para sumar una: deja el PNG en
+     /marcas y copia un bloque .marca con su nombre de archivo y su alt. -->
+<div class="marcas">
+  <p class="marcas-lab">Marcas con las que hemos trabajado</p>
+  <div class="marcas-fila">
+    <div class="marca"><img src="marcas/propremix.png" width="204" height="150" alt="ProPremix" decoding="async"></div>
+    <div class="marca"><img src="marcas/segurblock.png" width="340" height="134" alt="SegurBlock" decoding="async"></div>
+    <div class="marca"><img src="marcas/metalblock.png" width="340" height="137" alt="MetalBlock" decoding="async"></div>
+    <div class="marca"><img src="marcas/villa-victoria-park.png" width="314" height="150" alt="Villa Victoria Park" decoding="async"></div>
+    <div class="marca"><img src="marcas/kura-kefir.png" width="321" height="150" alt="Kúra Kéfir" decoding="async"></div>
+  </div>
+</div>
+
+<!-- Cintas -->
+<div class="cintas" aria-hidden="true">
+  <div class="marquee"><div class="track">
+    <span>Estrategia digital<i class="sep" aria-hidden="true"></i>Branding<i class="sep" aria-hidden="true"></i>Contenido audiovisual<i class="sep" aria-hidden="true"></i>Gestión de redes<i class="sep" aria-hidden="true"></i>Agentes de IA<i class="sep" aria-hidden="true"></i>CRM a medida<i class="sep" aria-hidden="true"></i>Desarrollo web<i class="sep" aria-hidden="true"></i>Publicidad digital<i class="sep" aria-hidden="true"></i></span>
+    <span>Estrategia digital<i class="sep" aria-hidden="true"></i>Branding<i class="sep" aria-hidden="true"></i>Contenido audiovisual<i class="sep" aria-hidden="true"></i>Gestión de redes<i class="sep" aria-hidden="true"></i>Agentes de IA<i class="sep" aria-hidden="true"></i>CRM a medida<i class="sep" aria-hidden="true"></i>Desarrollo web<i class="sep" aria-hidden="true"></i>Publicidad digital<i class="sep" aria-hidden="true"></i></span>
+  </div></div>
+  <div class="cinta-gigante"><div class="track">
+    <span><b>Designia</b><u>Marketing</u><b>Publicidad</b><u>Estrategia</u></span>
+    <span><b>Designia</b><u>Marketing</u><b>Publicidad</b><u>Estrategia</u></span>
+  </div></div>
+</div>
+
+<!-- ========================= PROBLEMA ========================= -->
+<section class="section w-luz" id="problema" data-num="01">
+  <div class="inner">
+    <span class="kicker">Diagnóstico</span>
+    <h2 class="display"><span class="mask"><span>¿Te suena familiar?</span></span></h2>
+    <p class="sec-lead">Cuatro señales que vemos una y otra vez en negocios que ya tienen clientes, pero todavía no tienen presencia.</p>
+    <div class="postales" data-stagger>
+      <article class="card" data-reveal="scale">
+        <div class="ico-tile"><svg class="ic" aria-hidden="true"><use href="#ic-cal"/></svg></div>
+        <h3>Publicas cuando te acuerdas</h3>
+        <p>Sin calendario ni línea visual, tu perfil no construye recuerdo ni confianza en quien entra por primera vez — y esa primera impresión no vuelve a repetirse.</p>
+      </article>
+      <article class="card" data-reveal="scale">
+        <div class="ico-tile"><svg class="ic" aria-hidden="true"><use href="#ic-down"/></svg></div>
+        <h3>No sabes si tu pauta funciona</h3>
+        <p>Inviertes en publicidad sin medir resultados: cada sol sale sin saber cuántos clientes vuelve. Multiplicado por doce meses, es presupuesto que pudo ser crecimiento real.</p>
+      </article>
+      <article class="card" data-reveal="scale">
+        <div class="ico-tile"><svg class="ic" aria-hidden="true"><use href="#ic-search"/></svg></div>
+        <h3>Tu competencia aparece primero</h3>
+        <p>Mientras tu ficha de Google está incompleta, tu competidor se queda con las consultas de tu zona: consultas que ya estaban buscándote a ti.</p>
+      </article>
+      <article class="card" data-reveal="scale">
+        <div class="ico-tile"><svg class="ic" aria-hidden="true"><use href="#ic-clock"/></svg></div>
+        <h3>Nadie mide si el contenido vende</h3>
+        <p>Publicar no es lo mismo que vender. Sin un reporte que conecte publicaciones con resultados, es imposible saber qué está funcionando y qué solo está ocupando espacio.</p>
+      </article>
+    </div>
+    <p class="cierre-problema" data-reveal>Tu marca merece <em>más</em>.</p>
+    <div class="cta-row" style="justify-content:center;margin-top:28px" data-reveal>
+      <a class="btn btn-primary magnetico" href="https://wa.me/51998399001?text=Hola%20Designia%2C%20me%20identifiqu%C3%A9%20con%20el%20diagn%C3%B3stico%20de%20la%20web%20y%20quiero%20el%20m%C3%ADo"
+         target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="problema_diagnostico">Quiero mi diagnóstico gratis</a>
+      <span class="cta-nota"><svg class="ic-s" aria-hidden="true"><use href="#ic-check"/></svg>Sin costo y sin compromiso</span>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= DIAGNÓSTICO EXPRESS ========================= -->
+<section class="section w-turq" id="diagnostico" data-num="02">
+  <div class="inner">
+    <span class="kicker">Diagnóstico express</span>
+    <h2 class="display"><span class="mask"><span>Averígualo en</span></span><span class="mask"><span>60 segundos</span></span></h2>
+    <p class="sec-lead">Seis preguntas sobre tu presencia digital. Al final ves tu puntaje y las tres cosas que hoy te están costando clientes.</p>
+
+    <div class="dx" id="dx" data-reveal>
+      <!-- Estado 1: preguntas -->
+      <div class="dx-quiz" id="dxQuiz">
+        <div class="dx-top">
+          <span class="dx-paso">Pregunta <b id="dxN">1</b> de 6</span>
+          <div class="dx-barra"><i id="dxBarra"></i></div>
+        </div>
+        <p class="dx-preg" id="dxPreg" aria-live="polite"></p>
+        <div class="dx-opts" id="dxOpts" role="group" aria-label="Opciones de respuesta"></div>
+        <button class="dx-atras" id="dxAtras" type="button" hidden>← Volver</button>
+      </div>
+
+      <!-- Estado 2: resultado -->
+      <div class="dx-res" id="dxRes" hidden>
+        <div class="dx-marcador">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(232,225,253,.16)" stroke-width="10"/>
+            <circle id="dxAro" cx="60" cy="60" r="52" fill="none" stroke="#13CDD9" stroke-width="10"
+                    stroke-linecap="round" stroke-dasharray="327" stroke-dashoffset="327"
+                    transform="rotate(-90 60 60)"/>
+          </svg>
+          <div class="dx-cifra"><b id="dxPuntaje">0</b><span>de 100</span></div>
+        </div>
+        <div class="dx-lectura">
+          <h3 id="dxBanda"></h3>
+          <p class="dx-nota">Esto se arma con lo que tú acabas de responder, no analiza tu cuenta. El diagnóstico completo sí revisa tu Instagram, tu ficha de Google y tu competencia directa.</p>
+          <ul class="dx-hallazgos" id="dxHallazgos"></ul>
+          <div class="dx-acciones">
+            <a class="btn btn-primary" id="dxCta" href="#" target="_blank" rel="noopener">Recibir el diagnóstico completo</a>
+            <button class="btn btn-line" id="dxReset" type="button">Repetir</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= SERVICIOS ========================= -->
+<section class="section w-dark" id="servicios" data-num="03">
+  <div class="inner">
+    <span class="kicker">Qué hacemos</span>
+    <h2 class="display"><span class="mask"><span>Cuatro frentes,</span></span><span class="mask"><span>un solo equipo</span></span></h2>
+    <p class="sec-lead">Operamos tu marketing completo como un área interna. Empiezas por donde más aprieta y sumas el resto cuando toca.</p>
+
+    <div class="pilar-bloque" data-reveal>
+      <div class="pilar-head">
+        <span class="ico-tile"><svg class="ic" aria-hidden="true"><use href="#ic-star"/></svg></span>
+        <div><h3 class="pilar-tit">Marca</h3><p class="pilar-lead">Que te reconozcan antes de leerte.</p></div>
+        <span class="pilar-num">01</span>
+      </div>
+      <div class="serv-grid" data-stagger>
+        <div class="serv-card" data-reveal><h4>Branding e identidad</h4><p>Construimos o pulimos tu marca para que se vea profesional y coherente en todos lados.</p></div>
+        <div class="serv-card" data-reveal><h4>Diseño gráfico</h4><p>Piezas que comunican y venden, sin plantillas que se ven iguales a todas.</p></div>
+        <div class="serv-card" data-reveal><h4>Copywriting y voz de marca</h4><p>Definimos cómo habla tu negocio, para que suene igual en un reel que en una cotización.</p></div>
+        <div class="serv-card" data-reveal><h4>Manual de marca</h4><p>Colores, tipografías y usos por escrito, para que nadie improvise con tu identidad.</p></div>
+        <div class="serv-card" data-reveal><h4>Kit de marca para redes</h4><p>Portadas, destacados y plantillas listas, para que tu perfil se vea armado desde el día uno.</p></div>
+      </div>
+    </div>
+
+    <div class="pilar-bloque" data-reveal>
+      <div class="pilar-head">
+        <span class="ico-tile"><svg class="ic" aria-hidden="true"><use href="#ic-clap"/></svg></span>
+        <div><h3 class="pilar-tit">Contenido</h3><p class="pilar-lead">Presencia constante, no publicaciones sueltas.</p></div>
+        <span class="pilar-num">02</span>
+      </div>
+      <div class="serv-grid" data-stagger>
+        <div class="serv-card" data-reveal><h4>Contenido audiovisual</h4><p>Reels y video producidos en bloques quincenales, sin sorpresas de calendario.</p></div>
+        <div class="serv-card" data-reveal><h4>Gestión de redes sociales</h4><p>Calendario, publicación y seguimiento: tu perfil activo y ordenado todo el mes.</p></div>
+        <div class="serv-card" data-reveal><h4>Community management</h4><p>Respondemos comentarios y mensajes en horario hábil, con el tono de tu marca.</p></div>
+        <div class="serv-card" data-reveal><h4>Email marketing</h4><p>Mensajes que recuperan clientes que ya compraron y acompañan a los que dudan.</p></div>
+        <div class="serv-card" data-reveal><h4>Fotografía de producto</h4><p>Tomas limpias de lo que vendes, listas para catálogo, web y pauta.</p></div>
+      </div>
+    </div>
+
+    <div class="pilar-bloque" data-reveal>
+      <div class="pilar-head">
+        <span class="ico-tile"><svg class="ic" aria-hidden="true"><use href="#ic-target"/></svg></span>
+        <div><h3 class="pilar-tit">Crecimiento</h3><p class="pilar-lead">Que te encuentren y que te elijan.</p></div>
+        <span class="pilar-num">03</span>
+      </div>
+      <div class="serv-grid" data-stagger>
+        <div class="serv-card" data-reveal><h4>Estrategia y auditoría</h4><p>Revisamos tu mercado, tu cuenta de Ads y tu SEO con herramientas propias: veinte minutos, no un día.</p></div>
+        <div class="serv-card" data-reveal><h4>Publicidad digital</h4><p>Campañas en Meta y Google segmentadas por objetivo, con cada sol rastreable hasta el resultado.</p></div>
+        <div class="serv-card" data-reveal><span class="serv-nuevo">Nuevo</span><h4>SEO local</h4><p>Tu ficha de Google completa y optimizada, para ganar las búsquedas de tu zona.</p></div>
+        <div class="serv-card" data-reveal><h4>Reputación y reseñas</h4><p>Pedimos reseñas y respondemos las que llegan: lo primero que ve quien te busca.</p></div>
+        <div class="serv-card" data-reveal><h4>Analítica y dashboards</h4><p>Un tablero en vivo que puedes revisar cuando quieras, sin esperar al cierre de mes.</p></div>
+      </div>
+    </div>
+
+    <div class="pilar-bloque" data-reveal>
+      <div class="pilar-head">
+        <span class="ico-tile"><svg class="ic" aria-hidden="true"><use href="#ic-gear"/></svg></span>
+        <div><h3 class="pilar-tit">Tecnología</h3><p class="pilar-lead">Software a la medida de tu operación, no plantillas.</p></div>
+        <span class="pilar-num">04</span>
+      </div>
+      <div class="serv-grid serv-grid--6" data-stagger>
+        <div class="serv-card" data-reveal><h4>Desarrollo web y landings</h4><p>Sitios rápidos, pensados para convertir visitas en conversaciones de WhatsApp.</p></div>
+        <div class="serv-card" data-reveal><span class="serv-nuevo">Nuevo</span><h4>Respuesta en segundos, no en horas</h4><p>Un asistente atiende tu WhatsApp cuando tú no puedes: responde lo de siempre, califica al cliente y agenda. Nosotros lo operamos.</p></div>
+        <div class="serv-card" data-reveal><span class="serv-nuevo">Nuevo</span><h4>CRM a medida</h4><p>Tu embudo de ventas ordenado: quién te escribió, en qué quedó y cuándo toca insistir.</p></div>
+        <div class="serv-card" data-reveal><h4>Automatización de procesos</h4><p>Reportes que se generan solos y alertas de leads al instante, sin trabajo manual.</p></div>
+        <div class="serv-card" data-reveal><h4>E-commerce y catálogos</h4><p>Catálogo de WhatsApp, Instagram Shopping o tienda simple para vender sin atender el chat.</p></div>
+        <div class="serv-card" data-reveal><span class="serv-nuevo">Nuevo</span><h4>Herramientas interactivas</h4><p>Un cuestionario que recomienda tu producto o servicio según lo que responde el visitante. Va en tu bio o tu web, y te deja el lead ya calificado.</p></div>
+      </div>
+    </div>
+
+    <div class="serv-cierre" data-reveal>
+      <p class="serv-pie">No necesitas los cuatro frentes desde el primer día: <strong>armamos el plan con lo que tu negocio necesita hoy</strong> y sumamos el resto cuando toca.</p>
+      <div class="pruebas">
+        <div class="prueba"><strong>Empiezas sin comprometerte</strong><span>El diagnóstico es gratis y no pedimos accesos ni datos de pago para hacerlo. Decides después de verlo.</span></div>
+        <div class="prueba"><strong>Sabes qué recibes cada mes</strong><span>Los entregables van por escrito en la propuesta: qué piezas, cuántas y cuándo. Sin sorpresas de calendario.</span></div>
+        <div class="prueba"><strong>Puedes revisarlo cuando quieras</strong><span>Un tablero en vivo con tus números y un reporte mensual con lectura, no capturas de pantalla.</span></div>
+      </div>
+    </div>
+    <div class="cta-row" style="justify-content:center;margin-top:30px" data-reveal>
+      <a class="btn btn-primary magnetico" href="https://wa.me/51998399001?text=Hola%20Designia%2C%20quiero%20saber%20qu%C3%A9%20servicios%20necesita%20mi%20negocio"
+         target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="servicios_armar_plan">Armemos tu plan</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= PROYECTOS ========================= -->
+<section class="section w-deep" id="proyectos" data-num="04">
+  <div class="inner">
+    <div class="carr-head">
+      <div>
+        <span class="kicker">Nuestros proyectos</span>
+        <h2 class="display"><span class="mask"><span>Lo que ya estamos</span></span><span class="mask"><span>construyendo</span></span></h2>
+      </div>
+      <div class="carr-btns">
+        <button class="carr-btn" id="filmPrev" type="button" aria-label="Proyecto anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button class="carr-btn" id="filmNext" type="button" aria-label="Proyecto siguiente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+    <div class="film" id="filmTrack" tabindex="0" role="region" aria-label="Carrusel de proyectos">
+      <article class="work w1">
+        <span class="wtag">Branding</span>
+        <div class="work-art">
+          <svg viewBox="0 0 240 150" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+            <rect x="0" y="0" width="60" height="150" fill="#13CDD9"/>
+            <rect x="60" y="0" width="60" height="150" fill="#22184a"/>
+            <rect x="120" y="0" width="60" height="150" fill="#271d9c"/>
+            <rect x="180" y="0" width="60" height="150" fill="#8b6af7"/>
+            <text x="14" y="95" font-family="Poppins,sans-serif" font-size="54" font-weight="800" fill="#22184a">Aa</text>
+            <text x="134" y="95" font-family="Poppins,sans-serif" font-size="54" font-weight="800" fill="#e8e1fd">Aa</text>
+          </svg>
+        </div>
+        <div><h3>Identidad Designia</h3><p>Logo, paleta y sistema visual completo de la agencia, construido con el mismo proceso que usamos para nuestros clientes.</p></div>
+      </article>
+      <article class="work w2">
+        <span class="wtag">Contenido</span>
+        <div class="work-art">
+          <svg viewBox="0 0 240 150" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+            <g fill="none" stroke="#e8e1fd" stroke-width="2" opacity=".85">
+              <rect x="16" y="20" width="60" height="110" rx="8"/>
+              <rect x="90" y="10" width="60" height="130" rx="8"/>
+              <rect x="164" y="20" width="60" height="110" rx="8"/>
+            </g>
+            <path d="M39 63l19 12-19 12z" fill="#13CDD9"/>
+            <path d="M113 63l19 12-19 12z" fill="#13CDD9"/>
+            <path d="M187 63l19 12-19 12z" fill="#13CDD9"/>
+            <g fill="#e8e1fd" opacity=".45">
+              <rect x="26" y="106" width="40" height="4" rx="2"/>
+              <rect x="100" y="114" width="40" height="4" rx="2"/>
+              <rect x="174" y="106" width="40" height="4" rx="2"/>
+            </g>
+          </svg>
+        </div>
+        <div><h3>Reels y carruseles</h3><p>Sistema de contenido propio con producción por lotes: grabamos en bloques de dos horas cada quince días, el mismo método que aplicamos a cada cuenta que gestionamos.</p></div>
+      </article>
+      <article class="work w3">
+        <span class="wtag">Desarrollo web</span>
+        <div class="work-art">
+          <svg viewBox="0 0 240 150" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+            <rect x="18" y="14" width="204" height="122" rx="8" fill="#170F35" opacity=".5"/>
+            <rect x="18" y="14" width="204" height="20" rx="8" fill="#e8e1fd" opacity=".2"/>
+            <circle cx="31" cy="24" r="3" fill="#13CDD9"/><circle cx="42" cy="24" r="3" fill="#e8e1fd" opacity=".5"/>
+            <rect x="32" y="46" width="104" height="12" rx="3" fill="#e8e1fd" opacity=".85"/>
+            <rect x="32" y="65" width="70" height="8" rx="3" fill="#e8e1fd" opacity=".45"/>
+            <rect x="32" y="82" width="54" height="16" rx="8" fill="#13CDD9"/>
+            <g fill="#e8e1fd" opacity=".3">
+              <rect x="32" y="110" width="54" height="16" rx="3"/>
+              <rect x="93" y="110" width="54" height="16" rx="3"/>
+              <rect x="154" y="110" width="54" height="16" rx="3"/>
+            </g>
+          </svg>
+        </div>
+        <div><h3>Esta landing</h3><p>Sí: la página que estás viendo también es nuestro portafolio. Construida, medida y ajustada con las mismas herramientas que usamos para nuestros clientes.</p></div>
+      </article>
+      <article class="work w4">
+        <span class="wtag">Automatización</span>
+        <div class="work-art">
+          <svg viewBox="0 0 240 150" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+            <g stroke="#e8e1fd" stroke-width="1.5" opacity=".22">
+              <path d="M20 130h200M20 98h200M20 66h200M20 34h200"/>
+            </g>
+            <g fill="#13CDD9">
+              <rect x="36" y="94" width="26" height="36" rx="3"/>
+              <rect x="82" y="70" width="26" height="60" rx="3"/>
+              <rect x="128" y="82" width="26" height="48" rx="3"/>
+              <rect x="174" y="42" width="26" height="88" rx="3"/>
+            </g>
+            <path d="M49 88 L95 62 L141 74 L187 34" fill="none" stroke="#e8e1fd" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="187" cy="34" r="5" fill="#e8e1fd"/>
+          </svg>
+        </div>
+        <div><h3>Nuestro propio stack</h3><p>Auditorías, reportes y seguimiento de leads corriendo con herramientas propias. Antes de ofrecerlo a un cliente, lo probamos en nuestra propia operación.</p></div>
+      </article>
+      <article class="work libre">
+        <span class="wtag">Tu marca</span>
+        <div class="work-art">
+          <svg viewBox="0 0 240 150" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+            <rect x="16" y="14" width="208" height="122" rx="10" fill="none" stroke="#13CDD9" stroke-width="2" stroke-dasharray="10 8" opacity=".6"/>
+            <path d="M120 52v46M97 75h46" stroke="#13CDD9" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div><h3>¿Tu marca aquí?</h3><p>Este espacio está reservado para el próximo proyecto. Puede ser el tuyo.</p></div>
+      </article>
+    </div>
+    <div class="carr-prog" aria-hidden="true"><i id="carrProg"></i></div>
+  </div>
+</section>
+
+<!-- ========================= PROCESO ========================= -->
+<section class="section w-luz" id="proceso" data-num="05">
+  <div class="inner">
+    <span class="kicker">Cómo trabajamos</span>
+    <h2 class="display"><span class="mask"><span>De la idea al crecimiento</span></span></h2>
+    <p class="sec-lead">Cinco etapas, y en cada una sabes exactamente qué recibes.</p>
+    <div class="steps">
+      <span class="linea" aria-hidden="true"></span>
+      <div class="step" style="--n:0"><div class="num">1</div><h3>Entender</h3><p>Conocemos tu marca, su audiencia y su contexto.</p><p class="rec"><b>Recibes:</b> un diagnóstico de una página con los hallazgos concretos de tu presencia digital actual, sin costo.</p></div>
+      <div class="step" style="--n:1"><div class="num">2</div><h3>Definir</h3><p>Objetivos, oportunidades y una dirección clara.</p><p class="rec"><b>Recibes:</b> una propuesta con el plan del trimestre, la inversión y lo que necesitamos de ti para arrancar.</p></div>
+      <div class="step" style="--n:2"><div class="num">3</div><h3>Crear</h3><p>Transformamos la identidad en contenido.</p><p class="rec"><b>Recibes:</b> piezas, reels y campañas producidas en bloques quincenales, sin sorpresas de calendario.</p></div>
+      <div class="step" style="--n:3"><div class="num">4</div><h3>Comunicar</h3><p>Llevamos el mensaje a los canales adecuados.</p><p class="rec"><b>Recibes:</b> publicación programada, campañas activas y respuesta a tus mensajes en horario hábil.</p></div>
+      <div class="step" style="--n:4"><div class="num">5</div><h3>Crecer</h3><p>Medimos, aprendemos y optimizamos.</p><p class="rec"><b>Recibes:</b> un reporte mensual con lectura estratégica — no capturas de pantalla — y una reunión para revisarlo juntos.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= FILOSOFÍA ========================= -->
+<section class="section w-dark" id="filosofia" data-num="06">
+  <div class="inner">
+    <span class="kicker">Acerca de nosotros</span>
+    <h2 class="display"><span class="mask"><span>Acerca de Designia</span></span></h2>
+    <p class="filo-intro" data-reveal>Somos una agencia de marketing digital y publicidad que construye, posiciona y hace crecer marcas en el entorno digital. Esto es lo que nos hace distintos:</p>
+    <div class="adn" data-stagger>
+      <div class="adn-item" data-reveal="scale"><h4><svg class="ic-s" aria-hidden="true"><use href="#ic-plug"/></svg> Área interna</h4><p>Operamos tu marketing completo como si fuéramos tu equipo, sin que contrates a nadie a planilla.</p></div>
+      <div class="adn-item" data-reveal="scale"><h4><svg class="ic-s" aria-hidden="true"><use href="#ic-target"/></svg> Criterio antes que ruido</h4><p>Nada de publicaciones de relleno: cada pieza tiene un porqué y un para quién.</p></div>
+      <div class="adn-item" data-reveal="scale"><h4><svg class="ic-s" aria-hidden="true"><use href="#ic-chart"/></svg> Todo se mide</h4><p>Reportes mensuales con lectura estratégica, no solo capturas de estadísticas.</p></div>
+      <div class="adn-item" data-reveal="scale"><h4><svg class="ic-s" aria-hidden="true"><use href="#ic-chat"/></svg> Cercanía real</h4><p>Hablas con quienes hacen el trabajo, no con un ejecutivo de cuentas que rota cada mes.</p></div>
+    </div>
+    <div class="filo-mv">
+      <div class="filo-slide" data-reveal="left"><h3><svg class="ic-s" aria-hidden="true"><use href="#ic-target"/></svg> Misión</h3><p>Ayudar a las marcas a transformar sus ideas en acciones de marketing efectivas, integrando estrategia y soluciones digitales para construir comunicación relevante y generar oportunidades de crecimiento.</p></div>
+      <div class="filo-slide" data-reveal="right"><h3><svg class="ic-s" aria-hidden="true"><use href="#ic-eye"/></svg> Visión</h3><p>Convertirnos en una agencia reconocida por integrar estrategia, creatividad y ejecución para desarrollar marcas que conecten de manera auténtica y evolucionen con las oportunidades del entorno digital.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= PLANES ========================= -->
+<div class="planes-wrap w-deep" id="planes">
+  <section class="section" data-num="07">
+    <div class="inner">
+      <span class="kicker">Planes</span>
+      <h2 class="display"><span class="mask"><span>Elige tu punto</span></span><span class="mask"><span>de partida</span></span></h2>
+      <p class="cupos"><svg class="ic-s" aria-hidden="true"><use href="#ic-star"/></svg>Tomamos solo 3 cuentas nuevas por trimestre para no diluir el servicio.</p>
+      <div class="planes" data-stagger>
+        <div class="plan tilt" data-reveal>
+          <h3>Punto Base</h3>
+          <p class="para">Para marcas que necesitan ordenar y profesionalizar su presencia digital.</p>
+          <p class="price">S/ 750 <small>/mes</small></p>
+          <ul><li>Diagnóstico inicial</li><li>Identidad visual para redes</li><li>Plantillas de publicaciones</li><li>Calendario de contenidos</li><li>Piezas gráficas mensuales</li></ul>
+          <a class="btn btn-ghost" href="https://wa.me/51998399001?text=Hola%20Designia%2C%20me%20interesa%20el%20plan%20Punto%20Base"
+             target="_blank" rel="noopener" data-ga="select_plan" data-ga-label="Punto Base" data-ga-price="750">Lo quiero</a>
+        </div>
+        <div class="plan destacado tilt" data-reveal>
+          <span class="p-tag-plan">Recomendado</span>
+          <h3>Punto Activo</h3>
+          <p class="para">Para marcas que ya tienen presencia y necesitan comunicación constante.</p>
+          <p class="price">S/ 1,290 <small>/mes</small></p>
+          <p class="nota">La inversión en pauta se paga aparte, directo a Meta o Google.</p>
+          <ul><li>Estrategia de contenido</li><li>Gestión de redes sociales</li><li>Diseño gráfico + copywriting</li><li>Contenido audiovisual</li><li>Community management</li><li>Respuesta automática en WhatsApp fuera de horario</li><li>Reporte mensual con lectura</li></ul>
+          <a class="btn btn-primary" href="https://wa.me/51998399001?text=Hola%20Designia%2C%20me%20interesa%20el%20plan%20Punto%20Activo"
+             target="_blank" rel="noopener" data-ga="select_plan" data-ga-label="Punto Activo" data-ga-price="1290">Lo quiero</a>
+        </div>
+        <div class="plan tilt" data-reveal>
+          <h3>Punto Integral</h3>
+          <p class="para">Para campañas que coordinan varios canales a la vez.</p>
+          <p class="price">S/ 1,990 <small>/mes</small></p>
+          <ul><li>Concepto creativo y dirección</li><li>Key visual de campaña</li><li>Piezas + contenido audiovisual</li><li>Redes sociales</li><li>Email marketing</li><li>Landing page</li><li>Una herramienta interactiva para captar leads</li></ul>
+          <a class="btn btn-ghost" href="https://wa.me/51998399001?text=Hola%20Designia%2C%20me%20interesa%20el%20plan%20Punto%20Integral"
+             target="_blank" rel="noopener" data-ga="select_plan" data-ga-label="Punto Integral" data-ga-price="1990">Lo quiero</a>
+        </div>
+      </div>
+      <p class="plan-pie" data-reveal>¿No sabes cuál te toca? <a href="https://wa.me/51998399001?text=Hola%20Designia%2C%20no%20s%C3%A9%20qu%C3%A9%20plan%20me%20conviene" target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="planes_ayuda">Cuéntanos tu caso</a> y te decimos cuál tiene sentido.</p>
+
+      <div class="kit" data-reveal>
+        <div class="precio">S/ 690 <small>Pago único</small></div>
+        <div style="flex:1;min-width:250px">
+          <h3>Kit Arranque — la puerta de entrada</h3>
+          <p>Diagnóstico digital completo, optimización de tu Instagram y Google Business Profile, kit de marca básico (paleta, tipografías, 3 plantillas), 9 piezas iniciales y guía de uso. La forma más directa de ver cómo trabajamos antes de entrar a un plan mensual.</p>
+        </div>
+        <a class="btn btn-primary magnetico" href="https://wa.me/51998399001?text=Hola%20Designia%2C%20quiero%20el%20Kit%20Arranque"
+           target="_blank" rel="noopener" data-ga="select_plan" data-ga-label="Kit Arranque" data-ga-price="690">Empezar por aquí</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ========================= FAQ ========================= -->
+<section class="section w-luz" id="preguntas" data-num="08">
+  <div class="inner">
+    <span class="kicker">Preguntas frecuentes</span>
+    <h2 class="display"><span class="mask"><span>Lo que todos preguntan</span></span></h2>
+    <div class="faq" data-stagger>
+      <div class="faq-item" data-reveal>
+        <button class="faq-q" type="button" aria-expanded="false">¿Necesito ya tener logo o marca?<span class="mas" aria-hidden="true"></span></button>
+        <div class="faq-a"><div><p>No. Si aún no tienes identidad, empiezas con el Kit Arranque, que incluye el kit de marca básico. Si ya la tienes, la respetamos y la ordenamos para que funcione en digital.</p></div></div>
+      </div>
+      <div class="faq-item" data-reveal>
+        <button class="faq-q" type="button" aria-expanded="false">¿En cuánto tiempo veo resultados?<span class="mas" aria-hidden="true"></span></button>
+        <div class="faq-a"><div><p>El contenido orgánico se construye en torno a 3 meses; la pauta bien segmentada trae primeros leads desde las primeras semanas. Por eso la permanencia mínima es de 3 meses: con menos tiempo no se puede demostrar nada.</p></div></div>
+      </div>
+      <div class="faq-item" data-reveal>
+        <button class="faq-q" type="button" aria-expanded="false">¿Trabajan con negocios fuera de Lima?<span class="mas" aria-hidden="true"></span></button>
+        <div class="faq-a"><div><p>Nuestro foco es Lima para producciones presenciales, pero el contenido, la pauta y la estrategia los operamos 100% en remoto para todo el Perú.</p></div></div>
+      </div>
+      <div class="faq-item" data-reveal>
+        <button class="faq-q" type="button" aria-expanded="false">¿Qué necesito para empezar?<span class="mas" aria-hidden="true"></span></button>
+        <div class="faq-a"><div><p>Una conversación de 20 minutos y tu diagnóstico gratis. Después, fotos o videos de tu negocio (o una producción contratada): sin materia prima, no hay contenido.</p></div></div>
+      </div>
+      <div class="faq-item" data-reveal>
+        <button class="faq-q" type="button" aria-expanded="false">¿Cómo nos comunicamos?<span class="mas" aria-hidden="true"></span></button>
+        <div class="faq-a"><div><p>WhatsApp para el día a día, reunión mensual con lectura de reporte y siempre las mismas personas al frente de tu cuenta.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= CONTACTO ========================= -->
+<div class="contacto-wrap w-deep" id="contacto">
+  <section class="section">
+    <div class="inner">
+      <span class="kicker">Hablemos</span>
+      <h2 class="display"><span class="mask"><span>Es momento de</span></span><span class="mask"><span>encender tu marca</span></span></h2>
+      <p class="sub">Cuéntanos qué vendes y te enviamos un diagnóstico gratis de tu presencia digital.</p>
+
+      <div class="contacto-grid">
+        <div class="entrega" data-reveal="left">
+          <h3>Qué recibes en el diagnóstico</h3>
+          <ul>
+            <li><svg class="ic-s" aria-hidden="true"><use href="#ic-search"/></svg>Revisión de tu Instagram, tu ficha de Google y tu web actual.</li>
+            <li><svg class="ic-s" aria-hidden="true"><use href="#ic-down"/></svg>Qué está haciendo tu competencia directa en tu zona.</li>
+            <li><svg class="ic-s" aria-hidden="true"><use href="#ic-doc"/></svg>Una página con los hallazgos concretos y por dónde empezar.</li>
+            <li><svg class="ic-s" aria-hidden="true"><use href="#ic-chat"/></svg>Una conversación de 20 minutos para revisarlo juntos.</li>
+          </ul>
+          <p class="garantia"><b>Sin costo y sin compromiso.</b> No pedimos accesos ni datos de pago para el diagnóstico. Si después decides trabajar con nosotros, la permanencia mínima es de 3 meses — el tiempo real que toma demostrar algo.</p>
+        </div>
+
+        <form class="form-reset" id="formContacto" data-reveal="right" novalidate>
+          <div class="campo-r"><label for="nombre">Nombre *</label><input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="Tu nombre" required></div>
+          <div class="campo-r"><label for="negocio">Negocio *</label><input type="text" id="negocio" name="negocio" autocomplete="organization" placeholder="Nombre de tu negocio" required></div>
+          <div class="campo-r full"><label for="vende">¿Qué vendes y dónde? *</label><textarea id="vende" name="vende" rows="2" placeholder="Ej. Clínica dental en Surco, atendemos por citas" required></textarea></div>
+          <div class="campo-r full">
+            <label id="lblInteres">¿Qué necesitas primero? <span style="text-transform:none;letter-spacing:0;font-weight:500;opacity:.7">(opcional)</span></label>
+            <div class="chips" role="group" aria-labelledby="lblInteres">
+              <label class="chip"><input type="radio" name="interes" value="Redes y contenido"><span>Redes y contenido</span></label>
+              <label class="chip"><input type="radio" name="interes" value="Publicidad"><span>Publicidad</span></label>
+              <label class="chip"><input type="radio" name="interes" value="Marca y diseño"><span>Marca y diseño</span></label>
+              <label class="chip"><input type="radio" name="interes" value="Web y automatización"><span>Web y automatización</span></label>
+              <label class="chip"><input type="radio" name="interes" value="Todavía no lo sé"><span>Todavía no lo sé</span></label>
+            </div>
+          </div>
+          <div class="envio">
+            <button class="btn-enviar" type="submit">Enviar por WhatsApp <span class="arr" aria-hidden="true"><i></i><i></i><i></i></span></button>
+            <small>Se abre WhatsApp con tu mensaje ya escrito.<br>Te respondemos el mismo día hábil.</small>
+          </div>
+        </form>
+      </div>
+
+      <div class="gigante-wrap" aria-hidden="true"><p class="gigante" id="gigante">Te esperamos · Te esperamos ·</p></div>
+      <p class="datos-contacto">
+        <span>Lima, Perú</span>
+        <a href="mailto:contacto@designia360.com" data-ga="cta_click" data-ga-label="contacto_email">contacto@designia360.com</a>
+        <a href="https://wa.me/51998399001" target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="contacto_whatsapp">+51 998 399 001</a>
+      </p>
+    </div>
+  </section>
+</div>
+</main>
+
+<!-- WhatsApp flotante (escritorio) -->
+<a class="wa-float" id="waFloat" href="https://wa.me/51998399001?text=Hola%20Designia%2C%20tengo%20una%20consulta"
+   target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" data-ga="cta_click" data-ga-label="float_whatsapp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+</a>
+
+<!-- Barra de acción móvil -->
+<div class="cta-movil" id="ctaMovil">
+  <a class="btn btn-line" href="tel:+51998399001" data-ga="cta_click" data-ga-label="movil_llamada">Llamar</a>
+  <a class="btn btn-primary" href="https://wa.me/51998399001?text=Hola%20Designia%2C%20quiero%20mi%20diagn%C3%B3stico%20gratis"
+     target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="movil_diagnostico">Diagnóstico gratis</a>
+</div>
+
+<footer>
+  <img src="logo-designia-blanco.png" alt="Designia" class="logo-foot" width="478" height="160" loading="lazy" decoding="async">
+  <div class="f-social">
+    <a class="pill" href="https://www.instagram.com/designia.pe/" target="_blank" rel="noopener"><span class="dot"></span>Instagram</a>
+    <a class="pill" href="https://www.linkedin.com/company/designia-pe/" target="_blank" rel="noopener"><span class="dot"></span>LinkedIn</a>
+    <a class="pill" href="https://wa.me/51998399001" target="_blank" rel="noopener"><span class="dot"></span>WhatsApp</a>
+  </div>
+  <p><strong>Designia</strong> · Agencia de marketing digital y publicidad · Lima, Perú</p>
+  <p class="legal">© <span id="anio"></span> Designia. Todos los derechos reservados.</p>
+</footer>
+
+<!-- ========================= DATOS ESTRUCTURADOS ========================= -->
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@graph":[
+ {
+  "@type":"ProfessionalService",
+  "@id":"https://designia360.com/#agencia",
+  "name":"Designia",
+  "alternateName":"Designia 360",
+  "url":"https://designia360.com/",
+  "logo":{"@type":"ImageObject","url":"https://designia360.com/logo-designia.png","width":478,"height":160},
+  "image":"https://designia360.com/og-designia.jpg",
+  "description":"Agencia de marketing digital, publicidad y tecnología en Lima: estrategia, contenido, publicidad, branding, automatización y desarrollo web.",
+  "slogan":"Todo un equipo de marketing sin ampliar tu planilla",
+  "telephone":"+51 998 399 001",
+  "email":"contacto@designia360.com",
+  "priceRange":"S/ 690 - S/ 1990",
+  "currenciesAccepted":"PEN",
+  "paymentAccepted":"Transferencia bancaria, Yape, Plin",
+  "address":{"@type":"PostalAddress","addressLocality":"Lima","addressRegion":"Lima","addressCountry":"PE"},
+  "areaServed":[{"@type":"City","name":"Lima"},{"@type":"Country","name":"Perú"}],
+  "contactPoint":[{
+    "@type":"ContactPoint","contactType":"ventas",
+    "telephone":"+51 998 399 001","email":"contacto@designia360.com",
+    "availableLanguage":["es"],"areaServed":"PE"
+  }],
+  "sameAs":["https://www.instagram.com/designia.pe/","https://www.linkedin.com/company/designia-pe/"],
+  "knowsAbout":["Marketing digital","Meta Ads","Google Ads","Branding","SEO local","Automatización de marketing","Desarrollo web","Community management"],
+  "hasOfferCatalog":{"@type":"OfferCatalog","name":"Planes Designia","itemListElement":[
+    {"@type":"Offer","name":"Kit Arranque","price":"690","priceCurrency":"PEN","url":"https://designia360.com/#planes"},
+    {"@type":"Offer","name":"Punto Base","price":"750","priceCurrency":"PEN","url":"https://designia360.com/#planes"},
+    {"@type":"Offer","name":"Punto Activo","price":"1290","priceCurrency":"PEN","url":"https://designia360.com/#planes"},
+    {"@type":"Offer","name":"Punto Integral","price":"1990","priceCurrency":"PEN","url":"https://designia360.com/#planes"}]},
+  "makesOffer":[
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Branding e identidad de marca","serviceType":"Branding"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Gestión de redes sociales","serviceType":"Community management"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Publicidad digital en Meta y Google","serviceType":"Publicidad digital"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"SEO local y ficha de Google","serviceType":"SEO local"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Desarrollo web y landing pages","serviceType":"Desarrollo web"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Automatización de marketing","serviceType":"Automatización"}}]
+  },
+ {
+  "@type":"WebSite",
+  "@id":"https://designia360.com/#sitio",
+  "url":"https://designia360.com/",
+  "name":"Designia",
+  "inLanguage":"es-PE",
+  "publisher":{"@id":"https://designia360.com/#agencia"}
+ }
+]
+}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"¿Necesito ya tener logo o marca?","acceptedAnswer":{"@type":"Answer","text":"No. Si aún no tienes identidad, empiezas con el Kit Arranque, que incluye el kit de marca básico. Si ya la tienes, la respetamos y la ordenamos para que funcione en digital."}},
+{"@type":"Question","name":"¿En cuánto tiempo veo resultados?","acceptedAnswer":{"@type":"Answer","text":"El contenido orgánico se construye en torno a 3 meses; la pauta bien segmentada trae primeros leads desde las primeras semanas. Por eso la permanencia mínima es de 3 meses."}},
+{"@type":"Question","name":"¿Trabajan con negocios fuera de Lima?","acceptedAnswer":{"@type":"Answer","text":"El foco es Lima para producciones presenciales, pero el contenido, la pauta y la estrategia se operan 100% en remoto para todo el Perú."}},
+{"@type":"Question","name":"¿Qué necesito para empezar?","acceptedAnswer":{"@type":"Answer","text":"Una conversación de 20 minutos y tu diagnóstico gratis. Después, fotos o videos de tu negocio o una producción contratada."}},
+{"@type":"Question","name":"¿Cómo nos comunicamos?","acceptedAnswer":{"@type":"Answer","text":"WhatsApp para el día a día, reunión mensual con lectura de reporte y siempre las mismas personas al frente de tu cuenta."}}]}
+</script>
+
+<!-- ==========================================================================
+     GOOGLE ANALYTICS 4
+     ✏️  Pega tu Measurement ID abajo (GA4 → Administrar → Flujos de datos).
+     Mientras diga G-XXXXXXXXXX NO se carga ningún script externo: los eventos
+     se acumulan en window.dataLayer y la web no pierde nada de rendimiento.
+
+     Eventos que ya quedan cableados:
+       · cta_click      (todos los botones, con item_name = ubicación)
+       · select_plan    (planes y Kit Arranque, con value y currency PEN)
+       · generate_lead  (envío del formulario → conversión principal)
+       · faq_open       (qué dudas frenan la compra)
+       · scroll_depth   (25/50/75/90 %)
+     Marca "generate_lead" como conversión/evento clave dentro de GA4.
+     ========================================================================== -->
+<script>
+window.GA4_ID = 'G-XXXXXXXXXX';
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+(function(){
+  gtag('js', new Date());
+  if(!/^G-[A-Z0-9]{6,}$/.test(window.GA4_ID) || window.GA4_ID === 'G-XXXXXXXXXX') return;
+  gtag('config', window.GA4_ID);
+  var cargar = function(){
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GA4_ID;
+    document.head.appendChild(s);
+  };
+  if(document.readyState === 'complete') cargar();
+  else addEventListener('load', cargar, {once:true});
+})();
+</script>
+
+<script>
+(function(){
+'use strict';
+var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+var finePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;
+var $  = function(s,c){return (c||document).querySelector(s);};
+var $$ = function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s));};
+
+/* ------------------------------------------------------------------
+   0. CAPA DE MEDICIÓN (GA4)
+   ------------------------------------------------------------------ */
+function ev(nombre, params){
+  try{ gtag('event', nombre, params || {}); }catch(e){}
+}
+document.addEventListener('click', function(e){
+  var el = e.target.closest('[data-ga]');
+  if(!el) return;
+  var p = {};
+  if(el.dataset.gaLabel) p.item_name = el.dataset.gaLabel;
+  if(el.dataset.gaPrice){ p.value = +el.dataset.gaPrice; p.currency = 'PEN'; }
+  if(el.href){
+    p.link_url = el.href;
+    if(el.href.indexOf('wa.me') > -1) p.method = 'whatsapp';
+  }
+  ev(el.dataset.ga, p);
+}, {passive:true});
+
+(function(){                                   // profundidad de scroll
+  var hitos = [25,50,75,90], vistos = {};
+  addEventListener('scroll', function(){
+    var h = document.documentElement;
+    var total = h.scrollHeight - h.clientHeight;
+    if(total <= 0) return;
+    var pct = h.scrollTop / total * 100;
+    for(var i=0;i<hitos.length;i++){
+      var m = hitos[i];
+      if(pct >= m && !vistos[m]){ vistos[m] = 1; ev('scroll_depth', {percent_scrolled:m}); }
+    }
+  }, {passive:true});
+})();
+
+/* ------------------------------------------------------------------
+   1. INTRO
+   ------------------------------------------------------------------ */
+(function(){
+  var intro = $('#intro');
+  if(!intro) return;
+  var visto = false;
+  try{ visto = !!sessionStorage.getItem('dIntro'); }catch(e){}
+  if(visto || reduce){ intro.remove(); return; }
+  var cerrar = function(){
+    intro.classList.add('done');
+    try{ sessionStorage.setItem('dIntro','1'); }catch(e){}
+    setTimeout(function(){ if(intro.parentNode) intro.remove(); }, 700);
+  };
+  var t = setTimeout(cerrar, 1400);
+  $('#saltar').addEventListener('click', function(){ clearTimeout(t); cerrar(); });
+})();
+
+/* ------------------------------------------------------------------
+   2. MENÚ MÓVIL
+   ------------------------------------------------------------------ */
+(function(){
+  var burger = $('#burger'), nav = $('#navMenu');
+  var cerrar = function(){
+    nav.classList.remove('open');
+    burger.setAttribute('aria-expanded','false');
+    burger.setAttribute('aria-label','Abrir menú');
+    document.body.style.overflow = '';
+  };
+  burger.addEventListener('click', function(){
+    var abierto = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', String(abierto));
+    burger.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
+    document.body.style.overflow = abierto ? 'hidden' : '';
+  });
+  $$('a', nav).forEach(function(a){ a.addEventListener('click', cerrar); });
+  addEventListener('keydown', function(e){ if(e.key === 'Escape') cerrar(); });
+})();
+
+/* ------------------------------------------------------------------
+   3. REVELADOS EN SCROLL (IntersectionObserver + CSS, sin librerías)
+   ------------------------------------------------------------------ */
+(function(){
+  $$('[data-stagger]').forEach(function(grupo){          // escalonado por grupo
+    $$('[data-reveal]', grupo).forEach(function(el, i){
+      el.style.setProperty('--d', (i * 0.09) + 's');
+    });
+  });
+  var io = new IntersectionObserver(function(entradas){
+    entradas.forEach(function(x){
+      if(!x.isIntersecting) return;
+      x.target.classList.add('is-in');
+      io.unobserve(x.target);
+    });
+  }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+  $$('[data-reveal], .steps').forEach(function(el){ io.observe(el); });
+
+  var ioMask = new IntersectionObserver(function(entradas){  // títulos línea a línea
+    entradas.forEach(function(x){
+      if(!x.isIntersecting) return;
+      x.target.classList.add('is-in');
+      ioMask.unobserve(x.target);
+    });
+  }, {threshold:0.35});
+  $$('.mask').forEach(function(el){
+    if(el.closest('.hero')) return;                      // el hero anima al cargar
+    var hermanos = $$('.mask', el.parentElement);
+    el.style.setProperty('--d', (hermanos.indexOf(el) * 0.1) + 's');
+    ioMask.observe(el);
+  });
+})();
+
+/* ------------------------------------------------------------------
+   4b. CONTADORES DE LA FRANJA
+   ------------------------------------------------------------------ */
+(function(){
+  var io = new IntersectionObserver(function(entradas){
+    entradas.forEach(function(x){
+      if(!x.isIntersecting) return;
+      var el = x.target, fin = +el.dataset.target, suf = el.dataset.suffix || '';
+      io.unobserve(el);
+      if(reduce) return;                       // el valor ya está en el HTML
+      var listo = false;
+      setTimeout(function(){ listo = true; el.textContent = fin + suf; }, 1500);
+      requestAnimationFrame(function(t0){
+        (function paso(t){
+          if(listo) return;
+          var q = Math.min((t - t0) / 1300, 1);
+          el.textContent = Math.round(fin * (1 - Math.pow(1 - q, 3))) + suf;
+          if(q < 1) requestAnimationFrame(paso);
+          else { listo = true; el.textContent = fin + suf; }
+        })(t0);
+      });
+    });
+  }, {threshold:0.6});
+  $$('.cifra strong').forEach(function(el){ io.observe(el); });
+})();
+
+/* ------------------------------------------------------------------
+   5. PALABRA ROTATIVA DEL HERO
+   ------------------------------------------------------------------ */
+(function(){
+  var rot = $('#rotWord');
+  if(!rot || reduce) return;
+  var palabras = ['contenido que conecta','publicidad que vende','branding que se recuerda',
+                  'webs que convierten','datos que se entienden'];
+  var i = 0, timer = null;
+  var girar = function(){
+    rot.classList.add('fade');
+    setTimeout(function(){
+      i = (i + 1) % palabras.length;
+      rot.textContent = palabras[i];
+      rot.classList.remove('fade');
+    }, 320);
+  };
+  var arrancar = function(){ if(!timer) timer = setInterval(girar, 2800); };
+  var parar = function(){ clearInterval(timer); timer = null; };
+  arrancar();
+  document.addEventListener('visibilitychange', function(){ document.hidden ? parar() : arrancar(); });
+})();
+
+/* ------------------------------------------------------------------
+   6. CARRUSEL DE PROYECTOS
+   ------------------------------------------------------------------ */
+(function(){
+  var film = $('#filmTrack'), prev = $('#filmPrev'), next = $('#filmNext'), prog = $('#carrProg');
+  if(!film) return;
+  var paso = function(){
+    var t = film.querySelector('.work');
+    return t ? t.getBoundingClientRect().width + 22 : 330;
+  };
+  var estado = function(){
+    var max = film.scrollWidth - film.clientWidth;
+    prev.disabled = film.scrollLeft < 8;
+    next.disabled = film.scrollLeft > max - 8;
+    if(prog){
+      var ancho = Math.max(film.clientWidth / film.scrollWidth * 100, 15);
+      prog.style.width = ancho + '%';
+      var avance = max > 0 ? film.scrollLeft / max : 0;
+      prog.style.transform = 'translateX(' + (avance * (100 / ancho * 100 - 100)) + '%)';
+    }
+  };
+  var tSnap;
+  var mover = function(dir){
+    film.classList.add('nosnap');                 // el snap cancela el scroll suave
+    film.scrollBy({left: dir * paso(), behavior:'smooth'});
+    clearTimeout(tSnap);
+    tSnap = setTimeout(function(){ film.classList.remove('nosnap'); estado(); }, 650);
+  };
+  prev.addEventListener('click', function(){ mover(-1); });
+  next.addEventListener('click', function(){ mover(1); });
+  film.addEventListener('scroll', estado, {passive:true});
+  addEventListener('resize', estado, {passive:true});
+  film.addEventListener('keydown', function(e){
+    if(e.key === 'ArrowRight'){ e.preventDefault(); mover(1); }
+    if(e.key === 'ArrowLeft'){ e.preventDefault(); mover(-1); }
+  });
+  var down = false, startX = 0, startScroll = 0, movido = 0;
+  film.addEventListener('pointerdown', function(e){
+    if(e.pointerType === 'touch') return;                 // en táctil manda el scroll nativo
+    down = true; movido = 0; startX = e.clientX; startScroll = film.scrollLeft;
+    film.classList.add('drag');
+  });
+  addEventListener('pointermove', function(e){
+    if(!down) return;
+    var d = e.clientX - startX;
+    movido = Math.abs(d);
+    film.scrollLeft = startScroll - d;
+  }, {passive:true});
+  addEventListener('pointerup', function(){ down = false; film.classList.remove('drag'); });
+  film.addEventListener('click', function(e){ if(movido > 6) e.preventDefault(); }, true);
+  estado();
+})();
+
+/* ------------------------------------------------------------------
+   6b. DIAGNÓSTICO EXPRESS
+   Puntúa lo que el visitante responde — no consulta ninguna cuenta.
+   Cada respuesta vale 0, 1 o 2; las que no llegan a 2 generan un
+   hallazgo, y se muestran los tres más graves.
+   ------------------------------------------------------------------ */
+(function(){
+  var dx = $('#dx');
+  if(!dx) return;
+
+  var PREGUNTAS = [
+    {q:'¿Con qué frecuencia publicas en tus redes?',
+     o:[['Con calendario, sin fallar',2],['Cuando me acuerdo',1],['Casi nunca',0]],
+     h:['Tu perfil no está construyendo recuerdo',
+        'Quien entra por primera vez y ve el último post de hace un mes, no vuelve. Y esa primera impresión no se repite.',
+        'Se resuelve con: calendario de contenidos y producción por lotes.']},
+    {q:'¿Cómo está tu ficha de Google Business?',
+     o:[['Completa y con reseñas recientes',2],['Existe, pero sin actualizar',1],['No tengo o no sé',0]],
+     h:['Tu competencia se queda con las búsquedas de tu zona',
+        'Son consultas de gente que ya te estaba buscando a ti y termina eligiendo al de al lado porque aparece primero.',
+        'Se resuelve con: SEO local y gestión de reseñas.']},
+    {q:'¿Inviertes en publicidad digital?',
+     o:[['Sí, y sé qué campaña trae clientes',2],['Sí, pero no sé qué funciona',1],['No invierto',0]],
+     h:['Estás pagando por tráfico que no puedes rastrear',
+        'Cada sol sale sin saber cuántos clientes vuelve. Multiplicado por doce meses, es presupuesto que pudo ser crecimiento.',
+        'Se resuelve con: campañas por objetivo y medición hasta el resultado.']},
+    {q:'¿Tienes web o landing propia?',
+     o:[['Sí, y me llegan consultas por ahí',2],['Sí, pero no genera nada',1],['No tengo',0]],
+     h:['No tienes dónde aterrizar a quien te busca',
+        'La gente te encuentra, mira y se va, porque no hay un lugar que convierta ese interés en una conversación.',
+        'Se resuelve con: una landing rápida pensada para abrir chats de WhatsApp.']},
+    {q:'¿Cuánto demoras en responder un mensaje nuevo?',
+     o:[['Minutos',2],['Algunas horas',1],['Un día o más',0]],
+     h:['Cada hora de demora enfría al cliente',
+        'El que pregunta un sábado a las 9 de la noche ya compró en otro lado el domingo. No es que no te quisiera; es que no le respondiste.',
+        'Se resuelve con: un asistente que responde y agenda mientras tú atiendes.']},
+    {q:'¿Tienes un reporte que conecte lo que publicas con tus ventas?',
+     o:[['Sí, y lo reviso cada mes',2],['Solo capturas de estadísticas',1],['No mido nada',0]],
+     h:['Publicar no es vender, y sin reporte no sabes cuál es cuál',
+        'Sin un número que una las publicaciones con los resultados, es imposible saber qué repetir y qué dejar de hacer.',
+        'Se resuelve con: tablero en vivo y reporte mensual con lectura.']}
+  ];
+
+  var BANDAS = [
+    [0, 33,'Estás partiendo casi de cero — y eso es una oportunidad'],
+    [34,58,'Tienes base, pero se te está escapando por el camino'],
+    [59,83,'Vas bien: lo que falta es constancia y medición'],
+    [84,100,'Estás sólido. Lo que sigue es escalar con pauta y automatización']
+  ];
+
+  var quiz = $('#dxQuiz'), res = $('#dxRes'), preg = $('#dxPreg'), opts = $('#dxOpts'),
+      barra = $('#dxBarra'), numero = $('#dxN'), atras = $('#dxAtras');
+  var i = 0, respuestas = [], arrancado = false;
+
+  function pintar(){
+    var p = PREGUNTAS[i];
+    numero.textContent = i + 1;
+    barra.style.width = (i / PREGUNTAS.length * 100) + '%';
+    preg.textContent = p.q;
+    opts.innerHTML = '';
+    p.o.forEach(function(op, k){
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'opt';
+      b.innerHTML = '<span class="letra">' + 'ABC'[k] + '</span><span>' + op[0] + '</span>';
+      b.addEventListener('click', function(){ responder(op[1], op[0]); });
+      opts.appendChild(b);
+    });
+    atras.hidden = i === 0;
+  }
+
+  function responder(valor, texto){
+    if(!arrancado){ arrancado = true; ev('diagnostico_inicio', {}); }
+    respuestas[i] = {v:valor, t:texto};
+    if(i < PREGUNTAS.length - 1){ i++; pintar(); }
+    else terminar();
+  }
+
+  atras.addEventListener('click', function(){ if(i > 0){ i--; pintar(); } });
+
+  function terminar(){
+    var suma = respuestas.reduce(function(a, r){ return a + r.v; }, 0);
+    var pct = Math.round(suma / (PREGUNTAS.length * 2) * 100);
+
+    quiz.hidden = true;
+    res.hidden = false;
+
+    // Marcador. El valor final se escribe YA; la animación solo lo adorna.
+    // Así, si el navegador congela los fotogramas (pestaña en segundo plano,
+    // movimiento reducido), el visitante igual ve su puntaje correcto.
+    var aro = $('#dxAro'), largo = 327, cifra = $('#dxPuntaje');
+    aro.style.strokeDashoffset = String(largo - largo * pct / 100);
+    cifra.textContent = String(pct);
+    if(!reduce){
+      // El contador arranca DENTRO del primer fotograma real: si el navegador
+      // nunca lo entrega, el número final ya está escrito y no se pierde.
+      var listo = false;
+      setTimeout(function(){ listo = true; cifra.textContent = String(pct); }, 1300);
+      requestAnimationFrame(function(t0){
+        (function contar(t){
+          if(listo) return;
+          var q = Math.min((t - t0) / 1100, 1);
+          cifra.textContent = String(Math.round(pct * (1 - Math.pow(1 - q, 3))));
+          if(q < 1) requestAnimationFrame(contar);
+          else { listo = true; cifra.textContent = String(pct); }
+        })(t0);
+      });
+    }
+
+    for(var b = 0; b < BANDAS.length; b++){
+      if(pct >= BANDAS[b][0] && pct <= BANDAS[b][1]){ $('#dxBanda').textContent = BANDAS[b][2]; break; }
+    }
+
+    // hallazgos: primero lo que peor está
+    var flojos = [];
+    respuestas.forEach(function(r, k){ if(r.v < 2) flojos.push({k:k, v:r.v}); });
+    flojos.sort(function(a, b){ return a.v - b.v; });
+    var lista = $('#dxHallazgos');
+    lista.innerHTML = '';
+    if(!flojos.length){
+      lista.innerHTML = '<li><span class="rank">✓</span><div><strong>No encontramos huecos evidentes</strong>' +
+        '<span>Con este nivel, lo que mueve la aguja ya no es ordenar sino invertir mejor. Ahí es donde entramos.</span></div></li>';
+    }
+    flojos.slice(0, 3).forEach(function(f, n){
+      var h = PREGUNTAS[f.k].h;
+      var li = document.createElement('li');
+      li.innerHTML = '<span class="rank">' + (n + 1) + '</span><div><strong>' + h[0] + '</strong>' +
+                     '<span>' + h[1] + '<em>' + h[2] + '</em></span></div>';
+      lista.appendChild(li);
+    });
+
+    // enlace a WhatsApp con el resumen ya escrito
+    var resumen = respuestas.map(function(r, k){ return (k + 1) + ') ' + r.t; }).join(', ');
+    var msg = 'Hola Designia, hice el diagnóstico express de la web y saqué ' + pct + '/100. ' +
+              'Mis respuestas: ' + resumen + '. Quiero el diagnóstico completo.';
+    $('#dxCta').href = 'https://wa.me/51998399001?text=' + encodeURIComponent(msg);
+
+    ev('diagnostico_completado', {value: pct, score: pct});
+  }
+
+  $('#dxCta').addEventListener('click', function(){
+    ev('generate_lead', {method:'diagnostico_express', currency:'PEN'});
+  });
+  $('#dxReset').addEventListener('click', function(){
+    i = 0; respuestas = []; res.hidden = true; quiz.hidden = false; pintar();
+  });
+
+  pintar();
+})();
+
+/* ------------------------------------------------------------------
+   7. FAQ (altura fluida con grid-template-rows)
+   ------------------------------------------------------------------ */
+$$('.faq-q').forEach(function(b){
+  var item = b.parentElement, panel = item.querySelector('.faq-a');
+  b.addEventListener('click', function(){
+    var abierto = item.classList.toggle('open');
+    b.setAttribute('aria-expanded', String(abierto));
+    if(abierto){
+      panel.style.height = panel.scrollHeight + 'px';
+      // al terminar se libera a auto para que resista rotar el móvil
+      panel.addEventListener('transitionend', function fin(e){
+        if(e.propertyName !== 'height') return;
+        panel.removeEventListener('transitionend', fin);
+        if(item.classList.contains('open')) panel.style.height = 'auto';
+      });
+      ev('faq_open', {item_name: b.textContent.trim()});
+    }else{
+      panel.style.height = panel.scrollHeight + 'px';
+      requestAnimationFrame(function(){
+        requestAnimationFrame(function(){ panel.style.height = '0px'; });
+      });
+    }
+  });
+});
+
+/* ------------------------------------------------------------------
+   8. FOCO DE LUZ, INCLINACIÓN 3D Y BOTONES MAGNÉTICOS (solo escritorio)
+   ------------------------------------------------------------------ */
+if(finePointer && !reduce){
+  document.addEventListener('pointermove', function(e){
+    var c = e.target.closest('.card, .serv-card');
+    if(!c) return;
+    var r = c.getBoundingClientRect();
+    c.style.setProperty('--cx', ((e.clientX - r.left) / r.width * 100) + '%');
+    c.style.setProperty('--cy', ((e.clientY - r.top) / r.height * 100) + '%');
+  }, {passive:true});
+
+  $$('.tilt').forEach(function(c){
+    c.addEventListener('pointermove', function(e){
+      var r = c.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - 0.5;
+      var y = (e.clientY - r.top) / r.height - 0.5;
+      c.style.transform = 'translateY(-7px) rotateX(' + (-y * 6) + 'deg) rotateY(' + (x * 6) + 'deg)';
+    });
+    c.addEventListener('pointerleave', function(){ c.style.transform = ''; });
+  });
+
+  $$('.magnetico').forEach(function(b){
+    b.addEventListener('pointermove', function(e){
+      var r = b.getBoundingClientRect();
+      var x = (e.clientX - r.left - r.width / 2) * 0.2;
+      var y = (e.clientY - r.top - r.height / 2) * 0.28;
+      b.style.transform = 'translate(' + x + 'px,' + (y - 3) + 'px)';
+    });
+    b.addEventListener('pointerleave', function(){ b.style.transform = ''; });
+  });
+}
+
+/* ------------------------------------------------------------------
+   9. CURSOR PERSONALIZADO
+   ------------------------------------------------------------------ */
+if(finePointer && !reduce){
+  var dot = $('.cursor-dot'), ring = $('.cursor-ring'), heroEl = $('.hero');
+  document.body.classList.add('cursor-on');
+  addEventListener('pointermove', function(e){
+    // Punto y anillo comparten exactamente la misma posición y el mismo
+    // fotograma: el anillo es un halo del punto, no lo persigue.
+    var t = 'translate3d(' + e.clientX + 'px,' + e.clientY + 'px,0) translate(-50%,-50%)';
+    dot.style.transform = t;
+    ring.style.transform = t;
+    document.body.classList.toggle('cursor-hot',
+      !!e.target.closest('a,button,.faq-q,.card,.plan,.work,.chip,.opt'));
+    // El cursor se adapta a la superficie que tiene debajo, no a la sección:
+    // dentro del turquesa hay una tarjeta oscura (.dx) y dentro del morado hay
+    // un bloque turquesa (.kit). Gana el ancestro más cercano.
+    var sup = e.target.closest('.dx,.kit,.w-turq,.w-luz');
+    document.body.classList.toggle('cursor-claro',
+      !!sup && !sup.classList.contains('dx'));
+    if(heroEl && e.target.closest('.hero')){
+      var r = heroEl.getBoundingClientRect();
+      heroEl.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
+      heroEl.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%');
+    }
+  }, {passive:true});
+}
+
+/* ------------------------------------------------------------------
+   10. UN SOLO BUCLE DE SCROLL: progreso, barra, CTA flotantes, parallax
+   ------------------------------------------------------------------ */
+(function(){
+  var topbar = $('#topbar'), prog = $('#progBar'), wa = $('#waFloat'),
+      ctaMovil = $('#ctaMovil'), heroSec = $('.hero');
+  var ticking = false;
+  var pintar = function(){
+    ticking = false;
+    var h = document.documentElement;
+    var y = h.scrollTop || document.body.scrollTop;
+    var max = h.scrollHeight - h.clientHeight;
+
+    if(prog) prog.style.transform = 'scaleX(' + (max > 0 ? y / max : 0) + ')';
+    topbar.classList.toggle('scrolled', y > 40);
+
+    var pasoHero = heroSec ? y > heroSec.offsetHeight * 0.6 : y > 420;
+    if(wa) wa.classList.toggle('show', pasoHero);
+    if(ctaMovil) ctaMovil.classList.toggle('show', pasoHero);
+
+  };
+  addEventListener('scroll', function(){
+    if(!ticking){ ticking = true; requestAnimationFrame(pintar); }
+  }, {passive:true});
+  addEventListener('resize', pintar, {passive:true});
+  pintar();
+})();
+
+/* ------------------------------------------------------------------
+   11. NAVEGACIÓN ACTIVA
+   ------------------------------------------------------------------ */
+(function(){
+  var links = $$('.topbar nav a');
+  var io = new IntersectionObserver(function(entradas){
+    entradas.forEach(function(x){
+      if(!x.isIntersecting) return;
+      links.forEach(function(a){
+        a.classList.toggle('active', a.getAttribute('href') === '#' + x.target.id);
+      });
+    });
+  }, {rootMargin:'-45% 0px -50% 0px'});
+  $$('main section[id], .planes-wrap, .contacto-wrap').forEach(function(s){ io.observe(s); });
+})();
+
+/* ------------------------------------------------------------------
+   12. FORMULARIO → WHATSAPP (+ generate_lead de GA4)
+   ------------------------------------------------------------------ */
+(function(){
+  var form = $('#formContacto');
+  if(!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var campos = ['#nombre','#negocio','#vende'];
+    for(var i=0;i<campos.length;i++){
+      var c = $(campos[i]);
+      if(!c.value.trim()){ c.focus(); if(c.reportValidity) c.reportValidity(); return; }
+    }
+    var n = $('#nombre').value.trim(), b = $('#negocio').value.trim(), v = $('#vende').value.trim();
+    var sel = form.querySelector('input[name="interes"]:checked');
+    var interes = sel ? sel.value : '';
+
+    ev('generate_lead', {method:'formulario_whatsapp', item_name: interes || 'sin especificar', currency:'PEN'});
+
+    if(!/[.!?]$/.test(v)) v += '.';
+    var msg = 'Hola Designia, soy ' + n + ', de ' + b + '. ' + v +
+              (interes ? ' Lo que más necesito ahora: ' + interes + '.' : '') +
+              ' Quiero mi diagnóstico gratis de presencia digital.';
+    var url = 'https://wa.me/51998399001?text=' + encodeURIComponent(msg);
+    var w = window.open(url, '_blank', 'noopener');
+    if(!w || w.closed || typeof w.closed === 'undefined') location.href = url;
+  });
+})();
+
+/* ------------------------------------------------------------------
+   13. AÑO
+   ------------------------------------------------------------------ */
+$('#anio').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

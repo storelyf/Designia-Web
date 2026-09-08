@@ -1,0 +1,24 @@
+LOGOS DE MARCAS
+===============
+
+En uso (los cinco salen en la web, en ese orden):
+  propremix.png · segurblock.png · metalblock.png
+  villa-victoria-park.png · kura-kefir.png
+
+CÓMO SE VEN
+Van en monocromo blanco sobre el fondo morado, sin recuadro, al 62% de
+opacidad (100% al pasar el cursor). Por eso los archivos guardados aquí
+son siluetas en blanco + transparencia: no llevan color.
+
+SegurBlock y MetalBlock llegaron en un solo archivo. Se separaron en dos
+logos independientes, como corresponde: son marcas distintas.
+
+Tus archivos originales, sin tocar, quedaron en _originales/ por si algún
+día hace falta el logo a color. Esa carpeta no afecta a la web.
+
+PARA AGREGAR OTRA MARCA
+  1. Necesitas el logo en PNG con FONDO TRANSPARENTE (si trae fondo blanco
+     o de color, hay que liberarlo antes o se verá como un rectángulo).
+  2. Déjalo aquí, unos 400-600 px de ancho.
+  3. En index.html busca  class="marcas-fila"  y copia una línea así:
+     <div class="marca"><img src="marcas/NOMBRE.png" alt="Nombre" decoding="async"></div>

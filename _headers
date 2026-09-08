@@ -1,0 +1,21 @@
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
+
+# Las fuentes llevan el nombre fijo: se cachean para siempre
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/marcas/*
+  Cache-Control: public, max-age=2592000
+
+/*.png
+  Cache-Control: public, max-age=2592000
+/*.jpg
+  Cache-Control: public, max-age=2592000
+
+# El HTML se revalida siempre, para que un cambio se vea al instante
+/
+  Cache-Control: public, max-age=0, must-revalidate

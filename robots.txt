@@ -1,0 +1,6 @@
+# https://designia360.com
+
+User-agent: *
+Allow: /
+
+Sitemap: https://designia360.com/sitemap.xml
