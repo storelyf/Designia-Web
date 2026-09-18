@@ -4,35 +4,30 @@
 <meta charset="UTF-8">
 <script>document.documentElement.classList.remove('no-js')</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Designia · Marketing, Publicidad y Tecnología en Lima</title>
-<meta name="description" content="Designia es la agencia de marketing, publicidad y tecnología de los negocios de servicio en Lima: estrategia, contenido, pauta, branding, web y automatización. Haz tu diagnóstico gratis en 60 segundos.">
+<title>Designia · Agencia de Marketing e IA en Lima</title>
+<meta name="description" content="Designia es la agencia de marketing e inteligencia artificial de los negocios de servicio en Lima: estrategia, contenido, publicidad, asistentes de WhatsApp con IA, visibilidad en ChatGPT y automatización. Diagnóstico gratis en 60 segundos.">
 <meta name="theme-color" content="#22184a">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="author" content="Designia">
 <meta name="geo.region" content="PE-LIM">
 <meta name="geo.placename" content="Lima">
 
-<!-- ==========================================================
-     ✏️  AL COMPRAR EL DOMINIO
-     Reemplaza https://designia.pe por tu dominio final aquí
-     y en los bloques JSON-LD del final del archivo.
-     ========================================================== -->
 <link rel="canonical" href="https://designia360.com/">
 <meta property="og:url" content="https://designia360.com/">
 <meta property="og:image" content="https://designia360.com/og-designia.jpg">
 <meta name="twitter:image" content="https://designia360.com/og-designia.jpg">
 
-<meta property="og:title" content="Designia · Agencia de Marketing Digital y Publicidad en Lima">
-<meta property="og:description" content="Somos el área de marketing que tu negocio no puede contratar a planilla. Diagnóstico gratis de tu presencia digital.">
+<meta property="og:title" content="Designia · Agencia de Marketing e IA en Lima">
+<meta property="og:description" content="Todo un equipo de marketing e IA sin ampliar tu planilla. Diagnóstico gratis de tu presencia digital en 60 segundos.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_PE">
 <meta property="og:site_name" content="Designia">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Designia — agencia de marketing digital y publicidad en Lima">
+<meta property="og:image:alt" content="Designio, la mascota de Designia, agencia de marketing e IA en Lima">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Designia · Agencia de Marketing Digital y Publicidad en Lima">
-<meta name="twitter:description" content="Somos el área de marketing que tu negocio no puede contratar a planilla.">
+<meta name="twitter:title" content="Designia · Agencia de Marketing e IA en Lima">
+<meta name="twitter:description" content="Todo un equipo de marketing e IA sin ampliar tu planilla.">
 
 <link rel="alternate" hreflang="es-pe" href="https://designia360.com/">
 <link rel="alternate" hreflang="x-default" href="https://designia360.com/">
@@ -54,6 +49,7 @@
 <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/poppins-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="logo-designia-blanco.png" fetchpriority="high">
+<link rel="preload" as="image" href="designio/designio-frontal.webp" type="image/webp" media="(min-width:1000px)">
 
 <style>
 /* ==========================================================================
@@ -328,7 +324,7 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
    11. HERO
    ========================================================================== */
 .hero{position:relative;overflow:hidden;padding:clamp(48px,5vw,76px) 24px clamp(56px,6vw,88px);
-  background:var(--tinta-900);color:var(--lavanda);min-height:min(82vh,820px);display:flex;align-items:center}
+  background:var(--tinta-900);color:var(--lavanda);display:flex;align-items:center}
 .hero::after{content:"";position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(600px circle at var(--mx,62%) var(--my,38%),rgba(19,205,217,.14),transparent 62%)}
 /* En lugar de retícula, un halo suave que da profundidad sin dibujar líneas */
@@ -367,6 +363,179 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
   transition:transform .35s var(--ease),border-color .3s,color .3s,background .3s}
 .pill:hover{border-color:var(--turq);color:var(--turq);transform:translateY(-3px);background:rgba(19,205,217,.07)}
 .pill .dot{width:7px;height:7px;border-radius:50%;background:var(--turq);flex:none}
+
+/* ==========================================================================
+   PORTADA — Designio y tarjetas vivas (simulación etiquetada)
+   ========================================================================== */
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);gap:clamp(24px,4vw,56px);align-items:center}
+.hero-grid h1.display{font-size:clamp(2.3rem,1.1rem + 3vw,4rem);line-height:.98}
+.hero-vis{position:relative;opacity:0;animation:sube .9s .5s var(--ease) forwards}
+.vis-stage{position:relative;height:580px;max-width:540px;margin-inline:auto}
+.designio{display:block;width:auto;filter:drop-shadow(0 26px 34px rgba(0,0,0,.42))}
+.designio-hero{position:absolute;left:50%;bottom:0;height:520px;transform:translateX(-46%);
+  animation:respira 6s ease-in-out infinite}
+@keyframes respira{0%,100%{transform:translateX(-46%) translateY(0)}50%{transform:translateX(-46%) translateY(-9px)}}
+.vcard{position:absolute;width:250px;padding:15px 17px;border-radius:18px;
+  background:rgba(23,15,53,.86);border:1px solid var(--hilo);box-shadow:0 24px 50px rgba(0,0,0,.45);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  --r:0deg;animation:flota 7s ease-in-out infinite}
+@keyframes flota{0%,100%{transform:rotate(var(--r)) translateY(0)}50%{transform:rotate(var(--r)) translateY(-10px)}}
+.vcard-chat{left:-4%;top:4%;--r:-3deg}
+.vcard-metric{right:-4%;top:24%;width:226px;--r:2deg;animation-delay:-2.6s}
+.vcard-leads{left:0;bottom:4%;width:262px;--r:1.5deg;animation-delay:-4.2s}
+.vhead{display:flex;align-items:center;gap:8px;font-size:.72rem;font-weight:700;letter-spacing:.04em;color:rgba(232,225,253,.8)}
+.vhead em{margin-left:auto;font-style:normal;color:var(--turq);font-weight:700}
+.vdot{width:8px;height:8px;border-radius:50%;background:#25d366;box-shadow:0 0 0 4px rgba(37,211,102,.18)}
+.vbubbles{display:flex;flex-direction:column;gap:7px;margin-top:11px}
+.vb{max-width:92%;padding:8px 11px;border-radius:12px;font-size:.8rem;line-height:1.4;color:var(--lavanda)}
+.vb-in{align-self:flex-start;background:rgba(232,225,253,.1);border-bottom-left-radius:4px}
+.vb-out{align-self:flex-end;background:var(--turq);color:var(--tinta);border-bottom-right-radius:4px;font-weight:500}
+.vb-enter{animation:vbIn .38s var(--ease-expo) both}
+@keyframes vbIn{from{opacity:0;transform:translateY(8px) scale(.96)}to{opacity:1;transform:none}}
+.vlab{display:block;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(232,225,253,.6)}
+.vnum{display:block;font-family:'Poppins',sans-serif;font-weight:800;font-size:2.1rem;letter-spacing:-.05em;color:var(--blanco);line-height:1.1;margin-top:4px}
+.vnum.bump{animation:bump .5s var(--ease)}
+@keyframes bump{30%{transform:scale(1.08);color:var(--turq)}}
+.vchg{display:block;font-size:.74rem;color:#5CE0A8;font-weight:600;margin-top:2px}
+.vspark{width:100%;height:46px;margin-top:8px;display:block}
+.vlead{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:8px 0;border-top:1px solid var(--hilo)}
+.vlead:first-child{border-top:0;padding-top:0}
+.vlead b{display:block;font-size:.82rem;color:var(--blanco);font-weight:700}
+.vlead small{display:block;font-size:.68rem;color:rgba(232,225,253,.55)}
+.vav{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-size:.7rem;font-weight:800;
+  background:linear-gradient(135deg,var(--violeta),var(--intenso));color:#fff}
+.vpill{font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 8px;border-radius:999px;
+  background:rgba(255,120,80,.18);color:#FF9A7A}
+.vpill-ag{background:rgba(19,205,217,.16);color:var(--turq)}
+.vpill-nu{background:rgba(232,225,253,.12);color:var(--lavanda)}
+.vlead-enter{animation:vbIn .45s var(--ease-expo) both}
+.vsim{position:absolute;right:0;bottom:-6px;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(232,225,253,.45);border:1px solid var(--hilo);border-radius:999px;padding:4px 9px}
+@media(max-width:1000px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-vis{margin-top:40px}
+  .vis-stage{height:440px;max-width:420px}
+  .designio-hero{height:380px}
+  .vcard{width:210px;padding:12px 14px}
+  .vcard-chat{left:-2%;top:0}
+  .vcard-metric{right:-2%;top:18%;width:190px}
+  .vcard-leads{display:none}
+  .vnum{font-size:1.7rem}
+}
+@media(max-width:480px){
+  .vis-stage{height:400px}
+  .designio-hero{height:340px;transform:translateX(-40%)}
+  @keyframes respira{0%,100%{transform:translateX(-40%) translateY(0)}50%{transform:translateX(-40%) translateY(-9px)}}
+  .vcard-chat{left:-4%;width:180px}
+  .vcard-metric{right:-6%;width:160px}
+}
+
+/* ==========================================================================
+   POR DENTRO — bento con gráficos vivos
+   ========================================================================== */
+.bento{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;margin-top:56px;
+  background:var(--hilo);border:1px solid var(--hilo);border-radius:var(--r-lg);overflow:hidden}
+@media(max-width:900px){.bento{grid-template-columns:1fr}}
+.bn{background:var(--tinta-900);display:flex;flex-direction:column;min-height:420px}
+.bn-viz{position:relative;flex:1;padding:26px 26px 0;overflow:hidden;min-height:250px}
+.bn-text{padding:22px 26px 28px;border-top:1px solid var(--hilo)}
+.bn-eye{font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--turq);margin-bottom:8px}
+.bn-text h3{font-size:1.28rem;font-weight:700;letter-spacing:-.03em;color:var(--blanco);margin-bottom:8px}
+.bn-text p{font-size:.92rem;line-height:1.62;color:rgba(232,225,253,.68)}
+.bn-text strong{color:var(--lavanda);font-weight:600}
+/* 01 feed */
+.feed-top{display:flex;justify-content:space-between;align-items:center;font-size:.78rem;color:rgba(232,225,253,.7);margin-bottom:12px}
+.feed-top b{color:var(--blanco);font-weight:700}
+.feed-top i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#25d366;margin-right:6px;animation:pulsa 1.6s infinite}
+@keyframes pulsa{50%{opacity:.35}}
+.feed-list{display:grid;gap:8px}
+.flead{display:grid;grid-template-columns:34px 1fr auto;gap:12px;align-items:center;padding:10px 12px;border-radius:14px;
+  background:rgba(232,225,253,.05);border:1px solid var(--hilo)}
+.flead.enter{animation:vbIn .45s var(--ease-expo) both}
+.flead b{display:block;font-size:.84rem;color:var(--blanco)}
+.flead small{display:block;font-size:.7rem;color:rgba(232,225,253,.55)}
+.f-av{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-size:.7rem;font-weight:800;color:#fff;
+  background:linear-gradient(135deg,var(--violeta),var(--intenso))}
+.f-score{text-align:right;min-width:52px}
+.f-score b{display:block;font-family:'Poppins',sans-serif;font-weight:800;color:var(--turq);font-size:1rem;line-height:1}
+.f-score i{display:block;height:3px;border-radius:3px;margin-top:5px;background:linear-gradient(90deg,var(--turq) var(--w,60%),rgba(232,225,253,.12) 0)}
+.flead.frio .f-score b{color:rgba(232,225,253,.45)}
+.flead.frio .f-score i{background:linear-gradient(90deg,rgba(232,225,253,.35) var(--w,30%),rgba(232,225,253,.12) 0)}
+/* 02 chat */
+.bn-chat .vbubbles{margin-top:0}
+.bn-chat .vhead{margin-bottom:12px}
+.typing{align-self:flex-start;display:inline-flex;gap:4px;padding:10px 12px;border-radius:12px;background:rgba(232,225,253,.1)}
+.typing i{width:6px;height:6px;border-radius:50%;background:rgba(232,225,253,.7);animation:tdot 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes tdot{50%{opacity:.25;transform:translateY(-2px)}}
+.bn-chat .vb{font-size:.86rem}
+/* 03 calendario */
+.cal-top{display:flex;justify-content:space-between;font-size:.78rem;color:rgba(232,225,253,.7);margin-bottom:12px}
+.cal-top b{color:var(--blanco)}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.cal span{aspect-ratio:1;border-radius:8px;background:rgba(232,225,253,.06);border:1px solid var(--hilo);
+  display:grid;place-items:center;font-size:.6rem;color:rgba(232,225,253,.35);transition:background .35s,color .35s,transform .35s var(--ease)}
+.cal span.on{background:var(--turq);color:var(--tinta);font-weight:800;border-color:var(--turq);transform:scale(1.04)}
+.cal span.on.reel{background:var(--violeta);color:#fff;border-color:var(--violeta)}
+.cal-leyenda{display:flex;gap:14px;margin-top:12px;font-size:.7rem;color:rgba(232,225,253,.6)}
+.cal-leyenda i{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:5px;vertical-align:-1px;background:var(--turq)}
+.cal-leyenda i.v{background:var(--violeta)}
+/* 04 reporte */
+.rep-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.rep-kpi{padding:10px 12px;border-radius:12px;background:rgba(232,225,253,.05);border:1px solid var(--hilo)}
+.rep-kpi small{display:block;font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(232,225,253,.55)}
+.rep-kpi b{display:block;font-family:'Poppins',sans-serif;font-weight:800;font-size:1.25rem;letter-spacing:-.04em;color:var(--blanco);margin-top:3px}
+.rep-kpi b.up{color:var(--turq)}
+.bars{display:grid;grid-template-columns:repeat(8,1fr);gap:8px;align-items:end;height:120px}
+.bars i{display:block;border-radius:6px 6px 3px 3px;background:linear-gradient(180deg,var(--turq),rgba(19,205,217,.35));
+  height:6px;transition:height 1s var(--ease-expo)}
+.bars.on i{height:var(--h)}
+.bars i:last-child{background:linear-gradient(180deg,var(--violeta),rgba(139,106,247,.35))}
+.bars-lab{display:flex;justify-content:space-between;font-size:.66rem;color:rgba(232,225,253,.5);margin-top:8px}
+
+/* ==========================================================================
+   BUSCADORES DE IA — banda GEO con respuesta simulada
+   ========================================================================== */
+.ia-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(28px,5vw,72px);align-items:center}
+@media(max-width:960px){.ia-grid{grid-template-columns:1fr}}
+.ia-motor{font-style:normal;color:var(--turq-600);display:inline-block;min-width:5.2ch;transition:opacity .3s,transform .3s}
+.ia-motor.fade{opacity:0;transform:translateY(8px)}
+.ia-lista{list-style:none;display:grid;gap:12px;margin:26px 0 30px;max-width:560px}
+.ia-lista li{display:flex;gap:12px;align-items:flex-start;font-size:.96rem;line-height:1.55;color:var(--texto)}
+.ia-lista li .ic-s{margin-top:.2em;--t1:var(--turq-600);--t2:var(--tinta)}
+.ia-card{background:var(--tinta-900);color:var(--lavanda);border-radius:var(--r-lg);padding:clamp(20px,3vw,30px);
+  box-shadow:0 30px 70px rgba(23,15,53,.28);position:relative}
+.ia-head{display:flex;align-items:center;gap:9px;font-size:.72rem;font-weight:700;letter-spacing:.06em;color:rgba(232,225,253,.7);margin-bottom:18px}
+.ia-head i{width:9px;height:9px;border-radius:50%;background:var(--violeta);box-shadow:0 0 0 4px rgba(139,106,247,.22)}
+.ia-q{font-family:'Poppins',sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:-.02em;color:var(--blanco);
+  padding:12px 14px;border-radius:12px;background:rgba(232,225,253,.08);margin-bottom:16px}
+.ia-ans{font-size:.95rem;line-height:1.65;min-height:5.2em;color:rgba(232,225,253,.85)}
+.ia-ans b{color:var(--turq)}
+.ia-ans .cursor{display:inline-block;width:2px;height:1em;background:var(--turq);vertical-align:-2px;margin-left:2px;animation:pulsa .9s infinite}
+.ia-src{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:18px;padding-top:14px;border-top:1px solid var(--hilo);font-size:.72rem;color:rgba(232,225,253,.55)}
+.ia-src em{font-style:normal;padding:4px 9px;border-radius:999px;border:1px solid var(--hilo);color:var(--lavanda)}
+.ia-sim{position:absolute;right:16px;top:14px;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(232,225,253,.45)}
+
+/* ==========================================================================
+   DESIGNIO en otras secciones + frase de entidad
+   ========================================================================== */
+.dx-mascota{display:none}
+@media(min-width:1000px){
+  .dx-res{grid-template-columns:auto 1fr 150px}
+  .dx-mascota{display:block;align-self:end;justify-self:center}
+  .dx-mascota img{height:300px;width:auto;filter:drop-shadow(0 20px 26px rgba(0,0,0,.4))}
+}
+.designio-contacto{display:none}
+@media(min-width:900px){
+  .designio-contacto{display:block;height:300px;width:auto;margin:34px auto 0;
+    filter:drop-shadow(0 20px 26px rgba(0,0,0,.45));animation:respira2 6s ease-in-out infinite}
+}
+@keyframes respira2{50%{transform:translateY(-8px)}}
+.en-frase{margin-top:40px;padding:22px 26px;border-radius:var(--r);background:rgba(232,225,253,.05);border:1px solid var(--hilo);
+  font-size:1rem;line-height:1.7;color:rgba(232,225,253,.82)}
+.en-frase b{color:var(--turq);font-weight:700}
+.w-luz .en-frase{background:#fff;border-color:var(--hilo-claro);color:var(--texto)}
+.w-luz .en-frase b{color:var(--turq-600)}
 
 /* Franja de dos pisos: las cifras dan escala, los compromisos dan confianza */
 .franja{background:var(--tinta);padding:clamp(46px,5vw,68px) 24px}
@@ -809,6 +978,8 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
   .steps .linea{transform:scaleX(1)!important}
   .track{animation:none!important}
   .cursor-dot,.cursor-ring{display:none!important}
+  .vcard,.designio-hero,.designio-contacto{animation:none!important}
+  .hero-vis{opacity:1!important}
 }
 </style>
 </head>
@@ -885,31 +1056,66 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
   <div class="hero-glow" aria-hidden="true"></div>
   <div class="blob b1" aria-hidden="true"></div>
   <div class="blob b2" aria-hidden="true"></div>
-  <div class="inner">
-    <p class="hero-eyebrow">
-      <img class="mark" src="isotipo-blanco.png" alt="" width="112" height="115" aria-hidden="true">
-      Agencia de marketing digital · <b>Lima, Perú</b>
-    </p>
-    <h1 class="display">
-      <span class="mask"><span>Todo un <span class="grad">equipo de marketing</span></span></span>
-      <span class="mask"><span>sin ampliar tu planilla</span></span>
-    </h1>
-    <p class="big-rot">
-      <img class="mark" src="isotipo-blanco.png" alt="" width="112" height="115" aria-hidden="true">
-      Encendemos tu marca con <span class="rot-word" id="rotWord">contenido que conecta</span>
-    </p>
-    <p class="lead">Agencia de marketing digital y publicidad para marcas que ya venden, pero todavía no suenan. Con base en Lima y trabajando <strong>en todo el Perú</strong>.</p>
-    <div class="cta-row">
-      <a class="btn btn-primary magnetico" href="https://wa.me/51998399001?text=Hola%20Designia%2C%20vengo%20de%20la%20web%20y%20quiero%20mi%20diagn%C3%B3stico%20gratis"
-         target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="hero_diagnostico">Quiero mi diagnóstico gratis</a>
-      <a class="btn btn-ghost" href="#planes" data-ga="cta_click" data-ga-label="hero_planes">Ver planes y precios</a>
-      <span class="cta-nota"><svg class="ic-s on-dark" aria-hidden="true"><use href="#ic-clock"/></svg>Te respondemos el mismo día hábil</span>
+  <div class="inner hero-grid">
+    <div class="hero-copy">
+      <p class="hero-eyebrow">
+        <img class="mark" src="isotipo-blanco.png" alt="" width="112" height="115" aria-hidden="true">
+        Agencia de marketing e IA · <b>Lima, Perú</b>
+      </p>
+      <h1 class="display">
+        <span class="mask"><span>Todo un equipo de <span class="grad">marketing e IA</span></span></span>
+        <span class="mask"><span>sin ampliar tu planilla</span></span>
+      </h1>
+      <p class="big-rot">
+        <img class="mark" src="isotipo-blanco.png" alt="" width="112" height="115" aria-hidden="true">
+        Encendemos tu marca con <span class="rot-word" id="rotWord">contenido que conecta</span>
+      </p>
+      <p class="lead">Estrategia, contenido, publicidad y asistentes con inteligencia artificial para negocios que ya venden, pero todavía no suenan. Con base en Lima y trabajando <strong>en todo el Perú</strong>.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary magnetico" href="https://wa.me/51998399001?text=Hola%20Designia%2C%20vengo%20de%20la%20web%20y%20quiero%20mi%20diagn%C3%B3stico%20gratis"
+           target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="hero_diagnostico">Quiero mi diagnóstico gratis</a>
+        <a class="btn btn-ghost" href="#planes" data-ga="cta_click" data-ga-label="hero_planes">Ver planes y precios</a>
+        <span class="cta-nota"><svg class="ic-s on-dark" aria-hidden="true"><use href="#ic-clock"/></svg>Te respondemos el mismo día hábil</span>
+      </div>
+      <p class="social-lab">Escríbenos por</p>
+      <div class="social-row">
+        <a class="pill" href="https://www.instagram.com/designia.pe/" target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="hero_instagram"><span class="dot"></span>Instagram</a>
+        <a class="pill" href="https://www.linkedin.com/company/designia-pe/" target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="hero_linkedin"><span class="dot"></span>LinkedIn</a>
+        <a class="pill" href="https://wa.me/51998399001" target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="hero_whatsapp"><span class="dot"></span>WhatsApp</a>
+      </div>
     </div>
-    <p class="social-lab">Escríbenos por</p>
-    <div class="social-row">
-      <a class="pill" href="https://www.instagram.com/designia.pe/" target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="hero_instagram"><span class="dot"></span>Instagram</a>
-      <a class="pill" href="https://www.linkedin.com/company/designia-pe/" target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="hero_linkedin"><span class="dot"></span>LinkedIn</a>
-      <a class="pill" href="https://wa.me/51998399001" target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="hero_whatsapp"><span class="dot"></span>WhatsApp</a>
+
+    <!-- Designio + tarjetas vivas. Las tarjetas son una simulación (etiquetada)
+         de lo que el sistema hace por un cliente: atender, medir, ordenar leads. -->
+    <div class="hero-vis">
+      <div class="vis-stage">
+        <picture>
+          <source media="(max-width:999px)" srcset="designio/designio-frontal-sm.webp" type="image/webp">
+          <img class="designio designio-hero" src="designio/designio-frontal.webp" width="296" height="720" decoding="async"
+               alt="Designio, la mascota de Designia: un personaje de arcilla violeta con suéter blanco que sostiene una bombilla con un imán dentro">
+        </picture>
+        <div class="vcard vcard-chat" aria-hidden="true">
+          <div class="vhead"><i class="vdot"></i><span>Asistente Designia · WhatsApp</span><em>12 s</em></div>
+          <div class="vbubbles" id="visBubbles">
+            <div class="vb vb-in">Hola, ¿tienen turno para mañana?</div>
+            <div class="vb vb-out">¡Hola, Carla! Sí: 10:30 o 16:00. ¿Cuál prefieres?</div>
+          </div>
+        </div>
+        <div class="vcard vcard-metric" aria-hidden="true">
+          <span class="vlab">Consultas esta semana</span>
+          <b class="vnum" id="visNum" data-base="38">38</b>
+          <span class="vchg">↑ 12 más que la semana pasada</span>
+          <svg class="vspark" viewBox="0 0 240 56" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0,44 L24,40 L48,42 L72,34 L96,36 L120,28 L144,30 L168,20 L192,22 L216,12 L240,6" fill="none" stroke="#13CDD9" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+            <path d="M0,44 L24,40 L48,42 L72,34 L96,36 L120,28 L144,30 L168,20 L192,22 L216,12 L240,6 L240,56 L0,56 Z" fill="rgba(19,205,217,.12)"/>
+          </svg>
+        </div>
+        <div class="vcard vcard-leads" id="visLeads" aria-hidden="true">
+          <div class="vlead"><span class="vav">MR</span><div><b>María R.</b><small>Instagram · hace 1 min</small></div><span class="vpill">Caliente</span></div>
+          <div class="vlead"><span class="vav">JC</span><div><b>Jorge C.</b><small>Google · hace 3 min</small></div><span class="vpill vpill-ag">Agendado</span></div>
+        </div>
+        <span class="vsim" aria-hidden="true">Simulación</span>
+      </div>
     </div>
   </div>
 </section>
@@ -963,12 +1169,12 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
 <!-- Cintas -->
 <div class="cintas" aria-hidden="true">
   <div class="marquee"><div class="track">
-    <span>Estrategia digital<i class="sep" aria-hidden="true"></i>Branding<i class="sep" aria-hidden="true"></i>Contenido audiovisual<i class="sep" aria-hidden="true"></i>Gestión de redes<i class="sep" aria-hidden="true"></i>Agentes de IA<i class="sep" aria-hidden="true"></i>CRM a medida<i class="sep" aria-hidden="true"></i>Desarrollo web<i class="sep" aria-hidden="true"></i>Publicidad digital<i class="sep" aria-hidden="true"></i></span>
-    <span>Estrategia digital<i class="sep" aria-hidden="true"></i>Branding<i class="sep" aria-hidden="true"></i>Contenido audiovisual<i class="sep" aria-hidden="true"></i>Gestión de redes<i class="sep" aria-hidden="true"></i>Agentes de IA<i class="sep" aria-hidden="true"></i>CRM a medida<i class="sep" aria-hidden="true"></i>Desarrollo web<i class="sep" aria-hidden="true"></i>Publicidad digital<i class="sep" aria-hidden="true"></i></span>
+    <span>Estrategia digital<i class="sep" aria-hidden="true"></i>Branding<i class="sep" aria-hidden="true"></i>Contenido audiovisual<i class="sep" aria-hidden="true"></i>Gestión de redes<i class="sep" aria-hidden="true"></i>Asistentes con IA<i class="sep" aria-hidden="true"></i>Visibilidad en ChatGPT<i class="sep" aria-hidden="true"></i>CRM a medida<i class="sep" aria-hidden="true"></i>Desarrollo web<i class="sep" aria-hidden="true"></i>Publicidad digital<i class="sep" aria-hidden="true"></i></span>
+    <span>Estrategia digital<i class="sep" aria-hidden="true"></i>Branding<i class="sep" aria-hidden="true"></i>Contenido audiovisual<i class="sep" aria-hidden="true"></i>Gestión de redes<i class="sep" aria-hidden="true"></i>Asistentes con IA<i class="sep" aria-hidden="true"></i>Visibilidad en ChatGPT<i class="sep" aria-hidden="true"></i>CRM a medida<i class="sep" aria-hidden="true"></i>Desarrollo web<i class="sep" aria-hidden="true"></i>Publicidad digital<i class="sep" aria-hidden="true"></i></span>
   </div></div>
   <div class="cinta-gigante"><div class="track">
-    <span><b>Designia</b><u>Marketing</u><b>Publicidad</b><u>Estrategia</u></span>
-    <span><b>Designia</b><u>Marketing</u><b>Publicidad</b><u>Estrategia</u></span>
+    <span><b>Designia</b><u>Marketing</u><b>IA</b><u>Publicidad</u></span>
+    <span><b>Designia</b><u>Marketing</u><b>IA</b><u>Publicidad</u></span>
   </div></div>
 </div>
 
@@ -1048,6 +1254,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
             <button class="btn btn-line" id="dxReset" type="button">Repetir</button>
           </div>
         </div>
+        <div class="dx-mascota" aria-hidden="true"><img src="designio/designio-34-sm.webp" alt="" width="150" height="360" loading="lazy" decoding="async"></div>
       </div>
     </div>
   </div>
@@ -1058,7 +1265,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
   <div class="inner">
     <span class="kicker">Qué hacemos</span>
     <h2 class="display"><span class="mask"><span>Cuatro frentes,</span></span><span class="mask"><span>un solo equipo</span></span></h2>
-    <p class="sec-lead">Operamos tu marketing completo como un área interna. Empiezas por donde más aprieta y sumas el resto cuando toca.</p>
+    <p class="sec-lead">Operamos tu marketing completo como un área interna, con inteligencia artificial donde ahorra tiempo de verdad. Empiezas por donde más aprieta y sumas el resto cuando toca.</p>
 
     <div class="pilar-bloque" data-reveal>
       <div class="pilar-head">
@@ -1096,12 +1303,13 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
         <div><h3 class="pilar-tit">Crecimiento</h3><p class="pilar-lead">Que te encuentren y que te elijan.</p></div>
         <span class="pilar-num">03</span>
       </div>
-      <div class="serv-grid" data-stagger>
+      <div class="serv-grid serv-grid--6" data-stagger>
         <div class="serv-card" data-reveal><h4>Estrategia y auditoría</h4><p>Revisamos tu mercado, tu cuenta de Ads y tu SEO con herramientas propias: veinte minutos, no un día.</p></div>
         <div class="serv-card" data-reveal><h4>Publicidad digital</h4><p>Campañas en Meta y Google segmentadas por objetivo, con cada sol rastreable hasta el resultado.</p></div>
         <div class="serv-card" data-reveal><span class="serv-nuevo">Nuevo</span><h4>SEO local</h4><p>Tu ficha de Google completa y optimizada, para ganar las búsquedas de tu zona.</p></div>
         <div class="serv-card" data-reveal><h4>Reputación y reseñas</h4><p>Pedimos reseñas y respondemos las que llegan: lo primero que ve quien te busca.</p></div>
         <div class="serv-card" data-reveal><h4>Analítica y dashboards</h4><p>Un tablero en vivo que puedes revisar cuando quieras, sin esperar al cierre de mes.</p></div>
+        <div class="serv-card" data-reveal><span class="serv-nuevo">Nuevo</span><h4>Visibilidad en buscadores de IA</h4><p>Que te recomienden cuando alguien le pregunta a ChatGPT, Gemini o Perplexity por un negocio como el tuyo. Datos estructurados, contenido que responde y reseñas que la IA puede verificar.</p></div>
       </div>
     </div>
 
@@ -1136,8 +1344,112 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
   </div>
 </section>
 
+<!-- ========================= POR DENTRO (gráficos vivos) ========================= -->
+<section class="section w-deep" id="motor" data-num="04">
+  <div class="inner">
+    <span class="kicker">Así funciona por dentro</span>
+    <h2 class="display"><span class="mask"><span>Un sistema que atiende,</span></span><span class="mask"><span>publica y mide por ti</span></span></h2>
+    <p class="sec-lead">Lo que corre en segundo plano mientras tú atiendes tu negocio. Los datos de abajo son una simulación, pero así se ve en una cuenta real.</p>
+
+    <div class="bento" id="bento" data-stagger>
+      <article class="bn bn-feed" data-reveal>
+        <div class="bn-viz">
+          <div class="feed-top"><b>Consultas de hoy</b><span><i></i><em id="feedCount">14</em> nuevas · en vivo</span></div>
+          <div class="feed-list" id="feedList">
+            <div class="flead"><span class="f-av">MR</span><div><b>María R.</b><small>Instagram · pregunta por horarios</small></div><div class="f-score"><b>91</b><i style="--w:91%"></i></div></div>
+            <div class="flead"><span class="f-av">JC</span><div><b>Jorge C.</b><small>Google · pidió cotización</small></div><div class="f-score"><b>84</b><i style="--w:84%"></i></div></div>
+            <div class="flead frio"><span class="f-av">AT</span><div><b>Andrés T.</b><small>TikTok · solo preguntó el precio</small></div><div class="f-score"><b>32</b><i style="--w:32%"></i></div></div>
+          </div>
+        </div>
+        <div class="bn-text">
+          <p class="bn-eye">01 · Captación</p>
+          <h3>Cada consulta llega con origen y puntaje</h3>
+          <p>Sabes de qué anuncio o red vino cada persona y qué tan lista está para comprar. El anuncio que trae curiosos se pausa. <strong>Recibes:</strong> la lista ordenada por quién va a cerrar primero.</p>
+        </div>
+      </article>
+
+      <article class="bn bn-chat" data-reveal>
+        <div class="bn-viz">
+          <div class="vhead"><i class="vdot"></i><span>Asistente · WhatsApp del negocio</span><em>23:14</em></div>
+          <div class="vbubbles" id="bnChat">
+            <div class="vb vb-in">¿Atienden sábados? Necesito una limpieza dental</div>
+            <div class="vb vb-out">Sí, de 9 a 13 h. Tengo 10:00 y 11:30 este sábado. ¿Te reservo uno?</div>
+          </div>
+        </div>
+        <div class="bn-text">
+          <p class="bn-eye">02 · Atención</p>
+          <h3>Respondes en segundos, también a las once de la noche</h3>
+          <p>Un asistente con IA contesta lo de siempre, califica al cliente y agenda. Cuando hace falta una persona, te avisa. <strong>Recibes:</strong> citas agendadas mientras dormías.</p>
+        </div>
+      </article>
+
+      <article class="bn bn-cal" data-reveal>
+        <div class="bn-viz">
+          <div class="cal-top"><b>Calendario de contenido · octubre</b><span>producción quincenal</span></div>
+          <div class="cal" id="bnCal" aria-hidden="true"></div>
+          <div class="cal-leyenda"><span><i></i>Post o carrusel</span><span><i class="v"></i>Reel</span></div>
+        </div>
+        <div class="bn-text">
+          <p class="bn-eye">03 · Contenido</p>
+          <h3>Un calendario que se llena solo cada quincena</h3>
+          <p>Grabamos en bloques de dos horas cada quince días y el mes queda programado. Tu perfil publica aunque tú estés atendiendo. <strong>Recibes:</strong> el mes completo aprobado por adelantado.</p>
+        </div>
+      </article>
+
+      <article class="bn bn-rep" data-reveal>
+        <div class="bn-viz">
+          <div class="rep-kpis">
+            <div class="rep-kpi"><small>Consultas</small><b class="up" data-kpi="126">126</b></div>
+            <div class="rep-kpi"><small>Citas</small><b data-kpi="41">41</b></div>
+            <div class="rep-kpi"><small>Costo / cita</small><b>S/ 18</b></div>
+          </div>
+          <div class="bars" id="bnBars" aria-hidden="true">
+            <i style="--h:34%"></i><i style="--h:46%"></i><i style="--h:40%"></i><i style="--h:58%"></i><i style="--h:66%"></i><i style="--h:62%"></i><i style="--h:80%"></i><i style="--h:100%"></i>
+          </div>
+          <div class="bars-lab"><span>sem 1</span><span>sem 2</span><span>sem 3</span><span>sem 4</span><span>hoy</span></div>
+        </div>
+        <div class="bn-text">
+          <p class="bn-eye">04 · Medición</p>
+          <h3>Un reporte que dice qué funcionó y qué cambia</h3>
+          <p>Nada de capturas de pantalla. Un tablero en vivo y, cada mes, una lectura: qué repetir, qué cortar y cuánto costó cada cliente. <strong>Recibes:</strong> decisiones, no números sueltos.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= BUSCADORES DE IA (GEO) ========================= -->
+<section class="section w-luz" id="ia" data-num="05">
+  <div class="inner ia-grid">
+    <div>
+      <span class="kicker">Buscadores de IA</span>
+      <h2 class="display"><span class="mask"><span>¿Aparece tu negocio</span></span><span class="mask"><span>cuando le preguntan a <em class="ia-motor" id="iaMotor">ChatGPT</em>?</span></span></h2>
+      <p class="sec-lead">Cada vez más gente pregunta a un asistente de IA en lugar de buscar en Google. Si tu negocio no está descrito con claridad y datos verificables, para ese asistente no existe. Nosotros lo dejamos legible para personas y para modelos.</p>
+      <ul class="ia-lista">
+        <li><svg class="ic-s" aria-hidden="true"><use href="#ic-doc"/></svg>Web y ficha de Google con datos estructurados: qué haces, dónde, cuánto cuesta y cómo contactarte.</li>
+        <li><svg class="ic-s" aria-hidden="true"><use href="#ic-chat"/></svg>Contenido que responde preguntas reales de tus clientes, no solo publicaciones bonitas.</li>
+        <li><svg class="ic-s" aria-hidden="true"><use href="#ic-star"/></svg>Reseñas y menciones que un modelo puede verificar y citar.</li>
+      </ul>
+      <div class="cta-row">
+        <a class="btn btn-primary magnetico" href="https://wa.me/51998399001?text=Hola%20Designia%2C%20quiero%20que%20mi%20negocio%20aparezca%20en%20ChatGPT%20y%20otros%20buscadores%20de%20IA"
+           target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="ia_geo">Quiero aparecer en ChatGPT</a>
+        <span class="cta-nota"><svg class="ic-s" aria-hidden="true"><use href="#ic-check"/></svg>Incluido en los planes con SEO local</span>
+      </div>
+    </div>
+    <div class="ia-demo" data-reveal aria-hidden="true">
+      <div class="ia-card">
+        <span class="ia-sim">Simulación</span>
+        <div class="ia-head"><i></i>Asistente de IA · con búsqueda web</div>
+        <p class="ia-q">“¿Qué clínica dental en Surco atiende los sábados?”</p>
+        <div class="ia-ans" id="iaAns" data-texto="Según su sitio web y su ficha de Google, <b>Clínica Sonríe</b> atiende los sábados de 9:00 a 13:00, responde por WhatsApp en minutos y tiene 4,8 estrellas en 120 reseñas. Puedes reservar desde su web."></div>
+        <div class="ia-src"><span>Fuentes:</span><em>clinicasonrie.pe</em><em>Google Business Profile</em><em>reseñas verificadas</em></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ========================= PROYECTOS ========================= -->
-<section class="section w-deep" id="proyectos" data-num="04">
+<section class="section w-deep" id="proyectos" data-num="06">
   <div class="inner">
     <div class="carr-head">
       <div>
@@ -1239,7 +1551,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
 </section>
 
 <!-- ========================= PROCESO ========================= -->
-<section class="section w-luz" id="proceso" data-num="05">
+<section class="section w-luz" id="proceso" data-num="07">
   <div class="inner">
     <span class="kicker">Cómo trabajamos</span>
     <h2 class="display"><span class="mask"><span>De la idea al crecimiento</span></span></h2>
@@ -1256,17 +1568,18 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
 </section>
 
 <!-- ========================= FILOSOFÍA ========================= -->
-<section class="section w-dark" id="filosofia" data-num="06">
+<section class="section w-dark" id="filosofia" data-num="08">
   <div class="inner">
     <span class="kicker">Acerca de nosotros</span>
     <h2 class="display"><span class="mask"><span>Acerca de Designia</span></span></h2>
-    <p class="filo-intro" data-reveal>Somos una agencia de marketing digital y publicidad que construye, posiciona y hace crecer marcas en el entorno digital. Esto es lo que nos hace distintos:</p>
+    <p class="filo-intro" data-reveal>Somos una agencia de marketing e inteligencia artificial que construye, posiciona y hace crecer marcas en el entorno digital. Designio, nuestro embajador, es la cara de esa idea: una bombilla encendida que atrae. Esto es lo que nos hace distintos:</p>
     <div class="adn" data-stagger>
       <div class="adn-item" data-reveal="scale"><h4><svg class="ic-s" aria-hidden="true"><use href="#ic-plug"/></svg> Área interna</h4><p>Operamos tu marketing completo como si fuéramos tu equipo, sin que contrates a nadie a planilla.</p></div>
       <div class="adn-item" data-reveal="scale"><h4><svg class="ic-s" aria-hidden="true"><use href="#ic-target"/></svg> Criterio antes que ruido</h4><p>Nada de publicaciones de relleno: cada pieza tiene un porqué y un para quién.</p></div>
       <div class="adn-item" data-reveal="scale"><h4><svg class="ic-s" aria-hidden="true"><use href="#ic-chart"/></svg> Todo se mide</h4><p>Reportes mensuales con lectura estratégica, no solo capturas de estadísticas.</p></div>
       <div class="adn-item" data-reveal="scale"><h4><svg class="ic-s" aria-hidden="true"><use href="#ic-chat"/></svg> Cercanía real</h4><p>Hablas con quienes hacen el trabajo, no con un ejecutivo de cuentas que rota cada mes.</p></div>
     </div>
+    <p class="en-frase" data-reveal><b>Designia en una frase:</b> agencia de marketing e inteligencia artificial en Lima, Perú, que opera el marketing de negocios de servicio como un área interna — estrategia, contenido, publicidad, web, asistentes de WhatsApp con IA y automatización — con planes mensuales desde S/ 750, un Kit Arranque de pago único y un diagnóstico gratuito para empezar.</p>
     <div class="filo-mv">
       <div class="filo-slide" data-reveal="left"><h3><svg class="ic-s" aria-hidden="true"><use href="#ic-target"/></svg> Misión</h3><p>Ayudar a las marcas a transformar sus ideas en acciones de marketing efectivas, integrando estrategia y soluciones digitales para construir comunicación relevante y generar oportunidades de crecimiento.</p></div>
       <div class="filo-slide" data-reveal="right"><h3><svg class="ic-s" aria-hidden="true"><use href="#ic-eye"/></svg> Visión</h3><p>Convertirnos en una agencia reconocida por integrar estrategia, creatividad y ejecución para desarrollar marcas que conecten de manera auténtica y evolucionen con las oportunidades del entorno digital.</p></div>
@@ -1276,7 +1589,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
 
 <!-- ========================= PLANES ========================= -->
 <div class="planes-wrap w-deep" id="planes">
-  <section class="section" data-num="07">
+  <section class="section" data-num="09">
     <div class="inner">
       <span class="kicker">Planes</span>
       <h2 class="display"><span class="mask"><span>Elige tu punto</span></span><span class="mask"><span>de partida</span></span></h2>
@@ -1325,7 +1638,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
 </div>
 
 <!-- ========================= FAQ ========================= -->
-<section class="section w-luz" id="preguntas" data-num="08">
+<section class="section w-luz" id="preguntas" data-num="10">
   <div class="inner">
     <span class="kicker">Preguntas frecuentes</span>
     <h2 class="display"><span class="mask"><span>Lo que todos preguntan</span></span></h2>
@@ -1350,6 +1663,14 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
         <button class="faq-q" type="button" aria-expanded="false">¿Cómo nos comunicamos?<span class="mas" aria-hidden="true"></span></button>
         <div class="faq-a"><div><p>WhatsApp para el día a día, reunión mensual con lectura de reporte y siempre las mismas personas al frente de tu cuenta.</p></div></div>
       </div>
+      <div class="faq-item" data-reveal>
+        <button class="faq-q" type="button" aria-expanded="false">¿Qué es la visibilidad en buscadores de IA?<span class="mas" aria-hidden="true"></span></button>
+        <div class="faq-a"><div><p>Es que tu negocio aparezca cuando alguien le pregunta a ChatGPT, Gemini o Perplexity por un servicio como el tuyo. Se trabaja con datos estructurados en la web, contenido que responde preguntas concretas y reseñas verificables. Lo incluimos en los planes que llevan SEO local.</p></div></div>
+      </div>
+      <div class="faq-item" data-reveal>
+        <button class="faq-q" type="button" aria-expanded="false">¿Cómo usan la inteligencia artificial en Designia?<span class="mas" aria-hidden="true"></span></button>
+        <div class="faq-a"><div><p>En tres cosas concretas: un asistente que responde tu WhatsApp en segundos y agenda citas, reportes y auditorías que se generan solos, y herramientas interactivas como el diagnóstico de esta web. La estrategia y el contenido los hace el equipo; la IA le quita el trabajo repetitivo.</p></div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1372,6 +1693,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
             <li><svg class="ic-s" aria-hidden="true"><use href="#ic-chat"/></svg>Una conversación de 20 minutos para revisarlo juntos.</li>
           </ul>
           <p class="garantia"><b>Sin costo y sin compromiso.</b> No pedimos accesos ni datos de pago para el diagnóstico. Si después decides trabajar con nosotros, la permanencia mínima es de 3 meses — el tiempo real que toma demostrar algo.</p>
+          <img class="designio designio-contacto" src="designio/designio-frontal-sm.webp" alt="Designio, la mascota de Designia" width="148" height="360" loading="lazy" decoding="async">
         </div>
 
         <form class="form-reset" id="formContacto" data-reveal="right" novalidate>
@@ -1384,7 +1706,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
               <label class="chip"><input type="radio" name="interes" value="Redes y contenido"><span>Redes y contenido</span></label>
               <label class="chip"><input type="radio" name="interes" value="Publicidad"><span>Publicidad</span></label>
               <label class="chip"><input type="radio" name="interes" value="Marca y diseño"><span>Marca y diseño</span></label>
-              <label class="chip"><input type="radio" name="interes" value="Web y automatización"><span>Web y automatización</span></label>
+              <label class="chip"><input type="radio" name="interes" value="Web, IA y automatización"><span>Web, IA y automatización</span></label>
               <label class="chip"><input type="radio" name="interes" value="Todavía no lo sé"><span>Todavía no lo sé</span></label>
             </div>
           </div>
@@ -1426,7 +1748,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
     <a class="pill" href="https://www.linkedin.com/company/designia-pe/" target="_blank" rel="noopener"><span class="dot"></span>LinkedIn</a>
     <a class="pill" href="https://wa.me/51998399001" target="_blank" rel="noopener"><span class="dot"></span>WhatsApp</a>
   </div>
-  <p><strong>Designia</strong> · Agencia de marketing digital y publicidad · Lima, Perú</p>
+  <p><strong>Designia</strong> · Agencia de marketing e inteligencia artificial · Lima, Perú</p>
   <p class="legal">© <span id="anio"></span> Designia. Todos los derechos reservados.</p>
 </footer>
 
@@ -1439,11 +1761,11 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
   "@type":"ProfessionalService",
   "@id":"https://designia360.com/#agencia",
   "name":"Designia",
-  "alternateName":"Designia 360",
+  "alternateName":["Designia 360","Designia360"],
   "url":"https://designia360.com/",
   "logo":{"@type":"ImageObject","url":"https://designia360.com/logo-designia.png","width":478,"height":160},
   "image":"https://designia360.com/og-designia.jpg",
-  "description":"Agencia de marketing digital, publicidad y tecnología en Lima: estrategia, contenido, publicidad, branding, automatización y desarrollo web.",
+  "description":"Agencia de marketing e inteligencia artificial en Lima, Perú. Opera el marketing de negocios de servicio como un área interna: estrategia, contenido, publicidad en Meta y Google, branding, desarrollo web, asistentes de WhatsApp con IA, visibilidad en buscadores de IA y automatización.",
   "slogan":"Todo un equipo de marketing sin ampliar tu planilla",
   "telephone":"+51 998 399 001",
   "email":"contacto@designia360.com",
@@ -1458,7 +1780,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
     "availableLanguage":["es"],"areaServed":"PE"
   }],
   "sameAs":["https://www.instagram.com/designia.pe/","https://www.linkedin.com/company/designia-pe/"],
-  "knowsAbout":["Marketing digital","Meta Ads","Google Ads","Branding","SEO local","Automatización de marketing","Desarrollo web","Community management"],
+  "knowsAbout":["Marketing digital","Inteligencia artificial aplicada al marketing","Asistentes de WhatsApp con IA","Visibilidad en buscadores de IA (GEO)","Meta Ads","Google Ads","Branding","SEO local","Automatización de marketing","Desarrollo web","Community management"],
   "hasOfferCatalog":{"@type":"OfferCatalog","name":"Planes Designia","itemListElement":[
     {"@type":"Offer","name":"Kit Arranque","price":"690","priceCurrency":"PEN","url":"https://designia360.com/#planes"},
     {"@type":"Offer","name":"Punto Base","price":"750","priceCurrency":"PEN","url":"https://designia360.com/#planes"},
@@ -1470,7 +1792,9 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
     {"@type":"Offer","itemOffered":{"@type":"Service","name":"Publicidad digital en Meta y Google","serviceType":"Publicidad digital"}},
     {"@type":"Offer","itemOffered":{"@type":"Service","name":"SEO local y ficha de Google","serviceType":"SEO local"}},
     {"@type":"Offer","itemOffered":{"@type":"Service","name":"Desarrollo web y landing pages","serviceType":"Desarrollo web"}},
-    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Automatización de marketing","serviceType":"Automatización"}}]
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Automatización de marketing","serviceType":"Automatización"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Asistente de WhatsApp con inteligencia artificial","serviceType":"Atención automatizada"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Visibilidad en buscadores de IA (GEO)","serviceType":"Optimización para motores generativos"}}]
   },
  {
   "@type":"WebSite",
@@ -1479,6 +1803,17 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
   "name":"Designia",
   "inLanguage":"es-PE",
   "publisher":{"@id":"https://designia360.com/#agencia"}
+ },
+ {
+  "@type":"WebPage",
+  "@id":"https://designia360.com/#pagina",
+  "url":"https://designia360.com/",
+  "name":"Designia · Agencia de Marketing e IA en Lima",
+  "isPartOf":{"@id":"https://designia360.com/#sitio"},
+  "about":{"@id":"https://designia360.com/#agencia"},
+  "inLanguage":"es-PE",
+  "dateModified":"2026-09-18",
+  "speakable":{"@type":"SpeakableSpecification","cssSelector":[".hero h1",".hero .lead",".en-frase"]}
  }
 ]
 }
@@ -1489,7 +1824,9 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
 {"@type":"Question","name":"¿En cuánto tiempo veo resultados?","acceptedAnswer":{"@type":"Answer","text":"El contenido orgánico se construye en torno a 3 meses; la pauta bien segmentada trae primeros leads desde las primeras semanas. Por eso la permanencia mínima es de 3 meses."}},
 {"@type":"Question","name":"¿Trabajan con negocios fuera de Lima?","acceptedAnswer":{"@type":"Answer","text":"El foco es Lima para producciones presenciales, pero el contenido, la pauta y la estrategia se operan 100% en remoto para todo el Perú."}},
 {"@type":"Question","name":"¿Qué necesito para empezar?","acceptedAnswer":{"@type":"Answer","text":"Una conversación de 20 minutos y tu diagnóstico gratis. Después, fotos o videos de tu negocio o una producción contratada."}},
-{"@type":"Question","name":"¿Cómo nos comunicamos?","acceptedAnswer":{"@type":"Answer","text":"WhatsApp para el día a día, reunión mensual con lectura de reporte y siempre las mismas personas al frente de tu cuenta."}}]}
+{"@type":"Question","name":"¿Cómo nos comunicamos?","acceptedAnswer":{"@type":"Answer","text":"WhatsApp para el día a día, reunión mensual con lectura de reporte y siempre las mismas personas al frente de tu cuenta."}},
+{"@type":"Question","name":"¿Qué es la visibilidad en buscadores de IA?","acceptedAnswer":{"@type":"Answer","text":"Es que tu negocio aparezca cuando alguien le pregunta a ChatGPT, Gemini o Perplexity por un servicio como el tuyo. Se trabaja con datos estructurados en la web, contenido que responde preguntas concretas y reseñas verificables. Designia lo incluye en los planes que llevan SEO local."}},
+{"@type":"Question","name":"¿Cómo usa Designia la inteligencia artificial?","acceptedAnswer":{"@type":"Answer","text":"En tres cosas concretas: un asistente que responde el WhatsApp del negocio en segundos y agenda citas, reportes y auditorías que se generan solos, y herramientas interactivas como el diagnóstico de su web. La estrategia y el contenido los hace el equipo; la IA le quita el trabajo repetitivo."}}]}
 </script>
 
 <!-- ==========================================================================
@@ -1684,8 +2021,8 @@ document.addEventListener('click', function(e){
 (function(){
   var rot = $('#rotWord');
   if(!rot || reduce) return;
-  var palabras = ['contenido que conecta','publicidad que vende','branding que se recuerda',
-                  'webs que convierten','datos que se entienden'];
+  var palabras = ['contenido que conecta','publicidad que vende','asistentes que responden 24/7',
+                  'visibilidad en ChatGPT','webs que convierten'];
   var i = 0, timer = null;
   var girar = function(){
     rot.classList.add('fade');
@@ -1902,6 +2239,135 @@ document.addEventListener('click', function(e){
   });
 
   pintar();
+})();
+
+/* ------------------------------------------------------------------
+   6c. GRÁFICOS VIVOS — portada, "por dentro" y buscadores de IA
+   Todo es simulación etiquetada. Cada bucle corre solo cuando su
+   elemento está en pantalla y se apaga con movimiento reducido.
+   ------------------------------------------------------------------ */
+(function(){
+  if(reduce) return;
+  function cuandoVisible(el, entra, sale){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting) entra(); else if(sale) sale(); });
+    }, {threshold:0.25});
+    io.observe(el);
+  }
+  function bucle(el, primero, cada, fn){
+    var t = null;
+    function paso(){ fn(); t = setTimeout(paso, cada + Math.random()*900); }
+    cuandoVisible(el, function(){ if(!t) t = setTimeout(paso, primero); },
+                      function(){ clearTimeout(t); t = null; });
+  }
+  function burbuja(caja, quien, texto, max){
+    var b = document.createElement('div');
+    b.className = 'vb vb-' + quien + ' vb-enter'; b.textContent = texto; caja.appendChild(b);
+    while(caja.children.length > max) caja.removeChild(caja.firstChild);
+  }
+
+  // PORTADA · chat del asistente
+  var bub = $('#visBubbles');
+  if(bub){
+    var guion = [['in','¿Y aceptan tarjeta?'],['out','Sí, y también Yape. Te reservo las 10:30 a tu nombre.'],
+                 ['in','Perfecto, gracias.'],['out','Listo, Carla. Te llega la confirmación por aquí.'],
+                 ['in','Hola, ¿tienen turno para mañana?'],['out','¡Hola! Sí: 10:30 o 16:00. ¿Cuál prefieres?']];
+    var gi = 0;
+    bucle(bub, 1600, 2500, function(){ burbuja(bub, guion[gi][0], guion[gi][1], 4); gi = (gi+1) % guion.length; });
+  }
+  // PORTADA · contador de consultas
+  var num = $('#visNum');
+  if(num){
+    var n = +num.dataset.base;
+    bucle(num, 2200, 4200, function(){
+      n += 1; num.textContent = n;
+      num.classList.remove('bump'); void num.offsetWidth; num.classList.add('bump');
+    });
+  }
+  // PORTADA · lista de interesados
+  var leads = $('#visLeads');
+  if(leads){
+    var pool = [['SV','Sofía V.','Meta · hace 1 min','Caliente',''],['DM','Diego M.','Google · hace 2 min','Agendado','vpill-ag'],
+                ['PT','Paola T.','Instagram · hace 1 min','Caliente',''],['LH','Luis H.','TikTok · hace 4 min','Nuevo','vpill-nu']];
+    var li = 0;
+    bucle(leads, 3000, 4600, function(){
+      var q = pool[li]; var d = document.createElement('div'); d.className = 'vlead vlead-enter';
+      d.innerHTML = '<span class="vav">'+q[0]+'</span><div><b>'+q[1]+'</b><small>'+q[2]+'</small></div><span class="vpill '+q[4]+'">'+q[3]+'</span>';
+      leads.insertBefore(d, leads.firstChild);
+      while(leads.children.length > 3) leads.removeChild(leads.lastChild);
+      li = (li+1) % pool.length;
+    });
+  }
+
+  // POR DENTRO · 01 feed de consultas con puntaje
+  var feed = $('#feedList'), feedN = $('#feedCount');
+  if(feed){
+    var fpool = [['PT','Paola T.','Meta · presupuesto aprobado',93,false],['LH','Luis H.','TikTok · quiere ver fotos',58,false],
+                 ['SV','Sofía V.','Instagram · quiere agendar esta semana',88,false],['RQ','Renzo Q.','Google · envío a provincia',71,false],
+                 ['CA','Carla A.','Meta · pregunta por promociones',44,true],['DM','Diego M.','WhatsApp · ya es cliente, vuelve',96,false]];
+    var fi = 0, fc = +feedN.textContent;
+    bucle(feed, 1800, 3600, function(){
+      var q = fpool[fi]; var d = document.createElement('div'); d.className = 'flead enter' + (q[4] ? ' frio' : '');
+      d.innerHTML = '<span class="f-av">'+q[0]+'</span><div><b>'+q[1]+'</b><small>'+q[2]+'</small></div><div class="f-score"><b>'+q[3]+'</b><i style="--w:'+q[3]+'%"></i></div>';
+      feed.insertBefore(d, feed.firstChild);
+      while(feed.children.length > 3) feed.removeChild(feed.lastChild);
+      fc += 1; feedN.textContent = fc; fi = (fi+1) % fpool.length;
+    });
+  }
+  // POR DENTRO · 02 asistente escribiendo
+  var chat = $('#bnChat');
+  if(chat){
+    var cg = [['in','Sí, el de 11:30 por favor'],['out','Listo, Ana: sábado 11:30, limpieza dental. Te envío la dirección.'],
+              ['in','¿Cuánto cuesta?'],['out','S/ 120. Si lo prefieres, puedes pagar con Yape al llegar.'],
+              ['in','Perfecto, gracias'],['out','A ti. Te recordamos la cita el viernes por aquí.']];
+    var ci = 0, tip = null;
+    bucle(chat, 1500, 3300, function(){
+      var q = cg[ci]; ci = (ci+1) % cg.length;
+      if(q[0] === 'out'){
+        tip = document.createElement('div'); tip.className = 'typing'; tip.innerHTML = '<i></i><i></i><i></i>'; chat.appendChild(tip);
+        setTimeout(function(){ if(tip && tip.parentNode) chat.removeChild(tip); burbuja(chat, 'out', q[1], 4); }, 1100);
+      } else burbuja(chat, 'in', q[1], 4);
+    });
+  }
+  // POR DENTRO · 03 calendario que se llena
+  var cal = $('#bnCal');
+  if(cal){
+    var dias = 28, celdas = [];
+    for(var d = 1; d <= dias; d++){ var c = document.createElement('span'); c.textContent = d; cal.appendChild(c); celdas.push(c); }
+    var plan = [2,4,5,7,9,11,12,14,16,18,19,21,23,25,26,28], reels = {5:1,12:1,19:1,26:1}, k = 0;
+    bucle(cal, 800, 420, function(){
+      if(k >= plan.length){ celdas.forEach(function(c){ c.className = ''; }); k = 0; return; }
+      var c = celdas[plan[k]-1]; c.className = 'on' + (reels[plan[k]] ? ' reel' : ''); k++;
+    });
+  }
+  // POR DENTRO · 04 barras del reporte
+  var bars = $('#bnBars');
+  if(bars) cuandoVisible(bars, function(){ bars.classList.add('on'); }, function(){ bars.classList.remove('on'); });
+
+  // BUSCADORES DE IA · motor rotativo + respuesta que se escribe
+  var motor = $('#iaMotor');
+  if(motor){
+    var motores = ['ChatGPT','Gemini','Perplexity','Copilot'], mi = 0;
+    bucle(motor, 2600, 2400, function(){
+      motor.classList.add('fade');
+      setTimeout(function(){ mi = (mi+1) % motores.length; motor.textContent = motores[mi]; motor.classList.remove('fade'); }, 300);
+    });
+  }
+  var ans = $('#iaAns');
+  if(ans){
+    var html = ans.dataset.texto, escrito = false;
+    cuandoVisible(ans, function(){
+      if(escrito) return; escrito = true;
+      var tmp = document.createElement('div'); tmp.innerHTML = html;
+      var plano = tmp.textContent, pos = 0;
+      ans.innerHTML = '<span class="cursor"></span>';
+      (function tecla(){
+        pos += 2;
+        ans.innerHTML = (pos >= plano.length ? html : plano.slice(0, pos)) + (pos >= plano.length ? '' : '<span class="cursor"></span>');
+        if(pos < plano.length) setTimeout(tecla, 22);
+      })();
+    });
+  }
 })();
 
 /* ------------------------------------------------------------------

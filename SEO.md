@@ -1,93 +1,68 @@
 # Posicionamiento — estado y pendientes
 
-Actualizado: 2026-09-05 · Dominio: **designia360.com**
+Actualizado: 2026-09-18 · Dominio: **designia360.com** · Alojamiento: GitHub → Cloudflare
 
 ---
 
 ## Lo que ya está hecho en la web
 
-### Lo básico que leen todos los buscadores
-- `<title>` y `meta description` únicos y escritos para captar clic, no solo palabras clave.
-- `rel="canonical"` apuntando a `https://designia360.com/` — evita que Google indexe dos versiones.
-- `hreflang` `es-pe` y `x-default`.
-- `lang="es-PE"` en el `<html>`, y `geo.region` / `geo.placename` para Lima.
-- Un solo `<h1>`, jerarquía limpia de `<h2>` por sección, HTML semántico
-  (`header`, `nav`, `main`, `section`, `article`, `footer`).
-- `alt` descriptivo en todas las imágenes, con `width` y `height` para que nada
-  salte al cargar (eso es CLS, uno de los tres Core Web Vitals).
+### Buscadores clásicos (Google, Bing, DuckDuckGo)
+- `<title>` y `meta description` alineados al posicionamiento actual: *agencia de marketing e IA en Lima*.
+- `rel="canonical"`, `hreflang` es-PE / x-default, `lang="es-PE"`, `geo.region`.
+- Un solo `<h1>`, un `<h2>` por sección, HTML semántico, `alt` en todas las imágenes con `width`/`height` (sin saltos de maquetación).
+- Datos estructurados en `@graph`: **ProfessionalService** (contacto, zona, precios, catálogo de planes, lista de servicios —incluidos el asistente de WhatsApp con IA y la visibilidad en buscadores de IA—), **WebSite**, **WebPage** (con `dateModified` y `speakable`) y **FAQPage** con 7 preguntas, en sincronía exacta con el acordeón visible.
+- Open Graph y Twitter Card con imagen propia 1200×630 (Designio + titular).
+- `sitemap.xml` con `lastmod`, `robots.txt` abierto, clave **IndexNow** en la raíz (Bing/Yandex/DuckDuckGo).
+- Velocidad: cero peticiones a terceros, fuentes auto-alojadas, Designio en WebP (≈27 KB), caché larga en `_headers`.
 
-### Datos estructurados (`schema.org`)
-Van en formato `@graph`, que es como Google enlaza las entidades entre sí:
-- **ProfessionalService** — nombre, logo, teléfono, correo, dirección, zona de servicio,
-  rango de precios, redes, temas que domina, catálogo de planes y lista de servicios.
-- **WebSite** — enlazado al editor (la agencia).
-- **FAQPage** — las 5 preguntas frecuentes. Es lo que puede hacer que aparezcan
-  desplegables debajo del resultado en Google.
-
-### Redes sociales
-Open Graph y Twitter Card completos, con imagen 1200×630 propia (`og-designia.jpg`).
-Es lo que se ve al pegar el enlace en WhatsApp, LinkedIn o Instagram.
-
-### Velocidad (pesa en el ranking, sobre todo en móvil)
-- Cero peticiones a terceros: sin CDN, sin librerías externas, sin Google Fonts.
-- Fuentes auto-alojadas en subconjunto latin y precargadas.
-- ~174 KB comprimidos en total.
-- `_headers` con caché larga para fuentes e imágenes.
-
-### Rastreo e indexación
-- `robots.txt` abierto, con el sitemap declarado.
-- `sitemap.xml` con `lastmod` e imagen.
-- `_redirects` que fuerza una sola versión: `www` → sin `www`, `http` → `https`,
-  `/index.html` → `/`. Sin esto, Google puede ver hasta cuatro sitios distintos.
-- **IndexNow**: la clave `91afe59a5ec1dc6caac8ccead4a1153f.txt` ya está en la raíz.
-  Es el protocolo de Bing, Yandex y DuckDuckGo para avisar cambios al instante en
-  vez de esperar a que pasen a rastrear.
+### Buscadores de IA — GEO (ChatGPT, Gemini, Perplexity, Copilot)
+Lo que un modelo necesita para citar a Designia cuando alguien pregunta por una agencia en Lima:
+- **`/llms.txt`**: resumen en texto plano de qué hace la agencia, servicios, planes con precios, proceso, marcas, contacto. Es el formato que los asistentes leen primero cuando existe.
+- **`robots.txt`** con permiso explícito a los rastreadores de IA: GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-SearchBot, PerplexityBot, Google-Extended, Applebot-Extended, Amazonbot, meta-externalagent, DuckAssistBot, CCBot.
+- **Frase de entidad** visible en la sección "Nosotros" ("Designia en una frase: …"): una definición completa, citable, con ubicación, servicios y precios. Marcada como `speakable`.
+- **Preguntas frecuentes con respuestas directas y autocontenidas** (las dos nuevas hablan de IA y de visibilidad en buscadores de IA).
+- **Datos verificables y consistentes** en todas partes: nombre, teléfono, correo, precios, marcas. La IA cruza fuentes; cualquier incoherencia resta.
+- Sección propia "Buscadores de IA" que explica el servicio con una respuesta simulada (etiquetada como simulación).
 
 ---
 
 ## Lo que solo puedes hacer tú
 
-Ordenado por impacto real. Los tres primeros valen más que cualquier ajuste técnico
-que quede por hacer en la web.
+Ordenado por impacto real.
 
-### 1. Ficha de Google Business Profile — el mayor peso en búsqueda local
-Para "agencia de marketing digital en Lima" y similares, la ficha manda sobre la web.
-- Crearla y verificarla en business.google.com
-- Categoría principal: *Agencia de marketing*
-- El nombre, teléfono y correo deben coincidir **exactos** con los de la web:
-  `Designia` · `+51 998 399 001` · `contacto@designia360.com`
-- Pedir reseñas desde el primer cliente. Es el factor que más mueve la aguja.
+### 1. Ficha de Google Business Profile
+Para "agencia de marketing en Lima" la ficha manda sobre la web, y **también es la fuente que más consultan los asistentes de IA** para negocios locales.
+- Crear y verificar en business.google.com. Categoría: *Agencia de marketing*.
+- Nombre, teléfono y correo **idénticos** a la web: `Designia` · `+51 998 399 001` · `contacto@designia360.com`.
+- Pedir reseñas desde el primer cliente: es lo que más pesa, en Google y en la IA.
 
-### 2. Dar de alta el sitio en los paneles
-- **Google Search Console** → search.google.com/search-console
-- **Bing Webmaster Tools** → bing.com/webmasters (cubre también Yahoo y DuckDuckGo;
-  además permite importar directo desde Search Console)
+### 2. Redirecciones en Cloudflare (importante)
+Cloudflare no acepta la sintaxis `301!` de Netlify ni redirecciones entre dominios en `_redirects`. Por eso el archivo quedó solo con `/index.html → /`. Falta configurar en el panel:
+- **Reglas → Redirect Rules**: `www.designia360.com/*` → `https://designia360.com/$1` (301).
+- **SSL/TLS → Edge Certificates**: activar *Always Use HTTPS*.
+Sin esto Google puede ver hasta cuatro versiones del sitio y repartir la fuerza entre ellas.
 
-En ambos, verificar con la etiqueta HTML: los dos `<meta>` ya están escritos en
-`index.html`, comentados. Solo hay que pegar el código y quitar los `<!-- -->`.
-Después, enviar el sitemap en cada panel.
+### 3. Paneles de buscadores
+- **Google Search Console** y **Bing Webmaster Tools**: los dos `<meta>` de verificación ya están escritos y comentados en `index.html` (buscar "VERIFICACIÓN"). Pegar el código, quitar los `<!-- -->`, y enviar el sitemap en cada uno.
+- **IndexNow**: cuando cambies la web, avisa a Bing con una petición a
+  `https://api.indexnow.org/indexnow?url=https://designia360.com/&key=91afe59a5ec1dc6caac8ccead4a1153f`
 
-### 3. Enlaces desde otros sitios
-Que otros dominios enlacen a designia360.com es de lo que más pesa. Lo alcanzable:
-directorios de agencias peruanas, la web de los clientes ("sitio hecho por…"),
-gremios, notas de prensa locales.
+### 4. Analítica
+- **GA4**: pegar el Measurement ID en `window.GA4_ID`. Eventos ya cableados: `cta_click`, `select_plan`, `generate_lead`, `faq_open`, `scroll_depth`, `diagnostico_inicio`, `diagnostico_completado`. Marcar `generate_lead` como evento clave.
+- Alternativa sin cookies: **Cloudflare Web Analytics** (gratis, se activa desde el panel del dominio, sin tocar el código).
 
-### 4. Contenido
-Una sola página posiciona para pocos términos. Si en algún momento quieres competir
-por más búsquedas, el camino es un blog o páginas por servicio
-(`/marketing-digital-lima`, `/publicidad-meta-ads`, etc.).
+### 5. Enlaces y menciones
+Que otros dominios enlacen a designia360.com es lo que más pesa después de la ficha: webs de los clientes ("sitio hecho por…"), directorios de agencias peruanas, LinkedIn de la empresa, notas locales. Para la IA cuentan además las **menciones consistentes** del nombre con el mismo descriptor ("agencia de marketing e IA en Lima").
 
-### 5. Horario de atención en los datos estructurados
-No lo puse porque no me consta cuál es, y en datos estructurados una hora inventada
-es peor que ninguna. Cuando lo definas, se agrega `openingHoursSpecification`.
+### 6. Contenido
+Una sola página posiciona para pocos términos. Cuando toque competir por más búsquedas, el camino es un blog o páginas por servicio (`/asistente-whatsapp-ia`, `/publicidad-meta-ads-lima`, …). Cada nueva página debe sumarse al `sitemap.xml` y al `llms.txt`.
+
+### 7. Horario de atención
+No está en los datos estructurados porque no me consta cuál es. Cuando lo definas se agrega `openingHoursSpecification`.
 
 ---
 
 ## Notas
-
-- El correo `contacto@designia360.com` necesita que el dominio tenga **SPF, DKIM y DMARC**
-  configurados. Sin eso, los correos que envíes caen en spam — y eso sí afecta la
-  reputación de la marca, aunque no el ranking.
-- Si algún día se decide bloquear a los rastreadores de IA (GPTBot, ClaudeBot, etc.),
-  se hace en `robots.txt`. Hoy están permitidos, que es lo habitual para una agencia
-  que quiere ser citada.
+- El correo `contacto@designia360.com` necesita **SPF, DKIM y DMARC** en el DNS de Cloudflare; sin eso, lo que envíes cae en spam.
+- Los rastreadores de IA están permitidos a propósito: para una agencia que quiere ser citada, bloquearlos sería contraproducente. Si algún día se quiere limitar alguno, se hace en `robots.txt`.
+- `_backup-original/`, `SEO.md`, `Isotipo-HD.png` y los originales de `marcas/` no se publican (`.assetsignore`).

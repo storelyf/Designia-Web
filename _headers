@@ -11,6 +11,12 @@
 /marcas/*
   Cache-Control: public, max-age=2592000
 
+/designio/*
+  Cache-Control: public, max-age=2592000
+
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
+
 /*.png
   Cache-Control: public, max-age=2592000
 /*.jpg

@@ -1,7 +1,5 @@
-# Una sola versión canónica del sitio: evita que Google indexe duplicados.
-https://www.designia360.com/*   https://designia360.com/:splat   301!
-http://www.designia360.com/*    https://designia360.com/:splat   301!
-http://designia360.com/*        https://designia360.com/:splat   301!
+# Cloudflare (Workers / Pages): solo redirecciones por ruta, sin el "!" de Netlify.
+# El paso de www → designia360.com y de http → https se configura en el panel de
+# Cloudflare (Reglas → Redirect Rules), no aquí: ver SEO.md.
 
-# El index explícito redirige a la raíz
-/index.html                     /                                 301!
+/index.html   /   301

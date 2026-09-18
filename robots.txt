@@ -1,6 +1,46 @@
 # https://designia360.com
+# Sitio abierto a buscadores clásicos y a los rastreadores de asistentes de IA:
+# que el negocio aparezca también cuando alguien pregunta a ChatGPT, Gemini,
+# Perplexity o Copilot. Resumen para modelos en /llms.txt
 
 User-agent: *
+Allow: /
+Disallow: /_backup-original/
+
+# Buscadores
+User-agent: Googlebot
+Allow: /
+User-agent: Bingbot
+Allow: /
+
+# Asistentes de IA y sus rastreadores de búsqueda
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+User-agent: Amazonbot
+Allow: /
+User-agent: meta-externalagent
+Allow: /
+User-agent: DuckAssistBot
+Allow: /
+User-agent: CCBot
 Allow: /
 
 Sitemap: https://designia360.com/sitemap.xml
