@@ -49,7 +49,7 @@
 <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/poppins-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="logo-designia-blanco.png" fetchpriority="high">
-<link rel="preload" as="image" href="designio/designio-frontal.webp" type="image/webp" media="(min-width:1000px)">
+<link rel="preload" as="image" href="designio/frontal.webp" type="image/webp" media="(min-width:1000px)">
 
 <style>
 /* ==========================================================================
@@ -372,8 +372,6 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
 .hero-vis{position:relative;opacity:0;animation:sube .9s .5s var(--ease) forwards}
 .vis-stage{position:relative;height:580px;max-width:540px;margin-inline:auto}
 .designio{display:block;width:auto;filter:drop-shadow(0 26px 34px rgba(0,0,0,.42))}
-.designio-hero{position:absolute;left:50%;bottom:0;height:520px;transform:translateX(-46%);
-  animation:respira 6s ease-in-out infinite}
 @keyframes respira{0%,100%{transform:translateX(-46%) translateY(0)}50%{transform:translateX(-46%) translateY(-9px)}}
 .vcard{position:absolute;width:250px;padding:15px 17px;border-radius:18px;
   background:rgba(23,15,53,.86);border:1px solid var(--hilo);box-shadow:0 24px 50px rgba(0,0,0,.45);
@@ -415,7 +413,6 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
   .hero-grid{grid-template-columns:1fr}
   .hero-vis{margin-top:40px}
   .vis-stage{height:440px;max-width:420px}
-  .designio-hero{height:380px}
   .vcard{width:210px;padding:12px 14px}
   .vcard-chat{left:-2%;top:0}
   .vcard-metric{right:-2%;top:18%;width:190px}
@@ -424,8 +421,6 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
 }
 @media(max-width:480px){
   .vis-stage{height:400px}
-  .designio-hero{height:340px;transform:translateX(-40%)}
-  @keyframes respira{0%,100%{transform:translateX(-40%) translateY(0)}50%{transform:translateX(-40%) translateY(-9px)}}
   .vcard-chat{left:-4%;width:180px}
   .vcard-metric{right:-6%;width:160px}
 }
@@ -517,20 +512,43 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
 .ia-sim{position:absolute;right:16px;top:14px;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(232,225,253,.45)}
 
 /* ==========================================================================
-   DESIGNIO en otras secciones + frase de entidad
+   DESIGNIO — poses reales. El contenedor .dz hace la entrada (con data-reveal);
+   la imagen interior flota. Fuera de la portada solo aparece en pantallas anchas.
    ========================================================================== */
-.dx-mascota{display:none}
-@media(min-width:1000px){
-  .dx-res{grid-template-columns:auto 1fr 150px}
-  .dx-mascota{display:block;align-self:end;justify-self:center}
-  .dx-mascota img{height:300px;width:auto;filter:drop-shadow(0 20px 26px rgba(0,0,0,.4))}
-}
-.designio-contacto{display:none}
-@media(min-width:900px){
-  .designio-contacto{display:block;height:300px;width:auto;margin:34px auto 0;
-    filter:drop-shadow(0 20px 26px rgba(0,0,0,.45));animation:respira2 6s ease-in-out infinite}
-}
-@keyframes respira2{50%{transform:translateY(-8px)}}
+.dz{display:none;position:relative;pointer-events:none;transition:opacity .9s var(--ease) var(--d,0s),transform .9s var(--ease-expo) var(--d,0s)}
+.dz img{width:auto;filter:drop-shadow(0 22px 28px rgba(0,0,0,.42))}
+.dz-flota{animation:dzFlota 6s ease-in-out infinite}
+@keyframes dzFlota{50%{transform:translateY(-9px)}}
+.dz-pop[data-reveal]{transform:scale(.72) translateY(40px)}
+.dz-up[data-reveal]{transform:translateY(60px)}
+.dz-left[data-reveal]{transform:translateX(-50px)}
+.dz-right[data-reveal]{transform:translateX(50px)}
+.dz-peek[data-reveal]{transform:translate(12%,70%)}
+.dz.is-in{opacity:1;transform:none}
+.dz-cab{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:end}
+.dz-cab .dz img{height:clamp(220px,24vw,300px)}
+.dz-chat{position:absolute;right:-6px;bottom:-14px}
+.dz-chat img{height:230px}
+.bn-chat .vbubbles{max-width:70%}
+.ia-demo{position:relative}
+.dz-peek{position:absolute;right:0;bottom:-34px;z-index:2}
+#ia{overflow-x:clip}
+.dz-peek img{height:210px;filter:drop-shadow(0 16px 22px rgba(0,0,0,.4))}
+.dz-contacto{margin-top:30px}
+.dz-contacto img{height:320px}
+@media(min-width:900px){.dz{display:block}}
+/* Portada: la bombilla late y el personaje se inclina siguiendo el cursor */
+.dz-hero{position:absolute;left:50%;bottom:0;transform:translateX(-46%);animation:respira 6s ease-in-out infinite}
+.designio-hero{position:static;height:520px;transform:rotate(calc(var(--tx,0) * 3deg)) translateY(calc(var(--ty,0) * -6px));
+  transition:transform .6s var(--ease);animation:none;transform-origin:50% 90%}
+.bulb-glow{position:absolute;left:30.2%;top:42.8%;width:120px;height:120px;transform:translate(-50%,-50%);border-radius:50%;
+  background:radial-gradient(circle,rgba(180,140,255,.55),rgba(139,106,247,.18) 45%,transparent 70%);
+  filter:blur(10px);animation:brilla 3.2s ease-in-out infinite;pointer-events:none}
+@keyframes brilla{50%{opacity:.35;transform:translate(-50%,-50%) scale(.82)}}
+@media(max-width:1000px){.dz-hero{transform:translateX(-46%)}.designio-hero{height:380px}}
+@media(max-width:480px){.dz-hero{transform:translateX(-40%)}.designio-hero{height:340px}
+  @keyframes respira{0%,100%{transform:translateX(-40%) translateY(0)}50%{transform:translateX(-40%) translateY(-9px)}}}
+
 .en-frase{margin-top:40px;padding:22px 26px;border-radius:var(--r);background:rgba(232,225,253,.05);border:1px solid var(--hilo);
   font-size:1rem;line-height:1.7;color:rgba(232,225,253,.82)}
 .en-frase b{color:var(--turq);font-weight:700}
@@ -978,7 +996,8 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
   .steps .linea{transform:scaleX(1)!important}
   .track{animation:none!important}
   .cursor-dot,.cursor-ring{display:none!important}
-  .vcard,.designio-hero,.designio-contacto{animation:none!important}
+  .vcard,.dz-hero,.dz-flota,.bulb-glow{animation:none!important}
+  .dz{opacity:1!important;transform:none!important}
   .hero-vis{opacity:1!important}
 }
 </style>
@@ -1089,11 +1108,14 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
          de lo que el sistema hace por un cliente: atender, medir, ordenar leads. -->
     <div class="hero-vis">
       <div class="vis-stage">
-        <picture>
-          <source media="(max-width:999px)" srcset="designio/designio-frontal-sm.webp" type="image/webp">
-          <img class="designio designio-hero" src="designio/designio-frontal.webp" width="315" height="630" decoding="async"
-               alt="Designio, la mascota de Designia: un personaje de arcilla violeta con suéter blanco que sostiene una bombilla con un imán dentro">
-        </picture>
+        <div class="dz-hero" id="dzHero">
+          <span class="bulb-glow" aria-hidden="true"></span>
+          <picture>
+            <source media="(max-width:999px)" srcset="designio/frontal-sm.webp" type="image/webp">
+            <img class="designio designio-hero" src="designio/frontal.webp" width="359" height="720" decoding="async"
+                 alt="Designio, la mascota de Designia: un personaje de arcilla violeta con suéter blanco que sostiene una bombilla encendida con un imán dentro">
+          </picture>
+        </div>
         <div class="vcard vcard-chat" aria-hidden="true">
           <div class="vhead"><i class="vdot"></i><span>Asistente Designia · WhatsApp</span><em>12 s</em></div>
           <div class="vbubbles" id="visBubbles">
@@ -1181,9 +1203,14 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
 <!-- ========================= PROBLEMA ========================= -->
 <section class="section w-luz" id="problema" data-num="01">
   <div class="inner">
-    <span class="kicker">Diagnóstico</span>
-    <h2 class="display"><span class="mask"><span>¿Te suena familiar?</span></span></h2>
-    <p class="sec-lead">Cuatro señales que vemos una y otra vez en negocios que ya tienen clientes, pero todavía no tienen presencia.</p>
+    <div class="dz-cab">
+      <div>
+        <span class="kicker">Diagnóstico</span>
+        <h2 class="display"><span class="mask"><span>¿Te suena familiar?</span></span></h2>
+        <p class="sec-lead">Cuatro señales que vemos una y otra vez en negocios que ya tienen clientes, pero todavía no tienen presencia.</p>
+      </div>
+      <div class="dz dz-pop" data-reveal aria-hidden="true"><img class="designio dz-flota" src="designio/saludando.webp" alt="" width="441" height="720" loading="lazy" decoding="async"></div>
+    </div>
     <div class="postales" data-stagger>
       <article class="card" data-reveal="scale">
         <div class="ico-tile"><svg class="ic" aria-hidden="true"><use href="#ic-cal"/></svg></div>
@@ -1218,9 +1245,14 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
 <!-- ========================= DIAGNÓSTICO EXPRESS ========================= -->
 <section class="section w-turq" id="diagnostico" data-num="02">
   <div class="inner">
-    <span class="kicker">Diagnóstico express</span>
-    <h2 class="display"><span class="mask"><span>Averígualo en</span></span><span class="mask"><span>60 segundos</span></span></h2>
-    <p class="sec-lead">Seis preguntas sobre tu presencia digital. Al final ves tu puntaje y las tres cosas que hoy te están costando clientes.</p>
+    <div class="dz-cab">
+      <div>
+        <span class="kicker">Diagnóstico express</span>
+        <h2 class="display"><span class="mask"><span>Averígualo en</span></span><span class="mask"><span>60 segundos</span></span></h2>
+        <p class="sec-lead">Seis preguntas sobre tu presencia digital. Al final ves tu puntaje y las tres cosas que hoy te están costando clientes.</p>
+      </div>
+      <div class="dz dz-up" data-reveal aria-hidden="true"><img class="designio dz-flota" src="designio/laptop.webp" alt="" width="516" height="720" loading="lazy" decoding="async"></div>
+    </div>
 
     <div class="dx" id="dx" data-reveal>
       <!-- Estado 1: preguntas -->
@@ -1254,7 +1286,6 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
             <button class="btn btn-line" id="dxReset" type="button">Repetir</button>
           </div>
         </div>
-        <div class="dx-mascota" aria-hidden="true"><img src="designio/designio-34-sm.webp" alt="" width="174" height="360" loading="lazy" decoding="async"></div>
       </div>
     </div>
   </div>
@@ -1375,6 +1406,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
             <div class="vb vb-in">¿Atienden sábados? Necesito una limpieza dental</div>
             <div class="vb vb-out">Sí, de 9 a 13 h. Tengo 10:00 y 11:30 este sábado. ¿Te reservo uno?</div>
           </div>
+          <div class="dz dz-chat dz-right" data-reveal aria-hidden="true"><img class="designio dz-flota" src="designio/celular.webp" alt="" width="422" height="720" loading="lazy" decoding="async"></div>
         </div>
         <div class="bn-text">
           <p class="bn-eye">02 · Atención</p>
@@ -1444,6 +1476,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
         <div class="ia-ans" id="iaAns" data-texto="Según su sitio web y su ficha de Google, <b>Clínica Sonríe</b> atiende los sábados de 9:00 a 13:00, responde por WhatsApp en minutos y tiene 4,8 estrellas en 120 reseñas. Puedes reservar desde su web."></div>
         <div class="ia-src"><span>Fuentes:</span><em>clinicasonrie.pe</em><em>Google Business Profile</em><em>reseñas verificadas</em></div>
       </div>
+      <div class="dz dz-peek" data-reveal aria-hidden="true"><img class="designio" src="designio/asomandose.webp" alt="" width="611" height="720" loading="lazy" decoding="async"></div>
     </div>
   </div>
 </section>
@@ -1693,7 +1726,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
             <li><svg class="ic-s" aria-hidden="true"><use href="#ic-chat"/></svg>Una conversación de 20 minutos para revisarlo juntos.</li>
           </ul>
           <p class="garantia"><b>Sin costo y sin compromiso.</b> No pedimos accesos ni datos de pago para el diagnóstico. Si después decides trabajar con nosotros, la permanencia mínima es de 3 meses — el tiempo real que toma demostrar algo.</p>
-          <img class="designio designio-contacto" src="designio/designio-frontal-sm.webp" alt="Designio, la mascota de Designia" width="180" height="360" loading="lazy" decoding="async">
+          <div class="dz dz-left dz-contacto" data-reveal><img class="designio dz-flota" src="designio/senalando.webp" alt="Designio, la mascota de Designia, señalando el formulario" width="526" height="720" loading="lazy" decoding="async"></div>
         </div>
 
         <form class="form-reset" id="formContacto" data-reveal="right" novalidate>
@@ -1720,6 +1753,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
       <div class="gigante-wrap" aria-hidden="true"><p class="gigante" id="gigante">Te esperamos · Te esperamos ·</p></div>
       <p class="datos-contacto">
         <span>Lima, Perú</span>
+        <span>Lun–Vie · 9:00 a 18:00</span>
         <a href="mailto:contacto@designia360.com" data-ga="cta_click" data-ga-label="contacto_email">contacto@designia360.com</a>
         <a href="https://wa.me/51998399001" target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="contacto_whatsapp">+51 998 399 001</a>
       </p>
@@ -1772,6 +1806,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
   "priceRange":"S/ 690 - S/ 1990",
   "currenciesAccepted":"PEN",
   "paymentAccepted":"Transferencia bancaria, Yape, Plin",
+  "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"18:00"}],
   "address":{"@type":"PostalAddress","addressLocality":"Lima","addressRegion":"Lima","addressCountry":"PE"},
   "areaServed":[{"@type":"City","name":"Lima"},{"@type":"Country","name":"Perú"}],
   "contactPoint":[{
@@ -2453,6 +2488,12 @@ if(finePointer && !reduce){
       var r = heroEl.getBoundingClientRect();
       heroEl.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
       heroEl.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%');
+      // Designio se inclina un poco hacia donde está el cursor
+      var dz = $('#dzHero');
+      if(dz){
+        dz.style.setProperty('--tx', ((e.clientX - r.left) / r.width * 2 - 1).toFixed(3));
+        dz.style.setProperty('--ty', ((e.clientY - r.top) / r.height * 2 - 1).toFixed(3));
+      }
     }
   }, {passive:true});
 }

@@ -58,7 +58,7 @@ Que otros dominios enlacen a designia360.com es lo que más pesa después de la 
 Una sola página posiciona para pocos términos. Cuando toque competir por más búsquedas, el camino es un blog o páginas por servicio (`/asistente-whatsapp-ia`, `/publicidad-meta-ads-lima`, …). Cada nueva página debe sumarse al `sitemap.xml` y al `llms.txt`.
 
 ### 7. Horario de atención
-No está en los datos estructurados porque no me consta cuál es. Cuando lo definas se agrega `openingHoursSpecification`.
+Ya está: lunes a viernes de 9:00 a 18:00, en los datos estructurados (`openingHoursSpecification`), visible en la sección de contacto y en `llms.txt`. Si cambia, hay que actualizarlo en esos tres sitios y en la ficha de Google.
 
 ---
 
