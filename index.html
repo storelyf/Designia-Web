@@ -1363,8 +1363,8 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
         </div>
         <div class="bn-text">
           <p class="bn-eye">01 · Captación</p>
-          <h3>Cada consulta llega con origen y puntaje</h3>
-          <p>Sabes de qué anuncio o red vino cada persona y qué tan lista está para comprar. El anuncio que trae curiosos se pausa. <strong>Recibes:</strong> la lista ordenada por quién va a cerrar primero.</p>
+          <h3>Cada consulta llega con origen y etiqueta</h3>
+          <p>Cada consulta entra con su origen (qué anuncio o red la trajo) y una etiqueta según lo que respondió: caliente, tibia o solo curiosa. <strong>Recibes:</strong> una lista ordenada para responder primero a quien está listo para comprar.</p>
         </div>
       </article>
 
@@ -2446,9 +2446,9 @@ if(finePointer && !reduce){
     // El cursor se adapta a la superficie que tiene debajo, no a la sección:
     // dentro del turquesa hay una tarjeta oscura (.dx) y dentro del morado hay
     // un bloque turquesa (.kit). Gana el ancestro más cercano.
-    var sup = e.target.closest('.dx,.kit,.w-turq,.w-luz');
+    var sup = e.target.closest('.dx,.ia-card,.kit,.w-turq,.w-luz');
     document.body.classList.toggle('cursor-claro',
-      !!sup && !sup.classList.contains('dx'));
+      !!sup && !sup.classList.contains('dx') && !sup.classList.contains('ia-card'));
     if(heroEl && e.target.closest('.hero')){
       var r = heroEl.getBoundingClientRect();
       heroEl.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
