@@ -25,3 +25,5 @@
 # El HTML se revalida siempre, para que un cambio se vea al instante
 /
   Cache-Control: public, max-age=0, must-revalidate
+/auditoria
+  Cache-Control: public, max-age=0, must-revalidate

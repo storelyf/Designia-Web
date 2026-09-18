@@ -6,6 +6,7 @@
 User-agent: *
 Allow: /
 Disallow: /_backup-original/
+Disallow: /api/
 
 # Buscadores
 User-agent: Googlebot

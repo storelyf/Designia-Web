@@ -23,6 +23,7 @@ Lo que un modelo necesita para citar a Designia cuando alguien pregunta por una 
 - **Preguntas frecuentes con respuestas directas y autocontenidas** (las dos nuevas hablan de IA y de visibilidad en buscadores de IA).
 - **Datos verificables y consistentes** en todas partes: nombre, teléfono, correo, precios, marcas. La IA cruza fuentes; cualquier incoherencia resta.
 - Sección propia "Buscadores de IA" que explica el servicio con una respuesta simulada (etiquetada como simulación).
+- **Herramienta propia `/auditoria`** (página `auditoria.html` + función `functions/api/auditar.js` de Cloudflare Pages): lee en vivo la web que le indiquen y puntúa sobre 100 su preparación GEO. Es demostración del servicio, imán de leads (CTA a WhatsApp con el resultado) y página indexable con su propio JSON-LD (WebPage, WebApplication, FAQPage). La función solo corre en Cloudflare Pages; en local la página muestra el mensaje de "auditor no disponible" con salida a WhatsApp.
 
 ---
 
@@ -57,7 +58,10 @@ Que otros dominios enlacen a designia360.com es lo que más pesa después de la 
 ### 6. Contenido
 Una sola página posiciona para pocos términos. Cuando toque competir por más búsquedas, el camino es un blog o páginas por servicio (`/asistente-whatsapp-ia`, `/publicidad-meta-ads-lima`, …). Cada nueva página debe sumarse al `sitemap.xml` y al `llms.txt`.
 
-### 7. Horario de atención
+### 7. Comprobar la función de auditoría tras el primer deploy
+Abre `https://designia360.com/api/auditar?dominio=eqapla.com`: debe devolver un JSON con `puntaje`. Si da 404, el proyecto de Cloudflare no está leyendo la carpeta `functions/` (pasa si el deploy es Workers en vez de Pages, o si el "root directory" del proyecto no es la raíz del repo). En ese caso la página `/auditoria` sigue funcionando y ofrece pedir la auditoría por WhatsApp.
+
+### 8. Horario de atención
 Ya está: lunes a viernes de 9:00 a 18:00, en los datos estructurados (`openingHoursSpecification`), visible en la sección de contacto y en `llms.txt`. Si cambia, hay que actualizarlo en esos tres sitios y en la ficha de Google.
 
 ---

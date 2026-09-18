@@ -11,4 +11,10 @@
       <image:title>Designia — agencia de marketing digital y publicidad en Lima</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://designia360.com/auditoria</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

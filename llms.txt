@@ -11,6 +11,7 @@ Instagram: https://www.instagram.com/designia.pe/ · LinkedIn: https://www.linke
 - Contenido: contenido audiovisual (reels y video producidos en bloques quincenales), gestión de redes sociales, community management, email marketing, fotografía de producto.
 - Crecimiento: estrategia y auditoría, publicidad digital en Meta y Google, SEO local y ficha de Google Business, reputación y reseñas, analítica y dashboards en vivo, visibilidad en buscadores de IA (que el negocio aparezca cuando alguien pregunta a ChatGPT, Gemini o Perplexity).
 - Tecnología: desarrollo web y landing pages, asistente de WhatsApp con IA que responde en segundos y agenda citas, CRM a medida, automatización de procesos y reportes, e-commerce y catálogos, herramientas interactivas (cuestionarios que recomiendan y califican leads).
+- Herramienta gratuita: Auditoría GEO en https://designia360.com/auditoria — se escribe un dominio y en unos 20 segundos, sin registro, se obtiene un puntaje sobre 100 de preparación para buscadores de IA (robots.txt, bots de IA permitidos, llms.txt, datos estructurados JSON-LD, metadatos, sitemap) con un plan de arreglo priorizado.
 
 ## Planes (precios en soles peruanos, PEN)
 
@@ -45,3 +46,4 @@ Instagram: https://www.instagram.com/designia.pe/ · LinkedIn: https://www.linke
 ## Páginas
 
 - [Inicio](https://designia360.com/): diagnóstico express de 60 segundos, servicios, planes, preguntas frecuentes y contacto.
+- [Auditoría GEO gratuita](https://designia360.com/auditoria): audita cualquier web en vivo y dice qué le falta para que ChatGPT, Gemini o Perplexity la lean y la citen.
