@@ -292,7 +292,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
         <div class="ap-score">
           <div class="ap-aro">
             <svg viewBox="0 0 120 120" aria-hidden="true">
-              <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(232,225,253,.14)" stroke-width="10"/>
+              <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(232,225,253,.22)" stroke-width="10"/>
               <circle id="apArco" cx="60" cy="60" r="52" fill="none" stroke="#13CDD9" stroke-width="10" stroke-linecap="round" stroke-dasharray="327" stroke-dashoffset="327" transform="rotate(-90 60 60)"/>
             </svg>
             <div class="cif"><b id="apNum">0</b><span>de 100</span></div>
@@ -362,7 +362,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
   "isPartOf":{"@id":"https://designia360.com/#sitio"},
   "about":{"@id":"https://designia360.com/#agencia"},
   "inLanguage":"es-PE",
-  "dateModified":"2026-09-18",
+  "dateModified":"2026-09-19",
   "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[
     {"@type":"ListItem","position":1,"name":"Inicio","item":"https://designia360.com/"},
     {"@type":"ListItem","position":2,"name":"Auditoría GEO","item":"https://designia360.com/auditoria"}]}
@@ -550,7 +550,7 @@ function mostrar(j, filas){
     var msg = 'Hola Designia, auditè mi web ' + j.dominio + ' en designia360.com/auditoria y saqué ' + p + '/100. ' +
       (pend.length ? 'Lo que me falta: ' + pend.map(function(c){ return c.nombre; }).join(', ') + '. ' : '') + 'Quiero que me ayuden a arreglarlo.';
     $('#apCta').href = 'https://wa.me/51998399001?text=' + encodeURIComponent(msg.replace('auditè', 'audité'));
-    habla(p >= 85 ? 'Buen trabajo. Falta poco para que te citen.' : p >= 60 ? 'Vas bien: hay puntos fáciles de ganar.' : p >= 35 ? 'A medias. Tres arreglos y cambia.' : 'Hoy la IA casi no te ve. Se arregla.');
+    habla(p >= 85 ? '¡Así se hace! Te leen sin problema.' : p >= 60 ? 'Ya casi. Mira el plan de abajo.' : p >= 35 ? 'Tiene arreglo, y es rápido.' : 'Tranquilo: todo esto se construye.');
     ev('auditoria_completada', {value: p, score: p, dominio: j.dominio});
     corriendo = false; btn.disabled = false; btn.textContent = 'Auditar mi web gratis';
     if(matchMedia('(max-width:960px)').matches) $('#audPanel').scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block: 'start'});

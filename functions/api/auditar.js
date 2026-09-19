@@ -162,7 +162,10 @@ export async function onRequestGet(ctx) {
 
 /* ------------------------------------------------------------------ utilidades */
 
-function check(id, nombre, estado, peso, pts, detalle, arreglo) {
+// La etiqueta se deriva de los puntos, nunca se escribe a mano: así no puede
+// salir un "Atención" con 0 de 10, que es lo que confundía en el resultado.
+function check(id, nombre, _estado, peso, pts, detalle, arreglo) {
+  const estado = pts >= peso ? 'ok' : pts > 0 ? 'aviso' : 'falta';
   return { id, nombre, estado, peso, pts, detalle, arreglo };
 }
 
