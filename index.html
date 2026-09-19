@@ -585,7 +585,7 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
   opacity:0;transform:translateY(8px) scale(.94);transform-origin:100% 100%;
   transition:opacity .5s var(--ease) .6s,transform .5s var(--ease-expo) .6s}
 .dz-dice::after{content:"";position:absolute;right:-7px;bottom:5px;border:7px solid transparent;border-left-color:var(--blanco);border-bottom:0}
-.dz.is-in .dz-dice{opacity:1;transform:none}
+.dz.is-in .dz-dice,.dz-tras.is-in .dz-dice,.ia-demo.is-in .dz-dice{opacity:1;transform:none}
 .dz-right[data-reveal]{transform:translateX(50px)}
 .dz.is-in{opacity:1;transform:none}
 /* DETRÁS DEL CONTENIDO — la regla única. Designio no tiene cuadro propio: se
@@ -596,7 +596,8 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
 .dz-zona>.dz-tras{position:absolute;bottom:100%;right:var(--dz-x,42px);z-index:0;
   margin-bottom:var(--dz-hunde,-90px);display:none;pointer-events:none;
   transition:opacity .9s var(--ease),transform .9s var(--ease-expo)}
-.dz-tras[data-reveal]{opacity:0;transform:translateY(26px)}
+.dz-tras[data-reveal]{opacity:0;transform:translateY(26px);
+  transition:opacity .9s var(--ease),transform .9s var(--ease-expo)}
 .dz-tras.is-in{opacity:1;transform:none}
 .dz-tras img{display:block;width:auto;height:var(--dz-alto,265px);
   filter:drop-shadow(0 20px 26px rgba(23,15,53,.4))}
@@ -612,7 +613,7 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
 @media(min-width:960px){
   .dz-zona>.postales{margin-top:96px}
   .dz-zona>.dx{margin-top:96px}
-  .dz-zona>.garantia{margin-top:116px}
+  .dz-zona>.garantia{margin-top:190px}
 }
 /* Bento: el celular, de pie contra el borde inferior de su celda */
 .dz-chat{position:absolute;right:18px;bottom:0}
@@ -624,9 +625,10 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
    que el corte queda siempre por debajo del borde de la tarjeta. */
 #ia{overflow-x:clip}
 .ia-demo{position:relative}
-.dz-asoma{position:absolute;bottom:100%;right:clamp(28px,6vw,72px);z-index:0;
-  margin-bottom:-124px;display:none;pointer-events:none}
-.dz-asoma img{display:block;width:auto;height:290px;filter:drop-shadow(0 -4px 20px rgba(23,15,53,.34))}
+.dz-asoma{position:absolute;bottom:100%;right:0;z-index:0;margin-bottom:-38px;
+  display:none;pointer-events:none}
+.dz-asoma img{display:block;width:auto;height:300px;filter:none}
+.dz-asoma .dz-dice{top:14%}
 @media(min-width:960px){.dz-asoma{display:block}}
 @media(min-width:900px){.dz{display:block}}
 /* Portada: contenedor fijo a la derecha; las poses se funden una con otra y el
@@ -1690,7 +1692,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
       </div>
     </div>
     <div class="ia-demo" data-reveal aria-hidden="true">
-      <span class="dz-asoma"><img class="designio" src="designio/asomandose.webp" alt="" width="611" height="720" loading="lazy" decoding="async"></span>
+      <span class="dz-asoma"><span class="dz-dice">Yo reviso qué dicen de ti.</span><img class="designio" src="designio/asomandose.webp" alt="" width="611" height="720" loading="lazy" decoding="async"></span>
       <div class="ia-card">
         <span class="ia-sim">Simulación</span>
         <div class="ia-head"><i></i>Asistente de IA · con búsqueda web</div>
