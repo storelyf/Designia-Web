@@ -572,7 +572,6 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
 .dz-up[data-reveal]{transform:translateY(60px)}
 .dz-left[data-reveal]{transform:translateX(-50px)}
 .dz-right[data-reveal]{transform:translateX(50px)}
-.dz-peek[data-reveal]{transform:translate(-30%,45%)}
 .dz.is-in{opacity:1;transform:none}
 /* Cabeceras: el personaje está de pie sobre la línea que cierra la cabecera */
 .dz-cab{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:end;border-bottom:1px solid var(--hilo-claro)}
@@ -584,15 +583,16 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
 .dz-chat{position:absolute;right:16px;bottom:0}
 .dz-chat img{height:236px}
 .bn-chat .vbubbles{max-width:62%}
-/* Tarjeta de IA: se asoma por DETRÁS del borde derecho, sin tapar la respuesta */
-.ia-demo{position:relative}
-.ia-card{z-index:1}
-.dz-peek{position:absolute;right:0;bottom:-22px;z-index:0}
-.dz-peek::after{display:none}
-.dz-peek img{height:236px;filter:drop-shadow(0 16px 22px rgba(0,0,0,.4))}
-#ia{overflow-x:clip}
-@media(min-width:1100px){.ia-demo{padding-right:118px}}
-@media(max-width:1099px){.dz-peek{display:none}}
+/* Buscadores de IA: de pie al final de la columna de texto, señalando la tarjeta */
+.dz-piso-ia{border-bottom-color:var(--hilo-claro);margin:34px 0 0;padding-right:0}
+.dz-ia img{height:250px}
+.dz-ia .dz-dice{top:6%}
+/* Pie de página: la pose "asomándose" tiene bordes rectos, así que va en una esquina real,
+   recortada por el borde inferior de la página */
+footer{position:relative;overflow:hidden}
+.dz-pie{position:absolute;right:0;bottom:-6px;pointer-events:none;display:none}
+.dz-pie img{height:190px;width:auto;filter:drop-shadow(0 12px 18px rgba(0,0,0,.4))}
+@media(min-width:1100px){.dz-pie{display:block}}
 /* Contacto: de pie sobre una línea, al borde de su columna, señalando el formulario */
 .dz-piso{display:none;justify-content:flex-end;padding-right:10px;margin:30px 0 28px;border-bottom:1px solid var(--hilo)}
 .dz-contacto{margin-bottom:-1px}
@@ -617,6 +617,34 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
 @keyframes brilla{50%{opacity:.35;transform:translate(-50%,-50%) scale(.82)}}
 @media(max-width:1000px){.dz-hero{width:260px;height:380px}}
 @media(max-width:480px){.dz-hero{width:180px;height:300px}.pose[data-pose="celular"]{height:88%}.pose[data-pose="laptop"]{height:74%}}
+
+
+.en-frase{margin-top:40px;padding:22px 26px;border-radius:var(--r);background:rgba(232,225,253,.05);border:1px solid var(--hilo);
+  font-size:1rem;line-height:1.7;color:rgba(232,225,253,.82)}
+.en-frase b{color:var(--turq);font-weight:700}
+.w-luz .en-frase{background:#fff;border-color:var(--hilo-claro);color:var(--texto)}
+.w-luz .en-frase b{color:var(--turq-600)}
+
+/* Franja de dos pisos: las cifras dan escala, los compromisos dan confianza */
+.franja{background:var(--tinta);padding:clamp(46px,5vw,68px) 24px}
+.franja>*{max-width:1240px;margin-inline:auto}
+.franja-cifras{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;
+  padding-bottom:clamp(36px,4vw,50px);border-bottom:1px solid var(--hilo)}
+.cifra strong{display:block;font-family:'Poppins',sans-serif;font-weight:800;letter-spacing:-.055em;
+  font-size:clamp(2.5rem,1.9rem + 2.4vw,3.9rem);color:var(--turq);line-height:.95}
+.cifra span{display:block;margin-top:10px;font-size:.85rem;line-height:1.4;
+  color:rgba(232,225,253,.62);font-weight:500;max-width:15ch}
+.promesas{padding-top:clamp(36px,4vw,50px);display:grid;
+  grid-template-columns:repeat(3,1fr);gap:clamp(26px,3vw,44px)}
+.promesa{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start}
+.promesa .ic{width:32px;height:32px;margin-top:2px}
+.promesa strong{display:block;font-family:'Poppins',sans-serif;font-weight:700;
+  font-size:1.04rem;letter-spacing:-.025em;color:var(--blanco);line-height:1.25;margin-bottom:8px}
+.promesa span{display:block;font-size:.91rem;line-height:1.62;color:rgba(232,225,253,.66)}
+@media(max-width:900px){
+  .franja-cifras{grid-template-columns:repeat(2,1fr);gap:32px 26px}
+  .promesas{grid-template-columns:1fr;gap:28px}
+}
 
 /* ==========================================================================
    12. CINTAS — la banda turquesa manda, el rótulo gigante ya no se pierde
@@ -1130,7 +1158,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
     <a href="#proceso" style="--n:4">Proceso</a>
     <a href="#filosofia" style="--n:5">Nosotros</a>
     <a href="#planes" style="--n:6">Planes</a>
-    <a href="auditoria" style="--n:7">Auditoría GEO</a>
+    <a href="auditoria.html" style="--n:7">Auditoría GEO</a>
     <a href="#contacto" style="--n:8">Contacto</a>
   </nav>
   <div class="nav-cta">
@@ -1194,7 +1222,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
             <span class="mask"><span>cuando le preguntan a <span class="grad">ChatGPT</span>?</span></span>
           </p>
           <p class="lead">Cada vez más clientes le preguntan a un asistente de IA en lugar de buscar en Google. Audita tu web en 20 segundos y mira qué le falta para que la IA <strong>te recomiende a ti</strong>.</p>
-          <form class="hero-audit" id="heroAudit" action="auditoria" method="get">
+          <form class="hero-audit" id="heroAudit" action="auditoria.html" method="get">
             <label class="sr-only" for="heroDominio">Dominio de tu web</label>
             <input type="text" id="heroDominio" name="dominio" placeholder="tunegocio.pe" autocomplete="url" inputmode="url" spellcheck="false" autocapitalize="off">
             <button class="btn btn-primary" type="submit" data-ga="cta_click" data-ga-label="hero_auditoria">Auditar mi web gratis</button>
@@ -1602,8 +1630,11 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
       <div class="cta-row">
         <a class="btn btn-primary magnetico" href="https://wa.me/51998399001?text=Hola%20Designia%2C%20quiero%20que%20mi%20negocio%20aparezca%20en%20ChatGPT%20y%20otros%20buscadores%20de%20IA"
            target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="ia_geo">Quiero aparecer en ChatGPT</a>
-        <a class="btn btn-line" href="auditoria" data-ga="cta_click" data-ga-label="ia_auditoria">Auditar mi web gratis</a>
+        <a class="btn btn-line" href="auditoria.html" data-ga="cta_click" data-ga-label="ia_auditoria">Auditar mi web gratis</a>
         <span class="cta-nota"><svg class="ic-s" aria-hidden="true"><use href="#ic-check"/></svg>Incluido en los planes con SEO local</span>
+      </div>
+      <div class="dz-piso dz-piso-ia">
+        <div class="dz dz-up dz-ia" data-reveal aria-hidden="true"><span class="dz-dice">Así te encuentran cuando preguntan.</span><img class="designio dz-flota" src="designio/senalando.webp" alt="" width="526" height="720" loading="lazy" decoding="async"></div>
       </div>
     </div>
     <div class="ia-demo" data-reveal aria-hidden="true">
@@ -1614,7 +1645,6 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
         <div class="ia-ans" id="iaAns" data-texto="Según su sitio web y su ficha de Google, <b>Clínica Sonríe</b> atiende los sábados de 9:00 a 13:00, responde por WhatsApp en minutos y tiene 4,8 estrellas en 120 reseñas. Puedes reservar desde su web.">Según su sitio web y su ficha de Google, <b>Clínica Sonríe</b> atiende los sábados de 9:00 a 13:00, responde por WhatsApp en minutos y tiene 4,8 estrellas en 120 reseñas. Puedes reservar desde su web.</div>
         <div class="ia-src"><span>Fuentes:</span><em>clinicasonrie.pe</em><em>Google Business Profile</em><em>reseñas verificadas</em></div>
       </div>
-      <div class="dz dz-peek" data-reveal aria-hidden="true"><img class="designio" src="designio/asomandose.webp" alt="" width="611" height="720" loading="lazy" decoding="async"></div>
     </div>
   </div>
 </section>
@@ -1928,13 +1958,14 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
 </div>
 
 <footer>
+  <span class="dz-pie" aria-hidden="true"><img src="designio/asomandose.webp" alt="" width="611" height="720" loading="lazy" decoding="async"></span>
   <img src="logo-designia-blanco.png" alt="Designia" class="logo-foot" width="478" height="160" loading="lazy" decoding="async">
   <div class="f-social">
     <a class="pill" href="https://www.instagram.com/designia.pe/" target="_blank" rel="noopener"><span class="dot"></span>Instagram</a>
     <a class="pill" href="https://www.linkedin.com/company/designia-pe/" target="_blank" rel="noopener"><span class="dot"></span>LinkedIn</a>
     <a class="pill" href="https://wa.me/51998399001" target="_blank" rel="noopener"><span class="dot"></span>WhatsApp</a>
   </div>
-  <p class="f-links"><a href="auditoria">Auditoría GEO gratuita</a> · <a href="#diagnostico">Diagnóstico express</a> · <a href="#planes">Planes</a></p>
+  <p class="f-links"><a href="auditoria.html">Auditoría GEO gratuita</a> · <a href="#diagnostico">Diagnóstico express</a> · <a href="#planes">Planes</a></p>
   <p><strong>Designia</strong> · Agencia de marketing e inteligencia artificial · Lima, Perú</p>
   <p class="legal">© <span id="anio"></span> Designia. Todos los derechos reservados.</p>
 </footer>

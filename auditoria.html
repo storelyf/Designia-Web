@@ -236,13 +236,13 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
 <a class="skip" href="#auditoria">Saltar al contenido</a>
 
 <header class="topbar">
-  <a href="./" aria-label="Designia, ir al inicio"><img src="logo-designia-blanco.png" alt="Designia" class="logo-top" width="478" height="160"></a>
+  <a href="index.html" aria-label="Designia, ir al inicio"><img src="logo-designia-blanco.png" alt="Designia" class="logo-top" width="478" height="160"></a>
   <nav aria-label="Navegación principal">
-    <a href="./">Inicio</a>
-    <a href="./#diagnostico">Diagnóstico</a>
-    <a href="./#servicios">Servicios</a>
-    <a href="./#planes">Planes</a>
-    <a href="./#contacto">Contacto</a>
+    <a href="index.html">Inicio</a>
+    <a href="index.html#diagnostico">Diagnóstico</a>
+    <a href="index.html#servicios">Servicios</a>
+    <a href="index.html#planes">Planes</a>
+    <a href="index.html#contacto">Contacto</a>
   </nav>
   <a class="btn btn-primary btn-sm" href="https://wa.me/51998399001?text=Hola%20Designia%2C%20vengo%20de%20la%20auditor%C3%ADa%20GEO%20de%20la%20web" target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="auditoria_header_whatsapp">Hablemos</a>
 </header>
@@ -322,7 +322,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
     </div>
     <div class="cta-row">
       <a class="btn btn-primary" href="https://wa.me/51998399001?text=Hola%20Designia%2C%20quiero%20que%20mi%20negocio%20aparezca%20cuando%20le%20preguntan%20a%20ChatGPT" target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="auditoria_geo_cta">Quiero aparecer en ChatGPT</a>
-      <a class="btn btn-line" href="./#planes">Ver planes y precios</a>
+      <a class="btn btn-line" href="index.html#planes">Ver planes y precios</a>
       <span class="nota-luz">Incluido en los planes que llevan SEO local.</span>
     </div>
   </div>
@@ -344,7 +344,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
 
 <footer>
   <img src="logo-designia-blanco.png" alt="Designia" class="logo-foot" width="478" height="160" loading="lazy" decoding="async">
-  <p><a href="./">Inicio</a> · <a href="./#diagnostico">Diagnóstico express</a> · <a href="./#planes">Planes</a> · <a href="./#contacto">Contacto</a></p>
+  <p><a href="index.html">Inicio</a> · <a href="index.html#diagnostico">Diagnóstico express</a> · <a href="index.html#planes">Planes</a> · <a href="index.html#contacto">Contacto</a></p>
   <p><strong>Designia</strong> · Agencia de marketing e inteligencia artificial · Lima, Perú · <a href="mailto:contacto@designia360.com">contacto@designia360.com</a></p>
   <p class="legal">© <span id="anio"></span> Designia. Todos los derechos reservados.</p>
 </footer>
@@ -423,6 +423,8 @@ var estado = $('#apEstado'), lista = $('#apLista'), vacio = $('#apVacio'), err =
 var ETIQ = {ok:'Bien', aviso:'Atención', falta:'Falta'};
 var NOMBRES = ['robots.txt','Bots de IA permitidos','llms.txt (ficha para los modelos)','Datos estructurados (JSON-LD)','Title, description, OG y canonical','sitemap.xml','Sitemap declarado en robots.txt'];
 var corriendo = false, temporizadores = [];
+// Abierto como archivo o en un servidor estático no hay función de Cloudflare: se avisa en vez de fingir un fallo.
+var enLocal = location.protocol === 'file:' || /^(localhost|127\.|0\.0\.0\.0|\[::1\])/.test(location.hostname);
 
 function habla(t){
   if(!dice) return;
@@ -479,6 +481,7 @@ function auditar(dom, origen){
       var msg;
       if(x.status === 400) msg = '<b>Ese dominio no parece válido.</b> Escríbelo como <code>tunegocio.pe</code>, sin rutas ni espacios.';
       else if(x.status === 502) msg = '<b>No pudimos leer ' + dom + '.</b> No responde, no existe o bloquea lecturas automáticas. Revisa que esté bien escrito.';
+      else if(enLocal) msg = '<b>Estás viendo una copia local.</b> El auditor corre en el servidor de Cloudflare, así que aquí no responde. Pruébalo publicado en <a href="https://designia360.com/auditoria" target="_blank" rel="noopener">designia360.com/auditoria</a>.';
       else msg = '<b>El auditor automático no está disponible en este momento.</b> Escríbenos con tu dominio y te mandamos la auditoría hecha a mano, sin costo.';
       fallar(msg, dom);
     })
@@ -492,7 +495,7 @@ function fallar(msg, dom){
   err.innerHTML = msg + '<br><a class="btn btn-primary btn-sm" target="_blank" rel="noopener" href="https://wa.me/51998399001?text=' +
     encodeURIComponent('Hola Designia, quise auditar ' + dom + ' en la web y no salió. ¿Me la hacen ustedes?') + '">Pedirla por WhatsApp</a>';
   err.hidden = false;
-  habla('No pude leer esa web. ¿Está bien escrita?');
+  habla(enLocal ? 'Aquí en local no puedo auditar. Publicada sí.' : 'No pude leer esa web. ¿Está bien escrita?');
   corriendo = false; btn.disabled = false; btn.textContent = 'Auditar mi web gratis';
 }
 
