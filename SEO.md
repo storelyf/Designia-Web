@@ -10,18 +10,18 @@ Actualizado: 2026-09-18 · Dominio: **designia360.com** · Alojamiento: GitHub �
 - `<title>` y `meta description` alineados al posicionamiento actual: *agencia de marketing e IA en Lima*.
 - `rel="canonical"`, `hreflang` es-PE / x-default, `lang="es-PE"`, `geo.region`.
 - Un solo `<h1>`, un `<h2>` por sección, HTML semántico, `alt` en todas las imágenes con `width`/`height` (sin saltos de maquetación).
-- Datos estructurados en `@graph`: **ProfessionalService** (contacto, zona, precios, catálogo de planes, lista de servicios —incluidos el asistente de WhatsApp con IA y la visibilidad en buscadores de IA—), **WebSite**, **WebPage** (con `dateModified` y `speakable`) y **FAQPage** con 7 preguntas, en sincronía exacta con el acordeón visible.
+- Datos estructurados en `@graph`: **ProfessionalService** (contacto, zona, catálogo de servicios, lista de servicios —incluidos el asistente de WhatsApp con IA y la visibilidad en buscadores de IA—), **WebSite**, **WebPage** (con `dateModified` y `speakable`) y **FAQPage** con 7 preguntas, en sincronía exacta con el acordeón visible.
 - Open Graph y Twitter Card con imagen propia 1200×630 (Designio + titular).
 - `sitemap.xml` con `lastmod`, `robots.txt` abierto, clave **IndexNow** en la raíz (Bing/Yandex/DuckDuckGo).
 - Velocidad: cero peticiones a terceros, fuentes auto-alojadas, Designio en WebP (≈27 KB), caché larga en `_headers`.
 
 ### Buscadores de IA — GEO (ChatGPT, Gemini, Perplexity, Copilot)
 Lo que un modelo necesita para citar a Designia cuando alguien pregunta por una agencia en Lima:
-- **`/llms.txt`**: resumen en texto plano de qué hace la agencia, servicios, planes con precios, proceso, marcas, contacto. Es el formato que los asistentes leen primero cuando existe.
+- **`/llms.txt`**: resumen en texto plano de qué hace la agencia, servicios, puntos de partida, proceso, marcas, contacto. Sin tarifas: Designia no publica precios, cada propuesta se arma por alcance. Es el formato que los asistentes leen primero cuando existe.
 - **`robots.txt`** con permiso explícito a los rastreadores de IA: GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-SearchBot, PerplexityBot, Google-Extended, Applebot-Extended, Amazonbot, meta-externalagent, DuckAssistBot, CCBot.
-- **Frase de entidad** visible en la sección "Nosotros" ("Designia en una frase: …"): una definición completa, citable, con ubicación, servicios y precios. Marcada como `speakable`.
+- **Frase de entidad** visible en la sección "Nosotros" ("Designia en una frase: …"): una definición completa, citable, con ubicación y servicios. Marcada como `speakable`.
 - **Preguntas frecuentes con respuestas directas y autocontenidas** (las dos nuevas hablan de IA y de visibilidad en buscadores de IA).
-- **Datos verificables y consistentes** en todas partes: nombre, teléfono, correo, precios, marcas. La IA cruza fuentes; cualquier incoherencia resta.
+- **Datos verificables y consistentes** en todas partes: nombre, teléfono, correo, horario, marcas. La IA cruza fuentes; cualquier incoherencia resta.
 - Sección propia "Buscadores de IA" que explica el servicio con una respuesta simulada (etiquetada como simulación).
 - **Herramienta propia `/auditoria`** (página `auditoria.html` + función `functions/api/auditar.js` de Cloudflare Pages): lee en vivo la web que le indiquen y puntúa sobre 100 su preparación GEO. Es demostración del servicio, imán de leads (CTA a WhatsApp con el resultado) y página indexable con su propio JSON-LD (WebPage, WebApplication, FAQPage). La función solo corre en Cloudflare Pages; en local la página muestra el mensaje de "auditor no disponible" con salida a WhatsApp.
 

@@ -1,6 +1,6 @@
 # Designia
 
-> Agencia de marketing e inteligencia artificial en Lima, Perú. Opera el marketing de negocios de servicio como un área interna: estrategia, contenido, publicidad, web, asistentes de WhatsApp con IA y automatización. Planes mensuales desde S/ 750 y un diagnóstico gratuito para empezar.
+> Agencia de marketing e inteligencia artificial en Lima, Perú. Opera el marketing de negocios de servicio como un área interna: estrategia, contenido, publicidad, web, asistentes de WhatsApp con IA y automatización. Trabaja con servicios mensuales y proyectos a medida: cada propuesta se arma según el alcance del negocio, con un diagnóstico gratuito para empezar. No publica tarifas cerradas.
 
 Sitio: https://designia360.com/ · Contacto: contacto@designia360.com · WhatsApp: +51 998 399 001
 Instagram: https://www.instagram.com/designia.pe/ · LinkedIn: https://www.linkedin.com/company/designia-pe/
@@ -13,12 +13,15 @@ Instagram: https://www.instagram.com/designia.pe/ · LinkedIn: https://www.linke
 - Tecnología: desarrollo web y landing pages, asistente de WhatsApp con IA que responde en segundos y agenda citas, CRM a medida, automatización de procesos y reportes, e-commerce y catálogos, herramientas interactivas (cuestionarios que recomiendan y califican leads).
 - Herramienta gratuita: Auditoría GEO en https://designia360.com/auditoria — se escribe un dominio y en unos 20 segundos, sin registro, se obtiene un puntaje sobre 100 de preparación para buscadores de IA (robots.txt, bots de IA permitidos, llms.txt, datos estructurados JSON-LD, metadatos, sitemap) con un plan de arreglo priorizado.
 
-## Planes (precios en soles peruanos, PEN)
+## Por dónde se empieza
 
-- Kit Arranque — S/ 690, pago único: diagnóstico digital completo, optimización de Instagram y Google Business Profile, kit de marca básico, 9 piezas iniciales y guía de uso.
-- Punto Base — S/ 750 al mes: diagnóstico inicial, identidad visual para redes, plantillas, calendario de contenidos, piezas gráficas mensuales.
-- Punto Activo — S/ 1 290 al mes: estrategia de contenido, gestión de redes, diseño y copywriting, contenido audiovisual, community management, respuesta automática en WhatsApp fuera de horario, reporte mensual con lectura. La inversión en pauta se paga aparte, directo a Meta o Google.
-- Punto Integral — S/ 1 990 al mes: concepto creativo y dirección, key visual de campaña, piezas y contenido audiovisual, redes sociales, email marketing, landing page, una herramienta interactiva para captar leads.
+Designia no publica tarifas. Cada propuesta se arma según el alcance, y llega por escrito 24 horas después del diagnóstico gratuito. Estos son los puntos de partida:
+
+- Kit Arranque — pago único, la puerta de entrada: diagnóstico digital completo, optimización de Instagram y Google Business Profile, kit de marca básico, 9 piezas iniciales y guía de uso.
+- Punto Base — servicio mensual: diagnóstico inicial, identidad visual para redes, plantillas, calendario de contenidos, piezas gráficas mensuales.
+- Punto Activo — servicio mensual: estrategia de contenido, gestión de redes, diseño y copywriting, contenido audiovisual, community management, respuesta automática en WhatsApp fuera de horario, reporte mensual con lectura. La inversión en pauta se paga aparte, directo a Meta o Google.
+- Punto Integral — por campaña: concepto creativo y dirección, key visual de campaña, piezas y contenido audiovisual, redes sociales, email marketing, landing page, una herramienta interactiva para captar leads.
+- A medida — por proyecto: desarrollo web y landing pages, asistente de WhatsApp con IA, CRM a medida, automatización de procesos, e-commerce y catálogos, herramientas interactivas.
 - Toma solo 3 cuentas nuevas por trimestre. Permanencia mínima: 3 meses.
 
 ## Cómo trabaja

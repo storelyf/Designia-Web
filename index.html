@@ -352,6 +352,8 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
 .rot-word{display:inline-block;color:var(--turq);
   transition:opacity .32s var(--ease),transform .32s var(--ease)}
 .rot-word.fade{opacity:0;transform:translateY(12px)}
+.rot-ia{font-style:normal;display:inline-block;min-width:5.4ch;transition:opacity .3s var(--ease),transform .3s var(--ease)}
+.rot-ia.fade{opacity:0;transform:translateY(10px)}
 .hero .lead{margin:18px 0 32px;max-width:580px;font-size:1.08rem;line-height:1.72;
   color:rgba(232,225,253,.7);opacity:0;animation:sube .8s .58s var(--ease) forwards}
 .hero .lead strong{color:var(--lavanda);font-weight:600}
@@ -376,11 +378,20 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
 .hslide{grid-area:1/1;visibility:hidden;opacity:0;transform:translateY(12px);
   transition:opacity .5s var(--ease),transform .55s var(--ease-expo),visibility .5s}
 .hslide.is-on{visibility:visible;opacity:1;transform:none}
-.hero-dots{display:flex;gap:6px;margin-top:10px}
-.hdot{width:32px;height:26px;display:grid;place-items:center;cursor:pointer;padding:0}
-.hdot i{display:block;width:8px;height:8px;border-radius:999px;background:rgba(232,225,253,.3);transition:width .35s var(--ease),background .3s}
-.hdot.is-on i{width:26px;background:var(--turq)}
-.hdot:hover i{background:var(--lavanda)}
+/* Los tres mensajes se navegan como pestañas con nombre: así se ve que hay más
+   de uno y que se pueden pulsar. La barra de abajo enseña cuánto falta. */
+.hero-tabs{display:flex;gap:8px;margin-top:22px;flex-wrap:wrap}
+.hdot{position:relative;padding:9px 16px 11px;border-radius:var(--r-full);cursor:pointer;
+  border:1px solid rgba(232,225,253,.22);background:rgba(232,225,253,.04);overflow:hidden;
+  font-size:.78rem;font-weight:600;color:rgba(232,225,253,.7);
+  transition:color .3s,border-color .3s,background .3s}
+.hdot:hover{color:var(--blanco);border-color:rgba(19,205,217,.5);background:rgba(19,205,217,.08)}
+.hdot.is-on{color:var(--tinta);background:var(--turq);border-color:var(--turq)}
+.hdot i{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--tinta);opacity:.35}
+.hdot.is-on i{animation:hdotAvanza var(--gira,6s) linear forwards}
+.hero-tabs.parado .hdot.is-on i{animation-play-state:paused}
+@keyframes hdotAvanza{to{width:100%}}
+@media(max-width:480px){.hdot{padding:8px 13px 10px;font-size:.73rem}}
 .hero-audit{display:flex;gap:10px;flex-wrap:wrap;max-width:560px;margin-top:4px;opacity:0;animation:sube .8s .7s var(--ease) forwards}
 .hero-audit input{flex:1 1 220px;min-height:56px;padding:0 22px;border-radius:var(--r-full);border:1px solid rgba(232,225,253,.28);
   background:rgba(232,225,253,.07);color:var(--blanco);font:inherit;font-size:1rem;transition:border-color .3s,background .3s}
@@ -957,7 +968,7 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
   border-radius:var(--r-full);background:rgba(139,106,247,.14);border:1px solid rgba(139,106,247,.4);
   color:var(--violeta);font-size:.87rem;font-weight:600}
 .cupos .ic-s{--t1:var(--violeta);--t2:var(--violeta)}
-.planes{display:grid;gap:1px;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));margin-top:60px;
+.planes{display:grid;gap:1px;grid-template-columns:repeat(auto-fit,minmax(252px,1fr));margin-top:52px;
   background:var(--hilo);border:1px solid var(--hilo);perspective:1400px}
 .plan{position:relative;background:var(--tinta);padding:48px 30px 34px;color:var(--lavanda);
   display:flex;flex-direction:column;transform-style:preserve-3d;will-change:transform;
@@ -969,9 +980,11 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
   letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
 .plan h3{font-size:1.5rem;font-weight:700;margin-bottom:10px;letter-spacing:-.03em;color:var(--blanco)}
 .plan .para{font-size:.89rem;color:rgba(232,225,253,.6);min-height:46px;line-height:1.6}
-.plan .price{font-family:'Poppins',sans-serif;font-size:2.6rem;font-weight:800;letter-spacing:-.05em;
-  color:var(--turq);margin:22px 0 2px;line-height:1}
-.plan .price small{font-size:.85rem;font-weight:600;letter-spacing:0;color:rgba(232,225,253,.55)}
+.plan .alcance{display:inline-flex;align-items:center;gap:8px;margin:20px 0 2px;padding:7px 14px;
+  border-radius:var(--r-full);border:1px solid rgba(19,205,217,.38);background:rgba(19,205,217,.1);
+  font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--turq)}
+.plan-medida .alcance{border-color:rgba(139,106,247,.45);background:rgba(139,106,247,.14);color:var(--violeta)}
+.plan-medida li::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.4l3 3L13 4.4' fill='none' stroke='%238b6af7' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
 .plan .nota{font-size:.75rem;color:rgba(232,225,253,.55);line-height:1.5;margin-top:6px}
 .plan ul{list-style:none;margin:24px 0 30px;display:grid;gap:12px;font-size:.91rem;
   color:rgba(232,225,253,.85)}
@@ -984,10 +997,10 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
 .kit{margin-top:60px;background:var(--turq);color:var(--tinta);padding:44px 40px;
   display:flex;gap:34px;align-items:center;flex-wrap:wrap;position:relative;overflow:hidden;
   border-radius:var(--r-lg)}
-.kit .precio{font-family:'Poppins',sans-serif;font-size:clamp(2.4rem,5vw,3.4rem);font-weight:800;
-  letter-spacing:-.05em;color:var(--tinta);white-space:nowrap;line-height:1}
-.kit .precio small{display:block;font-size:.72rem;font-weight:800;letter-spacing:.14em;
-  text-transform:uppercase;color:rgba(34,24,74,.8);margin-top:6px}
+.kit .marca-kit{font-family:'Poppins',sans-serif;font-size:clamp(1.5rem,3vw,2.1rem);font-weight:800;
+  letter-spacing:-.04em;color:var(--tinta);line-height:1.05;max-width:8ch}
+.kit .marca-kit small{display:block;font-size:.68rem;font-weight:800;letter-spacing:.14em;
+  text-transform:uppercase;color:rgba(34,24,74,.75);margin-top:8px}
 .kit h3{font-size:1.5rem;font-weight:800;margin-bottom:10px;letter-spacing:-.03em;color:var(--tinta)}
 .kit p{font-size:.96rem;color:rgba(34,24,74,.82);line-height:1.65}
 .kit .btn-primary{background:var(--tinta);color:var(--turq);box-shadow:none}
@@ -1229,7 +1242,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
           <div class="cta-row">
             <a class="btn btn-primary magnetico" href="https://wa.me/51998399001?text=Hola%20Designia%2C%20vengo%20de%20la%20web%20y%20quiero%20mi%20diagn%C3%B3stico%20gratis"
                target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="hero_diagnostico">Quiero mi diagnóstico gratis</a>
-            <a class="btn btn-ghost" href="#planes" data-ga="cta_click" data-ga-label="hero_planes">Ver planes y precios</a>
+            <a class="btn btn-ghost" href="#planes" data-ga="cta_click" data-ga-label="hero_planes">Ver cómo trabajamos</a>
             <span class="cta-nota"><svg class="ic-s on-dark" aria-hidden="true"><use href="#ic-clock"/></svg>Te respondemos el mismo día hábil</span>
           </div>
         </div>
@@ -1250,7 +1263,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
         <div class="hslide" data-pose="laptop">
           <p class="display h1-like">
             <span class="mask"><span>¿Aparece tu negocio</span></span>
-            <span class="mask"><span>cuando le preguntan a <span class="grad">ChatGPT</span>?</span></span>
+            <span class="mask"><span>cuando le preguntan a <em class="grad rot-ia" id="heroMotor">ChatGPT</em>?</span></span>
           </p>
           <p class="lead">Cada vez más clientes le preguntan a un asistente de IA en lugar de buscar en Google. Audita tu web en 20 segundos y mira qué le falta para que la IA <strong>te recomiende a ti</strong>.</p>
           <form class="hero-audit" id="heroAudit" action="auditoria.html" method="get">
@@ -1261,10 +1274,10 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
           <p class="hero-nota" id="heroNota">Sin registro. Puntaje sobre 100 en 20 segundos y qué arreglar primero.</p>
         </div>
       </div>
-      <div class="hero-dots" role="tablist" aria-label="Mensajes de portada">
-        <button class="hdot is-on" type="button" role="tab" aria-selected="true" aria-label="Marketing e IA"><i></i></button>
-        <button class="hdot" type="button" role="tab" aria-selected="false" aria-label="Asistente de WhatsApp"><i></i></button>
-        <button class="hdot" type="button" role="tab" aria-selected="false" aria-label="Buscadores de IA"><i></i></button>
+      <div class="hero-tabs" role="tablist" aria-label="Mensajes de portada">
+        <button class="hdot is-on" type="button" role="tab" aria-selected="true"><span>Marketing e IA</span><i></i></button>
+        <button class="hdot" type="button" role="tab" aria-selected="false"><span>Asistente 24/7</span><i></i></button>
+        <button class="hdot" type="button" role="tab" aria-selected="false"><span>Buscadores de IA</span><i></i></button>
       </div>
 
       <p class="social-lab">Escríbenos por</p>
@@ -1843,7 +1856,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
       <div class="adn-item" data-reveal="scale"><h4><svg class="ic-s" aria-hidden="true"><use href="#ic-chart"/></svg> Todo se mide</h4><p>Reportes mensuales con lectura estratégica, no solo capturas de estadísticas.</p></div>
       <div class="adn-item" data-reveal="scale"><h4><svg class="ic-s" aria-hidden="true"><use href="#ic-chat"/></svg> Cercanía real</h4><p>Hablas con quienes hacen el trabajo, no con un ejecutivo de cuentas que rota cada mes.</p></div>
     </div>
-    <p class="en-frase" data-reveal><b>Designia en una frase:</b> agencia de marketing e inteligencia artificial en Lima, Perú, que opera el marketing de negocios de servicio como un área interna — estrategia, contenido, publicidad, web, asistentes de WhatsApp con IA y automatización — con planes mensuales desde S/ 750, un Kit Arranque de pago único y un diagnóstico gratuito para empezar.</p>
+    <p class="en-frase" data-reveal><b>Designia en una frase:</b> agencia de marketing e inteligencia artificial en Lima, Perú, que opera el marketing de negocios de servicio como un área interna — estrategia, contenido, publicidad, web, asistentes de WhatsApp con IA y automatización — con servicios mensuales, proyectos a medida y un diagnóstico gratuito para empezar. Cada propuesta se arma según el alcance que necesita el negocio.</p>
     <div class="filo-mv" data-reveal>
       <div class="mv-tabs" role="tablist" aria-label="Misión y visión">
         <button class="mv-tab is-on" type="button" role="tab" aria-selected="true" aria-controls="mv-0">Misión</button>
@@ -1859,47 +1872,56 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
 <div class="planes-wrap w-deep" id="planes">
   <section class="section" data-num="09">
     <div class="inner">
-      <span class="kicker">Planes</span>
-      <h2 class="display"><span class="mask"><span>Elige tu punto</span></span><span class="mask"><span>de partida</span></span></h2>
+      <span class="kicker">Cómo empezamos</span>
+      <h2 class="display"><span class="mask"><span>Tu propuesta se arma</span></span><span class="mask"><span>para tu negocio</span></span></h2>
+      <p class="sec-lead">No vendemos paquetes cerrados. Eliges por dónde partir, lo ajustamos a lo que necesitas y te pasamos una propuesta con el alcance y la inversión por escrito, en 24 horas desde el diagnóstico.</p>
       <p class="cupos"><svg class="ic-s" aria-hidden="true"><use href="#ic-star"/></svg>Tomamos solo 3 cuentas nuevas por trimestre para no diluir el servicio.</p>
       <div class="planes" data-stagger>
         <div class="plan tilt" data-reveal>
           <h3>Punto Base</h3>
           <p class="para">Para marcas que necesitan ordenar y profesionalizar su presencia digital.</p>
-          <p class="price">S/ 750 <small>/mes</small></p>
+          <p class="alcance">Servicio mensual</p>
           <ul><li>Diagnóstico inicial</li><li>Identidad visual para redes</li><li>Plantillas de publicaciones</li><li>Calendario de contenidos</li><li>Piezas gráficas mensuales</li></ul>
           <a class="btn btn-ghost" href="https://wa.me/51998399001?text=Hola%20Designia%2C%20me%20interesa%20el%20plan%20Punto%20Base"
-             target="_blank" rel="noopener" data-ga="select_plan" data-ga-label="Punto Base" data-ga-price="750">Lo quiero</a>
+             target="_blank" rel="noopener" data-ga="select_plan" data-ga-label="Punto Base">Pedir propuesta</a>
         </div>
         <div class="plan destacado tilt" data-reveal>
           <span class="p-tag-plan">Recomendado</span>
           <h3>Punto Activo</h3>
           <p class="para">Para marcas que ya tienen presencia y necesitan comunicación constante.</p>
-          <p class="price">S/ 1,290 <small>/mes</small></p>
+          <p class="alcance">Servicio mensual</p>
           <p class="nota">La inversión en pauta se paga aparte, directo a Meta o Google.</p>
           <ul><li>Estrategia de contenido</li><li>Gestión de redes sociales</li><li>Diseño gráfico + copywriting</li><li>Contenido audiovisual</li><li>Community management</li><li>Respuesta automática en WhatsApp fuera de horario</li><li>Reporte mensual con lectura</li></ul>
           <a class="btn btn-primary" href="https://wa.me/51998399001?text=Hola%20Designia%2C%20me%20interesa%20el%20plan%20Punto%20Activo"
-             target="_blank" rel="noopener" data-ga="select_plan" data-ga-label="Punto Activo" data-ga-price="1290">Lo quiero</a>
+             target="_blank" rel="noopener" data-ga="select_plan" data-ga-label="Punto Activo">Pedir propuesta</a>
         </div>
         <div class="plan tilt" data-reveal>
           <h3>Punto Integral</h3>
           <p class="para">Para campañas que coordinan varios canales a la vez.</p>
-          <p class="price">S/ 1,990 <small>/mes</small></p>
+          <p class="alcance">Por campaña</p>
           <ul><li>Concepto creativo y dirección</li><li>Key visual de campaña</li><li>Piezas + contenido audiovisual</li><li>Redes sociales</li><li>Email marketing</li><li>Landing page</li><li>Una herramienta interactiva para captar leads</li></ul>
           <a class="btn btn-ghost" href="https://wa.me/51998399001?text=Hola%20Designia%2C%20me%20interesa%20el%20plan%20Punto%20Integral"
-             target="_blank" rel="noopener" data-ga="select_plan" data-ga-label="Punto Integral" data-ga-price="1990">Lo quiero</a>
+             target="_blank" rel="noopener" data-ga="select_plan" data-ga-label="Punto Integral">Pedir propuesta</a>
+        </div>
+        <div class="plan plan-medida tilt" data-reveal>
+          <h3>A medida</h3>
+          <p class="para">Para lo que no entra en un servicio mensual: proyectos con su propio alcance.</p>
+          <p class="alcance">Por proyecto</p>
+          <ul><li>Desarrollo web y landing pages</li><li>Asistente de WhatsApp con IA</li><li>CRM a medida</li><li>Automatización de procesos</li><li>E-commerce y catálogos</li><li>Herramientas interactivas</li></ul>
+          <a class="btn btn-ghost" href="https://wa.me/51998399001?text=Hola%20Designia%2C%20quiero%20cotizar%20un%20proyecto%20a%20medida"
+             target="_blank" rel="noopener" data-ga="select_plan" data-ga-label="A medida">Cotizar mi proyecto</a>
         </div>
       </div>
-      <p class="plan-pie" data-reveal>¿No sabes cuál te toca? <a href="https://wa.me/51998399001?text=Hola%20Designia%2C%20no%20s%C3%A9%20qu%C3%A9%20plan%20me%20conviene" target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="planes_ayuda">Cuéntanos tu caso</a> y te decimos cuál tiene sentido.</p>
+      <p class="plan-pie" data-reveal>¿No sabes por dónde empezar? <a href="https://wa.me/51998399001?text=Hola%20Designia%2C%20quiero%20que%20me%20ayuden%20a%20elegir%20por%20d%C3%B3nde%20empezar" target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="planes_ayuda">Cuéntanos tu caso</a> y te decimos qué tiene sentido para tu negocio.</p>
 
       <div class="kit" data-reveal>
-        <div class="precio">S/ 690 <small>Pago único</small></div>
+        <div class="marca-kit">Kit Arranque<small>Pago único</small></div>
         <div style="flex:1;min-width:250px">
-          <h3>Kit Arranque — la puerta de entrada</h3>
-          <p>Diagnóstico digital completo, optimización de tu Instagram y Google Business Profile, kit de marca básico (paleta, tipografías, 3 plantillas), 9 piezas iniciales y guía de uso. La forma más directa de ver cómo trabajamos antes de entrar a un plan mensual.</p>
+          <h3>La puerta de entrada</h3>
+          <p>Diagnóstico digital completo, optimización de tu Instagram y Google Business Profile, kit de marca básico (paleta, tipografías, 3 plantillas), 9 piezas iniciales y guía de uso. Pago único, la forma más directa de ver cómo trabajamos antes de entrar a un servicio mensual.</p>
         </div>
         <a class="btn btn-primary magnetico" href="https://wa.me/51998399001?text=Hola%20Designia%2C%20quiero%20el%20Kit%20Arranque"
-           target="_blank" rel="noopener" data-ga="select_plan" data-ga-label="Kit Arranque" data-ga-price="690">Empezar por aquí</a>
+           target="_blank" rel="noopener" data-ga="select_plan" data-ga-label="Kit Arranque">Empezar por aquí</a>
       </div>
     </div>
   </section>
@@ -2041,7 +2063,6 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
   "slogan":"Todo un equipo de marketing sin ampliar tu planilla",
   "telephone":"+51 998 399 001",
   "email":"contacto@designia360.com",
-  "priceRange":"S/ 690 - S/ 1990",
   "currenciesAccepted":"PEN",
   "paymentAccepted":"Transferencia bancaria, Yape, Plin",
   "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"18:00"}],
@@ -2054,11 +2075,12 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
   }],
   "sameAs":["https://www.instagram.com/designia.pe/","https://www.linkedin.com/company/designia-pe/"],
   "knowsAbout":["Marketing digital","Inteligencia artificial aplicada al marketing","Asistentes de WhatsApp con IA","Visibilidad en buscadores de IA (GEO)","Meta Ads","Google Ads","Branding","SEO local","Automatización de marketing","Desarrollo web","Community management"],
-  "hasOfferCatalog":{"@type":"OfferCatalog","name":"Planes Designia","itemListElement":[
-    {"@type":"Offer","name":"Kit Arranque","price":"690","priceCurrency":"PEN","url":"https://designia360.com/#planes"},
-    {"@type":"Offer","name":"Punto Base","price":"750","priceCurrency":"PEN","url":"https://designia360.com/#planes"},
-    {"@type":"Offer","name":"Punto Activo","price":"1290","priceCurrency":"PEN","url":"https://designia360.com/#planes"},
-    {"@type":"Offer","name":"Punto Integral","price":"1990","priceCurrency":"PEN","url":"https://designia360.com/#planes"}]},
+  "hasOfferCatalog":{"@type":"OfferCatalog","name":"Servicios Designia","itemListElement":[
+    {"@type":"Offer","name":"Kit Arranque","description":"Punto de entrada de pago único: diagnóstico, optimización de Instagram y ficha de Google, kit de marca básico y piezas iniciales.","url":"https://designia360.com/#planes"},
+    {"@type":"Offer","name":"Punto Base","description":"Servicio mensual para ordenar y profesionalizar la presencia digital.","url":"https://designia360.com/#planes"},
+    {"@type":"Offer","name":"Punto Activo","description":"Servicio mensual con estrategia, gestión de redes, contenido audiovisual y reporte.","url":"https://designia360.com/#planes"},
+    {"@type":"Offer","name":"Punto Integral","description":"Campañas que coordinan varios canales a la vez.","url":"https://designia360.com/#planes"},
+    {"@type":"Offer","name":"Proyectos a medida","description":"Desarrollo web, asistente de WhatsApp con IA, CRM, automatización, e-commerce y herramientas interactivas. Se cotizan por alcance.","url":"https://designia360.com/#planes"}]},
   "makesOffer":[
     {"@type":"Offer","itemOffered":{"@type":"Service","name":"Branding e identidad de marca","serviceType":"Branding"}},
     {"@type":"Offer","itemOffered":{"@type":"Service","name":"Gestión de redes sociales","serviceType":"Community management"}},
@@ -2110,7 +2132,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
 
      Eventos que ya quedan cableados:
        · cta_click      (todos los botones, con item_name = ubicación)
-       · select_plan    (planes y Kit Arranque, con value y currency PEN)
+       · select_plan    (servicios y Kit Arranque, por nombre)
        · generate_lead  (envío del formulario → conversión principal)
        · faq_open       (qué dudas frenan la compra)
        · scroll_depth   (25/50/75/90 %)
@@ -2314,12 +2336,21 @@ document.addEventListener('click', function(e){
 /* ------------------------------------------------------------------
    5b. DIAPOSITIVAS DE PORTADA
    Tres mensajes; cada uno enciende su escena y su pose de Designio.
-   Gira solo cada 7 s, se detiene al pasar el cursor o al elegir uno.
+   Se navegan con pestañas con nombre: la barra de cada una enseña cuánto
+   falta para el siguiente, y al pasar el cursor se detiene.
    ------------------------------------------------------------------ */
 (function(){
   var slides = $$('.hslide'), dots = $$('.hdot'), escenas = $$('.vscene'), poses = $$('#dzHero .pose');
   if(slides.length < 2) return;
-  var cur = 0, timer = null, manual = false, CADA = 7000;
+  var tabs = $('.hero-tabs');
+  var cur = 0, timer = null, manual = false, CADA = 6000;
+  if(tabs) tabs.style.setProperty('--gira', (CADA / 1000) + 's');
+
+  function barra(){                                // reinicia la barra de avance
+    var b = dots[cur].querySelector('i');
+    if(!b) return;
+    b.style.animation = 'none'; void b.offsetWidth; b.style.animation = '';
+  }
   function ir(i, user){
     if(i === cur) return;
     slides[cur].classList.remove('is-on');
@@ -2329,11 +2360,32 @@ document.addEventListener('click', function(e){
     escenas.forEach(function(e, k){ e.classList.toggle('is-on', k === cur); });
     var pose = slides[cur].dataset.pose;
     poses.forEach(function(p){ p.classList.toggle('is-on', p.dataset.pose === pose); });
+    barra();
+    motor(cur === 2);                              // el nombre del asistente solo rota en su mensaje
     try{ document.dispatchEvent(new CustomEvent('hero:slide', {detail: cur})); }catch(e){}
     if(user){ manual = true; parar(); ev('hero_slide', {index: cur + 1}); }
   }
-  function parar(){ clearInterval(timer); timer = null; }
-  function arrancar(){ if(reduce || manual || timer) return; timer = setInterval(function(){ ir((cur + 1) % slides.length); }, CADA); }
+  function parar(){ clearInterval(timer); timer = null; if(tabs) tabs.classList.add('parado'); }
+  function arrancar(){
+    if(reduce || manual || timer) return;
+    if(tabs) tabs.classList.remove('parado');
+    barra();
+    timer = setInterval(function(){ ir((cur + 1) % slides.length); }, CADA);
+  }
+
+  // El titular del tercer mensaje cambia de asistente, igual que la sección de GEO
+  var mot = $('#heroMotor'), motores = ['ChatGPT','Gemini','Perplexity','Copilot'], mi = 0, tMot = null;
+  function motor(encender){
+    clearInterval(tMot); tMot = null;
+    if(!mot || !encender || reduce) return;
+    tMot = setInterval(function(){
+      mot.classList.add('fade');
+      setTimeout(function(){
+        mi = (mi + 1) % motores.length; mot.textContent = motores[mi]; mot.classList.remove('fade');
+      }, 300);
+    }, 2100);
+  }
+
   dots.forEach(function(d, k){ d.addEventListener('click', function(){ ir(k, true); }); });
   var copy = $('#heroCopy');
   copy.addEventListener('pointerenter', parar);
