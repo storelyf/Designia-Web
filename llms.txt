@@ -10,7 +10,7 @@ Instagram: https://www.instagram.com/designia.pe/ · LinkedIn: https://www.linke
 - Marca: branding e identidad, diseño gráfico, copywriting y voz de marca, manual de marca, kit de marca para redes.
 - Contenido: contenido audiovisual (reels y video producidos en bloques quincenales), gestión de redes sociales, community management, email marketing, fotografía de producto.
 - Crecimiento: estrategia y auditoría, publicidad digital en Meta y Google, SEO local y ficha de Google Business, reputación y reseñas, analítica y dashboards en vivo, visibilidad en buscadores de IA (que el negocio aparezca cuando alguien pregunta a ChatGPT, Gemini o Perplexity).
-- Tecnología: desarrollo web y landing pages, asistente de WhatsApp con IA que responde en segundos y agenda citas, CRM a medida, automatización de procesos y reportes, e-commerce y catálogos, herramientas interactivas (cuestionarios que recomiendan y califican leads).
+- Tecnología: desarrollo web y landing pages, asistente de WhatsApp con IA que responde en segundos y agenda citas, automatización de procesos y reportes, e-commerce y catálogos, herramientas interactivas (cuestionarios que recomiendan y califican leads).
 - Herramienta gratuita: Auditoría GEO en https://designia360.com/auditoria — se escribe un dominio y en unos 20 segundos, sin registro, se obtiene un puntaje sobre 100 de preparación para buscadores de IA (robots.txt, bots de IA permitidos, llms.txt, datos estructurados JSON-LD, metadatos, sitemap) con un plan de arreglo priorizado.
 
 ## Por dónde se empieza
@@ -21,7 +21,7 @@ Designia no publica tarifas. Cada propuesta se arma según el alcance, y llega p
 - Punto Base — servicio mensual: diagnóstico inicial, identidad visual para redes, plantillas, calendario de contenidos, piezas gráficas mensuales.
 - Punto Activo — servicio mensual: estrategia de contenido, gestión de redes, diseño y copywriting, contenido audiovisual, community management, respuesta automática en WhatsApp fuera de horario, reporte mensual con lectura. La inversión en pauta se paga aparte, directo a Meta o Google.
 - Punto Integral — por campaña: concepto creativo y dirección, key visual de campaña, piezas y contenido audiovisual, redes sociales, email marketing, landing page, una herramienta interactiva para captar leads.
-- A medida — por proyecto: desarrollo web y landing pages, asistente de WhatsApp con IA, CRM a medida, automatización de procesos, e-commerce y catálogos, herramientas interactivas.
+- A medida — por proyecto: desarrollo web y landing pages, asistente de WhatsApp con IA, automatización de procesos, e-commerce y catálogos, herramientas interactivas. El CRM a medida se evalúa caso por caso, dentro de un proyecto con alcance propio.
 - Toma solo 3 cuentas nuevas por trimestre. Permanencia mínima: 3 meses.
 
 ## Cómo trabaja

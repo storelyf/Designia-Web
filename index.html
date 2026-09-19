@@ -855,6 +855,10 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
 .serv-card p{color:rgba(232,225,253,.58);font-size:.87rem;line-height:1.62;position:relative}
 .serv-nuevo{position:absolute;top:14px;right:14px;background:var(--turq);color:var(--tinta);
   font-size:.58rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;z-index:2}
+/* Capacidad que sí tenemos pero que todavía no se ofrece en abierto: se pide, no se compra */
+.serv-consulta{position:absolute;top:14px;right:14px;background:rgba(139,106,247,.18);color:var(--violeta);
+  border:1px solid rgba(139,106,247,.5);font-size:.58rem;font-weight:800;letter-spacing:.1em;
+  text-transform:uppercase;padding:2px 8px;z-index:2}
 .serv-cierre{margin-top:64px;padding-top:48px;border-top:1px solid var(--hilo)}
 .pruebas{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;margin-top:40px;
   background:var(--hilo);border:1px solid var(--hilo)}
@@ -986,6 +990,7 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
 .plan-medida .alcance{border-color:rgba(139,106,247,.45);background:rgba(139,106,247,.14);color:var(--violeta)}
 .plan-medida li::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.4l3 3L13 4.4' fill='none' stroke='%238b6af7' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
 .plan .nota{font-size:.75rem;color:rgba(232,225,253,.55);line-height:1.5;margin-top:6px}
+.plan .li-nota{font-style:normal;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--violeta);white-space:nowrap}
 .plan ul{list-style:none;margin:24px 0 30px;display:grid;gap:12px;font-size:.91rem;
   color:rgba(232,225,253,.85)}
 .plan li{display:flex;gap:11px;align-items:flex-start;line-height:1.5}
@@ -1377,7 +1382,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
 <!-- Franja: cifras arriba, compromisos abajo, en un solo bloque -->
 <div class="franja">
   <div class="franja-cifras" data-stagger>
-    <div class="cifra" data-reveal><strong data-target="20">20</strong><span>servicios integrales</span></div>
+    <div class="cifra" data-reveal><strong data-target="22">22</strong><span>servicios integrales</span></div>
     <div class="cifra" data-reveal><strong data-target="4">4</strong><span>frentes de trabajo</span></div>
     <div class="cifra" data-reveal><strong data-target="5">5</strong><span>etapas de proceso</span></div>
     <div class="cifra" data-reveal><strong data-target="24" data-suffix=" h">24 h</strong><span>y tienes propuesta en mano</span></div>
@@ -1423,8 +1428,8 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
 <!-- Cintas -->
 <div class="cintas" aria-hidden="true">
   <div class="marquee"><div class="track">
-    <span>Estrategia digital<i class="sep" aria-hidden="true"></i>Branding<i class="sep" aria-hidden="true"></i>Contenido audiovisual<i class="sep" aria-hidden="true"></i>Gestión de redes<i class="sep" aria-hidden="true"></i>Asistentes con IA<i class="sep" aria-hidden="true"></i>Visibilidad en ChatGPT<i class="sep" aria-hidden="true"></i>CRM a medida<i class="sep" aria-hidden="true"></i>Desarrollo web<i class="sep" aria-hidden="true"></i>Publicidad digital<i class="sep" aria-hidden="true"></i></span>
-    <span>Estrategia digital<i class="sep" aria-hidden="true"></i>Branding<i class="sep" aria-hidden="true"></i>Contenido audiovisual<i class="sep" aria-hidden="true"></i>Gestión de redes<i class="sep" aria-hidden="true"></i>Asistentes con IA<i class="sep" aria-hidden="true"></i>Visibilidad en ChatGPT<i class="sep" aria-hidden="true"></i>CRM a medida<i class="sep" aria-hidden="true"></i>Desarrollo web<i class="sep" aria-hidden="true"></i>Publicidad digital<i class="sep" aria-hidden="true"></i></span>
+    <span>Estrategia digital<i class="sep" aria-hidden="true"></i>Branding<i class="sep" aria-hidden="true"></i>Contenido audiovisual<i class="sep" aria-hidden="true"></i>Gestión de redes<i class="sep" aria-hidden="true"></i>Asistentes con IA<i class="sep" aria-hidden="true"></i>Visibilidad en ChatGPT<i class="sep" aria-hidden="true"></i>Desarrollo web<i class="sep" aria-hidden="true"></i>Publicidad digital<i class="sep" aria-hidden="true"></i></span>
+    <span>Estrategia digital<i class="sep" aria-hidden="true"></i>Branding<i class="sep" aria-hidden="true"></i>Contenido audiovisual<i class="sep" aria-hidden="true"></i>Gestión de redes<i class="sep" aria-hidden="true"></i>Asistentes con IA<i class="sep" aria-hidden="true"></i>Visibilidad en ChatGPT<i class="sep" aria-hidden="true"></i>Desarrollo web<i class="sep" aria-hidden="true"></i>Publicidad digital<i class="sep" aria-hidden="true"></i></span>
   </div></div>
   <div class="cinta-gigante"><div class="track">
     <span><b>Designia</b><u>Marketing</u><b>IA</b><u>Publicidad</u></span>
@@ -1588,7 +1593,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
       <div class="serv-grid serv-grid--6" data-stagger>
         <div class="serv-card" data-reveal><h4>Desarrollo web y landings</h4><p>Sitios rápidos, pensados para convertir visitas en conversaciones de WhatsApp.</p></div>
         <div class="serv-card" data-reveal><span class="serv-nuevo">Nuevo</span><h4>Respuesta en segundos, no en horas</h4><p>Un asistente atiende tu WhatsApp cuando tú no puedes: responde lo de siempre, califica al cliente y agenda. Nosotros lo operamos.</p></div>
-        <div class="serv-card" data-reveal><span class="serv-nuevo">Nuevo</span><h4>CRM a medida</h4><p>Tu embudo de ventas ordenado: quién te escribió, en qué quedó y cuándo toca insistir.</p></div>
+        <div class="serv-card" data-reveal><span class="serv-consulta">Bajo consulta</span><h4>CRM a medida</h4><p>Tu embudo de ventas ordenado: quién te escribió, en qué quedó y cuándo toca insistir. Se construye para tu operación, dentro de un proyecto a medida.</p></div>
         <div class="serv-card" data-reveal><h4>Automatización de procesos</h4><p>Reportes que se generan solos y alertas de leads al instante, sin trabajo manual.</p></div>
         <div class="serv-card" data-reveal><h4>E-commerce y catálogos</h4><p>Catálogo de WhatsApp, Instagram Shopping o tienda simple para vender sin atender el chat.</p></div>
         <div class="serv-card" data-reveal><span class="serv-nuevo">Nuevo</span><h4>Herramientas interactivas</h4><p>Un cuestionario que recomienda tu producto o servicio según lo que responde el visitante. Va en tu bio o tu web, y te deja el lead ya calificado.</p></div>
@@ -1907,7 +1912,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
           <h3>A medida</h3>
           <p class="para">Para lo que no entra en un servicio mensual: proyectos con su propio alcance.</p>
           <p class="alcance">Por proyecto</p>
-          <ul><li>Desarrollo web y landing pages</li><li>Asistente de WhatsApp con IA</li><li>CRM a medida</li><li>Automatización de procesos</li><li>E-commerce y catálogos</li><li>Herramientas interactivas</li></ul>
+          <ul><li>Desarrollo web y landing pages</li><li>Asistente de WhatsApp con IA</li><li>Automatización de procesos</li><li>E-commerce y catálogos</li><li>Herramientas interactivas</li><li>CRM a medida <em class="li-nota">bajo consulta</em></li></ul>
           <a class="btn btn-ghost" href="https://wa.me/51998399001?text=Hola%20Designia%2C%20quiero%20cotizar%20un%20proyecto%20a%20medida"
              target="_blank" rel="noopener" data-ga="select_plan" data-ga-label="A medida">Cotizar mi proyecto</a>
         </div>
