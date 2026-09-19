@@ -372,8 +372,10 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
 .hero-grid h1.display,.hero-grid .h1-like{font-size:clamp(2.3rem,1.1rem + 3vw,4rem);line-height:.98;letter-spacing:-.048em}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 /* Tres mensajes de portada: cada uno con su tarjeta viva y su pose de Designio */
-.hero-slides{position:relative}
-.hslide{animation:sube .6s var(--ease) both}
+.hero-slides{display:grid}
+.hslide{grid-area:1/1;visibility:hidden;opacity:0;transform:translateY(12px);
+  transition:opacity .5s var(--ease),transform .55s var(--ease-expo),visibility .5s}
+.hslide.is-on{visibility:visible;opacity:1;transform:none}
 .hero-dots{display:flex;gap:6px;margin-top:10px}
 .hdot{width:32px;height:26px;display:grid;place-items:center;cursor:pointer;padding:0}
 .hdot i{display:block;width:8px;height:8px;border-radius:999px;background:rgba(232,225,253,.3);transition:width .35s var(--ease),background .3s}
@@ -403,10 +405,18 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
   backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
   --r:0deg;animation:flota 7s ease-in-out infinite}
 @keyframes flota{0%,100%{transform:rotate(var(--r)) translateY(0)}50%{transform:rotate(var(--r)) translateY(-10px)}}
-.vcard-chat{left:0;top:8%;--r:-2deg}
+.vcard-chat{left:0;top:2%;--r:-2deg}
 .vcard-metric{left:0;top:6%;--r:-2deg;animation-delay:-2.6s}
-.vcard-leads{left:0;bottom:10%;--r:1.5deg;animation-delay:-4.2s}
-.vcard-ia{left:0;top:12%;--r:-2deg}
+.vcard-leads{left:0;bottom:8%;--r:1.5deg;animation-delay:-4.2s}
+.vcard-citas{left:0;bottom:4%;--r:1.5deg;animation-delay:-3.4s}
+.vcard-ia{left:0;top:0;--r:-2deg}
+.vcard-motores{left:0;bottom:2%;--r:1.5deg;animation-delay:-4.8s}
+.vmot{list-style:none;display:grid;gap:7px;margin-top:10px}
+.vmot li{display:grid;grid-template-columns:64px minmax(0,1fr);gap:9px;align-items:center;
+  font-size:.68rem;font-weight:600;color:rgba(232,225,253,.72)}
+.vmot i{display:block;height:5px;border-radius:3px;
+  background:linear-gradient(90deg,var(--turq) var(--w,50%),rgba(232,225,253,.12) 0)}
+.vcard-citas .vnum{font-size:1.8rem}
 .vdot-ia{background:var(--violeta);box-shadow:0 0 0 4px rgba(139,106,247,.22)}
 .vcard-ia .vq{font-family:'Poppins',sans-serif;font-weight:700;font-size:.84rem;letter-spacing:-.02em;line-height:1.3;color:var(--blanco);
   padding:9px 11px;border-radius:10px;background:rgba(232,225,253,.08);margin:11px 0 10px}
@@ -449,7 +459,7 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
   .vis-stage{height:420px;max-width:480px}
   .vscene{width:min(230px,52%)}
   .vcard{padding:12px 14px}
-  .vcard-leads{display:none}
+  .vcard-leads,.vcard-motores{display:none}   /* se solapaban con la tarjeta alta */
   .vnum{font-size:1.7rem}
 }
 @media(max-width:480px){
@@ -573,32 +583,46 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
 .dz-left[data-reveal]{transform:translateX(-50px)}
 .dz-right[data-reveal]{transform:translateX(50px)}
 .dz.is-in{opacity:1;transform:none}
-/* Cabeceras: el personaje está de pie sobre la línea que cierra la cabecera */
-.dz-cab{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:end;border-bottom:1px solid var(--hilo-claro)}
-.dz-cab>div:first-child{padding-bottom:30px}
-.w-turq .dz-cab{border-bottom-color:rgba(34,24,74,.24)}
-.dz-cab .dz{margin-bottom:-1px;margin-right:clamp(0px,5vw,72px)}
-.dz-cab .dz img{height:clamp(220px,24vw,300px)}
-/* Bento: con el celular, de pie sobre la línea que separa el gráfico del texto */
-.dz-chat{position:absolute;right:16px;bottom:0}
+/* MARCO — la pieza que unifica. Designio siempre vive dentro de un rectángulo
+   con su suelo y su globo, nunca suelto sobre el fondo de la página. El marco
+   recorta: por eso los recortes con bordes rectos también funcionan. */
+.dz-marco{position:relative;display:none;overflow:hidden;border-radius:var(--r-lg);
+  border:1px solid var(--hilo);isolation:isolate;
+  background:radial-gradient(130% 100% at 78% 112%,rgba(139,106,247,.32),transparent 60%),rgba(232,225,253,.05)}
+.dz-marco::after{content:"";position:absolute;left:7%;right:7%;bottom:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(232,225,253,.4),transparent)}
+.w-luz .dz-marco{border-color:var(--hilo-claro);
+  background:radial-gradient(130% 100% at 78% 112%,rgba(139,106,247,.22),transparent 60%),var(--blanco)}
+.w-luz .dz-marco::after{background:linear-gradient(90deg,transparent,rgba(34,24,74,.22),transparent)}
+.w-turq .dz-marco{border-color:rgba(34,24,74,.22);
+  background:radial-gradient(130% 100% at 78% 112%,rgba(34,24,74,.3),transparent 60%),rgba(255,255,255,.3)}
+.w-turq .dz-marco::after{background:linear-gradient(90deg,transparent,rgba(34,24,74,.3),transparent)}
+.dz-marco .dz{position:absolute;right:16px;bottom:0;display:block}
+.dz-marco .dz::after{bottom:3px;background:radial-gradient(ellipse at center,rgba(23,15,53,.45),transparent 70%)}
+.dz-marco .dz img{height:100%;width:auto}
+.dz-marco .dz-dice{white-space:normal;width:max-content;max-width:200px;text-wrap:balance}
+@media(min-width:900px){.dz-marco{display:block}}
+/* Cabecera de sección: texto a la izquierda, marco a la derecha */
+.dz-cab{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(24px,4vw,56px);align-items:center}
+.dz-cab .dz-marco{width:clamp(320px,33vw,430px);height:clamp(240px,25vw,300px)}
+.dz-cab .dz{height:84%}
+/* Bento: el celular, de pie contra el borde inferior de su celda (ya es un marco) */
+.dz-chat{position:absolute;right:18px;bottom:0}
 .dz-chat img{height:236px}
+.dz-chat::after{bottom:2px}
 .bn-chat .vbubbles{max-width:62%}
-/* Buscadores de IA: de pie al final de la columna de texto, señalando la tarjeta */
-.dz-piso-ia{border-bottom-color:var(--hilo-claro);margin:34px 0 0;padding-right:0}
-.dz-ia img{height:250px}
-.dz-ia .dz-dice{top:6%}
-/* Pie de página: la pose "asomándose" tiene bordes rectos, así que va en una esquina real,
-   recortada por el borde inferior de la página */
-footer{position:relative;overflow:hidden}
-.dz-pie{position:absolute;right:0;bottom:-6px;pointer-events:none;display:none}
-.dz-pie img{height:190px;width:auto;filter:drop-shadow(0 12px 18px rgba(0,0,0,.4))}
-@media(min-width:1100px){.dz-pie{display:block}}
-/* Contacto: de pie sobre una línea, al borde de su columna, señalando el formulario */
-.dz-piso{display:none;justify-content:flex-end;padding-right:10px;margin:30px 0 28px;border-bottom:1px solid var(--hilo)}
-.dz-contacto{margin-bottom:-1px}
-.dz-contacto img{height:290px}
-.dz-contacto .dz-dice{top:8%}
-@media(min-width:900px){.dz-piso{display:flex}}
+/* Buscadores de IA: Designio se asoma POR ENCIMA del borde superior de la tarjeta,
+   con el cuerpo detrás. Su recorte está cortado en recto entre el 61% y el 93% de la
+   altura (el brazo): ese tramo queda tapado por la tarjeta, solo asoma la cabeza. */
+#ia{overflow-x:clip}
+.ia-demo{position:relative}
+.ia-card{position:relative;z-index:1}
+.dz-asoma{position:absolute;right:clamp(24px,5vw,60px);top:-116px;z-index:0;display:none;pointer-events:none}
+.dz-asoma img{height:258px;width:auto;filter:drop-shadow(0 -6px 18px rgba(23,15,53,.3))}
+@media(min-width:900px){.dz-asoma{display:block}}
+/* Contacto: marco al pie de la columna, señalando el formulario */
+.dz-marco-contacto{margin-top:30px;height:clamp(250px,26vw,300px)}
+.dz-marco-contacto .dz{height:88%;right:22px}
 @media(min-width:900px){.dz{display:block}}
 /* Portada: contenedor fijo a la derecha; las poses se funden una con otra y el
    conjunto se inclina siguiendo el cursor (ver JS). */
@@ -1095,7 +1119,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
   .steps .linea{transform:scaleX(1)!important}
   .track{animation:none!important}
   .cursor-dot,.cursor-ring{display:none!important}
-  .vcard,.dz-hero,.dz-flota,.bulb-glow,.pose img,.hslide,.pilar-bloque,.paso-det,.filo-slide{animation:none!important}
+  .vcard,.dz-hero,.dz-flota,.bulb-glow,.pose img,.pilar-bloque,.paso-det,.filo-slide{animation:none!important}
   .dz-dice{opacity:1!important;transform:none!important}
   .dz{opacity:1!important;transform:none!important}
   .hero-vis{opacity:1!important}
@@ -1203,7 +1227,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
           </div>
         </div>
 
-        <div class="hslide" data-pose="celular" hidden>
+        <div class="hslide" data-pose="celular">
           <p class="display h1-like">
             <span class="mask"><span>Respondes en segundos,</span></span>
             <span class="mask"><span>también a las <span class="grad">once de la noche</span></span></span>
@@ -1216,7 +1240,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
           </div>
         </div>
 
-        <div class="hslide" data-pose="laptop" hidden>
+        <div class="hslide" data-pose="laptop">
           <p class="display h1-like">
             <span class="mask"><span>¿Aparece tu negocio</span></span>
             <span class="mask"><span>cuando le preguntan a <span class="grad">ChatGPT</span>?</span></span>
@@ -1271,6 +1295,11 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
               <div class="vb vb-out">¡Hola, Carla! Sí: 10:30 o 16:00. ¿Cuál prefieres?</div>
             </div>
           </div>
+          <div class="vcard vcard-citas">
+            <span class="vlab">Citas agendadas</span>
+            <b class="vnum">7</b>
+            <span class="vchg">↑ 3 llegaron fuera de horario</span>
+          </div>
         </div>
         <div class="vscene" aria-hidden="true">
           <div class="vcard vcard-ia">
@@ -1278,6 +1307,14 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
             <p class="vq">“¿Qué clínica dental en Surco atiende los sábados?”</p>
             <div class="va" id="visAns" data-texto="Según su web y su ficha de Google, <b>Clínica Sonríe</b> atiende sábados de 9:00 a 13:00 y responde por WhatsApp en minutos.">Según su web y su ficha de Google, <b>Clínica Sonríe</b> atiende sábados de 9:00 a 13:00 y responde por WhatsApp en minutos.</div>
             <div class="vsrc"><em>clinicasonrie.pe</em><em>Google Business Profile</em></div>
+          </div>
+          <div class="vcard vcard-motores">
+            <span class="vlab">Te mencionan en</span>
+            <ul class="vmot">
+              <li><span>ChatGPT</span><i style="--w:72%"></i></li>
+              <li><span>Gemini</span><i style="--w:54%"></i></li>
+              <li><span>Perplexity</span><i style="--w:38%"></i></li>
+            </ul>
           </div>
         </div>
 
@@ -1367,7 +1404,9 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
         <h2 class="display"><span class="mask"><span>¿Te suena familiar?</span></span></h2>
         <p class="sec-lead">Cuatro señales que vemos una y otra vez en negocios que ya tienen clientes, pero todavía no tienen presencia.</p>
       </div>
-      <div class="dz dz-pop" data-reveal aria-hidden="true"><span class="dz-dice">Tranquilo: todo esto tiene arreglo.</span><img class="designio dz-flota" src="designio/saludando.webp" alt="" width="441" height="720" loading="lazy" decoding="async"></div>
+      <div class="dz-marco" aria-hidden="true">
+        <div class="dz dz-pop" data-reveal><span class="dz-dice">Tranquilo: todo esto tiene arreglo.</span><img class="designio dz-flota" src="designio/saludando.webp" alt="" width="441" height="720" loading="lazy" decoding="async"></div>
+      </div>
     </div>
     <div class="postales" data-stagger>
       <article class="card" data-reveal="scale">
@@ -1409,7 +1448,9 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
         <h2 class="display"><span class="mask"><span>Averígualo en</span></span><span class="mask"><span>60 segundos</span></span></h2>
         <p class="sec-lead">Seis preguntas sobre tu presencia digital. Al final ves tu puntaje y las tres cosas que hoy te están costando clientes.</p>
       </div>
-      <div class="dz dz-up" data-reveal aria-hidden="true"><span class="dz-dice">Yo te hago las preguntas.</span><img class="designio dz-flota" src="designio/laptop.webp" alt="" width="516" height="720" loading="lazy" decoding="async"></div>
+      <div class="dz-marco" aria-hidden="true">
+        <div class="dz dz-up" data-reveal><span class="dz-dice">Yo te hago las preguntas.</span><img class="designio dz-flota" src="designio/laptop.webp" alt="" width="516" height="720" loading="lazy" decoding="async"></div>
+      </div>
     </div>
 
     <div class="dx" id="dx" data-reveal>
@@ -1633,11 +1674,9 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
         <a class="btn btn-line" href="auditoria.html" data-ga="cta_click" data-ga-label="ia_auditoria">Auditar mi web gratis</a>
         <span class="cta-nota"><svg class="ic-s" aria-hidden="true"><use href="#ic-check"/></svg>Incluido en los planes con SEO local</span>
       </div>
-      <div class="dz-piso dz-piso-ia">
-        <div class="dz dz-up dz-ia" data-reveal aria-hidden="true"><span class="dz-dice">Así te encuentran cuando preguntan.</span><img class="designio dz-flota" src="designio/senalando.webp" alt="" width="526" height="720" loading="lazy" decoding="async"></div>
-      </div>
     </div>
     <div class="ia-demo" data-reveal aria-hidden="true">
+      <span class="dz-asoma"><img class="designio" src="designio/asomandose.webp" alt="" width="611" height="720" loading="lazy" decoding="async"></span>
       <div class="ia-card">
         <span class="ia-sim">Simulación</span>
         <div class="ia-head"><i></i>Asistente de IA · con búsqueda web</div>
@@ -1905,8 +1944,8 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
             <li><svg class="ic-s" aria-hidden="true"><use href="#ic-doc"/></svg>Una página con los hallazgos concretos y por dónde empezar.</li>
             <li><svg class="ic-s" aria-hidden="true"><use href="#ic-chat"/></svg>Una conversación de 20 minutos para revisarlo juntos.</li>
           </ul>
-          <div class="dz-piso">
-  <div class="dz dz-left dz-contacto" data-reveal><span class="dz-dice">Llénalo: son 30 segundos.</span><img class="designio dz-flota" src="designio/senalando.webp" alt="Designio, la mascota de Designia, señalando el formulario" width="526" height="720" loading="lazy" decoding="async"></div>
+          <div class="dz-marco dz-marco-contacto">
+            <div class="dz dz-left dz-contacto" data-reveal><span class="dz-dice">Llénalo: son 30 segundos.</span><img class="designio dz-flota" src="designio/senalando.webp" alt="Designio, la mascota de Designia, señalando el formulario" width="526" height="720" loading="lazy" decoding="async"></div>
           </div>
           <p class="garantia"><b>Sin costo y sin compromiso.</b> No pedimos accesos ni datos de pago para el diagnóstico. Si después decides trabajar con nosotros, la permanencia mínima es de 3 meses — el tiempo real que toma demostrar algo.</p>
         </div>
@@ -1958,7 +1997,6 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
 </div>
 
 <footer>
-  <span class="dz-pie" aria-hidden="true"><img src="designio/asomandose.webp" alt="" width="611" height="720" loading="lazy" decoding="async"></span>
   <img src="logo-designia-blanco.png" alt="Designia" class="logo-foot" width="478" height="160" loading="lazy" decoding="async">
   <div class="f-social">
     <a class="pill" href="https://www.instagram.com/designia.pe/" target="_blank" rel="noopener"><span class="dot"></span>Instagram</a>
@@ -2268,9 +2306,9 @@ document.addEventListener('click', function(e){
   var cur = 0, timer = null, manual = false, CADA = 7000;
   function ir(i, user){
     if(i === cur) return;
-    slides[cur].hidden = true; slides[cur].classList.remove('is-on');
+    slides[cur].classList.remove('is-on');
     cur = i;
-    slides[cur].hidden = false; slides[cur].classList.add('is-on');
+    slides[cur].classList.add('is-on');
     dots.forEach(function(d, k){ d.classList.toggle('is-on', k === cur); d.setAttribute('aria-selected', String(k === cur)); });
     escenas.forEach(function(e, k){ e.classList.toggle('is-on', k === cur); });
     var pose = slides[cur].dataset.pose;
