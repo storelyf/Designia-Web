@@ -6,7 +6,7 @@
  *
  * Solo lee páginas públicas, con un User-Agent identificado. No guarda datos:
  * el resultado se cachea 10 minutos por dominio para no golpear dos veces
- * al mismo sitio.
+ * al mismo sitio durante 3 minutos.
  */
 
 const UA = 'Mozilla/5.0 (compatible; DesigniaAuditBot/1.0; +https://designia360.com/auditoria)';
@@ -155,7 +155,9 @@ export async function onRequestGet(ctx) {
     extra: { titulo: meta.title || '', h1: meta.h1, lang: meta.lang || '', tipos: ld.tipos },
     checks
   };
-  const respuesta = json(resultado, 200, { 'Cache-Control': 'public, max-age=600' });
+  // Caché corta: protege de golpear dos veces el mismo sitio, pero deja que quien
+  // arregla algo y vuelve a auditar vea el cambio enseguida.
+  const respuesta = json(resultado, 200, { 'Cache-Control': 'public, max-age=180' });
   if (cache && ctx.waitUntil) ctx.waitUntil(cache.put(clave, respuesta.clone()));
   return respuesta;
 }
