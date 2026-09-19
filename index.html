@@ -397,20 +397,28 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
   background:linear-gradient(90deg,transparent,rgba(232,225,253,.3) 22%,rgba(232,225,253,.3) 78%,transparent)}
 .designio{display:block;width:auto;filter:drop-shadow(0 26px 34px rgba(0,0,0,.42))}
 @keyframes respira{50%{transform:translateY(-8px)}}
-.vscene{position:absolute;left:0;top:0;bottom:0;width:min(250px,46%);opacity:0;visibility:hidden;transform:translateY(18px);
+.vscene{position:absolute;left:0;top:0;bottom:0;width:min(262px,48%);
+  display:flex;flex-direction:column;justify-content:space-between;gap:10px;
+  opacity:0;visibility:hidden;transform:translateY(18px);
   transition:opacity .55s var(--ease),transform .55s var(--ease),visibility .55s}
 .vscene.is-on{opacity:1;visibility:visible;transform:none}
-.vcard{position:absolute;width:100%;padding:15px 17px;border-radius:18px;
+.vcard{position:relative;width:100%;flex:none;padding:13px 15px;border-radius:18px;
   background:rgba(23,15,53,.86);border:1px solid var(--hilo);box-shadow:0 24px 50px rgba(0,0,0,.45);
   backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
   --r:0deg;animation:flota 7s ease-in-out infinite}
 @keyframes flota{0%,100%{transform:rotate(var(--r)) translateY(0)}50%{transform:rotate(var(--r)) translateY(-10px)}}
-.vcard-chat{left:0;top:2%;--r:-2deg}
-.vcard-metric{left:0;top:6%;--r:-2deg;animation-delay:-2.6s}
-.vcard-leads{left:0;bottom:8%;--r:1.5deg;animation-delay:-4.2s}
-.vcard-citas{left:0;bottom:4%;--r:1.5deg;animation-delay:-3.4s}
-.vcard-ia{left:0;top:0;--r:-2deg}
-.vcard-motores{left:0;bottom:2%;--r:1.5deg;animation-delay:-4.8s}
+.vcard:nth-child(1){--r:-2deg}
+.vcard:nth-child(2){--r:1.5deg;animation-delay:-2.6s}
+.vcard:nth-child(3){--r:-1.2deg;animation-delay:-4.4s}
+.vmini{display:flex;align-items:baseline;gap:8px;margin-top:4px}
+.vmini b{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.55rem;letter-spacing:-.04em;color:var(--blanco);line-height:1}
+.vmini span{font-size:.7rem;color:rgba(232,225,253,.6);line-height:1.3}
+.vbars{display:flex;align-items:flex-end;gap:4px;height:26px;margin-top:9px}
+.vbars i{flex:1;border-radius:2px 2px 0 0;background:linear-gradient(180deg,var(--turq),rgba(19,205,217,.3));height:var(--h,50%)}
+.vcheck{list-style:none;display:grid;gap:6px;margin-top:9px}
+.vcheck li{display:flex;align-items:center;gap:8px;font-size:.7rem;font-weight:600;color:rgba(232,225,253,.74)}
+.vcheck i{width:14px;height:14px;border-radius:50%;flex:none;display:grid;place-items:center;
+  background:rgba(19,205,217,.18);color:var(--turq);font-size:.6rem;font-style:normal;font-weight:800}
 .vmot{list-style:none;display:grid;gap:7px;margin-top:10px}
 .vmot li{display:grid;grid-template-columns:64px minmax(0,1fr);gap:9px;align-items:center;
   font-size:.68rem;font-weight:600;color:rgba(232,225,253,.72)}
@@ -420,7 +428,7 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
 .vdot-ia{background:var(--violeta);box-shadow:0 0 0 4px rgba(139,106,247,.22)}
 .vcard-ia .vq{font-family:'Poppins',sans-serif;font-weight:700;font-size:.84rem;letter-spacing:-.02em;line-height:1.3;color:var(--blanco);
   padding:9px 11px;border-radius:10px;background:rgba(232,225,253,.08);margin:11px 0 10px}
-.vcard-ia .va{font-size:.8rem;line-height:1.5;color:rgba(232,225,253,.85);min-height:4.5em}
+.vcard-ia .va{font-size:.78rem;line-height:1.5;color:rgba(232,225,253,.85);min-height:3em}
 .vcard-ia .va b{color:var(--turq)}
 .vcard-ia .va .cursor{display:inline-block;width:2px;height:1em;background:var(--turq);vertical-align:-2px;margin-left:2px;animation:pulsa .9s infinite}
 .vcard-ia .vsrc{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px;padding-top:10px;border-top:1px solid var(--hilo)}
@@ -456,14 +464,14 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
 @media(max-width:1000px){
   .hero-grid{grid-template-columns:1fr}
   .hero-vis{margin-top:40px}
-  .vis-stage{height:420px;max-width:480px}
+  .vis-stage{height:500px;max-width:480px}
   .vscene{width:min(230px,52%)}
   .vcard{padding:12px 14px}
-  .vcard-leads,.vcard-motores{display:none}   /* se solapaban con la tarjeta alta */
+  .vcard-piezas,.vcard-tiempo,.vcard-geo{display:none}   /* en el móvil solo caben dos */
   .vnum{font-size:1.7rem}
 }
 @media(max-width:480px){
-  .vis-stage{height:360px}
+  .vis-stage{height:470px}
   .vscene{width:50%}
   .vcard{padding:11px 12px}
   .vhead{font-size:.64rem}
@@ -578,51 +586,48 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
   transition:opacity .5s var(--ease) .6s,transform .5s var(--ease-expo) .6s}
 .dz-dice::after{content:"";position:absolute;right:-7px;bottom:5px;border:7px solid transparent;border-left-color:var(--blanco);border-bottom:0}
 .dz.is-in .dz-dice{opacity:1;transform:none}
-.dz-pop[data-reveal]{transform:scale(.72) translateY(40px)}
-.dz-up[data-reveal]{transform:translateY(60px)}
-.dz-left[data-reveal]{transform:translateX(-50px)}
 .dz-right[data-reveal]{transform:translateX(50px)}
 .dz.is-in{opacity:1;transform:none}
-/* MARCO — la pieza que unifica. Designio siempre vive dentro de un rectángulo
-   con su suelo y su globo, nunca suelto sobre el fondo de la página. El marco
-   recorta: por eso los recortes con bordes rectos también funcionan. */
-.dz-marco{position:relative;display:none;overflow:hidden;border-radius:var(--r-lg);
-  border:1px solid var(--hilo);isolation:isolate;
-  background:radial-gradient(130% 100% at 78% 112%,rgba(139,106,247,.32),transparent 60%),rgba(232,225,253,.05)}
-.dz-marco::after{content:"";position:absolute;left:7%;right:7%;bottom:0;height:1px;
-  background:linear-gradient(90deg,transparent,rgba(232,225,253,.4),transparent)}
-.w-luz .dz-marco{border-color:var(--hilo-claro);
-  background:radial-gradient(130% 100% at 78% 112%,rgba(139,106,247,.22),transparent 60%),var(--blanco)}
-.w-luz .dz-marco::after{background:linear-gradient(90deg,transparent,rgba(34,24,74,.22),transparent)}
-.w-turq .dz-marco{border-color:rgba(34,24,74,.22);
-  background:radial-gradient(130% 100% at 78% 112%,rgba(34,24,74,.3),transparent 60%),rgba(255,255,255,.3)}
-.w-turq .dz-marco::after{background:linear-gradient(90deg,transparent,rgba(34,24,74,.3),transparent)}
-.dz-marco .dz{position:absolute;right:16px;bottom:0;display:block}
-.dz-marco .dz::after{bottom:3px;background:radial-gradient(ellipse at center,rgba(23,15,53,.45),transparent 70%)}
-.dz-marco .dz img{height:100%;width:auto}
-.dz-marco .dz-dice{white-space:normal;width:max-content;max-width:200px;text-wrap:balance}
-@media(min-width:900px){.dz-marco{display:block}}
-/* Cabecera de sección: texto a la izquierda, marco a la derecha */
-.dz-cab{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(24px,4vw,56px);align-items:center}
-.dz-cab .dz-marco{width:clamp(320px,33vw,430px);height:clamp(240px,25vw,300px)}
-.dz-cab .dz{height:84%}
-/* Bento: el celular, de pie contra el borde inferior de su celda (ya es un marco) */
+/* DETRÁS DEL CONTENIDO — la regla única. Designio no tiene cuadro propio: se
+   apoya por detrás de un bloque real de la página (las tarjetas, el diagnóstico,
+   la respuesta de IA) y sobresale por su borde superior. Eso lo integra y, de
+   paso, esconde la parte baja de los recortes que están cortados en recto. */
+.dz-zona{position:relative}
+.dz-zona>.dz-tras{position:absolute;bottom:100%;right:var(--dz-x,42px);z-index:0;
+  margin-bottom:var(--dz-hunde,-90px);display:none;pointer-events:none;
+  transition:opacity .9s var(--ease),transform .9s var(--ease-expo)}
+.dz-tras[data-reveal]{opacity:0;transform:translateY(26px)}
+.dz-tras.is-in{opacity:1;transform:none}
+.dz-tras img{display:block;width:auto;height:var(--dz-alto,265px);
+  filter:drop-shadow(0 20px 26px rgba(23,15,53,.4))}
+.w-luz .dz-tras img{filter:drop-shadow(0 20px 26px rgba(34,24,74,.24))}
+.dz-tras .dz-dice{top:4%;right:calc(100% - 26px)}
+@media(min-width:960px){.dz-zona>.dz-tras{display:block}}
+/* La columna del contacto es estrecha: ahí el globo se achica para no salirse
+   por el borde izquierdo. */
+@media(max-width:1200px){.entrega .dz-tras .dz-dice{max-width:150px}}
+/* El bloque que lo tapa va delante y con fondo opaco */
+.dz-zona>.postales .card,.dz-zona>.dx,.dz-zona>.garantia,.ia-card{position:relative;z-index:1}
+.dz-zona>.garantia{background:#241a47}
+@media(min-width:960px){
+  .dz-zona>.postales{margin-top:96px}
+  .dz-zona>.dx{margin-top:96px}
+  .dz-zona>.garantia{margin-top:116px}
+}
+/* Bento: el celular, de pie contra el borde inferior de su celda */
 .dz-chat{position:absolute;right:18px;bottom:0}
 .dz-chat img{height:236px}
 .dz-chat::after{bottom:2px}
 .bn-chat .vbubbles{max-width:62%}
-/* Buscadores de IA: Designio se asoma POR ENCIMA del borde superior de la tarjeta,
-   con el cuerpo detrás. Su recorte está cortado en recto entre el 61% y el 93% de la
-   altura (el brazo): ese tramo queda tapado por la tarjeta, solo asoma la cabeza. */
+/* Buscadores de IA: sobresale por encima de la tarjeta. El recorte está cortado
+   en recto entre el 61% y el 93% de su altura: se muestra solo hasta el 57%, así
+   que el corte queda siempre por debajo del borde de la tarjeta. */
 #ia{overflow-x:clip}
 .ia-demo{position:relative}
-.ia-card{position:relative;z-index:1}
-.dz-asoma{position:absolute;right:clamp(24px,5vw,60px);top:-116px;z-index:0;display:none;pointer-events:none}
-.dz-asoma img{height:258px;width:auto;filter:drop-shadow(0 -6px 18px rgba(23,15,53,.3))}
-@media(min-width:900px){.dz-asoma{display:block}}
-/* Contacto: marco al pie de la columna, señalando el formulario */
-.dz-marco-contacto{margin-top:30px;height:clamp(250px,26vw,300px)}
-.dz-marco-contacto .dz{height:88%;right:22px}
+.dz-asoma{position:absolute;bottom:100%;right:clamp(28px,6vw,72px);z-index:0;
+  margin-bottom:-124px;display:none;pointer-events:none}
+.dz-asoma img{display:block;width:auto;height:290px;filter:drop-shadow(0 -4px 20px rgba(23,15,53,.34))}
+@media(min-width:960px){.dz-asoma{display:block}}
 @media(min-width:900px){.dz{display:block}}
 /* Portada: contenedor fijo a la derecha; las poses se funden una con otra y el
    conjunto se inclina siguiendo el cursor (ver JS). */
@@ -1286,6 +1291,11 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
             <div class="vlead"><span class="vav">MR</span><div><b>María R.</b><small>Instagram · hace 1 min</small></div><span class="vpill">Caliente</span></div>
             <div class="vlead"><span class="vav">JC</span><div><b>Jorge C.</b><small>Google · hace 3 min</small></div><span class="vpill vpill-ag">Agendado</span></div>
           </div>
+          <div class="vcard vcard-piezas">
+            <span class="vlab">Contenido publicado</span>
+            <div class="vmini"><b>12</b><span>piezas este mes,<br>programadas por adelantado</span></div>
+            <div class="vbars"><i style="--h:38%"></i><i style="--h:56%"></i><i style="--h:44%"></i><i style="--h:72%"></i><i style="--h:60%"></i><i style="--h:88%"></i><i style="--h:100%"></i></div>
+          </div>
         </div>
         <div class="vscene" aria-hidden="true">
           <div class="vcard vcard-chat">
@@ -1300,12 +1310,16 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
             <b class="vnum">7</b>
             <span class="vchg">↑ 3 llegaron fuera de horario</span>
           </div>
+          <div class="vcard vcard-tiempo">
+            <span class="vlab">Tiempo de respuesta</span>
+            <div class="vmini"><b>12 s</b><span>de media,<br>a cualquier hora</span></div>
+          </div>
         </div>
         <div class="vscene" aria-hidden="true">
           <div class="vcard vcard-ia">
             <div class="vhead"><i class="vdot vdot-ia"></i><span>Asistente de IA · con búsqueda web</span></div>
             <p class="vq">“¿Qué clínica dental en Surco atiende los sábados?”</p>
-            <div class="va" id="visAns" data-texto="Según su web y su ficha de Google, <b>Clínica Sonríe</b> atiende sábados de 9:00 a 13:00 y responde por WhatsApp en minutos.">Según su web y su ficha de Google, <b>Clínica Sonríe</b> atiende sábados de 9:00 a 13:00 y responde por WhatsApp en minutos.</div>
+            <div class="va" id="visAns" data-texto="Según su ficha de Google, <b>Clínica Sonríe</b> atiende sábados de 9:00 a 13:00.">Según su ficha de Google, <b>Clínica Sonríe</b> atiende sábados de 9:00 a 13:00.</div>
             <div class="vsrc"><em>clinicasonrie.pe</em><em>Google Business Profile</em></div>
           </div>
           <div class="vcard vcard-motores">
@@ -1314,6 +1328,14 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
               <li><span>ChatGPT</span><i style="--w:72%"></i></li>
               <li><span>Gemini</span><i style="--w:54%"></i></li>
               <li><span>Perplexity</span><i style="--w:38%"></i></li>
+            </ul>
+          </div>
+          <div class="vcard vcard-geo">
+            <span class="vlab">Lo que la IA lee de ti</span>
+            <ul class="vcheck">
+              <li><i>✓</i>Ficha para modelos</li>
+              <li><i>✓</i>Datos estructurados</li>
+              <li><i>✓</i>Reseñas verificables</li>
             </ul>
           </div>
         </div>
@@ -1398,16 +1420,11 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
 <!-- ========================= PROBLEMA ========================= -->
 <section class="section w-luz" id="problema" data-num="01">
   <div class="inner">
-    <div class="dz-cab">
-      <div>
-        <span class="kicker">Diagnóstico</span>
-        <h2 class="display"><span class="mask"><span>¿Te suena familiar?</span></span></h2>
-        <p class="sec-lead">Cuatro señales que vemos una y otra vez en negocios que ya tienen clientes, pero todavía no tienen presencia.</p>
-      </div>
-      <div class="dz-marco" aria-hidden="true">
-        <div class="dz dz-pop" data-reveal><span class="dz-dice">Tranquilo: todo esto tiene arreglo.</span><img class="designio dz-flota" src="designio/saludando.webp" alt="" width="441" height="720" loading="lazy" decoding="async"></div>
-      </div>
-    </div>
+    <span class="kicker">Diagnóstico</span>
+    <h2 class="display"><span class="mask"><span>¿Te suena familiar?</span></span></h2>
+    <p class="sec-lead">Cuatro señales que vemos una y otra vez en negocios que ya tienen clientes, pero todavía no tienen presencia.</p>
+    <div class="dz-zona">
+      <span class="dz-tras" data-reveal aria-hidden="true" style="--dz-alto:270px;--dz-hunde:-92px;--dz-x:60px"><span class="dz-dice">Tranquilo: todo esto tiene arreglo.</span><img class="designio dz-flota" src="designio/saludando.webp" alt="" width="441" height="720" loading="lazy" decoding="async"></span>
     <div class="postales" data-stagger>
       <article class="card" data-reveal="scale">
         <div class="ico-tile"><svg class="ic" aria-hidden="true"><use href="#ic-cal"/></svg></div>
@@ -1430,6 +1447,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
         <p>Publicar no es lo mismo que vender. Sin un reporte que conecte publicaciones con resultados, es imposible saber qué está funcionando y qué solo está ocupando espacio.</p>
       </article>
     </div>
+    </div>
     <p class="cierre-problema" data-reveal>Tu marca merece <em>más</em>.</p>
     <div class="cta-row" style="justify-content:center;margin-top:28px" data-reveal>
       <a class="btn btn-primary magnetico" href="https://wa.me/51998399001?text=Hola%20Designia%2C%20me%20identifiqu%C3%A9%20con%20el%20diagn%C3%B3stico%20de%20la%20web%20y%20quiero%20el%20m%C3%ADo"
@@ -1442,17 +1460,12 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
 <!-- ========================= DIAGNÓSTICO EXPRESS ========================= -->
 <section class="section w-turq" id="diagnostico" data-num="02">
   <div class="inner">
-    <div class="dz-cab">
-      <div>
-        <span class="kicker">Diagnóstico express</span>
-        <h2 class="display"><span class="mask"><span>Averígualo en</span></span><span class="mask"><span>60 segundos</span></span></h2>
-        <p class="sec-lead">Seis preguntas sobre tu presencia digital. Al final ves tu puntaje y las tres cosas que hoy te están costando clientes.</p>
-      </div>
-      <div class="dz-marco" aria-hidden="true">
-        <div class="dz dz-up" data-reveal><span class="dz-dice">Yo te hago las preguntas.</span><img class="designio dz-flota" src="designio/laptop.webp" alt="" width="516" height="720" loading="lazy" decoding="async"></div>
-      </div>
-    </div>
+    <span class="kicker">Diagnóstico express</span>
+    <h2 class="display"><span class="mask"><span>Averígualo en</span></span><span class="mask"><span>60 segundos</span></span></h2>
+    <p class="sec-lead">Seis preguntas sobre tu presencia digital. Al final ves tu puntaje y las tres cosas que hoy te están costando clientes.</p>
 
+    <div class="dz-zona">
+      <span class="dz-tras" data-reveal aria-hidden="true" style="--dz-alto:250px;--dz-hunde:-72px;--dz-x:48px"><span class="dz-dice">Yo te hago las preguntas.</span><img class="designio dz-flota" src="designio/laptop.webp" alt="" width="516" height="720" loading="lazy" decoding="async"></span>
     <div class="dx" id="dx" data-reveal>
       <!-- Estado 1: preguntas -->
       <div class="dx-quiz" id="dxQuiz">
@@ -1486,6 +1499,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
           </div>
         </div>
       </div>
+    </div>
     </div>
   </div>
 </section>
@@ -1944,10 +1958,10 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
             <li><svg class="ic-s" aria-hidden="true"><use href="#ic-doc"/></svg>Una página con los hallazgos concretos y por dónde empezar.</li>
             <li><svg class="ic-s" aria-hidden="true"><use href="#ic-chat"/></svg>Una conversación de 20 minutos para revisarlo juntos.</li>
           </ul>
-          <div class="dz-marco dz-marco-contacto">
-            <div class="dz dz-left dz-contacto" data-reveal><span class="dz-dice">Llénalo: son 30 segundos.</span><img class="designio dz-flota" src="designio/senalando.webp" alt="Designio, la mascota de Designia, señalando el formulario" width="526" height="720" loading="lazy" decoding="async"></div>
-          </div>
+          <div class="dz-zona">
+          <span class="dz-tras" data-reveal style="--dz-alto:275px;--dz-hunde:-98px;--dz-x:18px"><span class="dz-dice">Llénalo: son 30 segundos.</span><img class="designio dz-flota" src="designio/senalando.webp" alt="Designio, la mascota de Designia, señalando el formulario" width="526" height="720" loading="lazy" decoding="async"></span>
           <p class="garantia"><b>Sin costo y sin compromiso.</b> No pedimos accesos ni datos de pago para el diagnóstico. Si después decides trabajar con nosotros, la permanencia mínima es de 3 meses — el tiempo real que toma demostrar algo.</p>
+          </div>
         </div>
 
         <form class="form-reset" id="formContacto" data-reveal="right" novalidate>
