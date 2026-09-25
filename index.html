@@ -297,7 +297,7 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
 .topbar nav a:hover::after,.topbar nav a.active::after{transform:scaleX(1);transform-origin:left}
 .topbar nav a.active{color:var(--turq)}
 .nav-cta{display:flex;align-items:center;gap:8px}
-.burger{display:none;padding:10px 6px;line-height:0;cursor:pointer;z-index:61}
+.burger{display:none;padding:10px 9px;min-width:44px;min-height:44px;line-height:0;cursor:pointer;z-index:61}
 .burger span{display:block;width:26px;height:2px;margin:6px 0;background:var(--lavanda);
   transition:transform .35s var(--ease),opacity .2s}
 .burger[aria-expanded="true"] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
@@ -381,7 +381,7 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
 /* Los tres mensajes se navegan como pestañas con nombre: así se ve que hay más
    de uno y que se pueden pulsar. La barra de abajo enseña cuánto falta. */
 .hero-tabs{display:flex;gap:8px;margin-top:22px;flex-wrap:wrap}
-.hdot{position:relative;padding:9px 16px 11px;border-radius:var(--r-full);cursor:pointer;
+.hdot{position:relative;min-height:44px;padding:9px 16px 11px;border-radius:var(--r-full);cursor:pointer;
   border:1px solid rgba(232,225,253,.22);background:rgba(232,225,253,.04);overflow:hidden;
   font-size:.78rem;font-weight:600;color:rgba(232,225,253,.7);
   transition:color .3s,border-color .3s,background .3s}
@@ -1049,7 +1049,7 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
 .garantia b{color:var(--lavanda)}
 .form-reset{display:grid;gap:30px;grid-template-columns:1fr 1fr}
 @media(max-width:620px){.form-reset{grid-template-columns:1fr}}
-.campo-r label{display:block;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;
+.campo-r label{display:block;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;
   color:rgba(232,225,253,.62);font-weight:700;margin-bottom:10px}
 .campo-r input,.campo-r textarea{width:100%;background:transparent;border:0;
   border-bottom:1.5px solid var(--hilo);color:var(--blanco);font:inherit;font-size:1.05rem;
@@ -1122,12 +1122,17 @@ footer .logo-foot{height:42px;width:auto;margin:0 auto 24px}
 .f-social{display:flex;gap:10px;justify-content:center;margin-bottom:26px;flex-wrap:wrap}
 footer .legal{margin-top:12px;font-size:.8rem;color:rgba(232,225,253,.52)}
 footer .f-links{margin-bottom:14px;font-size:.86rem}
+/* En el teléfono los enlaces del pie necesitan altura de dedo, no solo de texto */
+@media(max-width:760px){footer p a{display:inline-block;padding:12px 6px}}
 footer strong{color:var(--lavanda)}
 footer a{color:var(--turq);font-weight:600;text-decoration:none}
 
 /* ==========================================================================
    23. MÓVIL Y MOVIMIENTO REDUCIDO
    ========================================================================== */
+/* La barra fija de abajo mide ~70 px: el pie reserva ese espacio en móvil.
+   Va aquí, después de la regla general del pie, para que no la pise. */
+@media(max-width:760px){footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}}
 @media(max-width:760px){
   .blob{filter:blur(58px);animation:none}
   .kit{padding:30px 24px;gap:22px}
@@ -2034,7 +2039,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
 
 <!-- Barra de acción móvil -->
 <div class="cta-movil" id="ctaMovil">
-  <a class="btn btn-line" href="tel:+51998399001" data-ga="cta_click" data-ga-label="movil_llamada">Llamar</a>
+  <a class="btn btn-line" href="#contacto" data-ga="cta_click" data-ga-label="movil_escribenos">Escríbenos</a>
   <a class="btn btn-primary" href="https://wa.me/51998399001?text=Hola%20Designia%2C%20quiero%20mi%20diagn%C3%B3stico%20gratis"
      target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="movil_diagnostico">Diagnóstico gratis</a>
 </div>
