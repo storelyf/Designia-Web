@@ -634,13 +634,12 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
 .dz-chat{position:absolute;right:18px;bottom:0}
 .dz-chat img{height:236px}
 .dz-chat::after{bottom:2px}
-.bn-chat .vbubbles{max-width:62%}
 /* Buscadores de IA: sobresale por encima de la tarjeta. El recorte está cortado
    en recto entre el 61% y el 93% de su altura: se muestra solo hasta el 57%, así
    que el corte queda siempre por debajo del borde de la tarjeta. */
 #ia{overflow-x:clip}
 .ia-demo{position:relative}
-.dz-asoma{position:absolute;bottom:100%;right:0;z-index:0;margin-bottom:-38px;
+.dz-asoma{position:absolute;bottom:100%;right:0;z-index:0;margin-bottom:-122px;
   display:none;pointer-events:none}
 .dz-asoma img{display:block;width:auto;height:300px;filter:none}
 .dz-asoma .dz-dice{top:14%}
@@ -1224,6 +1223,38 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
 html.pausa *,html.pausa *::before,html.pausa *::after{animation-play-state:paused!important}
 /* RENDIMIENTO: las poses ocultas de la portada no animan */
 .pose:not(.is-on) img{animation:none}
+
+/* ==========================================================================
+   PULIDO UI (auditoría sep-2026): legibilidad y densidad en móvil
+   ========================================================================== */
+/* el número de sección ya no choca con el eyebrow ni con el titular en móvil */
+@media(max-width:760px){.section[data-num]::after{font-size:3.25rem;top:22px;opacity:.6}}
+/* titulares: las palabras y los descendentes no se pegan */
+h2.display{line-height:1;letter-spacing:-.034em}
+@media(max-width:600px){h2.display{line-height:1.04;letter-spacing:-.024em}}
+/* "Simulación" no se monta sobre la cabecera de la tarjeta de IA en móvil */
+@media(max-width:600px){.ia-card{padding-top:40px}}
+/* medida de línea legible en escritorio */
+.en-frase{max-width:68ch}
+.filo-intro,.serv-pie{max-width:62ch}
+.faq-a p{max-width:62ch}
+/* las opciones del formulario no heredan mayúsculas del label */
+.campo-r label.chip{display:inline-flex;margin:0;text-transform:none;letter-spacing:normal;font-size:inherit;font-weight:inherit;color:inherit}
+/* FAQ alineada con su titular (antes creaba una segunda columna centrada) */
+.faq{margin:56px 0 0}
+/* pie: sin separadores huérfanos y con altura de dedo */
+footer .f-links{display:flex;flex-wrap:wrap;justify-content:center;gap:0 18px}
+footer .f-links a{display:inline-flex;align-items:center;min-height:44px}
+/* Señales (#problema): en móvil, carrusel con scroll-snap en vez de 4 tarjetas
+   apiladas (~900 px menos de scroll; el contenido no cambia) */
+@media(max-width:760px){
+  .postales{display:grid;grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:84%;gap:12px;
+    overflow-x:auto;scroll-snap-type:x mandatory;margin-left:-24px;margin-right:-24px;padding:4px 24px 14px;
+    scroll-padding:0 24px;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+  .postales>.card{scroll-snap-align:start}
+  .postales-pista{display:flex}
+}
+.postales-pista{display:none;align-items:center;gap:8px;margin-top:10px;font-size:.8rem;font-weight:600;color:var(--texto)}
 </style>
 </head>
 <body>
@@ -1518,7 +1549,7 @@ html.pausa *,html.pausa *::before,html.pausa *::after{animation-play-state:pause
 <!-- ========================= PROBLEMA ========================= -->
 <section class="section w-luz" id="problema" data-num="01">
   <div class="inner">
-    <span class="kicker">Diagnóstico</span>
+    <span class="kicker">Señales</span>
     <h2 class="display"><span class="mask"><span>¿Te suena familiar?</span></span></h2>
     <p class="sec-lead">Cuatro señales que vemos una y otra vez en negocios que ya tienen clientes, pero todavía no tienen presencia.</p>
     <div class="dz-zona">
@@ -1545,6 +1576,7 @@ html.pausa *,html.pausa *::before,html.pausa *::after{animation-play-state:pause
         <p>Publicar no es lo mismo que vender. Sin un reporte que conecte publicaciones con resultados, es imposible saber qué está funcionando y qué solo está ocupando espacio.</p>
       </article>
     </div>
+    <p class="postales-pista" aria-hidden="true">Desliza para ver las 4 señales <span>→</span></p>
     </div>
     <p class="cierre-problema" data-reveal>Tu marca merece <em>más</em>.</p>
     <div class="cta-row" style="justify-content:center;margin-top:28px" data-reveal>
@@ -1726,7 +1758,6 @@ html.pausa *,html.pausa *::before,html.pausa *::after{animation-play-state:pause
             <div class="vb vb-in">¿Atienden sábados? Necesito una limpieza dental</div>
             <div class="vb vb-out">Sí, de 9 a 13 h. Tengo 10:00 y 11:30 este sábado. ¿Te reservo uno?</div>
           </div>
-          <div class="dz dz-chat dz-right" data-reveal aria-hidden="true"><img class="designio dz-flota" src="designio/celular.webp" alt="" width="422" height="720" loading="lazy" decoding="async"></div>
         </div>
         <div class="bn-text">
           <p class="bn-eye">02 · Atención <span class="tag-consulta">Bajo consulta</span></p>
@@ -2130,7 +2161,7 @@ html.pausa *,html.pausa *::before,html.pausa *::after{animation-play-state:pause
     <a class="pill" href="https://www.linkedin.com/company/designia-pe/" target="_blank" rel="noopener"><span class="dot"></span>LinkedIn</a>
     <a class="pill" href="https://wa.me/51998399001" target="_blank" rel="noopener"><span class="dot"></span>WhatsApp</a>
   </div>
-  <p class="f-links"><a href="auditoria.html">Auditoría GEO gratuita</a> · <a href="#diagnostico">Diagnóstico express</a> · <a href="#planes">Planes</a></p>
+  <p class="f-links"><a href="auditoria.html">Auditoría GEO gratuita</a><a href="#diagnostico">Diagnóstico express</a><a href="#planes">Planes</a></p>
   <p><strong>Designia</strong> · Agencia de marketing e inteligencia artificial · Lima, Perú</p>
   <p class="legal">© <span id="anio"></span> Designia. Todos los derechos reservados.</p>
 </footer>
@@ -3042,7 +3073,7 @@ if(finePointer && !reduce){
     var io = new IntersectionObserver(function(es){
       es.forEach(function(e){ zonas[e.target.id] = e.isIntersecting; });
       enZona = !!(zonas.contacto || zonas.dx);
-      if(!ticking){ ticking = true; requestAnimationFrame(pintar); }
+      pintar();
     }, {rootMargin:'-10% 0px -10% 0px'});
     ['#contacto','#dx'].forEach(function(s){ var el = $(s); if(el) io.observe(el); });
   }
