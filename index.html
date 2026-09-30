@@ -482,13 +482,17 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
   .vis-stage{height:500px;max-width:480px}
   .vscene{width:min(230px,52%)}
   .vcard{padding:12px 14px}
-  .vcard-piezas,.vcard-tiempo,.vcard-geo{display:none}   /* en el móvil solo caben dos */
+  .vis-stage{height:560px}                              /* tres tarjetas también en móvil (con dos se ve pobre) */
   .vnum{font-size:1.7rem}
 }
 @media(max-width:480px){
-  .vis-stage{height:470px}
-  .vscene{width:50%}
-  .vcard{padding:11px 12px}
+  .vis-stage{height:540px}
+  .vscene{width:calc(100% - 136px);gap:8px}
+  .vcard{padding:10px 12px}
+  .vspark{height:30px}.vbars{height:18px}
+  .vlead{grid-template-columns:auto 1fr;gap:4px 9px;padding:7px 0}
+  .vlead .vav{width:28px;height:28px}
+  .vlead .vpill{grid-column:2;justify-self:start}
   .vhead{font-size:.64rem}
   .vb{font-size:.72rem;padding:7px 9px}
   .vcard-ia .vq{font-size:.74rem}
@@ -661,7 +665,7 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
   filter:blur(10px);animation:brilla 3.2s ease-in-out infinite;pointer-events:none;z-index:2}
 @keyframes brilla{50%{opacity:.35;transform:translate(-50%,-50%) scale(.82)}}
 @media(max-width:1000px){.dz-hero{width:260px;height:380px}}
-@media(max-width:480px){.dz-hero{width:180px;height:300px}.pose[data-pose="celular"]{height:88%}.pose[data-pose="laptop"]{height:74%}}
+@media(max-width:480px){.dz-hero{width:160px;height:290px}.pose[data-pose="celular"]{height:88%}.pose[data-pose="laptop"]{height:74%}}
 
 
 .en-frase{margin-top:40px;padding:22px 26px;border-radius:var(--r);background:rgba(232,225,253,.05);border:1px solid var(--hilo);
