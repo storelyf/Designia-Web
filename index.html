@@ -1166,6 +1166,61 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
   .dz{opacity:1!important;transform:none!important}
   .hero-vis{opacity:1!important}
 }
+
+/* ==========================================================================
+   ACCESIBILIDAD AA — contraste, foco y objetivos táctiles (auditoría sep-2026)
+   Tokens solo para TEXTO: el turquesa y el violeta de marca siguen igual en
+   rellenos; sobre fondos claros o en texto pequeño se usan estos tonos.
+   ========================================================================== */
+:root{--turq-700:#0A7C84;--violeta-texto:#A38AF9}
+/* foco visible también sobre las secciones claras (turquesa sobre lavanda = 1,8:1) */
+.w-luz :focus-visible{outline-color:var(--tinta)}
+.w-luz .ia-card :focus-visible{outline-color:var(--turq)}
+.w-luz .kicker,.paso-n,.w-luz .cierre-problema em,.w-luz .en-frase b,.w-luz .ia-motor,.paso.is-on .num{color:var(--turq-700)}
+.w-luz .kicker::before{background:var(--turq-700)}
+.paso .num{-webkit-text-stroke-color:var(--turq-700)}
+.w-luz .grad{background:linear-gradient(100deg,var(--turq-700),var(--intenso));-webkit-background-clip:text;background-clip:text}
+/* violeta como texto sobre tinta no llega a 4,5:1 */
+.plan-medida .alcance,.cupos,.plan .li-nota{color:var(--violeta-texto)}
+/* textos con alfa demasiado bajo (la etiqueta "Simulación" tiene que leerse) */
+.vsim,.ia-sim{color:rgba(232,225,253,.75);font-size:.66rem}
+.plan .nota{color:rgba(232,225,253,.75)}
+.plan .para{color:rgba(232,225,253,.72)}
+.flead.frio .f-score b{color:rgba(232,225,253,.65)}
+.bars-lab{color:rgba(232,225,253,.62)}
+.vav,.f-av{background:linear-gradient(135deg,#6d4ae6,var(--intenso))}
+/* campos: placeholder y borde legibles, foco reforzado */
+.hero-audit input::placeholder{color:rgba(232,225,253,.6)}
+.campo-r input::placeholder,.campo-r textarea::placeholder{color:rgba(232,225,253,.55)}
+.hero-audit input{border-color:rgba(232,225,253,.45)}
+.campo-r input,.campo-r textarea{border-bottom-color:rgba(232,225,253,.45)}
+.hero-audit input:focus{box-shadow:0 0 0 2px var(--turq)}
+.campo-r input:focus,.campo-r textarea:focus{box-shadow:0 2px 0 0 var(--turq)}
+.hero-audit input[aria-invalid=true],.campo-r [aria-invalid=true]{border-color:#FF9A7A}
+.work-link{display:inline-flex;align-items:center;min-height:44px;color:var(--turq);font-weight:700;text-decoration:none}
+.work-link:hover{text-decoration:underline}
+.campo-err{margin-top:6px;font-size:.8rem;font-weight:500;color:#FF9A7A}
+.w-luz .campo-err{color:#B3261E}
+.opc{text-transform:none;letter-spacing:0;font-weight:500;color:rgba(232,225,253,.62)}
+/* objetivos táctiles de 44 px */
+.datos-contacto a{display:inline-flex;align-items:center;min-height:44px}
+.mv-tab{min-height:44px}
+.topbar>a{display:inline-flex;align-items:center;min-height:44px}
+/* el foco no queda tapado por la barra fija inferior */
+@media(max-width:760px){html{scroll-padding-bottom:96px}}
+/* lo que no se ve no se enfoca */
+.wa-float{visibility:hidden;transition:transform .35s var(--ease),opacity .35s,visibility 0s .35s}
+.wa-float.show{visibility:visible;transition:transform .35s var(--ease),opacity .35s,visibility 0s}
+.cta-movil{visibility:hidden;transition:transform .45s var(--ease-expo),visibility 0s .45s}
+.cta-movil.show{visibility:visible;transition:transform .45s var(--ease-expo),visibility 0s}
+.faq-item:not(.open) .faq-a{visibility:hidden}
+/* control para detener lo que se mueve solo (WCAG 2.2.2) */
+.pausa-mov{display:inline-flex;align-items:center;gap:8px;min-height:44px;margin-top:10px;padding:0 4px;background:none;border:0;
+  color:rgba(232,225,253,.72);font:600 .8rem/1 Inter,sans-serif;cursor:pointer}
+.pausa-mov:hover{color:var(--lavanda)}
+.pausa-mov i{display:inline-block;width:10px;height:12px;border-left:3px solid currentColor;border-right:3px solid currentColor}
+.pausa-mov[aria-pressed=true] i{width:0;height:0;border-style:solid;border-width:6px 0 6px 10px;border-color:transparent transparent transparent currentColor}
+html.pausa *,html.pausa *::before,html.pausa *::after{animation-play-state:paused!important}
 </style>
 </head>
 <body>
@@ -1196,7 +1251,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
 </svg>
 
 <!-- INTRO -->
-<div id="intro" role="dialog" aria-label="Bienvenida Designia">
+<div id="intro" aria-hidden="true">
   <div class="intro-lock">
     <div class="logo-wrap">
       <img src="logo-designia-blanco.png" alt="" class="logo-intro" width="478" height="160" fetchpriority="high">
@@ -1205,7 +1260,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
     <small class="intro-tag">marketing digital y publicidad</small>
     <div class="intro-bar" aria-hidden="true"><i></i></div>
   </div>
-  <button id="saltar" type="button">Saltar intro</button>
+  <button id="saltar" type="button" tabindex="-1">Saltar intro</button>
 </div>
 
 <div class="cursor-ring" aria-hidden="true"></div>
@@ -1250,12 +1305,13 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
       </p>
 
       <!-- Tres mensajes de portada. Designio cambia de pose con cada uno (ver .vis-stage). -->
+      <h1 class="sr-only">Designia, agencia de marketing e IA en Lima: todo un equipo de marketing e IA sin ampliar tu planilla</h1>
       <div class="hero-slides" id="heroSlides">
-        <div class="hslide is-on" data-pose="frontal">
-          <h1 class="display">
+        <div class="hslide is-on" id="hslide-0" role="tabpanel" aria-labelledby="hdot-0" data-pose="frontal">
+          <p class="display h1-like">
             <span class="mask"><span>Todo un equipo de <span class="grad">marketing e IA</span></span></span>
             <span class="mask"><span>sin ampliar tu planilla</span></span>
-          </h1>
+          </p>
           <p class="big-rot">
             <img class="mark" src="isotipo-blanco.png" alt="" width="112" height="115" aria-hidden="true">
             Encendemos tu marca con <span class="rot-word" id="rotWord">contenido que conecta</span>
@@ -1269,7 +1325,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
           </div>
         </div>
 
-        <div class="hslide" data-pose="celular">
+        <div class="hslide" id="hslide-1" role="tabpanel" aria-labelledby="hdot-1" data-pose="celular">
           <p class="hslide-tag"><span class="tag-consulta">Bajo consulta</span> Se arma por proyecto</p>
           <p class="display h1-like">
             <span class="mask"><span>Respondes en segundos,</span></span>
@@ -1283,7 +1339,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
           </div>
         </div>
 
-        <div class="hslide" data-pose="laptop">
+        <div class="hslide" id="hslide-2" role="tabpanel" aria-labelledby="hdot-2" data-pose="laptop">
           <p class="display h1-like">
             <span class="mask"><span>¿Aparece tu negocio</span></span>
             <span class="mask"><span>cuando le preguntan a <em class="grad rot-ia" id="heroMotor">ChatGPT</em>?</span></span>
@@ -1291,17 +1347,18 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
           <p class="lead">Cada vez más clientes le preguntan a un asistente de IA en lugar de buscar en Google. Audita tu web en 20 segundos y mira qué le falta para que la IA <strong>te recomiende a ti</strong>.</p>
           <form class="hero-audit" id="heroAudit" action="auditoria.html" method="get">
             <label class="sr-only" for="heroDominio">Dominio de tu web</label>
-            <input type="text" id="heroDominio" name="dominio" placeholder="tunegocio.pe" autocomplete="url" inputmode="url" spellcheck="false" autocapitalize="off">
+            <input type="text" id="heroDominio" name="dominio" placeholder="tunegocio.pe" autocomplete="url" inputmode="url" spellcheck="false" autocapitalize="off" aria-describedby="heroNota">
             <button class="btn btn-primary" type="submit" data-ga="cta_click" data-ga-label="hero_auditoria">Auditar mi web gratis</button>
           </form>
-          <p class="hero-nota" id="heroNota">Sin registro. Puntaje sobre 100 en 20 segundos y qué arreglar primero.</p>
+          <p class="hero-nota" id="heroNota" aria-live="polite">Sin registro. Puntaje sobre 100 en 20 segundos y qué arreglar primero.</p>
         </div>
       </div>
       <div class="hero-tabs" role="tablist" aria-label="Mensajes de portada">
-        <button class="hdot is-on" type="button" role="tab" aria-selected="true"><span>Marketing e IA</span><i></i></button>
-        <button class="hdot" type="button" role="tab" aria-selected="false"><span>Asistente 24/7</span><i></i></button>
-        <button class="hdot" type="button" role="tab" aria-selected="false"><span>Buscadores de IA</span><i></i></button>
+        <button class="hdot is-on" type="button" role="tab" id="hdot-0" aria-controls="hslide-0" aria-selected="true"><span>Marketing e IA</span><i></i></button>
+        <button class="hdot" type="button" role="tab" id="hdot-1" aria-controls="hslide-1" aria-selected="false" tabindex="-1"><span>Asistente 24/7</span><i></i></button>
+        <button class="hdot" type="button" role="tab" id="hdot-2" aria-controls="hslide-2" aria-selected="false" tabindex="-1"><span>Buscadores de IA</span><i></i></button>
       </div>
+      <button class="pausa-mov" id="pausaMov" type="button" aria-pressed="false"><i aria-hidden="true"></i><span>Pausar animaciones</span></button>
 
       <p class="social-lab">Escríbenos por</p>
       <div class="social-row">
@@ -1511,9 +1568,10 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
           <span class="dx-paso">Pregunta <b id="dxN">1</b> de 6</span>
           <div class="dx-barra"><i id="dxBarra"></i></div>
         </div>
-        <p class="dx-preg" id="dxPreg" aria-live="polite"></p>
+        <p class="dx-preg" id="dxPreg"></p>
+        <p class="sr-only" id="dxAnuncio" role="status"></p>
         <div class="dx-opts" id="dxOpts" role="group" aria-label="Opciones de respuesta"></div>
-        <button class="dx-atras" id="dxAtras" type="button" hidden>← Volver</button>
+        <button class="dx-atras" id="dxAtras" type="button" hidden><span aria-hidden="true">←</span> Volver</button>
       </div>
 
       <!-- Estado 2: resultado -->
@@ -1529,7 +1587,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
         </div>
         <a class="btn btn-primary dx-cta-top" id="dxCta2" href="#" target="_blank" rel="noopener">Pedir diagnóstico completo</a>
         <div class="dx-lectura">
-          <h3 id="dxBanda"></h3>
+          <h3 id="dxBanda" tabindex="-1"></h3>
           <p class="dx-nota">Esto se arma con lo que tú acabas de responder, no analiza tu cuenta. El diagnóstico completo sí revisa tu Instagram, tu ficha de Google y tu competencia directa.</p>
           <ul class="dx-hallazgos" id="dxHallazgos"></ul>
           <div class="dx-acciones">
@@ -1836,7 +1894,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
             <path d="M120 52v46M97 75h46" stroke="#13CDD9" stroke-width="4" stroke-linecap="round"/>
           </svg>
         </div>
-        <div><h3>Tu proyecto puede ser el siguiente</h3><p>Haz el test de 60 segundos o escríbenos: te decimos por dónde empezaríamos en tu caso.</p><p><a href="#diagnostico" data-ga="cta_click" data-ga-label="proyectos_test">Hacer el test →</a></p></div>
+        <div><h3>Tu proyecto puede ser el siguiente</h3><p>Haz el test de 60 segundos o escríbenos: te decimos por dónde empezaríamos en tu caso.</p><p><a class="work-link" href="#diagnostico" data-ga="cta_click" data-ga-label="proyectos_test">Hacer el test <span aria-hidden="true">→</span></a></p></div>
       </article>
     </div>
     <div class="carr-prog" aria-hidden="true"><i id="carrProg"></i></div>
@@ -2017,11 +2075,11 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
         </div>
 
         <form class="form-reset" id="formContacto" data-reveal="right" novalidate>
-          <div class="campo-r"><label for="nombre">Nombre *</label><input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="Tu nombre" required></div>
-          <div class="campo-r"><label for="negocio">Negocio *</label><input type="text" id="negocio" name="negocio" autocomplete="organization" placeholder="Nombre de tu negocio" required></div>
-          <div class="campo-r full"><label for="vende">¿Qué vendes y dónde? *</label><textarea id="vende" name="vende" rows="2" placeholder="Ej. Tienda de ropa online, inmobiliaria en Surco o clínica en Miraflores" required></textarea></div>
+          <div class="campo-r"><label for="nombre">Nombre *</label><input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="Tu nombre" required aria-describedby="err-nombre"><p class="campo-err" id="err-nombre" hidden>Escribe tu nombre.</p></div>
+          <div class="campo-r"><label for="negocio">Negocio *</label><input type="text" id="negocio" name="negocio" autocomplete="organization" placeholder="Nombre de tu negocio" required aria-describedby="err-negocio"><p class="campo-err" id="err-negocio" hidden>¿Cómo se llama tu negocio?</p></div>
+          <div class="campo-r full"><label for="vende">¿Qué vendes y dónde? *</label><textarea id="vende" name="vende" rows="2" placeholder="Ej. Tienda de ropa online, inmobiliaria en Surco o clínica en Miraflores" required aria-describedby="err-vende"></textarea><p class="campo-err" id="err-vende" hidden>Cuéntanos qué vendes, aunque sea en una línea.</p></div>
           <div class="campo-r full">
-            <label id="lblInteres">¿Qué necesitas primero? <span style="text-transform:none;letter-spacing:0;font-weight:500;opacity:.7">(opcional)</span></label>
+            <label id="lblInteres">¿Qué necesitas primero? <span class="opc">(opcional)</span></label>
             <div class="chips" role="group" aria-labelledby="lblInteres">
               <label class="chip"><input type="radio" name="interes" value="Redes y contenido"><span>Redes y contenido</span></label>
               <label class="chip"><input type="radio" name="interes" value="Publicidad"><span>Publicidad</span></label>
@@ -2189,6 +2247,20 @@ function gtag(){dataLayer.push(arguments);}
 (function(){
 'use strict';
 var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+var quieto = function(){ return reduce || document.documentElement.classList.contains('pausa'); };
+/* Botón "Pausar animaciones" (WCAG 2.2.2): congela CSS y avisa a los bucles */
+(function(){
+  var b = document.getElementById('pausaMov');
+  if(!b) return;
+  if(reduce){ b.hidden = true; return; }
+  b.addEventListener('click', function(){
+    var on = !document.documentElement.classList.contains('pausa');
+    document.documentElement.classList.toggle('pausa', on);
+    b.setAttribute('aria-pressed', String(on));
+    b.querySelector('span').textContent = on ? 'Reanudar animaciones' : 'Pausar animaciones';
+    document.dispatchEvent(new Event(on ? 'mov:pausa' : 'mov:reanudar'));
+  });
+})();
 var finePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;
 var $  = function(s,c){return (c||document).querySelector(s);};
 var $$ = function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s));};
@@ -2257,12 +2329,14 @@ document.addEventListener('click', function(e){
     raiz.style.setProperty('--h-barra', Math.round(barra.getBoundingClientRect().height) + 'px');
   }
 
+  var fuera = function(){ return $$('main, footer, #ctaMovil, #waFloat'); };
   var cerrar = function(){
     if(!nav.classList.contains('open')) return;
     nav.classList.remove('open');
     burger.setAttribute('aria-expanded','false');
     burger.setAttribute('aria-label','Abrir menú');
     raiz.classList.remove('nav-abierto');
+    fuera().forEach(function(el){ el.inert = false; });
   };
 
   burger.addEventListener('click', function(){
@@ -2271,10 +2345,21 @@ document.addEventListener('click', function(e){
     burger.setAttribute('aria-expanded', String(abierto));
     burger.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
     raiz.classList.toggle('nav-abierto', abierto);
+    fuera().forEach(function(el){ el.inert = abierto; });
+    if(abierto){ var a0 = $('a', nav); if(a0) setTimeout(function(){ a0.focus(); }, 60); }
+  });
+  // Tab da la vuelta entre los enlaces del menú y el botón que lo cierra
+  document.addEventListener('keydown', function(e){
+    if(e.key !== 'Tab' || !nav.classList.contains('open')) return;
+    var l = $$('a', nav), p = l[0], u = l[l.length - 1], a = document.activeElement;
+    if(!e.shiftKey && a === u){ e.preventDefault(); burger.focus(); }
+    else if(e.shiftKey && a === p){ e.preventDefault(); burger.focus(); }
+    else if(!e.shiftKey && a === burger){ e.preventDefault(); p.focus(); }
+    else if(e.shiftKey && a === burger){ e.preventDefault(); u.focus(); }
   });
 
   $$('a', nav).forEach(function(a){ a.addEventListener('click', cerrar); });
-  addEventListener('keydown', function(e){ if(e.key === 'Escape') cerrar(); });
+  addEventListener('keydown', function(e){ if(e.key === 'Escape' && nav.classList.contains('open')){ cerrar(); burger.focus(); } });
   addEventListener('resize', function(){ if(nav.classList.contains('open')) medirBarra(); }, {passive:true});
   medirBarra();
 })();
@@ -2348,6 +2433,7 @@ document.addEventListener('click', function(e){
                   'visibilidad en ChatGPT','webs que convierten'];
   var i = 0, timer = null;
   var girar = function(){
+    if(quieto()) return;
     rot.classList.add('fade');
     setTimeout(function(){
       i = (i + 1) % palabras.length;
@@ -2384,7 +2470,7 @@ document.addEventListener('click', function(e){
     slides[cur].classList.remove('is-on');
     cur = i;
     slides[cur].classList.add('is-on');
-    dots.forEach(function(d, k){ d.classList.toggle('is-on', k === cur); d.setAttribute('aria-selected', String(k === cur)); });
+    dots.forEach(function(d, k){ d.classList.toggle('is-on', k === cur); d.setAttribute('aria-selected', String(k === cur)); d.tabIndex = k === cur ? 0 : -1; });
     escenas.forEach(function(e, k){ e.classList.toggle('is-on', k === cur); });
     var pose = slides[cur].dataset.pose;
     poses.forEach(function(p){ p.classList.toggle('is-on', p.dataset.pose === pose); });
@@ -2395,7 +2481,7 @@ document.addEventListener('click', function(e){
   }
   function parar(){ clearInterval(timer); timer = null; if(tabs) tabs.classList.add('parado'); }
   function arrancar(){
-    if(reduce || manual || timer) return;
+    if(quieto() || manual || timer || !enVista) return;
     if(tabs) tabs.classList.remove('parado');
     barra();
     timer = setInterval(function(){ ir((cur + 1) % slides.length); }, CADA);
@@ -2405,7 +2491,7 @@ document.addEventListener('click', function(e){
   var mot = $('#heroMotor'), motores = ['ChatGPT','Gemini','Perplexity','Copilot'], mi = 0, tMot = null;
   function motor(encender){
     clearInterval(tMot); tMot = null;
-    if(!mot || !encender || reduce) return;
+    if(!mot || !encender || quieto()) return;
     tMot = setInterval(function(){
       mot.classList.add('fade');
       setTimeout(function(){
@@ -2414,7 +2500,25 @@ document.addEventListener('click', function(e){
     }, 2100);
   }
 
-  dots.forEach(function(d, k){ d.addEventListener('click', function(){ ir(k, true); }); });
+  dots.forEach(function(d, k){
+    d.addEventListener('click', function(){ ir(k, true); });
+    d.addEventListener('keydown', function(e){             // patrón de pestañas: flechas, Inicio y Fin
+      var n = e.key === 'ArrowRight' ? (k + 1) % dots.length : e.key === 'ArrowLeft' ? (k + dots.length - 1) % dots.length :
+              e.key === 'Home' ? 0 : e.key === 'End' ? dots.length - 1 : -1;
+      if(n < 0) return;
+      e.preventDefault(); ir(n, true); dots[n].focus();
+    });
+  });
+  // Fuera de pantalla no hace falta girar nada (ni gastar batería)
+  var enVista = true;
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){
+      enVista = es[0].isIntersecting;
+      if(enVista){ arrancar(); motor(cur === 2); } else { clearInterval(timer); timer = null; clearInterval(tMot); tMot = null; }
+    }).observe($('.hero'));
+  }
+  document.addEventListener('mov:reanudar', function(){ arrancar(); motor(cur === 2); });
+  document.addEventListener('mov:pausa', function(){ parar(); clearInterval(tMot); tMot = null; });
   var copy = $('#heroCopy');
   copy.addEventListener('pointerenter', parar);
   copy.addEventListener('pointerleave', arrancar);
@@ -2564,6 +2668,10 @@ document.addEventListener('click', function(e){
       opts.appendChild(b);
     });
     atras.hidden = i === 0;
+    if(arrancado){
+      $('#dxAnuncio').textContent = 'Pregunta ' + (i + 1) + ' de ' + PREGUNTAS.length + ': ' + p.q;
+      opts.firstChild.focus({preventScroll:true});
+    }
   }
 
   function responder(valor, texto){
@@ -2632,6 +2740,8 @@ document.addEventListener('click', function(e){
               'Mis respuestas: ' + resumen + '. Quiero el diagnóstico completo.';
     $('#dxCta').href = $('#dxCta2').href = 'https://wa.me/51998399001?text=' + encodeURIComponent(msg);
 
+    $('#dxAnuncio').textContent = 'Tu puntaje: ' + pct + ' de 100. ' + $('#dxBanda').textContent;
+    try{ $('#dxBanda').focus({preventScroll:true}); }catch(e){}
     ev('diagnostico_completado', {value: pct, score: pct});
   }
 
@@ -2661,7 +2771,7 @@ document.addEventListener('click', function(e){
   }
   function bucle(el, primero, cada, fn){
     var t = null;
-    function paso(){ fn(); t = setTimeout(paso, cada + Math.random()*900); }
+    function paso(){ if(!quieto()) fn(); t = setTimeout(paso, cada + Math.random()*900); }
     cuandoVisible(el, function(){ if(!t) t = setTimeout(paso, primero); },
                       function(){ clearTimeout(t); t = null; });
   }
@@ -2812,12 +2922,14 @@ document.addEventListener('click', function(e){
     });
     function parar(){ clearInterval(t); t = null; proc.classList.remove('auto'); }
     function arrancar(){
-      if(reduce || manual || t) return;
+      if(quieto() || manual || t) return;
       proc.classList.add('auto');
       t = setInterval(function(){ api.ir((api.actual() + 1) % pb.length); }, 5000);
     }
     proc.addEventListener('pointerenter', parar);
     proc.addEventListener('pointerleave', arrancar);
+    proc.addEventListener('focusin', parar);
+    document.addEventListener('mov:pausa', parar);
     new IntersectionObserver(function(es){ es.forEach(function(e){ e.isIntersecting ? arrancar() : parar(); }); }, {threshold: .3}).observe(proc);
   }
 })();
@@ -2975,13 +3087,25 @@ if(finePointer && !reduce){
 (function(){
   var form = $('#formContacto');
   if(!form) return;
+  ['#nombre','#negocio','#vende'].forEach(function(s){           // el error se va en cuanto se corrige
+    var c = $(s);
+    c.addEventListener('input', function(){
+      if(c.value.trim() && c.getAttribute('aria-invalid') === 'true'){
+        c.setAttribute('aria-invalid','false'); var e = $('#err-' + c.id); if(e) e.hidden = true;
+      }
+    });
+  });
   form.addEventListener('submit', function(e){
     e.preventDefault();
     var campos = ['#nombre','#negocio','#vende'];
-    for(var i=0;i<campos.length;i++){
-      var c = $(campos[i]);
-      if(!c.value.trim()){ c.focus(); if(c.reportValidity) c.reportValidity(); return; }
-    }
+    var primero = null;
+    campos.forEach(function(s){
+      var c = $(s), vacio = !c.value.trim(), err = $('#err-' + c.id);
+      c.setAttribute('aria-invalid', String(vacio));
+      if(err) err.hidden = !vacio;
+      if(vacio && !primero) primero = c;
+    });
+    if(primero){ primero.focus(); return; }
     var n = $('#nombre').value.trim(), b = $('#negocio').value.trim(), v = $('#vende').value.trim();
     var sel = form.querySelector('input[name="interes"]:checked');
     var interes = sel ? sel.value : '';
