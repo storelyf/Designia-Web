@@ -245,6 +245,21 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
   html{scroll-behavior:auto}
 }
+
+/* ===== Accesibilidad AA y móvil (auditoría sep-2026) ===== */
+:root{--turq-700:#0A7C84}
+.w-luz :focus-visible{outline-color:var(--tinta)}
+.w-luz .kicker{color:var(--turq-700)}.w-luz .kicker::before{background:var(--turq-700)}
+.tarj .num{-webkit-text-stroke-color:var(--turq-700)}
+.aud-form input::placeholder{color:rgba(232,225,253,.6)}
+.aud-form input{border-color:rgba(232,225,253,.45)}
+.aud-form input:focus{box-shadow:0 0 0 2px var(--turq)}
+.aud-form input[aria-invalid=true]{border-color:var(--coral)}
+.legal,.ap-vacio-t{color:rgba(232,225,253,.62)}
+/* la vista previa se lee: ejemplo con borde punteado, no texto atenuado */
+.ap-vacio .ap-item{opacity:1;border-style:dashed;background:transparent}
+/* en una columna, la lista de "qué revisamos" repetía los mismos puntos que la vista previa */
+@media(max-width:960px){.aud-checks{display:none}}
 </style>
 </head>
 <body>
@@ -259,7 +274,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
     <a href="index.html#planes">Planes</a>
     <a href="index.html#contacto">Contacto</a>
   </nav>
-  <a class="btn btn-primary btn-sm" href="https://wa.me/51998399001?text=Hola%20Designia%2C%20vengo%20de%20la%20auditor%C3%ADa%20GEO%20de%20la%20web" target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="auditoria_header_whatsapp">Hablemos</a>
+  <a class="btn btn-primary btn-sm" href="https://wa.me/51998399001?text=Hola%20Designia%2C%20vengo%20de%20la%20auditor%C3%ADa%20GEO%20de%20la%20web" target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="auditoria_header_whatsapp">Escríbenos</a>
 </header>
 
 <main>
@@ -272,10 +287,10 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
 
       <form class="aud-form" id="audForm" novalidate>
         <label class="sr-only" for="dominio">Dominio de tu web</label>
-        <input type="text" id="dominio" name="dominio" placeholder="tunegocio.pe" autocomplete="url" inputmode="url" spellcheck="false" autocapitalize="off" autofocus>
+        <input type="text" id="dominio" name="dominio" placeholder="tunegocio.pe" autocomplete="url" inputmode="url" spellcheck="false" autocapitalize="off" aria-describedby="audNota">
         <button class="btn btn-primary" id="audBtn" type="submit">Auditar mi web gratis</button>
       </form>
-      <p class="aud-nota" id="audNota">Solo leemos páginas públicas. No pedimos correo, accesos ni datos de pago.</p>
+      <p class="aud-nota" id="audNota" aria-live="polite">Solo leemos páginas públicas. No pedimos correo, accesos ni datos de pago.</p>
 
       <ul class="aud-checks" aria-label="Qué revisamos">
         <li><i><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h7"/></svg></i><div><code>robots.txt</code><span>¿deja entrar a GPTBot, ClaudeBot y PerplexityBot?</span></div></li>
@@ -287,12 +302,13 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
 
       <div class="dz-aud" aria-hidden="true">
         <span class="dz-dice" id="dzDice">Escribe tu dominio y dame 20 segundos.</span>
-        <img src="designio/laptop.webp" width="516" height="720" alt="" decoding="async">
+        <img src="designio/laptop.webp" width="516" height="720" alt="" loading="lazy" decoding="async">
       </div>
     </div>
 
-    <div class="aud-panel" id="audPanel" aria-live="polite">
-      <div class="ap-estado quieto" id="apEstado"><i></i><span>Esperando tu dominio</span></div>
+    <div class="aud-panel" id="audPanel">
+      <p class="sr-only" id="apAnuncio" role="status"></p>
+      <div class="ap-estado quieto" id="apEstado" role="status"><i></i><span>Esperando tu dominio</span></div>
       <ol class="ap-lista" id="apLista"></ol>
       <div class="ap-vacio" id="apVacio">
         <div class="ap-item"><b>Bots de IA permitidos</b><p>¿Tu robots.txt deja entrar a los rastreadores de los asistentes?</p></div>
@@ -305,7 +321,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
       <div class="ap-err" id="apErr" hidden></div>
     </div>
 
-    <aside class="ap-res" id="apRes" hidden aria-live="polite">
+    <aside class="ap-res" id="apRes" hidden aria-label="Tu resultado">
       <div class="ap-score">
         <div class="ap-aro">
           <svg viewBox="0 0 120 120" aria-hidden="true">
@@ -314,7 +330,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
           </svg>
           <div class="cif"><b id="apNum">0</b><span>de 100</span></div>
         </div>
-        <div class="ap-lectura"><h3 id="apBanda"></h3><p id="apLect"></p></div>
+        <div class="ap-lectura"><h3 id="apBanda" tabindex="-1"></h3><p id="apLect"></p></div>
       </div>
       <div class="ap-plan" id="apPlan"><h4>Tu plan de arreglo: lo que más sube tu puntaje, en orden</h4><ol id="apPlanLista"></ol></div>
       <div class="ap-acciones">
@@ -572,14 +588,16 @@ function mostrar(j, filas){
     ev('auditoria_completada', {value: p, score: p, dominio: j.dominio});
     corriendo = false; btn.disabled = false; btn.textContent = 'Auditar mi web gratis';
     if(matchMedia('(max-width:1199px)').matches) res.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block: 'start'});
+    $('#apAnuncio').textContent = 'Auditoría terminada: ' + p + ' de 100. ' + b[0];
+    try{ $('#apBanda').focus({preventScroll:true}); }catch(e){}
   }, paso * j.checks.length + 200));
 }
 
 form.addEventListener('submit', function(e){
   e.preventDefault();
   var v = limpiar(input.value);
-  if(!v || v.indexOf('.') === -1){ nota.textContent = 'Escribe el dominio de tu web, por ejemplo tunegocio.pe'; nota.classList.add('err'); input.focus(); return; }
-  nota.classList.remove('err'); nota.textContent = 'Solo leemos páginas públicas. No pedimos correo, accesos ni datos de pago.';
+  if(!v || v.indexOf('.') === -1){ nota.textContent = 'Escribe el dominio de tu web, por ejemplo tunegocio.pe'; nota.classList.add('err'); input.setAttribute('aria-invalid','true'); input.focus(); return; }
+  nota.classList.remove('err'); input.removeAttribute('aria-invalid'); nota.textContent = 'Solo leemos páginas públicas. No pedimos correo, accesos ni datos de pago.';
   input.value = v; auditar(v, 'pagina');
 });
 $('#apCta').addEventListener('click', function(){ ev('generate_lead', {method: 'auditoria_geo', currency: 'PEN'}); });
@@ -588,6 +606,8 @@ $('#apOtra').addEventListener('click', function(){ reiniciar(); input.value = ''
 // Llegó desde la portada con ?dominio=… : arranca solo
 var q = limpiar(new URLSearchParams(location.search).get('dominio') || '');
 if(q && q.indexOf('.') > -1){ input.value = q; setTimeout(function(){ auditar(q, 'portada'); }, 250); }
+// Sin autofocus en el HTML: en el móvil abría el teclado al aterrizar desde un anuncio
+else if(matchMedia('(pointer:fine) and (min-width:960px)').matches){ try{ input.focus({preventScroll:true}); }catch(e){} }
 })();
 </script>
 </body>
