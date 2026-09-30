@@ -817,7 +817,8 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
 .dx-hallazgos span{font-size:.9rem;line-height:1.6;color:rgba(232,225,253,.66)}
 .dx-hallazgos em{display:block;margin-top:7px;font-style:normal;font-size:.86rem;color:var(--turq)}
 .dx-acciones{display:flex;gap:12px;flex-wrap:wrap}
-.dx-cta-top{display:none}
+.dx-cta-top{display:none;font-size:.9rem;padding:14px 20px}
+.plan-pie a{display:inline-flex;align-items:center;min-height:44px}
 @media(max-width:760px){.dx-cta-top{display:flex;justify-self:stretch;margin-top:-8px}}
 .dx-acciones .btn-line{border-color:var(--hilo);color:var(--lavanda)}
 .dx-acciones .btn-line:hover{background:var(--lavanda);color:var(--tinta)}
@@ -1188,6 +1189,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
 .plan-medida .alcance,.cupos,.plan .li-nota{color:var(--violeta-texto)}
 /* textos con alfa demasiado bajo (la etiqueta "Simulación" tiene que leerse) */
 .vsim,.ia-sim{color:rgba(232,225,253,.75);font-size:.66rem}
+.vsim{z-index:6;background:rgba(23,15,53,.82)}
 .plan .nota{color:rgba(232,225,253,.75)}
 .plan .para{color:rgba(232,225,253,.72)}
 .flead.frio .f-score b{color:rgba(232,225,253,.65)}
@@ -2198,7 +2200,7 @@ footer .f-links a{display:inline-flex;align-items:center;min-height:44px}
     "availableLanguage":["es"],"areaServed":"PE"
   }],
   "sameAs":["https://www.instagram.com/designia.pe/","https://www.linkedin.com/company/designia-pe/"],
-  "knowsAbout":["Marketing digital","Inteligencia artificial aplicada al marketing","Asistentes de WhatsApp con IA","Visibilidad en buscadores de IA (GEO)","Meta Ads","Google Ads","Branding","SEO local","Automatización de marketing","Desarrollo web","Community management"],
+  "knowsAbout":["Marketing digital","Inteligencia artificial aplicada al marketing","Asistentes de WhatsApp con IA (bajo consulta)","Visibilidad en buscadores de IA (GEO)","Meta Ads","Google Ads","Branding","SEO local","Automatización de marketing","Desarrollo web","Community management"],
   "hasOfferCatalog":{"@type":"OfferCatalog","name":"Servicios Designia","itemListElement":[
     {"@type":"Offer","name":"Kit Arranque","description":"Punto de entrada de pago único: diagnóstico, optimización de Instagram y ficha de Google, kit de marca básico y piezas iniciales.","url":"https://designia360.com/#planes"},
     {"@type":"Offer","name":"Punto Base","description":"Servicio mensual para ordenar y profesionalizar la presencia digital.","url":"https://designia360.com/#planes"},
@@ -2495,7 +2497,7 @@ document.addEventListener('click', function(e){
   var slides = $$('.hslide'), dots = $$('.hdot'), escenas = $$('.vscene'), poses = $$('#dzHero .pose');
   if(slides.length < 2) return;
   var tabs = $('.hero-tabs');
-  var cur = 0, timer = null, manual = false, CADA = matchMedia('(max-width:959px)').matches ? 9000 : 6000;
+  var listoGiro = false, cur = 0, timer = null, manual = false, CADA = matchMedia('(max-width:959px)').matches ? 9000 : 6000;
   if(tabs) tabs.style.setProperty('--gira', (CADA / 1000) + 's');
 
   function barra(){                                // reinicia la barra de avance
@@ -2519,7 +2521,7 @@ document.addEventListener('click', function(e){
   }
   function parar(){ clearInterval(timer); timer = null; if(tabs) tabs.classList.add('parado'); }
   function arrancar(){
-    if(quieto() || manual || timer || !enVista) return;
+    if(quieto() || manual || timer || !enVista || !listoGiro) return;
     if(tabs) tabs.classList.remove('parado');
     barra();
     timer = setInterval(function(){ ir((cur + 1) % slides.length); }, CADA);
@@ -2563,9 +2565,10 @@ document.addEventListener('click', function(e){
   copy.addEventListener('focusin', parar);
   copy.addEventListener('focusout', arrancar);
   // En táctil no hay 'pointerleave': al primer toque en el texto, el visitante manda
-  copy.addEventListener('touchstart', function(){ manual = true; parar(); }, {passive:true});
+  var tRe = null;   // al tocar el texto se detiene; si no elige una pestaña, sigue a los 15 s
+  copy.addEventListener('touchstart', function(){ parar(); clearTimeout(tRe); tRe = setTimeout(arrancar, 15000); }, {passive:true});
   document.addEventListener('visibilitychange', function(){ document.hidden ? parar() : arrancar(); });
-  setTimeout(arrancar, 2600);                     // después de la intro, con tiempo de leer el primero
+  setTimeout(function(){ listoGiro = true; arrancar(); }, 2600);   // después de la intro, con tiempo de leer el primero
 
   // Formulario de auditoría: limpia el dominio y manda a /auditoria
   var f = $('#heroAudit');
