@@ -48,6 +48,7 @@
 <!-- Fuentes de marca auto-alojadas (subconjunto latin). Cero llamadas a terceros. -->
 <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/poppins-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/poppins-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="logo-designia-blanco.png" fetchpriority="high">
 <link rel="preload" as="image" href="designio/frontal.webp" type="image/webp" media="(min-width:1000px)">
 
@@ -1221,6 +1222,8 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
 .pausa-mov i{display:inline-block;width:10px;height:12px;border-left:3px solid currentColor;border-right:3px solid currentColor}
 .pausa-mov[aria-pressed=true] i{width:0;height:0;border-style:solid;border-width:6px 0 6px 10px;border-color:transparent transparent transparent currentColor}
 html.pausa *,html.pausa *::before,html.pausa *::after{animation-play-state:paused!important}
+/* RENDIMIENTO: las poses ocultas de la portada no animan */
+.pose:not(.is-on) img{animation:none}
 </style>
 </head>
 <body>
@@ -1445,8 +1448,8 @@ html.pausa *,html.pausa *::before,html.pausa *::after{animation-play-state:pause
                    alt="Designio, la mascota de Designia: un personaje de arcilla violeta con suéter blanco que sostiene una bombilla encendida con un imán dentro">
             </picture>
           </span>
-          <span class="pose" data-pose="celular" aria-hidden="true"><img class="designio" src="designio/celular.webp" fetchpriority="low" width="422" height="720" decoding="async" alt=""></span>
-          <span class="pose" data-pose="laptop" aria-hidden="true"><img class="designio" src="designio/laptop.webp" fetchpriority="low" width="516" height="720" decoding="async" alt=""></span>
+          <span class="pose" data-pose="celular" aria-hidden="true"><picture><source media="(max-width:999px)" srcset="designio/celular-sm.webp" type="image/webp"><img class="designio" src="designio/celular.webp" fetchpriority="low" width="422" height="720" decoding="async" alt=""></picture></span>
+          <span class="pose" data-pose="laptop" aria-hidden="true"><picture><source media="(max-width:999px)" srcset="designio/laptop-sm.webp" type="image/webp"><img class="designio" src="designio/laptop.webp" fetchpriority="low" width="516" height="720" decoding="async" alt=""></picture></span>
         </div>
         <span class="vsim" aria-hidden="true">Simulación</span>
       </div>
@@ -1459,11 +1462,11 @@ html.pausa *,html.pausa *::before,html.pausa *::after{animation-play-state:pause
 <div class="marcas">
   <p class="marcas-lab">Marcas con las que hemos trabajado</p>
   <div class="marcas-fila">
-    <div class="marca"><img src="marcas/propremix.png" width="204" height="150" alt="ProPremix" decoding="async"></div>
-    <div class="marca"><img src="marcas/segurblock.png" width="340" height="134" alt="SegurBlock" decoding="async"></div>
-    <div class="marca"><img src="marcas/metalblock.png" width="340" height="137" alt="MetalBlock" decoding="async"></div>
-    <div class="marca"><img src="marcas/villa-victoria-park.png" width="314" height="150" alt="Villa Victoria Park" decoding="async"></div>
-    <div class="marca"><img src="marcas/kura-kefir.png" width="321" height="150" alt="Kúra Kéfir" decoding="async"></div>
+    <div class="marca"><img src="marcas/propremix.png" width="204" height="150" alt="ProPremix" loading="lazy" decoding="async"></div>
+    <div class="marca"><img src="marcas/segurblock.png" width="340" height="134" alt="SegurBlock" loading="lazy" decoding="async"></div>
+    <div class="marca"><img src="marcas/metalblock.png" width="340" height="137" alt="MetalBlock" loading="lazy" decoding="async"></div>
+    <div class="marca"><img src="marcas/villa-victoria-park.png" width="314" height="150" alt="Villa Victoria Park" loading="lazy" decoding="async"></div>
+    <div class="marca"><img src="marcas/kura-kefir.png" width="321" height="150" alt="Kúra Kéfir" loading="lazy" decoding="async"></div>
   </div>
 </div>
 
