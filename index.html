@@ -2,7 +2,7 @@
 <html lang="es-PE" class="no-js">
 <head>
 <meta charset="UTF-8">
-<script>document.documentElement.classList.remove('no-js')</script>
+<script>(function(d){d.classList.remove('no-js');try{if(/[?&](utm_|gclid|fbclid|gbraid|wbraid|ttclid|msclkid)/.test(location.search)||matchMedia('(max-width:959px)').matches)d.classList.add('sin-intro')}catch(e){}})(document.documentElement)</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Designia · Agencia de Marketing e IA en Lima</title>
 <meta name="description" content="Designia es la agencia de marketing e inteligencia artificial de los negocios de servicio en Lima: estrategia, contenido, publicidad en Meta y Google, SEO local, web, visibilidad en ChatGPT y automatización. Diagnóstico gratis en 60 segundos.">
@@ -231,6 +231,7 @@ h2.display{font-size:clamp(2.2rem,6.4vw,5rem);line-height:.95;letter-spacing:-.0
 #intro{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;background:var(--tinta-900);
   transition:opacity .55s var(--ease),visibility .55s}
 #intro.done{opacity:0;visibility:hidden;pointer-events:none}
+html.sin-intro #intro{display:none}
 .intro-lock{display:flex;flex-direction:column;align-items:center;gap:18px;z-index:2}
 .logo-wrap{position:relative;overflow:hidden;padding:10px}
 .logo-intro{width:min(400px,74vw);height:auto;opacity:0;animation:introIn .7s .05s var(--ease-expo) forwards}
@@ -352,6 +353,7 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
 .rot-word{display:inline-block;color:var(--turq);
   transition:opacity .32s var(--ease),transform .32s var(--ease)}
 .rot-word.fade{opacity:0;transform:translateY(12px)}
+@media(max-width:760px){.big-rot{display:block;line-height:1.25;min-height:2.5em}.big-rot .mark{display:none}}
 .rot-ia{font-style:normal;display:inline-block;min-width:5.4ch;transition:opacity .3s var(--ease),transform .3s var(--ease)}
 .rot-ia.fade{opacity:0;transform:translateY(10px)}
 .hero .lead{margin:18px 0 32px;max-width:580px;font-size:1.08rem;line-height:1.72;
@@ -361,6 +363,7 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
 .social-lab{margin-top:36px;font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
   color:rgba(232,225,253,.58);opacity:0;animation:sube .8s .82s var(--ease) forwards}
 .social-row{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;opacity:0;animation:sube .8s .9s var(--ease) forwards}
+@media(max-width:760px){.social-lab,.social-row{display:none}}
 .pill{display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:10px 20px;border-radius:var(--r-full);
   border:1px solid var(--hilo);color:var(--lavanda);text-decoration:none;font-size:.87rem;font-weight:500;
   transition:transform .35s var(--ease),border-color .3s,color .3s,background .3s}
@@ -810,6 +813,8 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
 .dx-hallazgos span{font-size:.9rem;line-height:1.6;color:rgba(232,225,253,.66)}
 .dx-hallazgos em{display:block;margin-top:7px;font-style:normal;font-size:.86rem;color:var(--turq)}
 .dx-acciones{display:flex;gap:12px;flex-wrap:wrap}
+.dx-cta-top{display:none}
+@media(max-width:760px){.dx-cta-top{display:flex;justify-self:stretch;margin-top:-8px}}
 .dx-acciones .btn-line{border-color:var(--hilo);color:var(--lavanda)}
 .dx-acciones .btn-line:hover{background:var(--lavanda);color:var(--tinta)}
 
@@ -1114,6 +1119,7 @@ body.cursor-claro.cursor-hot .cursor-ring{background:rgba(34,24,74,.12);border-c
 .cta-movil .btn-line{border-color:var(--hilo);color:var(--lavanda)}
 .cta-movil .btn-line:hover{background:var(--lavanda);color:var(--tinta)}
 @media(max-width:760px){
+  body.bar-on .topbar .nav-cta .btn-sm{visibility:hidden}
   .cta-movil{display:flex}
   .wa-float{display:none}
   footer{padding-bottom:104px}
@@ -1257,9 +1263,9 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
           <p class="lead">Estrategia, contenido, publicidad y herramientas con inteligencia artificial para negocios que ya venden, pero todavía no suenan. Con base en Lima y trabajando <strong>en todo el Perú</strong>.</p>
           <div class="cta-row">
             <a class="btn btn-primary magnetico" href="https://wa.me/51998399001?text=Hola%20Designia%2C%20vengo%20de%20la%20web%20y%20quiero%20mi%20diagn%C3%B3stico%20gratis"
-               target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="hero_diagnostico">Quiero mi diagnóstico gratis</a>
-            <a class="btn btn-ghost" href="#planes" data-ga="cta_click" data-ga-label="hero_planes">Ver cómo trabajamos</a>
-            <span class="cta-nota"><svg class="ic-s on-dark" aria-hidden="true"><use href="#ic-clock"/></svg>Te respondemos el mismo día hábil</span>
+               target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="hero_diagnostico">Pedir diagnóstico gratis</a>
+            <a class="btn btn-ghost" href="#diagnostico" data-ga="cta_click" data-ga-label="hero_test">Hacer el test de 60 s</a>
+            <span class="cta-nota"><svg class="ic-s on-dark" aria-hidden="true"><use href="#ic-chat"/></svg>Por WhatsApp · te respondemos el mismo día hábil</span>
           </div>
         </div>
 
@@ -1391,6 +1397,19 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
   </div>
 </section>
 
+<!-- Marcas con las que se ha trabajado. Para sumar una: deja el PNG en
+     /marcas y copia un bloque .marca con su nombre de archivo y su alt. -->
+<div class="marcas">
+  <p class="marcas-lab">Marcas con las que hemos trabajado</p>
+  <div class="marcas-fila">
+    <div class="marca"><img src="marcas/propremix.png" width="204" height="150" alt="ProPremix" decoding="async"></div>
+    <div class="marca"><img src="marcas/segurblock.png" width="340" height="134" alt="SegurBlock" decoding="async"></div>
+    <div class="marca"><img src="marcas/metalblock.png" width="340" height="137" alt="MetalBlock" decoding="async"></div>
+    <div class="marca"><img src="marcas/villa-victoria-park.png" width="314" height="150" alt="Villa Victoria Park" decoding="async"></div>
+    <div class="marca"><img src="marcas/kura-kefir.png" width="321" height="150" alt="Kúra Kéfir" decoding="async"></div>
+  </div>
+</div>
+
 <!-- Franja: cifras arriba, compromisos abajo, en un solo bloque -->
 <div class="franja">
   <div class="franja-cifras" data-stagger>
@@ -1421,19 +1440,6 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
         <span>El equipo que te presenta la propuesta es el que ejecuta. Tu cuenta no rota de manos cada mes.</span>
       </div>
     </div>
-  </div>
-</div>
-
-<!-- Marcas con las que se ha trabajado. Para sumar una: deja el PNG en
-     /marcas y copia un bloque .marca con su nombre de archivo y su alt. -->
-<div class="marcas">
-  <p class="marcas-lab">Marcas con las que hemos trabajado</p>
-  <div class="marcas-fila">
-    <div class="marca"><img src="marcas/propremix.png" width="204" height="150" alt="ProPremix" decoding="async"></div>
-    <div class="marca"><img src="marcas/segurblock.png" width="340" height="134" alt="SegurBlock" decoding="async"></div>
-    <div class="marca"><img src="marcas/metalblock.png" width="340" height="137" alt="MetalBlock" decoding="async"></div>
-    <div class="marca"><img src="marcas/villa-victoria-park.png" width="314" height="150" alt="Villa Victoria Park" decoding="async"></div>
-    <div class="marca"><img src="marcas/kura-kefir.png" width="321" height="150" alt="Kúra Kéfir" decoding="async"></div>
   </div>
 </div>
 
@@ -1521,12 +1527,13 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
           </svg>
           <div class="dx-cifra"><b id="dxPuntaje">0</b><span>de 100</span></div>
         </div>
+        <a class="btn btn-primary dx-cta-top" id="dxCta2" href="#" target="_blank" rel="noopener">Pedir diagnóstico completo</a>
         <div class="dx-lectura">
           <h3 id="dxBanda"></h3>
           <p class="dx-nota">Esto se arma con lo que tú acabas de responder, no analiza tu cuenta. El diagnóstico completo sí revisa tu Instagram, tu ficha de Google y tu competencia directa.</p>
           <ul class="dx-hallazgos" id="dxHallazgos"></ul>
           <div class="dx-acciones">
-            <a class="btn btn-primary" id="dxCta" href="#" target="_blank" rel="noopener">Recibir el diagnóstico completo</a>
+            <a class="btn btn-primary" id="dxCta" href="#" target="_blank" rel="noopener">Recibir el diagnóstico completo por WhatsApp</a>
             <button class="btn btn-line" id="dxReset" type="button">Repetir</button>
           </div>
         </div>
@@ -1829,7 +1836,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
             <path d="M120 52v46M97 75h46" stroke="#13CDD9" stroke-width="4" stroke-linecap="round"/>
           </svg>
         </div>
-        <div><h3>¿Tu marca aquí?</h3><p>Este espacio está reservado para el próximo proyecto. Puede ser el tuyo.</p></div>
+        <div><h3>Tu proyecto puede ser el siguiente</h3><p>Haz el test de 60 segundos o escríbenos: te decimos por dónde empezaríamos en tu caso.</p><p><a href="#diagnostico" data-ga="cta_click" data-ga-label="proyectos_test">Hacer el test →</a></p></div>
       </article>
     </div>
     <div class="carr-prog" aria-hidden="true"><i id="carrProg"></i></div>
@@ -1951,6 +1958,10 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
     <h2 class="display"><span class="mask"><span>Lo que todos preguntan</span></span></h2>
     <div class="faq" data-stagger>
       <div class="faq-item" data-reveal>
+        <button class="faq-q" type="button" aria-expanded="false">¿Cuánto cuesta trabajar con Designia?<span class="mas" aria-hidden="true"></span></button>
+        <div class="faq-a"><div><p>Depende del alcance: no vendemos paquetes cerrados. Después del diagnóstico gratis te enviamos por escrito la propuesta con el alcance y la inversión, en 24 horas. La inversión en pauta se paga aparte, directo a Meta o Google.</p></div></div>
+      </div>
+      <div class="faq-item" data-reveal>
         <button class="faq-q" type="button" aria-expanded="false">¿Necesito ya tener logo o marca?<span class="mas" aria-hidden="true"></span></button>
         <div class="faq-a"><div><p>No. Si aún no tienes identidad, empiezas con el Kit Arranque, que incluye el kit de marca básico. Si ya la tienes, la respetamos y la ordenamos para que funcione en digital.</p></div></div>
       </div>
@@ -2008,7 +2019,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
         <form class="form-reset" id="formContacto" data-reveal="right" novalidate>
           <div class="campo-r"><label for="nombre">Nombre *</label><input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="Tu nombre" required></div>
           <div class="campo-r"><label for="negocio">Negocio *</label><input type="text" id="negocio" name="negocio" autocomplete="organization" placeholder="Nombre de tu negocio" required></div>
-          <div class="campo-r full"><label for="vende">¿Qué vendes y dónde? *</label><textarea id="vende" name="vende" rows="2" placeholder="Ej. Clínica dental en Surco, atendemos por citas" required></textarea></div>
+          <div class="campo-r full"><label for="vende">¿Qué vendes y dónde? *</label><textarea id="vende" name="vende" rows="2" placeholder="Ej. Tienda de ropa online, inmobiliaria en Surco o clínica en Miraflores" required></textarea></div>
           <div class="campo-r full">
             <label id="lblInteres">¿Qué necesitas primero? <span style="text-transform:none;letter-spacing:0;font-weight:500;opacity:.7">(opcional)</span></label>
             <div class="chips" role="group" aria-labelledby="lblInteres">
@@ -2046,9 +2057,9 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
 
 <!-- Barra de acción móvil -->
 <div class="cta-movil" id="ctaMovil">
-  <a class="btn btn-line" href="#contacto" data-ga="cta_click" data-ga-label="movil_escribenos">Escríbenos</a>
+  <a class="btn btn-line" href="#diagnostico" data-ga="cta_click" data-ga-label="movil_test">Test 60 s</a>
   <a class="btn btn-primary" href="https://wa.me/51998399001?text=Hola%20Designia%2C%20quiero%20mi%20diagn%C3%B3stico%20gratis"
-     target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="movil_diagnostico">Diagnóstico gratis</a>
+     target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="movil_diagnostico">WhatsApp</a>
 </div>
 
 <footer>
@@ -2134,6 +2145,7 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
 {"@type":"Question","name":"¿Necesito ya tener logo o marca?","acceptedAnswer":{"@type":"Answer","text":"No. Si aún no tienes identidad, empiezas con el Kit Arranque, que incluye el kit de marca básico. Si ya la tienes, la respetamos y la ordenamos para que funcione en digital."}},
 {"@type":"Question","name":"¿En cuánto tiempo veo resultados?","acceptedAnswer":{"@type":"Answer","text":"El contenido orgánico se construye en torno a 3 meses; la pauta bien segmentada trae primeros leads desde las primeras semanas. Por eso la permanencia mínima es de 3 meses."}},
 {"@type":"Question","name":"¿Trabajan con negocios fuera de Lima?","acceptedAnswer":{"@type":"Answer","text":"El foco es Lima para producciones presenciales, pero el contenido, la pauta y la estrategia se operan 100% en remoto para todo el Perú."}},
+{"@type":"Question","name":"¿Cuánto cuesta trabajar con Designia?","acceptedAnswer":{"@type":"Answer","text":"Depende del alcance: no vendemos paquetes cerrados. Después del diagnóstico gratis te enviamos por escrito la propuesta con el alcance y la inversión, en 24 horas. La inversión en pauta se paga aparte, directo a Meta o Google."}},
 {"@type":"Question","name":"¿Qué necesito para empezar?","acceptedAnswer":{"@type":"Answer","text":"Una conversación de 20 minutos y tu diagnóstico gratis. Después, fotos o videos de tu negocio o una producción contratada."}},
 {"@type":"Question","name":"¿Cómo nos comunicamos?","acceptedAnswer":{"@type":"Answer","text":"WhatsApp para el día a día, reunión mensual con lectura de reporte y siempre las mismas personas al frente de tu cuenta."}},
 {"@type":"Question","name":"¿Qué es la visibilidad en buscadores de IA?","acceptedAnswer":{"@type":"Answer","text":"Es que tu negocio aparezca cuando alguien le pregunta a ChatGPT, Gemini o Perplexity por un servicio como el tuyo. Se trabaja con datos estructurados en la web, contenido que responde preguntas concretas y reseñas verificables. Designia lo incluye en los planes que llevan SEO local."}},
@@ -2222,7 +2234,7 @@ document.addEventListener('click', function(e){
   if(!intro) return;
   var visto = false;
   try{ visto = !!sessionStorage.getItem('dIntro'); }catch(e){}
-  if(visto || reduce){ intro.remove(); return; }
+  if(visto || reduce || document.documentElement.classList.contains('sin-intro')){ intro.remove(); return; }
   var cerrar = function(){
     intro.classList.add('done');
     try{ sessionStorage.setItem('dIntro','1'); }catch(e){}
@@ -2359,7 +2371,7 @@ document.addEventListener('click', function(e){
   var slides = $$('.hslide'), dots = $$('.hdot'), escenas = $$('.vscene'), poses = $$('#dzHero .pose');
   if(slides.length < 2) return;
   var tabs = $('.hero-tabs');
-  var cur = 0, timer = null, manual = false, CADA = 6000;
+  var cur = 0, timer = null, manual = false, CADA = matchMedia('(max-width:959px)').matches ? 9000 : 6000;
   if(tabs) tabs.style.setProperty('--gira', (CADA / 1000) + 's');
 
   function barra(){                                // reinicia la barra de avance
@@ -2408,6 +2420,8 @@ document.addEventListener('click', function(e){
   copy.addEventListener('pointerleave', arrancar);
   copy.addEventListener('focusin', parar);
   copy.addEventListener('focusout', arrancar);
+  // En táctil no hay 'pointerleave': al primer toque en el texto, el visitante manda
+  copy.addEventListener('touchstart', function(){ manual = true; parar(); }, {passive:true});
   document.addEventListener('visibilitychange', function(){ document.hidden ? parar() : arrancar(); });
   setTimeout(arrancar, 2600);                     // después de la intro, con tiempo de leer el primero
 
@@ -2616,11 +2630,12 @@ document.addEventListener('click', function(e){
     var resumen = respuestas.map(function(r, k){ return (k + 1) + ') ' + r.t; }).join(', ');
     var msg = 'Hola Designia, hice el diagnóstico express de la web y saqué ' + pct + '/100. ' +
               'Mis respuestas: ' + resumen + '. Quiero el diagnóstico completo.';
-    $('#dxCta').href = 'https://wa.me/51998399001?text=' + encodeURIComponent(msg);
+    $('#dxCta').href = $('#dxCta2').href = 'https://wa.me/51998399001?text=' + encodeURIComponent(msg);
 
     ev('diagnostico_completado', {value: pct, score: pct});
   }
 
+  $('#dxCta2').addEventListener('click', function(){ ev('generate_lead', {method:'diagnostico_express', currency:'PEN'}); });
   $('#dxCta').addEventListener('click', function(){
     ev('generate_lead', {method:'diagnostico_express', currency:'PEN'});
   });
@@ -2906,7 +2921,16 @@ if(finePointer && !reduce){
 (function(){
   var topbar = $('#topbar'), prog = $('#progBar'), wa = $('#waFloat'),
       ctaMovil = $('#ctaMovil'), heroSec = $('.hero');
-  var ticking = false;
+  var ticking = false, enZona = false, zonas = {};
+  // Donde ya hay un formulario o el test, la barra fija sobra y tapa el teclado
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ zonas[e.target.id] = e.isIntersecting; });
+      enZona = !!(zonas.contacto || zonas.dx);
+      if(!ticking){ ticking = true; requestAnimationFrame(pintar); }
+    }, {rootMargin:'-10% 0px -10% 0px'});
+    ['#contacto','#dx'].forEach(function(s){ var el = $(s); if(el) io.observe(el); });
+  }
   var pintar = function(){
     ticking = false;
     var h = document.documentElement;
@@ -2917,8 +2941,9 @@ if(finePointer && !reduce){
     topbar.classList.toggle('scrolled', y > 40);
 
     var pasoHero = heroSec ? y > heroSec.offsetHeight * 0.6 : y > 420;
-    if(wa) wa.classList.toggle('show', pasoHero);
-    if(ctaMovil) ctaMovil.classList.toggle('show', pasoHero);
+    if(wa) wa.classList.toggle('show', pasoHero && !enZona);
+    if(ctaMovil) ctaMovil.classList.toggle('show', pasoHero && !enZona);
+    document.body.classList.toggle('bar-on', pasoHero && !enZona);
 
   };
   addEventListener('scroll', function(){
