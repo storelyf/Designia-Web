@@ -27,3 +27,7 @@
   Cache-Control: public, max-age=0, must-revalidate
 /auditoria
   Cache-Control: public, max-age=0, must-revalidate
+/recursos/
+  Cache-Control: public, max-age=0, must-revalidate
+/recursos/*
+  Cache-Control: public, max-age=0, must-revalidate
