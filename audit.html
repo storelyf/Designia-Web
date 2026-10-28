@@ -1,39 +1,40 @@
 <!DOCTYPE html>
-<html lang="es-PE">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Auditoría GEO gratis: ¿la IA puede leer tu web? · Designia</title>
-<meta name="description" content="Escribe tu dominio y en 20 segundos ves si ChatGPT, Gemini y Perplexity pueden leer y citar tu web: robots.txt, llms.txt, datos estructurados, metadatos y sitemap. Gratis y sin registro.">
+<title>Free GEO Audit: Can AI Read Your Website? · Designia</title>
+<meta name="description" content="Enter your domain and in 20 seconds see whether ChatGPT, Gemini and Perplexity can read and cite your website: robots.txt, llms.txt, structured data, meta tags and sitemap. Free, no sign-up.">
 <meta name="theme-color" content="#22184a">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="author" content="Designia">
-<link rel="canonical" href="https://designia360.com/auditoria">
-<meta property="og:url" content="https://designia360.com/auditoria">
-<meta property="og:title" content="Auditoría GEO gratis · ¿La IA puede leer tu web?">
-<meta property="og:description" content="Escribe tu dominio y en 20 segundos ves qué le falta a tu web para que ChatGPT, Gemini o Perplexity te recomienden. Sin registro.">
+<link rel="canonical" href="https://designia360.com/audit">
+<meta property="og:url" content="https://designia360.com/audit">
+<meta property="og:title" content="Free GEO audit · Can AI read your website?">
+<meta property="og:description" content="Enter your domain and in 20 seconds see what your website is missing for ChatGPT, Gemini or Perplexity to recommend you. No sign-up.">
 <meta property="og:type" content="website">
-<meta property="og:locale" content="es_PE">
+<meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Designia">
 <meta property="og:image" content="https://designia360.com/og-designia.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Auditoría GEO gratis · Designia">
-<meta name="twitter:description" content="¿La IA puede leer tu web? Averígualo en 20 segundos.">
+<meta name="twitter:title" content="Free GEO audit · Designia">
+<meta name="twitter:description" content="Can AI read your website? Find out in 20 seconds.">
 <meta name="twitter:image" content="https://designia360.com/og-designia.jpg">
-<link rel="alternate" hreflang="es-pe" href="https://designia360.com/auditoria">
-<link rel="alternate" hreflang="x-default" href="https://designia360.com/auditoria">
-<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="icono-192.png" sizes="192x192" type="image/png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/poppins-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="alternate" hreflang="en" href="https://designia360.com/audit">
+<link rel="alternate" hreflang="es" href="https://designia360.com/es/auditoria">
+<link rel="alternate" hreflang="x-default" href="https://designia360.com/audit">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/icono-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/poppins-800.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-@font-face{font-family:'Poppins';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/poppins-600.woff2) format('woff2')}
-@font-face{font-family:'Poppins';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/poppins-700.woff2) format('woff2')}
-@font-face{font-family:'Poppins';font-style:normal;font-weight:800;font-display:swap;src:url(fonts/poppins-800.woff2) format('woff2')}
-@font-face{font-family:'Inter';font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/inter-latin.woff2) format('woff2')}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/poppins-600.woff2) format('woff2')}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/poppins-700.woff2) format('woff2')}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:800;font-display:swap;src:url(/fonts/poppins-800.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/inter-latin.woff2) format('woff2')}
 :root{
   --turq:#13CDD9;--turq-600:#0FA9B3;--turq-050:#EAFBFC;
   --tinta:#22184a;--tinta-900:#170F35;--tinta-800:#1C1440;--tinta-700:#2E2160;
@@ -261,125 +262,136 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
 .ap-vacio .ap-item{opacity:1;border-style:dashed;background:transparent}
 /* en una columna, la lista de "qué revisamos" repetía los mismos puntos que la vista previa */
 @media(max-width:960px){.aud-checks{display:none}}
+
+/* Selector de idioma: el idioma actual va resaltado, el otro es un enlace */
+.lang-sw{display:inline-flex;align-items:center;border:1px solid rgba(232,225,253,.28);border-radius:999px;
+  font-family:'Poppins',sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.06em;flex:none}
+.lang-sw b,.lang-sw a{display:grid;place-items:center;min-width:44px;min-height:40px;padding:0 9px;border-radius:999px}
+.lang-sw b{background:rgba(19,205,217,.16);color:var(--turq)}
+.lang-sw a{color:rgba(232,225,253,.78);text-decoration:none;transition:color .2s}
+.lang-sw a:hover,.lang-sw a:focus-visible{color:var(--turq)}
+.nav-cta{display:flex;align-items:center;gap:8px}
 </style>
 </head>
 <body>
-<a class="skip" href="#auditoria">Saltar al contenido</a>
+<a class="skip" href="#auditoria">Skip to content</a>
 
 <header class="topbar">
-  <a href="index.html" aria-label="Designia, ir al inicio"><img src="logo-designia-blanco.png" alt="Designia" class="logo-top" width="478" height="160"></a>
-  <nav aria-label="Navegación principal">
-    <a href="index.html">Inicio</a>
-    <a href="index.html#diagnostico">Diagnóstico</a>
-    <a href="index.html#servicios">Servicios</a>
-    <a href="index.html#planes">Planes</a>
-    <a href="index.html#contacto">Contacto</a>
+  <a href="/" aria-label="Designia, go to home page"><img src="/logo-designia-blanco.png" alt="Designia" class="logo-top" width="478" height="160"></a>
+  <nav aria-label="Main navigation">
+    <a href="/">Home</a>
+    <a href="/#diagnostico">Assessment</a>
+    <a href="/#servicios">Services</a>
+    <a href="/#planes">Plans</a>
+    <a href="/#contacto">Contact</a>
   </nav>
-  <a class="btn btn-primary btn-sm" href="https://wa.me/51998399001?text=Hola%20Designia%2C%20vengo%20de%20la%20auditor%C3%ADa%20GEO%20de%20la%20web" target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="auditoria_header_whatsapp">Escríbenos</a>
+  <div class="nav-cta"><span class="lang-sw"><b aria-current="true" title="EN">EN</b><a href="/es/auditoria" hreflang="es" lang="es" aria-label="Ver en español" data-ga="cta_click" data-ga-label="idioma_es">ES</a></span>
+    <a class="btn btn-primary btn-sm" href="https://wa.me/51998399001?text=Hi%20Designia%2C%20I%27m%20writing%20from%20the%20GEO%20audit%20on%20your%20website" target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="auditoria_header_whatsapp">Message us</a>
+  </div>
 </header>
 
 <main>
 <section class="aud" id="auditoria">
   <div class="inner aud-grid" id="audGrid">
     <div class="aud-copy">
-      <span class="kicker">Auditoría GEO gratuita</span>
-      <h1 class="display">Audita tu web como la <span class="grad">lee la IA</span></h1>
-      <p class="lead">Escribe tu dominio y listo, sin registro: leemos tu sitio <strong>en vivo, ahora mismo</strong>, y ves resolverse uno por uno los siete puntos que deciden si ChatGPT, Gemini o Perplexity pueden entenderte y citarte. Al final, tu puntaje sobre 100 y qué arreglar primero.</p>
+      <span class="kicker">Free GEO audit</span>
+      <h1 class="display">Audit your website the way <span class="grad">AI reads it</span></h1>
+      <p class="lead">Enter your domain and that's it, no sign-up: we read your site <strong>live, right now</strong>, and you watch the seven checks that decide whether ChatGPT, Gemini or Perplexity can understand and cite you resolve one by one. At the end, you get your score out of 100 and what to fix first.</p>
 
       <form class="aud-form" id="audForm" novalidate>
-        <label class="sr-only" for="dominio">Dominio de tu web</label>
-        <input type="text" id="dominio" name="dominio" placeholder="tunegocio.pe" autocomplete="url" inputmode="url" spellcheck="false" autocapitalize="off" aria-describedby="audNota">
-        <button class="btn btn-primary" id="audBtn" type="submit">Auditar mi web gratis</button>
+        <label class="sr-only" for="dominio">Your website's domain</label>
+        <input type="text" id="dominio" name="dominio" placeholder="yourbusiness.com" autocomplete="url" inputmode="url" spellcheck="false" autocapitalize="off" aria-describedby="audNota">
+        <button class="btn btn-primary" id="audBtn" type="submit">Audit my site for free</button>
       </form>
-      <p class="aud-nota" id="audNota" aria-live="polite">Solo leemos páginas públicas. No pedimos correo, accesos ni datos de pago.</p>
+      <p class="aud-nota" id="audNota" aria-live="polite">We only read public pages. We never ask for your email, logins or payment details.</p>
 
-      <ul class="aud-checks" aria-label="Qué revisamos">
-        <li><i><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h7"/></svg></i><div><code>robots.txt</code><span>¿deja entrar a GPTBot, ClaudeBot y PerplexityBot?</span></div></li>
-        <li><i><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM9 9h6M9 13h6M9 17h3"/></svg></i><div><code>llms.txt</code><span>la ficha de tu marca que los modelos leen primero</span></div></li>
-        <li><i><svg viewBox="0 0 24 24"><path d="M8 4H5v16h3M16 4h3v16h-3M12 8v8"/></svg></i><div><code>JSON-LD</code><span>los datos estructurados con los que la IA arma tu ficha</span></div></li>
-        <li><i><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 10h8M8 14h5"/></svg></i><div><code>Title, description, OG y canonical</code><span>los cuatro metadatos con los que te titulan y te enlazan</span></div></li>
-        <li><i><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg></i><div><code>sitemap.xml</code><span>el mapa que decide si descubren tus páginas nuevas</span></div></li>
+      <ul class="aud-checks" aria-label="What we check">
+        <li><i><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h7"/></svg></i><div><code>robots.txt</code><span>does it let GPTBot, ClaudeBot and PerplexityBot in?</span></div></li>
+        <li><i><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM9 9h6M9 13h6M9 17h3"/></svg></i><div><code>llms.txt</code><span>your brand's brief that models read first</span></div></li>
+        <li><i><svg viewBox="0 0 24 24"><path d="M8 4H5v16h3M16 4h3v16h-3M12 8v8"/></svg></i><div><code>JSON-LD</code><span>the structured data AI uses to build your profile</span></div></li>
+        <li><i><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 10h8M8 14h5"/></svg></i><div><code>Title, description, OG and canonical</code><span>the four meta tags used to title and link to you</span></div></li>
+        <li><i><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg></i><div><code>sitemap.xml</code><span>the map that decides whether your new pages get discovered</span></div></li>
       </ul>
 
       <div class="dz-aud" aria-hidden="true">
-        <span class="dz-dice" id="dzDice">Escribe tu dominio y dame 20 segundos.</span>
-        <img src="designio/laptop.webp" width="516" height="720" alt="" loading="lazy" decoding="async">
+        <span class="dz-dice" id="dzDice">Enter your domain and give me 20 seconds.</span>
+        <img src="/designio/laptop.webp" width="516" height="720" alt="" loading="lazy" decoding="async">
       </div>
     </div>
 
     <div class="aud-panel" id="audPanel">
       <p class="sr-only" id="apAnuncio" role="status"></p>
-      <div class="ap-estado quieto" id="apEstado" role="status"><i></i><span>Esperando tu dominio</span></div>
+      <div class="ap-estado quieto" id="apEstado" role="status"><i></i><span>Waiting for your domain</span></div>
       <ol class="ap-lista" id="apLista"></ol>
       <div class="ap-vacio" id="apVacio">
-        <div class="ap-item"><b>Bots de IA permitidos</b><p>¿Tu robots.txt deja entrar a los rastreadores de los asistentes?</p></div>
-        <div class="ap-item"><b>llms.txt (ficha para los modelos)</b><p>La primera página que lee un modelo cuando llega a tu sitio.</p></div>
-        <div class="ap-item"><b>Datos estructurados (JSON-LD)</b><p>Con esto la IA sabe quién eres, dónde estás y qué vendes.</p></div>
-        <div class="ap-item"><b>Title, description, OG y canonical</b><p>Los metadatos con los que te titulan y te enlazan.</p></div>
-        <div class="ap-item"><b>sitemap.xml</b><p>El mapa de tus páginas, y si está declarado en robots.txt.</p></div>
-        <p class="ap-vacio-t">Así se ve un resultado. Cada punto se resuelve con una lectura real de tu web, no con una simulación.</p>
+        <div class="ap-item"><b>AI bots allowed</b><p>Does your robots.txt let AI assistants' crawlers in?</p></div>
+        <div class="ap-item"><b>llms.txt (brief for AI models)</b><p>The first page a model reads when it reaches your site.</p></div>
+        <div class="ap-item"><b>Structured data (JSON-LD)</b><p>This is how AI knows who you are, where you are and what you sell.</p></div>
+        <div class="ap-item"><b>Title, description, OG and canonical</b><p>The meta tags used to title and link to you.</p></div>
+        <div class="ap-item"><b>sitemap.xml</b><p>The map of your pages, and whether it's declared in robots.txt.</p></div>
+        <p class="ap-vacio-t">This is what a result looks like. Every check is resolved by a real reading of your site, not a simulation.</p>
       </div>
       <div class="ap-err" id="apErr" hidden></div>
     </div>
 
-    <aside class="ap-res" id="apRes" hidden aria-label="Tu resultado">
+    <aside class="ap-res" id="apRes" hidden aria-label="Your result">
       <div class="ap-score">
         <div class="ap-aro">
           <svg viewBox="0 0 120 120" aria-hidden="true">
             <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(232,225,253,.22)" stroke-width="10"/>
             <circle id="apArco" cx="60" cy="60" r="52" fill="none" stroke="#13CDD9" stroke-width="10" stroke-linecap="round" stroke-dasharray="327" stroke-dashoffset="327" transform="rotate(-90 60 60)"/>
           </svg>
-          <div class="cif"><b id="apNum">0</b><span>de 100</span></div>
+          <div class="cif"><b id="apNum">0</b><span>out of 100</span></div>
         </div>
         <div class="ap-lectura"><h3 id="apBanda" tabindex="-1"></h3><p id="apLect"></p></div>
       </div>
-      <div class="ap-plan" id="apPlan"><h4>Tu plan de arreglo: lo que más sube tu puntaje, en orden</h4><ol id="apPlanLista"></ol></div>
+      <div class="ap-plan" id="apPlan"><h4>Your fix plan: what raises your score most, in order</h4><ol id="apPlanLista"></ol></div>
       <div class="ap-acciones">
-        <a class="btn btn-primary" id="apCta" href="#" target="_blank" rel="noopener">Quiero que lo arreglen por mí</a>
-        <button class="btn btn-ghost" id="apOtra" type="button">Auditar otra web</button>
+        <a class="btn btn-primary" id="apCta" href="#" target="_blank" rel="noopener">I want you to fix it for me</a>
+        <button class="btn btn-ghost" id="apOtra" type="button">Audit another site</button>
       </div>
-      <p class="ap-pie">Te escribimos por WhatsApp con el resultado ya adjunto. Sin costo y sin compromiso.</p>
+      <p class="ap-pie">Message us on WhatsApp with your result already attached. Free, no commitment.</p>
     </aside>
   </div>
 </section>
 
 <section class="section w-luz" id="despues">
   <div class="inner">
-    <span class="kicker">Y después de la auditoría</span>
-    <h2 class="display">Lo que hacemos para que la IA te recomiende</h2>
-    <p class="sec-lead">El puntaje mide si un modelo <em>puede</em> leerte. Que te <em>elija</em> entre los dos o tres negocios que menciona depende de tres cosas que trabajamos juntos.</p>
+    <span class="kicker">After the audit</span>
+    <h2 class="display">What we do so AI recommends you</h2>
+    <p class="sec-lead">The score measures whether a model <em>can</em> read you. Whether it <em>chooses</em> you among the two or three businesses it mentions depends on three things we work on together.</p>
     <div class="tres">
-      <div class="tarj"><div class="num">01</div><h3>Tu web, legible para modelos</h3><p>Corregimos lo que salió en rojo: robots.txt, llms.txt, datos estructurados completos y metadatos consistentes. Nombre, teléfono, zona y horario idénticos en todas partes.</p></div>
-      <div class="tarj"><div class="num">02</div><h3>Tu ficha de Google, completa</h3><p>Es la fuente que más consultan los asistentes para negocios locales. La dejamos con categoría, horario, fotos, servicios y un flujo para pedir reseñas que la IA pueda verificar.</p></div>
-      <div class="tarj"><div class="num">03</div><h3>Contenido que responde preguntas</h3><p>Los modelos citan páginas que contestan lo que la gente pregunta: precios, horarios, cómo funciona, qué incluye. Escribimos esas respuestas con tu voz y las mantenemos al día.</p></div>
+      <div class="tarj"><div class="num">01</div><h3>Your website, readable by models</h3><p>We fix whatever came up red: robots.txt, llms.txt, complete structured data and consistent meta tags. Name, phone, area and hours identical everywhere.</p></div>
+      <div class="tarj"><div class="num">02</div><h3>Your Google Business Profile, complete</h3><p>It's the source assistants check most for local businesses. We fill it in with category, hours, photos and services, plus a process for requesting reviews that AI can verify.</p></div>
+      <div class="tarj"><div class="num">03</div><h3>Content that answers questions</h3><p>Models cite pages that answer what people ask: prices, hours, how it works, what's included. We write those answers in your voice and keep them up to date.</p></div>
     </div>
     <div class="cta-row">
-      <a class="btn btn-primary" href="https://wa.me/51998399001?text=Hola%20Designia%2C%20quiero%20que%20mi%20negocio%20aparezca%20cuando%20le%20preguntan%20a%20ChatGPT" target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="auditoria_geo_cta">Quiero aparecer en ChatGPT</a>
-      <a class="btn btn-line" href="index.html#planes">Ver cómo trabajamos</a>
-      <span class="nota-luz">Incluido en los planes que llevan SEO local.</span>
+      <a class="btn btn-primary" href="https://wa.me/51998399001?text=Hi%20Designia%2C%20I%20want%20my%20business%20to%20show%20up%20when%20people%20ask%20ChatGPT" target="_blank" rel="noopener" data-ga="cta_click" data-ga-label="auditoria_geo_cta">I want to show up in ChatGPT</a>
+      <a class="btn btn-line" href="/#planes">See how we work</a>
+      <span class="nota-luz">Included in plans with local SEO.</span>
     </div>
   </div>
 </section>
 
 <section class="section w-dark" id="preguntas">
   <div class="inner">
-    <span class="kicker">Preguntas frecuentes</span>
-    <h2 class="display">Sobre esta auditoría</h2>
+    <span class="kicker">Frequently asked questions</span>
+    <h2 class="display">About this audit</h2>
     <div class="faq">
-      <details><summary>¿Qué es GEO y en qué se diferencia del SEO?</summary><p>GEO (optimización para motores generativos) es que tu negocio aparezca en las respuestas de ChatGPT, Gemini, Perplexity o Copilot cuando alguien pregunta por un servicio como el tuyo. El SEO trabaja para que salgas en la lista de Google; el GEO, para que el asistente te nombre y te cite como fuente. Se apoyan: una web bien estructurada sirve a los dos.</p></details>
-      <details><summary>¿Qué hacen con mi dominio?</summary><p>Solo leemos páginas públicas de tu sitio (la portada, robots.txt, llms.txt y sitemap.xml), con un rastreador identificado como DesigniaAuditBot. No pedimos accesos ni datos personales y no guardamos tu información: el resultado se conserva diez minutos en caché para no leer tu web dos veces seguidas.</p></details>
-      <details><summary>¿Un puntaje alto garantiza que la IA me recomiende?</summary><p>No. El puntaje mide si un modelo puede leerte y entenderte, que es el requisito. Que te elija depende además de tu ficha de Google, tus reseñas y de tener contenido que responda preguntas reales. Eso es lo que trabajamos después de la auditoría.</p></details>
-      <details><summary>¿Es gratis de verdad?</summary><p>Sí. La auditoría es gratuita y no requiere registro. Si quieres que arreglemos lo que salió mal, conversamos por WhatsApp y te decimos qué toma y cuánto cuesta antes de empezar.</p></details>
+      <details><summary>What is GEO, and how is it different from SEO?</summary><p>GEO (generative engine optimization) means getting your business into the answers ChatGPT, Gemini, Perplexity or Copilot give when someone asks about a service like yours. SEO works to get you into Google's list of results; GEO works to get the assistant to name you and cite you as a source. They support each other: a well-structured website serves both.</p></details>
+      <details><summary>What do you do with my domain?</summary><p>We only read public pages of your site (the homepage, robots.txt, llms.txt and sitemap.xml), using a crawler identified as DesigniaAuditBot. We don't ask for logins or personal data, and we don't store your information: the result is cached for three minutes so we don't read your site twice in a row.</p></details>
+      <details><summary>Does a high score guarantee that AI will recommend me?</summary><p>No. The score measures whether a model can read and understand you, which is the prerequisite. Whether it chooses you also depends on your Google Business Profile, your reviews and having content that answers real questions. That's what we work on after the audit.</p></details>
+      <details><summary>Is it really free?</summary><p>Yes. The audit is free and requires no sign-up. If you want us to fix what came up short, we chat on WhatsApp and tell you what it involves and what it costs before we start.</p></details>
     </div>
   </div>
 </section>
 </main>
 
 <footer>
-  <img src="logo-designia-blanco.png" alt="Designia" class="logo-foot" width="478" height="160" loading="lazy" decoding="async">
-  <p><a href="index.html">Inicio</a> · <a href="index.html#diagnostico">Diagnóstico express</a> · <a href="index.html#planes">Planes</a> · <a href="index.html#contacto">Contacto</a></p>
-  <p><strong>Designia</strong> · Agencia de marketing e inteligencia artificial · Lima, Perú · <a href="mailto:contacto@designia360.com">contacto@designia360.com</a></p>
-  <p class="legal">© <span id="anio"></span> Designia. Todos los derechos reservados.</p>
+  <img src="/logo-designia-blanco.png" alt="Designia" class="logo-foot" width="478" height="160" loading="lazy" decoding="async">
+  <p><a href="/">Home</a> · <a href="/#diagnostico">Express assessment</a> · <a href="/#planes">Plans</a> · <a href="/#contacto">Contact</a></p>
+  <p><strong>Designia</strong> · Marketing and Artificial Intelligence Agency · Lima, Peru · <a href="mailto:contacto@designia360.com">contacto@designia360.com</a></p>
+  <p class="legal">© <span id="anio"></span> Designia. All rights reserved.</p>
 </footer>
 
 <script type="application/ld+json">
@@ -388,38 +400,38 @@ footer a{color:var(--turq);font-weight:600;text-decoration:none}
 "@graph":[
  {
   "@type":"WebPage",
-  "@id":"https://designia360.com/auditoria#pagina",
-  "url":"https://designia360.com/auditoria",
-  "name":"Auditoría GEO gratis: ¿la IA puede leer tu web?",
-  "description":"Herramienta gratuita de Designia que lee en vivo un sitio web y puntúa sobre 100 si los asistentes de IA (ChatGPT, Gemini, Perplexity) pueden leerlo y citarlo: robots.txt, llms.txt, datos estructurados, metadatos y sitemap.",
+  "@id":"https://designia360.com/audit#pagina",
+  "url":"https://designia360.com/audit",
+  "name":"Free GEO Audit: Can AI Read Your Website?",
+  "description":"Free tool by Designia that reads a website live and scores, out of 100, whether AI assistants (ChatGPT, Gemini, Perplexity) can read and cite it: robots.txt, llms.txt, structured data, meta tags and sitemap.",
   "isPartOf":{"@id":"https://designia360.com/#sitio"},
   "about":{"@id":"https://designia360.com/#agencia"},
-  "inLanguage":"es-PE",
+  "inLanguage":"en",
   "dateModified":"2026-09-19",
   "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[
-    {"@type":"ListItem","position":1,"name":"Inicio","item":"https://designia360.com/"},
-    {"@type":"ListItem","position":2,"name":"Auditoría GEO","item":"https://designia360.com/auditoria"}]}
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://designia360.com/"},
+    {"@type":"ListItem","position":2,"name":"GEO Audit","item":"https://designia360.com/audit"}]}
  },
  {
   "@type":"WebApplication",
-  "@id":"https://designia360.com/auditoria#app",
-  "name":"Auditoría GEO de Designia",
-  "url":"https://designia360.com/auditoria",
+  "@id":"https://designia360.com/audit#app",
+  "name":"Designia GEO Audit",
+  "url":"https://designia360.com/audit",
   "applicationCategory":"BusinessApplication",
   "operatingSystem":"Web",
   "browserRequirements":"Requires JavaScript",
-  "description":"Escribe un dominio y en unos 20 segundos obtienes un puntaje sobre 100 de preparación para buscadores de IA, con siete comprobaciones reales y un plan de arreglo priorizado.",
+  "description":"Enter a domain and in about 20 seconds get a score out of 100 for AI search readiness, with seven real checks and a prioritized fix plan.",
   "offers":{"@type":"Offer","price":"0","priceCurrency":"PEN"},
   "provider":{"@id":"https://designia360.com/#agencia"},
-  "inLanguage":"es-PE"
+  "inLanguage":"en"
  },
  {
   "@type":"FAQPage",
   "mainEntity":[
-   {"@type":"Question","name":"¿Qué es GEO y en qué se diferencia del SEO?","acceptedAnswer":{"@type":"Answer","text":"GEO (optimización para motores generativos) es que tu negocio aparezca en las respuestas de ChatGPT, Gemini, Perplexity o Copilot cuando alguien pregunta por un servicio como el tuyo. El SEO trabaja para que salgas en la lista de Google; el GEO, para que el asistente te nombre y te cite como fuente."}},
-   {"@type":"Question","name":"¿Qué hacen con mi dominio?","acceptedAnswer":{"@type":"Answer","text":"Solo se leen páginas públicas del sitio (portada, robots.txt, llms.txt y sitemap.xml) con un rastreador identificado como DesigniaAuditBot. No se piden accesos ni datos personales y el resultado se conserva diez minutos en caché."}},
-   {"@type":"Question","name":"¿Un puntaje alto garantiza que la IA me recomiende?","acceptedAnswer":{"@type":"Answer","text":"No. El puntaje mide si un modelo puede leer y entender la web, que es el requisito. Que la elija depende además de la ficha de Google, las reseñas y de tener contenido que responda preguntas reales."}},
-   {"@type":"Question","name":"¿Es gratis de verdad?","acceptedAnswer":{"@type":"Answer","text":"Sí. La auditoría es gratuita y no requiere registro."}}
+   {"@type":"Question","name":"What is GEO, and how is it different from SEO?","acceptedAnswer":{"@type":"Answer","text":"GEO (generative engine optimization) means getting your business into the answers ChatGPT, Gemini, Perplexity or Copilot give when someone asks about a service like yours. SEO works to get you into Google's list of results; GEO works to get the assistant to name you and cite you as a source. They support each other: a well-structured website serves both."}},
+   {"@type":"Question","name":"What do you do with my domain?","acceptedAnswer":{"@type":"Answer","text":"We only read public pages of your site (the homepage, robots.txt, llms.txt and sitemap.xml), using a crawler identified as DesigniaAuditBot. We don't ask for logins or personal data, and we don't store your information: the result is cached for three minutes so we don't read your site twice in a row."}},
+   {"@type":"Question","name":"Does a high score guarantee that AI will recommend me?","acceptedAnswer":{"@type":"Answer","text":"No. The score measures whether a model can read and understand you, which is the prerequisite. Whether it chooses you also depends on your Google Business Profile, your reviews and having content that answers real questions. That's what we work on after the audit."}},
+   {"@type":"Question","name":"Is it really free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The audit is free and requires no sign-up. If you want us to fix what came up short, we chat on WhatsApp and tell you what it involves and what it costs before we start."}}
   ]
  }
 ]
@@ -453,8 +465,8 @@ $('#anio').textContent = new Date().getFullYear();
 
 var form = $('#audForm'), input = $('#dominio'), btn = $('#audBtn'), nota = $('#audNota');
 var estado = $('#apEstado'), lista = $('#apLista'), vacio = $('#apVacio'), err = $('#apErr'), res = $('#apRes'), dice = $('#dzDice');
-var ETIQ = {ok:'Bien', aviso:'Atención', falta:'Falta'};
-var NOMBRES = ['robots.txt','Bots de IA permitidos','llms.txt (ficha para los modelos)','Datos estructurados (JSON-LD)','Title, description, OG y canonical','sitemap.xml','Sitemap declarado en robots.txt'];
+var ETIQ = {ok:'Good', aviso:'Warning', falta:'Missing'};
+var NOMBRES = ['robots.txt','AI bots allowed','llms.txt (brief for AI models)','Structured data (JSON-LD)','Title, description, OG and canonical','sitemap.xml','Sitemap declared in robots.txt'];
 var corriendo = false, temporizadores = [];
 // Abierto como archivo o en un servidor estático no hay función de Cloudflare: se avisa en vez de fingir un fallo.
 var enLocal = location.protocol === 'file:' || /^(localhost|127\.|0\.0\.0\.0|\[::1\])/.test(location.hostname);
@@ -471,9 +483,9 @@ function reiniciar(){
   temporizadores.forEach(clearTimeout); temporizadores = [];
   lista.innerHTML = ''; err.hidden = true; res.hidden = true; vacio.hidden = false;
   $('#audGrid').classList.remove('con-res');
-  estado.classList.add('quieto'); estado.lastElementChild.textContent = 'Esperando tu dominio';
-  nota.classList.remove('err'); nota.textContent = 'Solo leemos páginas públicas. No pedimos correo, accesos ni datos de pago.';
-  habla('Escribe tu dominio y dame 20 segundos.');
+  estado.classList.add('quieto'); estado.lastElementChild.textContent = 'Waiting for your domain';
+  nota.classList.remove('err'); nota.textContent = 'We only read public pages. We never ask for your email, logins or payment details.';
+  habla('Enter your domain and give me 20 seconds.');
 }
 function fila(nombre){
   var li = document.createElement('li'); li.className = 'ap-item';
@@ -488,49 +500,49 @@ function pintarFila(li, c){
   li.querySelector('p').textContent = c.detalle;
 }
 function banda(p){
-  if(p >= 85) return ['Listo para que te citen', 'Un modelo puede leerte y armar tu ficha. Lo que sigue es que te elija: ficha de Google, reseñas y contenido que responda preguntas.'];
-  if(p >= 60) return ['Vas bien, pero se te escapan puntos fáciles', 'La base está. Los arreglos de abajo son concretos y suben el puntaje rápido.'];
-  if(p >= 35) return ['A medias: la IA te ve borroso', 'Falta más de la mitad de lo que un modelo necesita para describirte con confianza. Se arregla en una semana de trabajo.'];
-  return ['Hoy la IA casi no te ve', 'Sin ficha para modelos ni datos estructurados, un asistente adivina o te omite. La buena noticia: todo esto se construye.'];
+  if(p >= 85) return ['Ready to be cited', 'A model can read you and build your profile. Next comes getting it to choose you: your Google Business Profile, reviews and content that answers questions.'];
+  if(p >= 60) return ['On track, but missing easy points', 'The foundation is there. The fixes below are specific and raise your score fast.'];
+  if(p >= 35) return ['Halfway there: AI sees you out of focus', 'More than half of what a model needs to describe you with confidence is missing. It takes about a week of work to fix.'];
+  return ['Right now, AI barely sees you', 'Without a brief for models or structured data, an assistant guesses or leaves you out. The good news: all of this can be built.'];
 }
 
 function auditar(dom, origen){
   if(corriendo) return;
-  corriendo = true; btn.disabled = true; btn.textContent = 'Leyendo tu web…';
+  corriendo = true; btn.disabled = true; btn.textContent = 'Reading your site…';
   temporizadores.forEach(clearTimeout); temporizadores = [];
   lista.innerHTML = ''; err.hidden = true; res.hidden = true; vacio.hidden = true;
-  estado.classList.remove('quieto'); estado.lastElementChild.textContent = 'Auditando ' + dom + ' en vivo';
-  habla('Leyendo ' + dom + '…');
-  try{ history.replaceState(null, '', 'auditoria?dominio=' + encodeURIComponent(dom)); }catch(e){}
+  estado.classList.remove('quieto'); estado.lastElementChild.textContent = 'Auditing ' + dom + ' live';
+  habla('Reading ' + dom + '…');
+  try{ history.replaceState(null, '', '/audit?dominio=' + encodeURIComponent(dom)); }catch(e){}
   ev('auditoria_inicio', {dominio: dom, origen: origen || 'pagina'});
 
   var filas = NOMBRES.map(fila);
   filas[0].classList.add('leyendo');
   var t0 = Date.now();
 
-  fetch('api/auditar?dominio=' + encodeURIComponent(dom), {headers:{'Accept':'application/json'}})
+  fetch('/api/auditar?dominio=' + encodeURIComponent(dom) + '&lang=en', {headers:{'Accept':'application/json'}})
     .then(function(r){ return r.json().then(function(j){ return {status: r.status, j: j}; }, function(){ return {status: r.status, j: null}; }); })
     .then(function(x){
       if(x.status === 200 && x.j && x.j.checks){ mostrar(x.j, filas); return; }
       var msg;
-      if(x.status === 400) msg = '<b>Ese dominio no parece válido.</b> Escríbelo como <code>tunegocio.pe</code>, sin rutas ni espacios.';
-      else if(x.status === 502) msg = '<b>No pudimos leer ' + dom + '.</b> No responde, no existe o bloquea lecturas automáticas. Revisa que esté bien escrito.';
-      else if(enLocal) msg = '<b>Estás viendo una copia local.</b> El auditor corre en el servidor de Cloudflare, así que aquí no responde. Pruébalo publicado en <a href="https://designia360.com/auditoria" target="_blank" rel="noopener">designia360.com/auditoria</a>.';
-      else msg = '<b>El auditor automático no está disponible en este momento.</b> Escríbenos con tu dominio y te mandamos la auditoría hecha a mano, sin costo.';
+      if(x.status === 400) msg = '<b>That domain doesn\'t look valid.</b> Type it like <code>yourbusiness.com</code>, with no paths or spaces.';
+      else if(x.status === 502) msg = '<b>We couldn\'t read ' + dom + '.</b> It isn\'t responding, doesn\'t exist or blocks automated reads. Check that it\'s spelled correctly.';
+      else if(enLocal) msg = '<b>You\'re viewing a local copy.</b> The auditor runs on Cloudflare\'s servers, so it can\'t respond here. Try the live version at <a href="https://designia360.com/audit" target="_blank" rel="noopener">designia360.com/audit</a>.';
+      else msg = '<b>The automatic auditor isn\'t available right now.</b> Message us your domain and we\'ll send you a manual audit, free of charge.';
       fallar(msg, dom);
     })
-    .catch(function(){ fallar('<b>Se cortó la conexión.</b> Vuelve a intentarlo en unos segundos o escríbenos con tu dominio y la hacemos por ti.', dom); });
+    .catch(function(){ fallar('<b>The connection dropped.</b> Try again in a few seconds, or message us your domain and we\'ll run it for you.', dom); });
 }
 
 function fallar(msg, dom){
   temporizadores.forEach(clearTimeout);
   lista.innerHTML = '';
-  estado.classList.add('quieto'); estado.lastElementChild.textContent = 'Sin resultado';
+  estado.classList.add('quieto'); estado.lastElementChild.textContent = 'No result';
   err.innerHTML = msg + '<br><a class="btn btn-primary btn-sm" target="_blank" rel="noopener" href="https://wa.me/51998399001?text=' +
-    encodeURIComponent('Hola Designia, quise auditar ' + dom + ' en la web y no salió. ¿Me la hacen ustedes?') + '">Pedirla por WhatsApp</a>';
+    encodeURIComponent('Hi Designia, I tried to audit ' + dom + ' on your website and it didn\'t work. Could you run it for me?') + '">Request it on WhatsApp</a>';
   err.hidden = false;
-  habla(enLocal ? 'Aquí en local no puedo auditar. Publicada sí.' : 'No pude leer esa web. ¿Está bien escrita?');
-  corriendo = false; btn.disabled = false; btn.textContent = 'Auditar mi web gratis';
+  habla(enLocal ? 'I can\'t audit from a local copy. Once it\'s live, I can.' : 'I couldn\'t read that site. Is it spelled correctly?');
+  corriendo = false; btn.disabled = false; btn.textContent = 'Audit my site for free';
 }
 
 function mostrar(j, filas){
@@ -544,10 +556,10 @@ function mostrar(j, filas){
   });
   temporizadores.push(setTimeout(function(){
     var vivo = document.createElement('li'); vivo.className = 'ap-vivo';
-    vivo.innerHTML = '<i></i><span>Auditoría en vivo: cada punto es una lectura real de tu sitio, hecha en ' + (j.ms / 1000).toFixed(1).replace('.', ',') + ' s.</span>';
+    vivo.innerHTML = '<i></i><span>Live audit: every check is a real reading of your site, done in ' + (j.ms / 1000).toFixed(1) + ' s.</span>';
     lista.appendChild(vivo);
 
-    estado.classList.add('quieto'); estado.lastElementChild.textContent = 'Auditoría de ' + j.dominio + ' · ' + j.checks.length + ' puntos revisados';
+    estado.classList.add('quieto'); estado.lastElementChild.textContent = 'Audit of ' + j.dominio + ' · ' + j.checks.length + ' checks reviewed';
     $('#audGrid').classList.add('con-res');
     var p = j.puntaje, b = banda(p);
     $('#apBanda').textContent = b[0]; $('#apLect').textContent = b[1];
@@ -569,27 +581,27 @@ function mostrar(j, filas){
       .sort(function(a, b2){ return (b2.peso - b2.pts) - (a.peso - a.pts); }).slice(0, 3);
     var ol = $('#apPlanLista'); ol.innerHTML = '';
     if(!pend.length){
-      $('#apPlan').querySelector('h4').textContent = 'No hay nada urgente que arreglar';
-      ol.innerHTML = '<li><span class="n">✓</span><div><b>Tu web ya es legible para los modelos.</b><span>Lo que mueve la aguja ahora es fuera de la web: ficha de Google, reseñas y contenido que responda preguntas. Ahí es donde entramos.</span></div></li>';
+      $('#apPlan').querySelector('h4').textContent = 'Nothing urgent to fix';
+      ol.innerHTML = '<li><span class="n">✓</span><div><b>Your website is already readable by models.</b><span>What moves the needle now happens off your website: your Google Business Profile, reviews and content that answers questions. That\'s where we come in.</span></div></li>';
     } else {
-      $('#apPlan').querySelector('h4').textContent = 'Tu plan de arreglo: lo que más sube tu puntaje, en orden';
+      $('#apPlan').querySelector('h4').textContent = 'Your fix plan: what raises your score most, in order';
       pend.forEach(function(c, i){
         var li = document.createElement('li');
         li.innerHTML = '<span class="n">' + (i + 1) + '</span><div><b></b><span></span><em></em></div>';
         li.querySelector('b').textContent = c.nombre;
         li.querySelector('span:not(.n)').textContent = c.arreglo;
-        li.querySelector('em').textContent = '+' + (c.peso - c.pts) + ' puntos';
+        li.querySelector('em').textContent = '+' + (c.peso - c.pts) + ' points';
         ol.appendChild(li);
       });
     }
-    var msg = 'Hola Designia, auditè mi web ' + j.dominio + ' en designia360.com/auditoria y saqué ' + p + '/100. ' +
-      (pend.length ? 'Lo que me falta: ' + pend.map(function(c){ return c.nombre; }).join(', ') + '. ' : '') + 'Quiero que me ayuden a arreglarlo.';
-    $('#apCta').href = 'https://wa.me/51998399001?text=' + encodeURIComponent(msg.replace('auditè', 'audité'));
-    habla(p >= 85 ? '¡Así se hace! Te leen sin problema.' : p >= 60 ? 'Ya casi. Mira el plan de abajo.' : p >= 35 ? 'Tiene arreglo, y es rápido.' : 'Tranquilo: todo esto se construye.');
+    var msg = 'Hi Designia, I audited my website ' + j.dominio + ' at designia360.com/audit and got ' + p + '/100. ' +
+      (pend.length ? 'What I\'m missing: ' + pend.map(function(c){ return c.nombre; }).join(', ') + '. ' : '') + 'I\'d like your help fixing it.';
+    $('#apCta').href = 'https://wa.me/51998399001?text=' + encodeURIComponent(msg);
+    habla(p >= 85 ? 'Nicely done! They can read you just fine.' : p >= 60 ? 'Almost there. Check the plan below.' : p >= 35 ? 'It\'s fixable, and fast.' : 'Don\'t worry: all of this can be built.');
     ev('auditoria_completada', {value: p, score: p, dominio: j.dominio});
-    corriendo = false; btn.disabled = false; btn.textContent = 'Auditar mi web gratis';
+    corriendo = false; btn.disabled = false; btn.textContent = 'Audit my site for free';
     if(matchMedia('(max-width:1199px)').matches) res.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block: 'start'});
-    $('#apAnuncio').textContent = 'Auditoría terminada: ' + p + ' de 100. ' + b[0];
+    $('#apAnuncio').textContent = 'Audit complete: ' + p + ' out of 100. ' + b[0];
     try{ $('#apBanda').focus({preventScroll:true}); }catch(e){}
   }, paso * j.checks.length + 200));
 }
@@ -597,12 +609,12 @@ function mostrar(j, filas){
 form.addEventListener('submit', function(e){
   e.preventDefault();
   var v = limpiar(input.value);
-  if(!v || v.indexOf('.') === -1){ nota.textContent = 'Escribe el dominio de tu web, por ejemplo tunegocio.pe'; nota.classList.add('err'); input.setAttribute('aria-invalid','true'); input.focus(); return; }
-  nota.classList.remove('err'); input.removeAttribute('aria-invalid'); nota.textContent = 'Solo leemos páginas públicas. No pedimos correo, accesos ni datos de pago.';
+  if(!v || v.indexOf('.') === -1){ nota.textContent = 'Enter your website\'s domain, for example yourbusiness.com'; nota.classList.add('err'); input.setAttribute('aria-invalid','true'); input.focus(); return; }
+  nota.classList.remove('err'); input.removeAttribute('aria-invalid'); nota.textContent = 'We only read public pages. We never ask for your email, logins or payment details.';
   input.value = v; auditar(v, 'pagina');
 });
 $('#apCta').addEventListener('click', function(){ ev('generate_lead', {method: 'auditoria_geo', currency: 'PEN'}); });
-$('#apOtra').addEventListener('click', function(){ reiniciar(); input.value = ''; input.focus(); try{ history.replaceState(null, '', 'auditoria'); }catch(e){} });
+$('#apOtra').addEventListener('click', function(){ reiniciar(); input.value = ''; input.focus(); try{ history.replaceState(null, '', '/audit'); }catch(e){} });
 
 // Llegó desde la portada con ?dominio=… : arranca solo
 var q = limpiar(new URLSearchParams(location.search).get('dominio') || '');

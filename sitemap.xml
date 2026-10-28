@@ -1,21 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://designia360.com/</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://designia360.com/og-designia.jpg</image:loc>
-      <image:title>Designia — agencia de marketing digital y publicidad en Lima</image:title>
-    </image:image>
+    <xhtml:link rel="alternate" hreflang="en" href="https://designia360.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://designia360.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://designia360.com/"/>
   </url>
   <url>
-    <loc>https://designia360.com/auditoria</loc>
-    <lastmod>2026-09-19</lastmod>
+    <loc>https://designia360.com/es/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://designia360.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://designia360.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://designia360.com/"/>
+  </url>
+  <url>
+    <loc>https://designia360.com/audit</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://designia360.com/audit"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://designia360.com/es/auditoria"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://designia360.com/audit"/>
+  </url>
+  <url>
+    <loc>https://designia360.com/es/auditoria</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://designia360.com/audit"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://designia360.com/es/auditoria"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://designia360.com/audit"/>
   </url>
   <url>
     <loc>https://designia360.com/recursos/</loc>

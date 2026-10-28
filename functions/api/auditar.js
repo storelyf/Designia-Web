@@ -18,12 +18,15 @@ const TIPOS_ENTIDAD = /^(Organization|LocalBusiness|ProfessionalService|Corporat
 export async function onRequestGet(ctx) {
   const url = new URL(ctx.request.url);
   const dominio = limpiarDominio(url.searchParams.get('dominio') || '');
+  // ?lang=en devuelve los textos en inglés; cualquier otro valor deja el español intacto
+  const en = url.searchParams.get('lang') === 'en';
+  const L = (es, ing) => en ? ing : es;
   if (!dominio) {
-    return json({ error: 'dominio_invalido', mensaje: 'Escribe un dominio válido, por ejemplo tunegocio.pe' }, 400);
+    return json({ error: 'dominio_invalido', mensaje: L('Escribe un dominio válido, por ejemplo tunegocio.pe', 'Enter a valid domain, for example yourbusiness.com') }, 400);
   }
 
   const cache = (typeof caches !== 'undefined' && caches.default) ? caches.default : null;
-  const clave = new Request('https://designia360.com/api/auditar?dominio=' + encodeURIComponent(dominio), { method: 'GET' });
+  const clave = new Request('https://designia360.com/api/auditar?dominio=' + encodeURIComponent(dominio) + (en ? '&lang=en' : ''), { method: 'GET' });
   if (cache) {
     const guardado = await cache.match(clave);
     if (guardado) return guardado;
@@ -34,7 +37,8 @@ export async function onRequestGet(ctx) {
   if (!home) {
     return json({
       error: 'sin_respuesta', dominio,
-      mensaje: 'No pudimos leer ' + dominio + ': no responde, no existe o bloquea lecturas automáticas.'
+      mensaje: L('No pudimos leer ' + dominio + ': no responde, no existe o bloquea lecturas automáticas.',
+        'We couldn\'t read ' + dominio + ': it isn\'t responding, doesn\'t exist or blocks automated reads.')
     }, 502);
   }
 
@@ -52,59 +56,68 @@ export async function onRequestGet(ctx) {
   const robotsOk = robots.ok && !esHTML(robots.tipo, robots.texto);
   const rb = robotsOk ? parseRobots(robots.texto) : null;
   checks.push(robotsOk
-    ? check('robots', 'robots.txt', 'ok', 10, 10, 'Existe y se puede leer.' + (rb.sitemaps.length ? ' Declara tu sitemap.' : ''),
-        'Ya está: solo mantenlo cuando cambies rutas.')
+    ? check('robots', 'robots.txt', 'ok', 10, 10, L('Existe y se puede leer.', 'It exists and can be read.') + (rb.sitemaps.length ? L(' Declara tu sitemap.', ' It declares your sitemap.') : ''),
+        L('Ya está: solo mantenlo cuando cambies rutas.', 'Done. Just keep it current when you change your URLs.'))
     : check('robots', 'robots.txt', 'aviso', 10, 4,
-        'No encontramos robots.txt. Sin él los bots entran igual, pero conviene declararlo y aprovechar para listar tu sitemap.',
-        'Crear /robots.txt con "User-agent: *", "Allow: /" y la línea "Sitemap:" apuntando a tu sitemap.xml.'));
+        L('No encontramos robots.txt. Sin él los bots entran igual, pero conviene declararlo y aprovechar para listar tu sitemap.',
+          'We couldn\'t find a robots.txt. Bots get in without one, but it\'s worth having, and it\'s the place to list your sitemap.'),
+        L('Crear /robots.txt con "User-agent: *", "Allow: /" y la línea "Sitemap:" apuntando a tu sitemap.xml.',
+          'Create /robots.txt with "User-agent: *", "Allow: /" and a "Sitemap:" line pointing to your sitemap.xml.')));
 
   // 2 · bots de IA permitidos
   if (robotsOk) {
     const bloqueados = BOTS_IA.filter(b => bloqueado(rb, b));
     if (!bloqueados.length) {
-      checks.push(check('bots_ia', 'Bots de IA permitidos', 'ok', 15, 15,
-        'GPTBot, ClaudeBot, PerplexityBot y Google-Extended pueden leer tu web.',
-        'Ya está. Si algún día quieres limitar uno, se hace en robots.txt.'));
+      checks.push(check('bots_ia', L('Bots de IA permitidos', 'AI bots allowed'), 'ok', 15, 15,
+        L('GPTBot, ClaudeBot, PerplexityBot y Google-Extended pueden leer tu web.', 'GPTBot, ClaudeBot, PerplexityBot and Google-Extended can read your site.'),
+        L('Ya está. Si algún día quieres limitar uno, se hace en robots.txt.', 'Done. If you ever want to limit one, you do it in robots.txt.')));
     } else {
       const pts = Math.round(15 * (BOTS_IA.length - bloqueados.length) / BOTS_IA.length);
-      checks.push(check('bots_ia', 'Bots de IA permitidos', bloqueados.length >= 3 ? 'falta' : 'aviso', 15, pts,
-        'Bloqueas a ' + bloqueados.join(', ') + '. Esos asistentes no pueden leerte ni recomendarte.',
-        'Quitar el "Disallow: /" de esos rastreadores en robots.txt (o darles "Allow: /").'));
+      checks.push(check('bots_ia', L('Bots de IA permitidos', 'AI bots allowed'), bloqueados.length >= 3 ? 'falta' : 'aviso', 15, pts,
+        L('Bloqueas a ', 'You block ') + bloqueados.join(', ') + L('. Esos asistentes no pueden leerte ni recomendarte.', '. Those assistants can\'t read you or recommend you.'),
+        L('Quitar el "Disallow: /" de esos rastreadores en robots.txt (o darles "Allow: /").', 'Remove the "Disallow: /" for those crawlers in robots.txt (or give them "Allow: /").')));
     }
   } else {
-    checks.push(check('bots_ia', 'Bots de IA permitidos', 'aviso', 15, 10,
-      'Sin robots.txt los bots de IA entran por defecto. Declararlo es una señal explícita de que quieres ser citado.',
-      'En el robots.txt nuevo, listar GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot y Google-Extended con "Allow: /".'));
+    checks.push(check('bots_ia', L('Bots de IA permitidos', 'AI bots allowed'), 'aviso', 15, 10,
+      L('Sin robots.txt los bots de IA entran por defecto. Declararlo es una señal explícita de que quieres ser citado.',
+        'Without robots.txt, AI bots get in by default. Declaring it is an explicit signal that you want to be cited.'),
+      L('En el robots.txt nuevo, listar GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot y Google-Extended con "Allow: /".',
+        'In the new robots.txt, list GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot and Google-Extended with "Allow: /".')));
   }
 
   // 3 · llms.txt
   const llmsOk = llms.ok && !esHTML(llms.tipo, llms.texto) && llms.texto.trim().length > 40;
   checks.push(llmsOk
-    ? check('llms', 'llms.txt (ficha para los modelos)', 'ok', 15, 15,
-        'Existe (' + llms.texto.split(/\r?\n/).filter(l => l.trim()).length + ' líneas). Es lo primero que lee un modelo cuando llega a tu sitio.',
-        'Ya está: actualízalo cuando cambien precios, servicios o contacto.')
-    : check('llms', 'llms.txt (ficha para los modelos)', 'falta', 15, 0,
-        'No existe. Es un archivo de texto en tu raíz que le dice a los modelos quién eres, qué haces, dónde y cómo contactarte.',
-        'Crear /llms.txt en texto plano: qué haces, para quién, zona, servicios, precios si los publicas, contacto y tus páginas clave.'));
+    ? check('llms', L('llms.txt (ficha para los modelos)', 'llms.txt (brief for AI models)'), 'ok', 15, 15,
+        L('Existe (', 'It exists (') + llms.texto.split(/\r?\n/).filter(l => l.trim()).length + L(' líneas). Es lo primero que lee un modelo cuando llega a tu sitio.', ' lines). It\'s the first thing a model reads when it reaches your site.'),
+        L('Ya está: actualízalo cuando cambien precios, servicios o contacto.', 'Done. Update it when your prices, services or contact details change.'))
+    : check('llms', L('llms.txt (ficha para los modelos)', 'llms.txt (brief for AI models)'), 'falta', 15, 0,
+        L('No existe. Es un archivo de texto en tu raíz que le dice a los modelos quién eres, qué haces, dónde y cómo contactarte.',
+          'It doesn\'t exist. It\'s a text file at your site\'s root that tells models who you are, what you do, where you are and how to contact you.'),
+        L('Crear /llms.txt en texto plano: qué haces, para quién, zona, servicios, precios si los publicas, contacto y tus páginas clave.',
+          'Create /llms.txt in plain text: what you do, who it\'s for, your area, services, prices if you publish them, contact details and your key pages.')));
 
   // 4 · datos estructurados (JSON-LD)
   const ld = extraerJsonLd(html);
   if (!ld.bloques) {
-    checks.push(check('jsonld', 'Datos estructurados (JSON-LD)', 'falta', 20, 0,
-      'Tu home no declara schema.org. Los motores arman fichas de negocios con estos datos; sin ellos, adivinan o te omiten.',
-      'Añadir un bloque JSON-LD tipo LocalBusiness (o el subtipo de tu rubro) con nombre, teléfono, dirección, horario, zona y servicios.'));
+    checks.push(check('jsonld', L('Datos estructurados (JSON-LD)', 'Structured data (JSON-LD)'), 'falta', 20, 0,
+      L('Tu home no declara schema.org. Los motores arman fichas de negocios con estos datos; sin ellos, adivinan o te omiten.',
+        'Your homepage doesn\'t declare schema.org. Engines build business profiles from this data; without it, they guess or leave you out.'),
+      L('Añadir un bloque JSON-LD tipo LocalBusiness (o el subtipo de tu rubro) con nombre, teléfono, dirección, horario, zona y servicios.',
+        'Add a JSON-LD block of type LocalBusiness (or the subtype for your industry) with name, phone, address, hours, service area and services.')));
   } else if (ld.invalidos === ld.bloques) {
-    checks.push(check('jsonld', 'Datos estructurados (JSON-LD)', 'aviso', 20, 6,
-      'Hay JSON-LD pero no se puede interpretar (JSON inválido): la IA lo ignora.',
-      'Validar el bloque en validator.schema.org y corregir la sintaxis.'));
+    checks.push(check('jsonld', L('Datos estructurados (JSON-LD)', 'Structured data (JSON-LD)'), 'aviso', 20, 6,
+      L('Hay JSON-LD pero no se puede interpretar (JSON inválido): la IA lo ignora.', 'There\'s JSON-LD, but it can\'t be parsed (invalid JSON), so AI ignores it.'),
+      L('Validar el bloque en validator.schema.org y corregir la sintaxis.', 'Check the block at validator.schema.org and fix the syntax.')));
   } else if (!ld.tipos.some(t => TIPOS_ENTIDAD.test(t))) {
-    checks.push(check('jsonld', 'Datos estructurados (JSON-LD)', 'aviso', 20, 12,
-      'Declaras ' + listar(ld.tipos) + ', pero ninguno describe a tu negocio como entidad (Organization o LocalBusiness).',
-      'Sumar un LocalBusiness/Organization con nombre, contacto, zona y horario, enlazado con @id desde tus otros bloques.'));
+    checks.push(check('jsonld', L('Datos estructurados (JSON-LD)', 'Structured data (JSON-LD)'), 'aviso', 20, 12,
+      L('Declaras ', 'You declare ') + listar(ld.tipos, en) + L(', pero ninguno describe a tu negocio como entidad (Organization o LocalBusiness).', ', but none of them describes your business as an entity (Organization or LocalBusiness).'),
+      L('Sumar un LocalBusiness/Organization con nombre, contacto, zona y horario, enlazado con @id desde tus otros bloques.',
+        'Add a LocalBusiness/Organization with name, contact details, service area and hours, linked by @id from your other blocks.')));
   } else {
-    checks.push(check('jsonld', 'Datos estructurados (JSON-LD)', 'ok', 20, 20,
-      'Declaras ' + listar(ld.tipos) + '. Con eso la IA arma tu ficha: nombre, contacto, zona.',
-      'Ya está: mantén nombre, teléfono y horario idénticos a tu ficha de Google.'));
+    checks.push(check('jsonld', L('Datos estructurados (JSON-LD)', 'Structured data (JSON-LD)'), 'ok', 20, 20,
+      L('Declaras ', 'You declare ') + listar(ld.tipos, en) + L('. Con eso la IA arma tu ficha: nombre, contacto, zona.', '. With that, AI can build your profile: name, contact details, area.'),
+      L('Ya está: mantén nombre, teléfono y horario idénticos a tu ficha de Google.', 'Done. Keep your name, phone and hours identical to your Google Business Profile.')));
   }
 
   // 5 · title, description, og:image y canonical
@@ -116,12 +129,12 @@ export async function onRequestGet(ctx) {
   if (!meta.canonical) faltan.push('canonical');
   const ptsMeta = (4 - faltan.length) * 5;
   checks.push(faltan.length === 0
-    ? check('meta', 'Title, description, OG y canonical', 'ok', 20, 20,
-        'Los cuatro están. Título: “' + recortar(meta.title, 70) + '”.',
-        'Ya está: revisa que el título nombre tu rubro y tu ciudad.')
-    : check('meta', 'Title, description, OG y canonical', faltan.length >= 3 ? 'falta' : 'aviso', 20, ptsMeta,
-        'Falta: ' + faltan.join(', ') + '.' + (meta.title ? ' Título: “' + recortar(meta.title, 60) + '”.' : ''),
-        'Completar en el <head>: ' + faltan.join(', ') + '. Son los datos con los que te titulan y te enlazan.'));
+    ? check('meta', L('Title, description, OG y canonical', 'Title, description, OG and canonical'), 'ok', 20, 20,
+        L('Los cuatro están. Título: “', 'All four are there. Title: “') + recortar(meta.title, 70) + '”.',
+        L('Ya está: revisa que el título nombre tu rubro y tu ciudad.', 'Done. Check that your title names your industry and your city.'))
+    : check('meta', L('Title, description, OG y canonical', 'Title, description, OG and canonical'), faltan.length >= 3 ? 'falta' : 'aviso', 20, ptsMeta,
+        L('Falta: ', 'Missing: ') + faltan.join(', ') + '.' + (meta.title ? L(' Título: “', ' Title: “') + recortar(meta.title, 60) + '”.' : ''),
+        L('Completar en el <head>: ', 'Add to the <head>: ') + faltan.join(', ') + L('. Son los datos con los que te titulan y te enlazan.', '. This is the data used to title your page and link to it.')));
 
   // 6 · sitemap.xml
   let sitemapOk = sitemap.ok && /<(urlset|sitemapindex)\b/i.test(sitemap.texto);
@@ -132,22 +145,23 @@ export async function onRequestGet(ctx) {
   }
   checks.push(sitemapOk
     ? check('sitemap', 'sitemap.xml', 'ok', 10, 10,
-        'Responde un sitemap XML en ' + sitemapDonde + (sitemap.ok && /<lastmod>/i.test(sitemap.texto) ? ', con fechas de modificación.' : '.'),
-        'Ya está: súmale cada página nueva y su fecha (lastmod).')
+        L('Responde un sitemap XML en ', 'An XML sitemap responds at ') + sitemapDonde + (sitemap.ok && /<lastmod>/i.test(sitemap.texto) ? L(', con fechas de modificación.', ', with last-modified dates.') : '.'),
+        L('Ya está: súmale cada página nueva y su fecha (lastmod).', 'Done. Add every new page and its date (lastmod).'))
     : check('sitemap', 'sitemap.xml', 'aviso', 10, 0,
-        'No respondió un sitemap XML en /sitemap.xml. Sin él, el descubrimiento de tus páginas depende de la suerte.',
-        'Publicar /sitemap.xml con tus URLs y su lastmod, y declararlo en robots.txt.'));
+        L('No respondió un sitemap XML en /sitemap.xml. Sin él, el descubrimiento de tus páginas depende de la suerte.',
+          'No XML sitemap responded at /sitemap.xml. Without one, whether your pages get discovered is left to luck.'),
+        L('Publicar /sitemap.xml con tus URLs y su lastmod, y declararlo en robots.txt.', 'Publish /sitemap.xml with your URLs and their lastmod, and declare it in robots.txt.')));
 
   // 7 · sitemap declarado en robots.txt
   checks.push(!robotsOk
-    ? check('sitemap_robots', 'Sitemap declarado en robots.txt', 'aviso', 10, 0,
-        'Sin robots.txt tampoco hay línea "Sitemap:" declarada.',
-        'Al crear robots.txt, añadir "Sitemap: https://' + dominio + '/sitemap.xml".')
+    ? check('sitemap_robots', L('Sitemap declarado en robots.txt', 'Sitemap declared in robots.txt'), 'aviso', 10, 0,
+        L('Sin robots.txt tampoco hay línea "Sitemap:" declarada.', 'With no robots.txt, there\'s no "Sitemap:" line either.'),
+        L('Al crear robots.txt, añadir "Sitemap: https://', 'When you create robots.txt, add "Sitemap: https://') + dominio + '/sitemap.xml".')
     : rb.sitemaps.length
-      ? check('sitemap_robots', 'Sitemap declarado en robots.txt', 'ok', 10, 10, 'Declarado: ' + rb.sitemaps[0], 'Ya está.')
-      : check('sitemap_robots', 'Sitemap declarado en robots.txt', 'aviso', 10, 0,
-          'robots.txt existe pero no dice dónde está tu sitemap.',
-          'Añadir la línea "Sitemap: https://' + dominio + '/sitemap.xml" al final de robots.txt.'));
+      ? check('sitemap_robots', L('Sitemap declarado en robots.txt', 'Sitemap declared in robots.txt'), 'ok', 10, 10, L('Declarado: ', 'Declared: ') + rb.sitemaps[0], L('Ya está.', 'Done.'))
+      : check('sitemap_robots', L('Sitemap declarado en robots.txt', 'Sitemap declared in robots.txt'), 'aviso', 10, 0,
+          L('robots.txt existe pero no dice dónde está tu sitemap.', 'robots.txt exists but doesn\'t say where your sitemap is.'),
+          L('Añadir la línea "Sitemap: https://', 'Add the line "Sitemap: https://') + dominio + L('/sitemap.xml" al final de robots.txt.', '/sitemap.xml" at the end of robots.txt.')));
 
   const puntaje = checks.reduce((a, c) => a + c.pts, 0);
   const resultado = {
@@ -333,7 +347,7 @@ function decodificar(s) {
 
 function recortar(s, n) { s = String(s || ''); return s.length > n ? s.slice(0, n - 1) + '…' : s; }
 
-function listar(tipos) {
+function listar(tipos, en) {
   const t = tipos.slice(0, 4);
-  return t.join(', ') + (tipos.length > 4 ? ' y ' + (tipos.length - 4) + ' más' : '');
+  return t.join(', ') + (tipos.length > 4 ? (en ? ' and ' : ' y ') + (tipos.length - 4) + (en ? ' more' : ' más') : '');
 }

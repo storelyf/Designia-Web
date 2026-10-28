@@ -3,3 +3,8 @@
 # Cloudflare (Reglas → Redirect Rules), no aquí: ver SEO.md.
 
 /index.html   /   301
+
+# La versión en español vive en /es/ desde que el inglés pasó a ser la principal
+/auditoria        /es/auditoria   301
+/auditoria.html   /es/auditoria   301
+/es/index.html    /es/            301
