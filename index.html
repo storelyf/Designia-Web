@@ -1396,6 +1396,46 @@ html:not([data-tema="claro"]) .w-luz .tag-consulta{color:#C7B8FF;background:rgba
   .tab-ind{transition:none}
   .card:hover{transform:none}
 }
+
+/* === PROCESO EN PILA: cada etapa se queda fija y la siguiente se le apila encima === */
+.pila{list-style:none;margin:56px 0 0;padding-bottom:10vh;--arriba:104px}
+.pila-carta{position:sticky;top:calc(var(--arriba) + var(--i) * 14px);display:grid;
+  grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(20px,4vw,56px);align-items:center;
+  height:250px;margin-bottom:28px;padding:0 clamp(28px,4.5vw,60px);border-radius:28px;
+  background:var(--pc);color:var(--pt);box-shadow:0 -10px 30px rgba(9,5,26,.10)}
+.pila-carta:last-child{margin-bottom:0}
+.pila-et{display:block;font-size:.8rem;font-weight:600;letter-spacing:.02em;color:var(--ps);margin-bottom:8px}
+.pila-carta h3{font-family:'Poppins',sans-serif;font-weight:800;letter-spacing:-.04em;line-height:1.02;
+  font-size:clamp(1.8rem,1.1rem + 2.2vw,2.8rem);color:var(--pt)}
+.pila-tag{display:inline-block;margin-top:14px;padding:5px 12px;border-radius:999px;border:1px solid currentColor;
+  font-size:.78rem;font-weight:600;color:var(--ps)}
+.pila-txt p{font-size:1.05rem;line-height:1.6;color:var(--pt);max-width:520px}
+.pila-txt .pila-rec{margin-top:12px;font-size:.95rem;color:var(--ps)}
+.pila-txt .pila-rec b{color:var(--pt);font-weight:700}
+/* escala de color: noche va de morado a turquesa; claro, de lavanda a tinta */
+.pila-carta:nth-child(1){--pc:#2E2160;--pt:#fff;--ps:rgb(232 225 253 / .86)}
+.pila-carta:nth-child(2){--pc:#3D2B85;--pt:#fff;--ps:rgb(232 225 253 / .88)}
+.pila-carta:nth-child(3){--pc:#5B3FD1;--pt:#fff;--ps:rgb(255 255 255 / .88)}
+.pila-carta:nth-child(4){--pc:#A38AF9;--pt:#170F35;--ps:rgb(23 15 53 / .84)}
+.pila-carta:nth-child(5){--pc:#13CDD9;--pt:#170F35;--ps:rgb(23 15 53 / .84)}
+html[data-tema="claro"] .pila-carta:nth-child(1){--pc:#F3EFFE;--pt:#22184a;--ps:rgb(34 24 74 / .8)}
+html[data-tema="claro"] .pila-carta:nth-child(2){--pc:#E2D8FD;--pt:#22184a;--ps:rgb(34 24 74 / .82)}
+html[data-tema="claro"] .pila-carta:nth-child(3){--pc:#C4B2FB;--pt:#170F35;--ps:rgb(23 15 53 / .84)}
+html[data-tema="claro"] .pila-carta:nth-child(4){--pc:#6D4AE6;--pt:#fff;--ps:rgb(255 255 255 / .88)}
+html[data-tema="claro"] .pila-carta:nth-child(5){--pc:#22184a;--pt:#fff;--ps:rgb(232 225 253 / .86)}
+html[data-tema="claro"] .pila-carta{box-shadow:0 -10px 30px rgba(34,24,74,.08)}
+@media(max-width:760px){
+  .pila{--arriba:84px;margin-top:40px}
+  .pila-carta{grid-template-columns:1fr;align-content:center;gap:14px;height:340px;top:calc(var(--arriba) + var(--i) * 10px);
+    padding:0 24px;border-radius:22px;margin-bottom:22px}
+  .pila-txt p{font-size:.98rem}
+}
+/* burbuja de Designio: siempre blanca con texto tinta; días del calendario legibles */
+.dz-dice{background:#fff;color:#22184a}
+.dz-dice::after{border-left-color:#fff}
+.cal span{color:rgb(var(--L) / .7)}
+html[data-tema="claro"] .cta-movil .btn-line{color:var(--tinta);border-color:rgba(34,24,74,.28)}
+html[data-tema="claro"] .cta-movil .btn-line:hover{background:var(--tinta);color:#fff}
 </style>
 </head>
 <body>
@@ -2061,22 +2101,28 @@ html:not([data-tema="claro"]) .w-luz .tag-consulta{color:#C7B8FF;background:rgba
   <div class="inner">
     <h2 class="display"><span class="mask"><span>From idea to growth</span></span></h2>
     <p class="sec-lead">Five stages, and at each one you know exactly what you get.</p>
-<div class="proceso" id="procesoUI" data-reveal>
-      <div class="pasos" role="tablist" aria-label="Process stages">
-        <button class="paso is-on" type="button" role="tab" aria-selected="true" aria-controls="paso-0"><span class="num">1</span><b>Understand</b><small>Free assessment</small><i class="barra" aria-hidden="true"></i></button>
-        <button class="paso" type="button" role="tab" aria-selected="false" aria-controls="paso-1" tabindex="-1"><span class="num">2</span><b>Define</b><small>Proposal in 24 h</small><i class="barra" aria-hidden="true"></i></button>
-        <button class="paso" type="button" role="tab" aria-selected="false" aria-controls="paso-2" tabindex="-1"><span class="num">3</span><b>Create</b><small>Production every two weeks</small><i class="barra" aria-hidden="true"></i></button>
-        <button class="paso" type="button" role="tab" aria-selected="false" aria-controls="paso-3" tabindex="-1"><span class="num">4</span><b>Communicate</b><small>Active channels</small><i class="barra" aria-hidden="true"></i></button>
-        <button class="paso" type="button" role="tab" aria-selected="false" aria-controls="paso-4" tabindex="-1"><span class="num">5</span><b>Grow</b><small>Report with analysis</small><i class="barra" aria-hidden="true"></i></button>
-      </div>
-      <div class="paso-panel">
-        <div class="paso-det" id="paso-0" role="tabpanel"><span class="paso-n">Stage 1 of 5</span><h3>Understand</h3><p>We get to know your brand, its audience and its context.</p><p class="rec"><b>You get:</b> a one-page assessment with concrete findings about your current online presence, free of charge.</p></div>
-        <div class="paso-det" id="paso-1" role="tabpanel" hidden><span class="paso-n">Stage 2 of 5</span><h3>Define</h3><p>Goals, opportunities and a clear direction.</p><p class="rec"><b>You get:</b> a proposal with the plan for the quarter, the investment and what we need from you to get started.</p></div>
-        <div class="paso-det" id="paso-2" role="tabpanel" hidden><span class="paso-n">Stage 3 of 5</span><h3>Create</h3><p>We turn your identity into content.</p><p class="rec"><b>You get:</b> designs, reels and campaigns produced in two-week blocks, with no calendar surprises.</p></div>
-        <div class="paso-det" id="paso-3" role="tabpanel" hidden><span class="paso-n">Stage 4 of 5</span><h3>Communicate</h3><p>We take the message to the right channels.</p><p class="rec"><b>You get:</b> scheduled posting, live campaigns and replies to your messages during business hours.</p></div>
-        <div class="paso-det" id="paso-4" role="tabpanel" hidden><span class="paso-n">Stage 5 of 5</span><h3>Grow</h3><p>We measure, learn and optimize.</p><p class="rec"><b>You get:</b> a monthly report with strategic analysis, not screenshots, plus a meeting to go over it together.</p></div>
-      </div>
-    </div>
+<ol class="pila" aria-label="Process stages">
+      <li class="pila-carta" style="--i:0">
+        <div class="pila-cab"><span class="pila-et">Stage 1 of 5</span><h3>Understand</h3><span class="pila-tag">Free assessment</span></div>
+        <div class="pila-txt"><p>We get to know your brand, its audience and its context.</p><p class="pila-rec"><b>You get:</b> a one-page assessment with concrete findings about your current online presence, free of charge.</p></div>
+      </li>
+      <li class="pila-carta" style="--i:1">
+        <div class="pila-cab"><span class="pila-et">Stage 2 of 5</span><h3>Define</h3><span class="pila-tag">Proposal in 24 h</span></div>
+        <div class="pila-txt"><p>Goals, opportunities and a clear direction.</p><p class="pila-rec"><b>You get:</b> a proposal with the plan for the quarter, the investment and what we need from you to get started.</p></div>
+      </li>
+      <li class="pila-carta" style="--i:2">
+        <div class="pila-cab"><span class="pila-et">Stage 3 of 5</span><h3>Create</h3><span class="pila-tag">Production every two weeks</span></div>
+        <div class="pila-txt"><p>We turn your identity into content.</p><p class="pila-rec"><b>You get:</b> designs, reels and campaigns produced in two-week blocks, with no calendar surprises.</p></div>
+      </li>
+      <li class="pila-carta" style="--i:3">
+        <div class="pila-cab"><span class="pila-et">Stage 4 of 5</span><h3>Communicate</h3><span class="pila-tag">Active channels</span></div>
+        <div class="pila-txt"><p>We take the message to the right channels.</p><p class="pila-rec"><b>You get:</b> scheduled posting, live campaigns and replies to your messages during business hours.</p></div>
+      </li>
+      <li class="pila-carta" style="--i:4">
+        <div class="pila-cab"><span class="pila-et">Stage 5 of 5</span><h3>Grow</h3><span class="pila-tag">Report with analysis</span></div>
+        <div class="pila-txt"><p>We measure, learn and optimize.</p><p class="pila-rec"><b>You get:</b> a monthly report with strategic analysis, not screenshots, plus a meeting to go over it together.</p></div>
+      </li>
+    </ol>
     </div>
 </section>
 
