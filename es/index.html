@@ -91,7 +91,6 @@
   --hilo-claro:rgba(34,24,74,.14);
 
   --grad-turq:linear-gradient(100deg,var(--turq),var(--turq-600));
-  --grad-marca:linear-gradient(100deg,var(--turq) 0%,var(--violeta) 100%);
 
   --r-xs:6px; --r-sm:10px; --r:14px; --r-lg:20px; --r-full:999px;
   --sh:0 4px 12px rgba(34,24,74,.06),0 14px 34px rgba(34,24,74,.09);
@@ -1382,7 +1381,7 @@ html:not([data-tema="claro"]) .w-luz .tag-consulta{color:#C7B8FF;background:rgba
   transition:opacity .55s var(--ease) calc(var(--i,0) * 65ms),transform .6s var(--ease-expo) calc(var(--i,0) * 65ms)}
 .vivo.is-in>*{opacity:1;transform:none}
 .vivo>li::before,.vivo>li>.ic-s{transform:scale(.2);opacity:0;
-  transition:transform .5s cubic-bezier(.34,1.56,.64,1) calc(var(--i,0) * 65ms + .18s),opacity .3s calc(var(--i,0) * 65ms + .18s)}
+  transition:transform .35s var(--ease-expo) calc(var(--i,0) * 65ms + .18s),opacity .3s calc(var(--i,0) * 65ms + .18s)}
 .vivo.is-in>li::before,.vivo.is-in>li>.ic-s{transform:none;opacity:1}
 /* barras de la tarjeta de la portada: crecen al cargar */
 .vbars i{transform-origin:bottom;animation:crece .9s var(--ease-expo) both;animation-delay:calc(.9s + var(--j,0) * 70ms)}
@@ -1436,6 +1435,34 @@ html[data-tema="claro"] .pila-carta{box-shadow:0 -10px 30px rgba(34,24,74,.08)}
 .cal span{color:rgb(var(--L) / .7)}
 html[data-tema="claro"] .cta-movil .btn-line{color:var(--tinta);border-color:rgba(34,24,74,.28)}
 html[data-tema="claro"] .cta-movil .btn-line:hover{background:var(--tinta);color:#fff}
+
+/* === 7 PUNTOS ANTIWEBSLOP (nov-2026) === */
+/* 3. fondos de un solo tono, sin degradé turquesa-violeta */
+.w1 .work-art{background:linear-gradient(150deg,#13CDD9,#0B9AA4)}
+.w2 .work-art{background:linear-gradient(150deg,#8b6af7,#6D4AE6)}
+.w3 .work-art{background:linear-gradient(150deg,#2E2160,#22184a)}
+.w4 .work-art{background:linear-gradient(150deg,#0FA9B3,#086F77)}
+.vav,.f-av{background:#5B3FD1}
+/* 4a. señales del problema: lista de frases grandes, no tarjetas */
+.postales{display:block;margin-top:56px;border-bottom:1px solid var(--hilo)}
+.postales>.card{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(16px,4vw,56px);align-items:baseline;
+  padding:30px 0;background:var(--lz-bg);border:0;border-top:1px solid var(--hilo);border-radius:0;box-shadow:none}
+.postales>.card:hover{transform:none;background:var(--lz-bg);box-shadow:none}
+.w-luz .postales>.card{background:var(--lz-bg)} /* tapa a Designio: se asoma desde detrás de la lista */
+.postales>.card h3{font-size:clamp(1.35rem,1rem + 1.2vw,1.9rem);line-height:1.15;margin:0}
+.postales>.card p{margin:0;max-width:560px}
+/* 4b. servicios: lista de dos columnas (nombre | qué incluye) */
+.serv-grid,.serv-grid--6{display:block}
+.serv-card{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(12px,3vw,40px);align-items:baseline;padding:18px 0}
+.serv-grid .serv-card:last-child{border-bottom:1px solid var(--hilo)}
+.serv-card h4{margin:0}
+.serv-card .serv-nuevo,.serv-card .serv-consulta{grid-column:1;justify-self:start}
+@media(max-width:760px){
+  .postales{display:block}
+  .postales>.card{grid-template-columns:1fr;gap:10px;padding:24px 0}
+  .postales-pista{display:none!important}
+  .serv-card{grid-template-columns:1fr;gap:6px}
+}
 </style>
 </head>
 <body>
@@ -1689,7 +1716,7 @@ html[data-tema="claro"] .cta-movil .btn-line:hover{background:var(--tinta);color
       <svg class="ic" aria-hidden="true"><use href="#ic-clock"/></svg>
       <div>
         <strong>Respuesta el mismo día hábil</strong>
-        <span>Escribes hoy y hablas hoy con nosotros. Sin cadena de correos ni ejecutivo de cuentas de intermediario.</span>
+        <span>Nos escribes y ese mismo día te responde la persona que lleva tu cuenta.</span>
       </div>
     </div>
     <div class="promesa" data-reveal>
@@ -1709,13 +1736,6 @@ html[data-tema="claro"] .cta-movil .btn-line:hover{background:var(--tinta);color
   </div>
 </div>
 
-<!-- Cintas -->
-<div class="cintas" aria-hidden="true">
-  <div class="cinta-gigante"><div class="track">
-    <span><b>Designia</b><u>Marketing</u><b>IA</b><u>Publicidad</u></span>
-    <span><b>Designia</b><u>Marketing</u><b>IA</b><u>Publicidad</u></span>
-  </div></div>
-</div>
 
 <!-- ========================= PROBLEMA ========================= -->
 <section class="section w-luz" id="problema">
@@ -1836,7 +1856,7 @@ html[data-tema="claro"] .cta-movil .btn-line:hover{background:var(--tinta);color
         <span class="pilar-num">02</span>
       </div>
       <div class="serv-grid" data-stagger>
-        <div class="serv-card" data-reveal><h4>Contenido audiovisual</h4><p>Reels y video producidos en bloques quincenales, sin sorpresas de calendario.</p></div>
+        <div class="serv-card" data-reveal><h4>Contenido audiovisual</h4><p>Reels y video producidos en bloques quincenales, con fechas acordadas desde el inicio.</p></div>
         <div class="serv-card" data-reveal><h4>Gestión de redes sociales</h4><p>Calendario, publicación y seguimiento: tu perfil activo y ordenado todo el mes.</p></div>
         <div class="serv-card" data-reveal><h4>Community management</h4><p>Respondemos comentarios y mensajes en horario hábil, con el tono de tu marca.</p></div>
         <div class="serv-card" data-reveal><h4>Email marketing</h4><p>Mensajes que recuperan clientes que ya compraron y acompañan a los que dudan.</p></div>
@@ -1880,7 +1900,7 @@ html[data-tema="claro"] .cta-movil .btn-line:hover{background:var(--tinta);color
       <p class="serv-pie">No necesitas los cuatro frentes desde el primer día: <strong>armamos el plan con lo que tu negocio necesita hoy</strong> y sumamos el resto cuando toca.</p>
       <div class="pruebas">
         <div class="prueba"><strong>Empiezas sin comprometerte</strong><span>El diagnóstico es gratis y no pedimos accesos ni datos de pago para hacerlo. Decides después de verlo.</span></div>
-        <div class="prueba"><strong>Sabes qué recibes cada mes</strong><span>Los entregables van por escrito en la propuesta: qué piezas, cuántas y cuándo. Sin sorpresas de calendario.</span></div>
+        <div class="prueba"><strong>Sabes qué recibes cada mes</strong><span>Los entregables van por escrito en la propuesta: qué piezas, cuántas y en qué fechas.</span></div>
         <div class="prueba"><strong>Puedes revisarlo cuando quieras</strong><span>Un tablero en vivo con tus números y un reporte mensual con lectura, no capturas de pantalla.</span></div>
       </div>
     </div>
@@ -2112,7 +2132,7 @@ html[data-tema="claro"] .cta-movil .btn-line:hover{background:var(--tinta);color
       </li>
       <li class="pila-carta" style="--i:2">
         <div class="pila-cab"><span class="pila-et">Etapa 3 de 5</span><h3>Crear</h3><span class="pila-tag">Producción quincenal</span></div>
-        <div class="pila-txt"><p>Transformamos la identidad en contenido.</p><p class="pila-rec"><b>Recibes:</b> piezas, reels y campañas producidas en bloques quincenales, sin sorpresas de calendario.</p></div>
+        <div class="pila-txt"><p>Transformamos la identidad en contenido.</p><p class="pila-rec"><b>Recibes:</b> piezas, reels y campañas producidas en bloques quincenales, con fechas acordadas desde el inicio.</p></div>
       </li>
       <li class="pila-carta" style="--i:3">
         <div class="pila-cab"><span class="pila-et">Etapa 4 de 5</span><h3>Comunicar</h3><span class="pila-tag">Canales activos</span></div>
@@ -2230,7 +2250,7 @@ html[data-tema="claro"] .cta-movil .btn-line:hover{background:var(--tinta);color
       </div>
       <div class="faq-item" data-reveal>
         <button class="faq-q" type="button" aria-expanded="false">¿Qué necesito para empezar?<span class="mas" aria-hidden="true"></span></button>
-        <div class="faq-a"><div><p>Tu diagnóstico gratis y la propuesta por escrito. Antes de cerrar, una conversación de 20 minutos para afinar los detalles. Después, fotos o videos de tu negocio (o una producción contratada): sin materia prima, no hay contenido.</p></div></div>
+        <div class="faq-a"><div><p>Tu diagnóstico gratis y la propuesta por escrito. Antes de cerrar, una conversación de 20 minutos para afinar los detalles. Después, fotos o videos de tu negocio (o una producción contratada), que es la materia prima del contenido.</p></div></div>
       </div>
       <div class="faq-item" data-reveal>
         <button class="faq-q" type="button" aria-expanded="false">¿Cómo nos comunicamos?<span class="mas" aria-hidden="true"></span></button>
@@ -2291,7 +2311,7 @@ html[data-tema="claro"] .cta-movil .btn-line:hover{background:var(--tinta);color
         </form>
       </div>
 
-      <div class="gigante-wrap" aria-hidden="true"><p class="gigante" id="gigante">Te esperamos · Te esperamos ·</p></div>
+      
       <p class="datos-contacto">
         <span>Lima, Perú</span>
         <span>Lun–Vie · 9:00 a 18:00 · Solo por escrito</span>

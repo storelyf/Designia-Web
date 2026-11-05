@@ -91,7 +91,6 @@
   --hilo-claro:rgba(34,24,74,.14);
 
   --grad-turq:linear-gradient(100deg,var(--turq),var(--turq-600));
-  --grad-marca:linear-gradient(100deg,var(--turq) 0%,var(--violeta) 100%);
 
   --r-xs:6px; --r-sm:10px; --r:14px; --r-lg:20px; --r-full:999px;
   --sh:0 4px 12px rgba(34,24,74,.06),0 14px 34px rgba(34,24,74,.09);
@@ -1382,7 +1381,7 @@ html:not([data-tema="claro"]) .w-luz .tag-consulta{color:#C7B8FF;background:rgba
   transition:opacity .55s var(--ease) calc(var(--i,0) * 65ms),transform .6s var(--ease-expo) calc(var(--i,0) * 65ms)}
 .vivo.is-in>*{opacity:1;transform:none}
 .vivo>li::before,.vivo>li>.ic-s{transform:scale(.2);opacity:0;
-  transition:transform .5s cubic-bezier(.34,1.56,.64,1) calc(var(--i,0) * 65ms + .18s),opacity .3s calc(var(--i,0) * 65ms + .18s)}
+  transition:transform .35s var(--ease-expo) calc(var(--i,0) * 65ms + .18s),opacity .3s calc(var(--i,0) * 65ms + .18s)}
 .vivo.is-in>li::before,.vivo.is-in>li>.ic-s{transform:none;opacity:1}
 /* barras de la tarjeta de la portada: crecen al cargar */
 .vbars i{transform-origin:bottom;animation:crece .9s var(--ease-expo) both;animation-delay:calc(.9s + var(--j,0) * 70ms)}
@@ -1436,6 +1435,34 @@ html[data-tema="claro"] .pila-carta{box-shadow:0 -10px 30px rgba(34,24,74,.08)}
 .cal span{color:rgb(var(--L) / .7)}
 html[data-tema="claro"] .cta-movil .btn-line{color:var(--tinta);border-color:rgba(34,24,74,.28)}
 html[data-tema="claro"] .cta-movil .btn-line:hover{background:var(--tinta);color:#fff}
+
+/* === 7 PUNTOS ANTIWEBSLOP (nov-2026) === */
+/* 3. fondos de un solo tono, sin degradé turquesa-violeta */
+.w1 .work-art{background:linear-gradient(150deg,#13CDD9,#0B9AA4)}
+.w2 .work-art{background:linear-gradient(150deg,#8b6af7,#6D4AE6)}
+.w3 .work-art{background:linear-gradient(150deg,#2E2160,#22184a)}
+.w4 .work-art{background:linear-gradient(150deg,#0FA9B3,#086F77)}
+.vav,.f-av{background:#5B3FD1}
+/* 4a. señales del problema: lista de frases grandes, no tarjetas */
+.postales{display:block;margin-top:56px;border-bottom:1px solid var(--hilo)}
+.postales>.card{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(16px,4vw,56px);align-items:baseline;
+  padding:30px 0;background:var(--lz-bg);border:0;border-top:1px solid var(--hilo);border-radius:0;box-shadow:none}
+.postales>.card:hover{transform:none;background:var(--lz-bg);box-shadow:none}
+.w-luz .postales>.card{background:var(--lz-bg)} /* tapa a Designio: se asoma desde detrás de la lista */
+.postales>.card h3{font-size:clamp(1.35rem,1rem + 1.2vw,1.9rem);line-height:1.15;margin:0}
+.postales>.card p{margin:0;max-width:560px}
+/* 4b. servicios: lista de dos columnas (nombre | qué incluye) */
+.serv-grid,.serv-grid--6{display:block}
+.serv-card{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(12px,3vw,40px);align-items:baseline;padding:18px 0}
+.serv-grid .serv-card:last-child{border-bottom:1px solid var(--hilo)}
+.serv-card h4{margin:0}
+.serv-card .serv-nuevo,.serv-card .serv-consulta{grid-column:1;justify-self:start}
+@media(max-width:760px){
+  .postales{display:block}
+  .postales>.card{grid-template-columns:1fr;gap:10px;padding:24px 0}
+  .postales-pista{display:none!important}
+  .serv-card{grid-template-columns:1fr;gap:6px}
+}
 </style>
 </head>
 <body>
@@ -1689,7 +1716,7 @@ html[data-tema="claro"] .cta-movil .btn-line:hover{background:var(--tinta);color
       <svg class="ic" aria-hidden="true"><use href="#ic-clock"/></svg>
       <div>
         <strong>Same-business-day reply</strong>
-        <span>Message us today and hear back from us today. No email chains, no account executive in the middle.</span>
+        <span>Message us and the person who runs your account replies the same day.</span>
       </div>
     </div>
     <div class="promesa" data-reveal>
@@ -1709,13 +1736,6 @@ html[data-tema="claro"] .cta-movil .btn-line:hover{background:var(--tinta);color
   </div>
 </div>
 
-<!-- Cintas -->
-<div class="cintas" aria-hidden="true">
-  <div class="cinta-gigante"><div class="track">
-    <span><b>Designia</b><u>Marketing</u><b>AI</b><u>Advertising</u></span>
-    <span><b>Designia</b><u>Marketing</u><b>AI</b><u>Advertising</u></span>
-  </div></div>
-</div>
 
 <!-- ========================= PROBLEMA ========================= -->
 <section class="section w-luz" id="problema">
@@ -1836,7 +1856,7 @@ html[data-tema="claro"] .cta-movil .btn-line:hover{background:var(--tinta);color
         <span class="pilar-num">02</span>
       </div>
       <div class="serv-grid" data-stagger>
-        <div class="serv-card" data-reveal><h4>Video content</h4><p>Reels and video produced in two-week blocks, with no calendar surprises.</p></div>
+        <div class="serv-card" data-reveal><h4>Video content</h4><p>Reels and video produced in two-week blocks, on dates agreed upfront.</p></div>
         <div class="serv-card" data-reveal><h4>Social media management</h4><p>Calendar, posting and follow-up: your profile active and organized all month long.</p></div>
         <div class="serv-card" data-reveal><h4>Community management</h4><p>We reply to comments and messages during business hours, in your brand's voice.</p></div>
         <div class="serv-card" data-reveal><h4>Email marketing</h4><p>Emails that bring back past customers and guide the ones still on the fence.</p></div>
@@ -1880,7 +1900,7 @@ html[data-tema="claro"] .cta-movil .btn-line:hover{background:var(--tinta);color
       <p class="serv-pie">You don't need all four areas from day one: <strong>we build the plan around what your business needs today</strong> and add the rest when the time is right.</p>
       <div class="pruebas">
         <div class="prueba"><strong>Start with no commitment</strong><span>The assessment is free, and we don't ask for logins or payment details to do it. You decide after you've seen it.</span></div>
-        <div class="prueba"><strong>Know what you get every month</strong><span>Deliverables are spelled out in the proposal: which pieces, how many and when. No calendar surprises.</span></div>
+        <div class="prueba"><strong>Know what you get every month</strong><span>Deliverables are spelled out in the proposal: which pieces, how many and on what dates.</span></div>
         <div class="prueba"><strong>Check in whenever you want</strong><span>A live dashboard with your numbers and a monthly report with real analysis, not screenshots.</span></div>
       </div>
     </div>
@@ -2112,7 +2132,7 @@ html[data-tema="claro"] .cta-movil .btn-line:hover{background:var(--tinta);color
       </li>
       <li class="pila-carta" style="--i:2">
         <div class="pila-cab"><span class="pila-et">Stage 3 of 5</span><h3>Create</h3><span class="pila-tag">Production every two weeks</span></div>
-        <div class="pila-txt"><p>We turn your identity into content.</p><p class="pila-rec"><b>You get:</b> designs, reels and campaigns produced in two-week blocks, with no calendar surprises.</p></div>
+        <div class="pila-txt"><p>We turn your identity into content.</p><p class="pila-rec"><b>You get:</b> designs, reels and campaigns produced in two-week blocks, on dates agreed upfront.</p></div>
       </li>
       <li class="pila-carta" style="--i:3">
         <div class="pila-cab"><span class="pila-et">Stage 4 of 5</span><h3>Communicate</h3><span class="pila-tag">Active channels</span></div>
@@ -2230,7 +2250,7 @@ html[data-tema="claro"] .cta-movil .btn-line:hover{background:var(--tinta);color
       </div>
       <div class="faq-item" data-reveal>
         <button class="faq-q" type="button" aria-expanded="false">What do I need to get started?<span class="mas" aria-hidden="true"></span></button>
-        <div class="faq-a"><div><p>Your free assessment and a written proposal. Before we close, a 20-minute conversation to finalize the details. After that, photos or videos of your business (or a hired shoot): without raw material, there's no content.</p></div></div>
+        <div class="faq-a"><div><p>Your free assessment and a written proposal. Before we close, a 20-minute conversation to finalize the details. After that, photos or videos of your business (or a hired shoot), the raw material for your content.</p></div></div>
       </div>
       <div class="faq-item" data-reveal>
         <button class="faq-q" type="button" aria-expanded="false">How do we communicate?<span class="mas" aria-hidden="true"></span></button>
@@ -2291,7 +2311,7 @@ html[data-tema="claro"] .cta-movil .btn-line:hover{background:var(--tinta);color
         </form>
       </div>
 
-      <div class="gigante-wrap" aria-hidden="true"><p class="gigante" id="gigante">See you soon · See you soon ·</p></div>
+      
       <p class="datos-contacto">
         <span>Lima, Peru</span>
         <span>Mon–Fri · 9:00 to 18:00 Lima time · In writing only</span>
@@ -2400,7 +2420,7 @@ html[data-tema="claro"] .cta-movil .btn-line:hover{background:var(--tinta);color
 {"@type":"Question","name":"How soon will I see results?","acceptedAnswer":{"@type":"Answer","text":"Organic content takes around 3 months to build; well-targeted ads bring in the first leads within the first few weeks. That's why the minimum commitment is 3 months: in less time, nothing can be proven."}},
 {"@type":"Question","name":"Do you work with businesses outside Lima?","acceptedAnswer":{"@type":"Answer","text":"Our in-person shoots are focused on Lima, but we run content, ads and strategy 100% remotely for businesses across Peru."}},
 {"@type":"Question","name":"How much does it cost to work with Designia?","acceptedAnswer":{"@type":"Answer","text":"It depends on the scope: we don't sell fixed packages. After the free assessment, we send you a written proposal with the scope and investment within 24 hours. Ad spend is paid separately, directly to Meta or Google."}},
-{"@type":"Question","name":"What do I need to get started?","acceptedAnswer":{"@type":"Answer","text":"Your free assessment and a written proposal. Before we close, a 20-minute conversation to finalize the details. After that, photos or videos of your business (or a hired shoot): without raw material, there's no content."}},
+{"@type":"Question","name":"What do I need to get started?","acceptedAnswer":{"@type":"Answer","text":"Your free assessment and a written proposal. Before we close, a 20-minute conversation to finalize the details. After that, photos or videos of your business (or a hired shoot), the raw material for your content."}},
 {"@type":"Question","name":"How do we communicate?","acceptedAnswer":{"@type":"Answer","text":"WhatsApp for day-to-day matters, a monthly meeting to go over the report, and always the same people running your account."}},
 {"@type":"Question","name":"What is AI search visibility?","acceptedAnswer":{"@type":"Answer","text":"It means your business shows up when someone asks ChatGPT, Gemini or Perplexity about a service like yours. It's done with structured data on your website, content that answers specific questions and verifiable reviews. We include it in plans that come with local SEO."}},
 {"@type":"Question","name":"How does Designia use artificial intelligence?","acceptedAnswer":{"@type":"Answer","text":"In three concrete ways: visibility in AI search engines like ChatGPT, reports and audits that generate themselves, and interactive tools like the assessment on this website. The AI WhatsApp assistant is built per project, on request. Our team handles strategy and content; AI takes the repetitive work off its plate."}}]}
