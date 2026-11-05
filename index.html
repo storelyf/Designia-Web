@@ -1246,6 +1246,74 @@ footer .f-links a{display:inline-flex;align-items:center;min-height:44px}
 .lang-sw a:hover,.lang-sw a:focus-visible{color:var(--turq)}
 /* En el teléfono el botón de WhatsApp ya está en la barra fija de abajo: arriba se deja sitio al idioma */
 @media(max-width:420px){.nav-cta>.btn{display:none}}
+
+/* === PRUEBA ELEGANTE (nov-2026): menos capas, turquesa con medida, jerarquía y aire === */
+/* Aire: más espacio entre secciones */
+:root{--sp:clamp(96px,12vw,176px)}
+
+/* Portada: un solo subtítulo; la etiqueta de agencia pasa a texto discreto */
+.hslide .big-rot{display:none}
+.hero-eyebrow{padding:0;background:none;border:0;border-radius:0;margin-bottom:28px;
+  font-size:.8rem;font-weight:500;letter-spacing:.01em;color:rgba(232,225,253,.88)}
+.hero-eyebrow b{color:var(--lavanda);font-weight:600}
+.hero-eyebrow .mark{width:22px;height:auto}
+.hero .lead{margin:26px 0 36px;font-size:1.12rem;line-height:1.75}
+.btn-ghost{border-width:1px;border-color:rgba(232,225,253,.28)}
+.cta-nota{flex-basis:100%;margin-top:6px;font-size:.82rem;font-weight:400}
+
+
+/* Pestañas de la portada: texto con una línea de progreso, no píldoras rellenas */
+.hero-tabs{gap:22px;margin-top:40px}
+.hdot,.hdot:hover{min-height:44px;padding:10px 0;border:0;border-radius:0;background:none;
+  color:rgba(232,225,253,.7);font-weight:500}
+.hdot:hover{color:var(--lavanda)}
+.hdot.is-on{background:none;color:var(--blanco)}
+.hdot::after{content:"";position:absolute;left:0;right:0;bottom:4px;height:1px;background:var(--hilo)}
+.hdot i{bottom:4px;height:1px;background:var(--turq);opacity:1;z-index:1}
+
+/* Turquesa solo para la acción y un resaltado: los títulos menores van en blanco */
+.prueba strong,.serv-pie strong{color:var(--blanco)}
+.pill .dot{background:rgba(232,225,253,.5)}
+
+/* Jerarquía: titulares en 800, todo lo demás más liviano */
+.card h3,.serv-card h4,.prueba strong,.promesa strong{font-weight:600;letter-spacing:-.015em}
+.sec-lead{line-height:1.75}
+
+/* Servicios: sin cuadrícula de tabla, columnas separadas por espacio y una línea fina arriba */
+.serv-grid{gap:36px 32px;background:none;border:0}
+.serv-card{background:none;padding:22px 0 0;border-top:1px solid var(--hilo);overflow:visible}
+.serv-card::before{display:none}
+.serv-card:hover{background:none}
+.serv-nuevo,.serv-consulta{position:static;display:inline-block;margin-bottom:12px}
+
+/* Tarjetas oscuras: superficie tonal, sin borde turquesa ni salto al pasar el mouse */
+.card{border-color:rgba(232,225,253,.08);background:rgba(232,225,253,.045)}
+.card::before,.card::after{display:none}
+.card:hover{transform:none;background:rgba(232,225,253,.065);border-color:rgba(232,225,253,.14)}
+
+/* Movimiento: menos y más lento */
+.btn-primary::after{display:none}
+.btn-primary:hover,.btn-ghost:hover,.btn-line:hover,.pill:hover{transform:translateY(-1px)}
+.cinta-gigante .track{animation-duration:90s}
+.cursor-dot,.cursor-ring{display:none!important}
+@media(hover:hover) and (pointer:fine){
+  body.cursor-on,body.cursor-on a,body.cursor-on button,body.cursor-on .faq-q,
+  body.cursor-on .card,body.cursor-on .plan,body.cursor-on .work{cursor:auto}
+  body.cursor-on a,body.cursor-on button,body.cursor-on .faq-q{cursor:pointer}
+}
+/* Ajustes tras ver las capturas */
+.social-lab,.social-row{display:none}
+.card h3{margin-top:0}
+.pilar-num,.pilar-head .ico-tile{display:none}
+.pilar-tabs{gap:0 28px;background:none;border:0;border-bottom:1px solid var(--hilo)}
+.ptab,.ptab:hover,.ptab.is-on{background:none;padding:18px 0 20px}
+.ptab .ico-tile,.pilar-head .ico-tile{background:none;border-color:transparent}
+.ptab.is-on .ico-tile{background:none;border-color:transparent}
+.ptab.is-on .ico-tile .ic{--t1:var(--turq);--t2:var(--turq)}
+.ptab b{font-weight:600;color:rgba(232,225,253,.75)}
+.ptab.is-on b{color:var(--blanco)}
+.ptab.is-on::after{height:2px;bottom:-1px}
+@media(max-width:760px){.hero .lead{font-size:1.02rem;margin:20px 0 30px}.hero-tabs{margin-top:20px}}
 </style>
 </head>
 <body>
