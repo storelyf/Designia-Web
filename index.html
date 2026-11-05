@@ -1437,32 +1437,35 @@ html[data-tema="claro"] .cta-movil .btn-line{color:var(--tinta);border-color:rgb
 html[data-tema="claro"] .cta-movil .btn-line:hover{background:var(--tinta);color:#fff}
 
 /* === 7 PUNTOS ANTIWEBSLOP (nov-2026) === */
-/* 3. fondos de un solo tono, sin degradé turquesa-violeta */
+/* fondos de un solo tono, sin degradé turquesa-violeta */
 .w1 .work-art{background:linear-gradient(150deg,#13CDD9,#0B9AA4)}
 .w2 .work-art{background:linear-gradient(150deg,#8b6af7,#6D4AE6)}
 .w3 .work-art{background:linear-gradient(150deg,#2E2160,#22184a)}
 .w4 .work-art{background:linear-gradient(150deg,#0FA9B3,#086F77)}
 .vav,.f-av{background:#5B3FD1}
-/* 4a. señales del problema: lista de frases grandes, no tarjetas */
-.postales{display:block;margin-top:56px;border-bottom:1px solid var(--hilo)}
-.postales>.card{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(16px,4vw,56px);align-items:baseline;
-  padding:30px 0;background:var(--lz-bg);border:0;border-top:1px solid var(--hilo);border-radius:0;box-shadow:none}
-.postales>.card:hover{transform:none;background:var(--lz-bg);box-shadow:none}
-.w-luz .postales>.card{background:var(--lz-bg)} /* tapa a Designio: se asoma desde detrás de la lista */
-.postales>.card h3{font-size:clamp(1.35rem,1rem + 1.2vw,1.9rem);line-height:1.15;margin:0}
-.postales>.card p{margin:0;max-width:560px}
-/* 4b. servicios: lista de dos columnas (nombre | qué incluye) */
-.serv-grid,.serv-grid--6{display:block}
-.serv-card{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(12px,3vw,40px);align-items:baseline;padding:18px 0}
-.serv-grid .serv-card:last-child{border-bottom:1px solid var(--hilo)}
-.serv-card h4{margin:0}
-.serv-card .serv-nuevo,.serv-card .serv-consulta{grid-column:1;justify-self:start}
-@media(max-width:760px){
-  .postales{display:block}
-  .postales>.card{grid-template-columns:1fr;gap:10px;padding:24px 0}
-  .postales-pista{display:none!important}
-  .serv-card{grid-template-columns:1fr;gap:6px}
+/* Designio se asoma DETRÁS de las tarjetas: en noche la tarjeta era translúcida y se veía a través */
+html:not([data-tema="claro"]) .dz-zona>.postales .card{background:#251D48}
+/* tarjetas del problema: hover sutil en escritorio */
+/* translate y scale van aparte de transform: la entrada escalonada (.8s) no se toca */
+.postales>.card{transition:opacity .8s var(--ease) var(--d,0s),transform .8s var(--ease) var(--d,0s),translate .22s cubic-bezier(.23,1,.32,1),scale .25s cubic-bezier(.23,1,.32,1),border-color .22s ease}
+.postales>.card h3{transition:color .22s ease}
+.postales>.card:hover{transform:none} /* el ascenso lo da translate, sin sumar el de .card */
+@media(hover:hover) and (pointer:fine){
+  .postales>.card.is-in:hover{translate:0 -4px;border-color:var(--turq-tx)}
+  .postales>.card:hover h3{color:var(--turq-tx)}
 }
+/* móvil: la tarjeta en foco queda nítida; las de los lados, un poco más chicas y tenues */
+@media(max-width:760px){
+  .postales.con-foco>.card.is-in{scale:.94}
+  .postales.con-foco>.card.is-in.en-foco{scale:1;border-color:var(--turq-tx)}
+  .postales-pista span{display:inline-block;animation:pista 1.6s cubic-bezier(.77,0,.175,1) infinite}
+}
+@keyframes pista{50%{transform:translateX(5px)}}
+@media(prefers-reduced-motion:reduce){
+  .postales.con-foco>.card.is-in,.postales>.card.is-in:hover{scale:1;translate:none}
+  .postales-pista span{animation:none}
+}
+html.pausa .postales-pista span{animation:none}
 </style>
 </head>
 <body>
@@ -2311,7 +2314,7 @@ html[data-tema="claro"] .cta-movil .btn-line:hover{background:var(--tinta);color
         </form>
       </div>
 
-      
+      <div class="gigante-wrap" aria-hidden="true"><p class="gigante" id="gigante">See you soon · See you soon ·</p></div>
       <p class="datos-contacto">
         <span>Lima, Peru</span>
         <span>Mon–Fri · 9:00 to 18:00 Lima time · In writing only</span>
@@ -3400,6 +3403,19 @@ $('#anio').textContent = new Date().getFullYear();
     es.forEach(function(x){ if(x.isIntersecting){ x.target.classList.add('is-in'); io.unobserve(x.target); } });
   }, {threshold: .2, rootMargin: '0px 0px -6% 0px'});
   listas.forEach(function(l){ io.observe(l); });
+})();
+</script>
+<script>
+/* Tarjetas del problema en móvil: marca la que está en foco dentro del carrusel */
+(function(){
+  var c = document.querySelector('.postales'); if(!c || !('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(x){ x.target.classList.toggle('en-foco', x.intersectionRatio > .6); });
+  }, {root: c, threshold: [0, .6, 1]});
+  var mq = matchMedia('(max-width:760px)');
+  function activa(){ c.classList.toggle('con-foco', mq.matches); }
+  mq.addEventListener('change', activa); activa();
+  Array.prototype.forEach.call(c.children, function(card){ io.observe(card); });
 })();
 </script>
 </body>
